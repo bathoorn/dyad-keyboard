@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 5
+version: 6
 units: mm
 key_unit: 19.05
 
@@ -29,6 +29,10 @@ changelog:
      Left 148.97 x 120.74, right 167.21 x 120.74. Pod centres recorded in
      PCB coordinates; the pod ring overhangs the main board edge by 2.3 mm
      (left) and 1.5 mm (right), so the two boards overlap in plan view."
+  - "v6 - switch-plate cutouts exported. 14.00 x 14.00 mm with 0.5 mm
+     corner reliefs per marbastlib plate library; the 2.25u Shift also gets
+     two 6.75 x 14.0 mm stabiliser cutouts. Replaces the LED light holes as
+     the geometry the case consumes."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -76,6 +80,16 @@ outlines:
     main board edge by 2.3 mm on the left and 1.5 mm on the right, so the two
     boards overlap in plan view. The case must resolve this in Z, or the main
     outline needs a notch. Decide at G3.
+  plate:
+    files: "hardware/outlines/dyad-plate-<half>.dxf / .json  (hardware/export_plate.py)"
+    cutout: "14.00 x 14.00 mm, 0.5 mm corner relief"
+    stabilised: "2.25u Shift only: + two 6.75 x 14.0 mm cutouts at x +-8.53..15.28, y -6.0..+8.0"
+    counts: "left 34 loops (31 plain + 3 for the stabilised key), right 37"
+    source: >
+      Geometry taken from marbastlib's own plate library rather than hardcoded.
+      Key width cannot be read from the switch footprint: marbastlib's hotswap
+      series stops at 1.75u, so kbplacer falls back to 1u and the name lies.
+      Width comes from the stabiliser footprint instead.
   perimeter_only: >
     Taken from the board's computed polygon outlines, not raw Edge.Cuts. The
     reverse-mount LED footprint cuts its own light hole, so Edge.Cuts carries
