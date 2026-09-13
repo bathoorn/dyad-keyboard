@@ -207,23 +207,27 @@ Combining them oversizes the regulator for current it never sees.
 
 **Free bonus test.** The strip answers the `74AHCT125` question from PLAN.md §4 — whether RP2040's 3.3 V data reliably drives 5 V LEDs. Try it *without* a level shifter first. If it is solid over a representative run length, the shifter footprint stays unpopulated.
 
-## 7a. The bench link is half-duplex, because a TRS cable has three conductors
+## 7a. Half-duplex is the shipping choice, not just a bench compromise
 
-PLAN.md §5 specs **full-duplex** PIO serial, which needs four conductors:
-VCC, GND, TX, RX — i.e. TRRS. The cable on hand is **TRS**, three conductors,
-so the bench runs **half-duplex** on a single bidirectional data line.
+The jack on hand (LCSC C26230, PJ325) has **5 pins — a 4-pole TRRS jack plus a
+switched insertion contact** — so the jack never limited anything. Only the
+cable did, and a TRS cable has three conductors: VCC, GND, and one data line.
 
-This is not a downgrade worth worrying about. Half-duplex is QMK's default and
-is what most splits carrying a trackball or trackpad actually use; the traffic
-is small — matrix state plus a few bytes of pointer delta per poll.
+**Nothing is lost.** Every split sync feature works half-duplex — pointing
+device, layer state, mods, WPM, display state, RGB. QMK's split transport is
+request/response, so it is logically half-duplex even over a full-duplex link;
+the second wire buys signal margin, not capability.
 
-**For the shipping design:** fit a **4-pole (TRRS) jack** on the controller
-regardless. It costs the same as a 3-pole, and it keeps full-duplex available
-if the ribbon-and-cable combination ever proves marginal. Plan on half-duplex,
-but do not design the option away.
+**And there is a positive reason to keep it.** In a 4-pole jack a TRS plug's
+sleeve bridges the ring-2 and sleeve contacts. Leave ring-2 unused and *either*
+cable works. Put full-duplex RX there and the wrong cable from the drawer ties
+RX to ground. Cable tolerance is worth more here than headroom we do not need.
 
-If the bench link proves flaky, the usual cause is the data line not idling
-high: add a 4.7 kΩ pull-up from the serial pin to 3V3 on one side.
+So: no need to hunt for a TRRS cable. PLAN.md §3 and §5 now specify a 4-pole
+jack, half-duplex, ring-2 unconnected.
+
+If the bench link is flaky, the usual cause is the data line not idling high:
+4.7 kΩ pull-up from the serial pin to 3V3 on one side.
 
 ## 5a. Decision: does the shipping design follow the bench rig?
 

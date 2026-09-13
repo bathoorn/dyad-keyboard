@@ -116,7 +116,7 @@ Ring rides on a thin-section ball bearing (6806-2RS class) or a printed race. **
 | Switches | MX-compatible, Kailh hot-swap sockets | |
 | Diodes | 1N4148W SOD-123, one per key, column→row | |
 | Per-key RGB | **SK6812MINI-E, reserved not committed** | Footprints on the mains from day one, populated later or never. Data pin, 5 V rail and ground return reserved on the main FFC — see §5. |
-| Split link | TRRS, with ESD protection and series resistors | USB-C-to-USB-C split cables risk shorting VBUS into a host. Not worth it. |
+| Split link | **4-pole (TRRS) jack, half-duplex, ring-2 unused** | Accepts either a TRS or a TRRS cable — see §5. USB-C-to-USB-C split cables risk shorting VBUS into a host; not worth it. |
 | USB | USB-C on **both** halves | |
 
 **Firmware stack:** QMK, data-driven `keyboard.json`, RP2040 split over PIO full-duplex serial (`SERIAL_DRIVER = vendor`), Quantum Painter for the display, Pointing Device + split pointing sync for the Cirque.
@@ -290,8 +290,16 @@ The second is off the table, and not on taste grounds: the right half needs the 
 ```make
 # rules.mk
 SPLIT_KEYBOARD = yes
-SERIAL_DRIVER = vendor        # RP2040 PIO full-duplex
+SERIAL_DRIVER = vendor        # RP2040 PIO, half-duplex (see below)
 ```
+
+**Half-duplex, deliberately — and a 4-pole jack with ring-2 left unused.**
+
+No QMK feature is lost. Pointing device, layer state, mods, WPM, display state and RGB all sync over half-duplex. The split transport is request/response — the master polls the slave and waits — so it is logically half-duplex even on a full-duplex link. The second conductor buys signal margin and a higher speed ceiling, not concurrency, and 460800 baud is ample for 37 keys plus a few bytes of pointer delta per poll.
+
+The reason to *choose* it is cable tolerance. In a 4-pole jack, a TRS plug's sleeve bridges the ring-2 and sleeve contacts. With ring-2 unused that short is harmless and **either cable works**. Put the full-duplex RX line there instead and the wrong cable out of the drawer ties RX to ground — a dead keyboard, and a driven pin into GND.
+
+Fit the 4-pole part regardless (it costs the same as a 3-pole, and the 5th pin is a switched insertion contact if presence detection is ever wanted), but leave ring-2 unconnected.
 ```c
 // config.h
 #define SPLIT_POINTING_ENABLE
