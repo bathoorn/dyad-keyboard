@@ -90,20 +90,38 @@ FFC conductor is good for roughly half an amp. See PLAN.md §5.
 
 ## 3. BOM
 
+**Inherited from the reference, LCSC codes already populated** (31 parts, 14
+distinct codes — nothing to look up):
+
+| Ref | Part | LCSC |
+|---|---|---|
+| U3 | RP2040, QFN-56 | **C2040** |
+| U1 | W25Q128JVS, 16 MB SOIC-8 | **C131025** |
+| Y1 | 12 MHz crystal, 3225 4-pin | **C9002** |
+| U2 | USBLC6-2SC6 ESD, SOT-23-6 | **C2827654** |
+| U4 | XC6206 LDO 3.3 V / 200 mA, SOT-23 | **C5446** |
+| J1 | USB-C receptacle, HRO TYPE-C-31-M-12 | **C165948** |
+| F1 | 500 mA fuse, 1206 | **C70076** |
+| C1–C17 | 10× 100 nF, 4× 1 µF, 1× 10 µF, 2× 22 pF, all 0402 | C1525 / C52923 / C15525 / C1555 |
+| R1,R2,R7 | 1 kΩ 0402 | C11702 |
+| R3,R4 | 5k1 CC 0402 | C25905 |
+| R5,R6 | 27 Ω 0603 | C25190 |
+
+Passives are 0402. That is finer than the "0805, hand-solderable" assumption in
+PLAN.md §10, but these are on the *assembly* BOM — JLCPCB places them, so it
+does not matter.
+
+**Still to add — none of these exist on a bare dev board:**
+
 | Block | Part | LCSC | Note |
 |---|---|---|---|
-| MCU | RP2040 | **C2040** | QFN-56, 0.4 mm pitch |
-| Flash | W25Q128JVSIQ | *verify* | 16 MB SOIC-8. QMK's default driver assumes W25Q-compatible. |
-| Crystal | 12 MHz, ≤30 ppm | *verify* | Load caps per the crystal's own CL. **1 kΩ series on XOUT.** |
-| 3V3 | AP2112K-3.3 | *verify* | Size from the Phase 1 measurement, not a datasheet guess |
-| USB | USB-C receptacle, 16-pin | *verify* | 27 Ω series on D+/D− |
-| ESD | USBLC6-2SC6 | *verify* | On D+/D− and again on the TRRS lines |
-| Split | **PJ-320A** 3.5 mm jack | *verify* (C2884926 XKB, others exist) | **14.1 × 5 × 6 mm.** Replaces PJ325/C26230, which at 12.3 mm tall busts the 10 mm envelope. Reported 4-pole — **leave ring-2 unconnected**. Verify the pinout on arrival. |
-| Level shift | 74AHCT125 | *verify* | **DNP**, with a 0 Ω bypass link. RGB only. |
-| Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top lock, **right-angle**, bottom contact, SMD |
-| Main FFC | HC-FPC-0.5-**20P**-FH20 | *confirm code* | Same family, 20-position sibling |
-| Buttons | BOOTSEL (→QSPI_SS via 1 kΩ), RESET (→RUN) | *verify* | Both non-optional |
-| Power OR | Schottky between VBUS and TRRS 5 V | *verify* | Stops one half back-feeding the other |
+| Split | PJ-320A 3.5 mm jack | *verify* | 14.1 × 5 × 6 mm. Verify pole count by pinout, not pin count. |
+| Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
+| Main FFC | HC-FPC-0.5-**20P**-FH20 | *confirm code* | 20-position sibling |
+| Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
+| Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
+| Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |
+| LDO *(conditional)* | AP2112K-3.3, SOT-23-**5** | *verify* | Only if Phase 1 measures above ~120 mA. Not a drop-in — see §4. |
 
 LCSC codes marked *verify* should be pulled with `easyeda2kicad` at schematic
 time so the design-side footprint matches the assembly-side part exactly
@@ -151,9 +169,11 @@ worth keeping for bring-up.
 
 ### What must change
 
+Item 1 is conditional on a measurement; 2–6 are unconditional.
+
 | # | Change | Why |
 |---|---|---|
-| 1 | **LDO: XC6206 → AP2112K-3.3** | XC6206 is **200 mA**. Load is ~70–130 mA — RP2040 ~30, flash ~5, Cirque ~3, and the GC9A01 backlight 20–60. At the top of that range there is no margin left. **Not a drop-in:** SOT-23 3-pin → SOT-23-**5**, and EN must be tied to Vin or the rail never comes up. LEDs do **not** load this rail. Confirm against the Phase 1 measurement. |
+| 1 | **LDO: XC6206 → AP2112K-3.3** *(only if measured >~120 mA)* | XC6206 is **200 mA**. Load is ~70–130 mA — RP2040 ~30, flash ~5, Cirque ~3, and the GC9A01 backlight 20–60. At the top of that range there is no margin left. **Not a drop-in:** SOT-23 3-pin → SOT-23-**5**, and EN must be tied to Vin or the rail never comes up. LEDs do **not** load this rail. Confirm against the Phase 1 measurement. |
 | 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
 | 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
 | 4 | **Delete J3/J4/J5** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. |
