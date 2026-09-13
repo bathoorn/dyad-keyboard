@@ -44,6 +44,7 @@
 - **Width templates must match the library's own spelling.** marbastlib names widths `1u`, `1.25u`; a plain `{}` renders 1.0 as `1.0u` and fails to load. Use `{:g}`.
 - **`--additional-elements` REPLACES the default** rather than adding to it. Omitting `ST{}` silently leaves stabilizers stranded at the origin.
 - **`--create-led-pcb-elements` does not position anything.** It creates and nets the LEDs and capacitors but leaves every one stacked at (0,0) unless they are also named in `--additional-elements`.
+- **marbastlib hotswap switch footprints must be placed on the BACK.** Their socket pads are on `F.Cu` and the pin holes are drawn mirrored, i.e. the footprint is drawn as seen from underneath. Placed on the front (kbplacer's default) the socket ends up on the same side as the switch. Pass `-s "SW{} 0 BACK"`. Verify by the pin1->pin2 vector, which must be `(-6.35, 2.54)` to match KiCad's stock `SW_Cherry_MX_1.00u_PCB` — absolute pad coordinates are not comparable between libraries because the origins differ (marbastlib uses the switch centre, KiCad stock uses pin 1).
 - **`GetBoardEdgesBoundingBox()` counts footprint-internal `Edge.Cuts`.** The reverse-mount SK6812MINI-E footprint cuts its own hole, so 640 of them inflate the reported board size. Measure the outline from board-level drawings only.
 
 ## Case CAD

@@ -52,6 +52,14 @@ def generate(half: str) -> None:
         "--pcb-file", os.path.join(out, f"dyad-main-{half}.kicad_pcb"),
         "--create-pcb-file",
         "--create-sch-file",
+        # Switches go on the BACK. marbastlib's hotswap footprint carries its
+        # socket pads on F.Cu and its pin holes mirrored -- i.e. it is drawn as
+        # seen from the back and must be placed there. Flipping puts the
+        # sockets on B.Cu (physical underside, where the socket is soldered)
+        # and restores the pin holes to standard top-view MX positions.
+        # Everything else is already on the back, so the whole board populates
+        # from the underside and switches insert from the top.
+        "-s", "SW{} 0 BACK",
         "--switch-footprint", SWITCH,
         "--stabilizer-footprint", STAB,
         "--diode-footprint", DIODE,
@@ -66,7 +74,7 @@ def generate(half: str) -> None:
         "--additional-elements",
         # ST{} restates kbplacer's default: passing --additional-elements
         # REPLACES it, so omitting ST leaves stabilizers stranded at origin.
-        "ST{} CUSTOM 0 0 0 FRONT;LED{} CUSTOM 0 0 180 BACK;C{} CUSTOM 0 7.5 0 BACK",
+        "ST{} CUSTOM 0 0 0 BACK;LED{} CUSTOM 0 0 180 BACK;C{} CUSTOM 0 7.5 0 BACK",
         "--route-switches-with-diodes",
         "--route-rows-and-columns",
         "--build-board-outline",
