@@ -290,6 +290,21 @@ for 69 LEDs: 3.5–6 mA each, about 6–10% of full white.** That is the real
 brightness ceiling, and it is set by a fuse and a connector rather than by
 firmware taste.
 
+**1.5 A is the useful target; 3 A buys nothing.** Past 1.5 A the source stops
+being the limit — the slave half's current crosses the 0.5 A jack, capping it at
+10 mA/LED, and matching the master for uniform brightness pins the board at
+**17% of full white** (`RGB_MATRIX_MAXIMUM_BRIGHTNESS` ≈ 43). Note that 17% is
+the worst case of all 69 keys at full white at once; ordinary animations light a
+subset or a single hue and draw far less.
+
+**If that is too dim, the fix is not a bigger charger — it is taking the jack
+out of the power path.** Power each half from its own USB-C, leave the jack's
+5 V conductor unconnected so it carries only data and ground, and enable
+`SPLIT_USB_DETECT` so master/slave follows actual USB *enumeration* rather than
+mere VBUS presence — the half on a dumb charger stays slave. Each half then gets
+its own supply: ~62% at 1.5 A, where the FFC becomes the next limit. The cost is
+two cables.
+
 Two things follow. **Upsize the fuse** — it is on our board and cheap to change,
 though it only helps if the source actually supplies more. And the USB-C CC
 resistors let a Type-C source offer 1.5 A or 3 A, but a plain USB-A cable gives
