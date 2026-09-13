@@ -100,13 +100,34 @@ FFC conductor is good for roughly half an amp. See PLAN.md §5.
 | ESD | USBLC6-2SC6 | *verify* | On D+/D− and again on the TRRS lines |
 | Split | **PJ-320A** 3.5 mm jack | *verify* (C2884926 XKB, others exist) | **14.1 × 5 × 6 mm.** Replaces PJ325/C26230, which at 12.3 mm tall busts the 10 mm envelope. Reported 4-pole — **leave ring-2 unconnected**. Verify the pinout on arrival. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, with a 0 Ω bypass link. RGB only. |
-| Connectors | 20-pin + 14-pin 0.5 mm FFC, locking | *verify* | |
+| Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top lock, **right-angle**, bottom contact, SMD |
+| Main FFC | HC-FPC-0.5-**20P**-FH20 | *confirm code* | Same family, 20-position sibling |
 | Buttons | BOOTSEL (→QSPI_SS via 1 kΩ), RESET (→RUN) | *verify* | Both non-optional |
 | Power OR | Schottky between VBUS and TRRS 5 V | *verify* | Stops one half back-feeding the other |
 
 LCSC codes marked *verify* should be pulled with `easyeda2kicad` at schematic
 time so the design-side footprint matches the assembly-side part exactly
 (see `docs/TOOLS.md`).
+
+### FFC connector choice
+
+Staying at **0.5 mm pitch**. 1.0 mm parts (e.g. Amphenol F516) are easier to
+hand-solder and carry more current, but neither helps here: JLCPCB places
+these, and the doubled 5 V/GND conductors already give ~1 A against ~0.4 A per
+half for RGB at capped brightness. What 1.0 mm does cost is board edge — a
+20-position part is ~23 mm wide instead of ~13 mm, on a 50 mm board whose other
+long edge already carries USB-C and the jack.
+
+**Right-angle, not vertical.** The same family's `LH20` variant (C49166895) is
+a vertical slide-lock part: the ribbon exits perpendicular to the board and
+must then bend, which wants headroom the 10 mm envelope does not have to spare.
+`FH20` is right-angle, so the ribbon lies flat.
+
+**Cable type is a real trap.** These are *bottom contact*. FFC cables come as
+type A (contacts the same side at both ends) and type B (opposite sides). Which
+one is correct depends on how both connectors end up oriented in layout, and
+the wrong type silently reverses the pinout end to end. Settle it once the
+layout fixes the orientations, not before.
 
 ---
 

@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 8
+version: 9
 units: mm
 key_unit: 19.05
 
@@ -40,6 +40,10 @@ changelog:
   - "v8 - split jack changed to PJ-320A. PJ325 (C26230) is 12.3 mm tall and
      exceeded max_height_above_pcb of 10.0; PJ-320A is 6 mm. Pole count on
      both parts is to be verified by pinout, not by pin count."
+  - "v9 - FFC connectors fixed at 0.5 mm, right-angle, bottom contact:
+     HC-FPC-0.5-14P-FH20 (C19273929) for the knob, 20P sibling for the main.
+     Vertical variants rejected -- the ribbon would need bend headroom the
+     10 mm envelope lacks."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -138,11 +142,14 @@ z_stack:
 # Connectors and ports. Positions are case-wall coordinates, set at G2.
 # ---------------------------------------------------------------------------
 connectors:
-  main_ffc:  { pins: 20, pitch: 0.5, position: TODO }
-  knob_ffc:  { pins: 14, pitch: 0.5, position: TODO }
+  main_ffc:  { pins: 20, pitch: 0.5, part: HC-FPC-0.5-20P-FH20, mount: right-angle, contact: bottom, position: TODO }
+  knob_ffc:  { pins: 14, pitch: 0.5, part: HC-FPC-0.5-14P-FH20, lcsc: C19273929, mount: right-angle, contact: bottom, position: TODO }
   usb_c:     { position: TODO, cutout_clearance: TODO }
   trrs:      { position: TODO, cutout_clearance: TODO }
   service_loop: TODO            # slack length per cable, so assembly is possible
+  ffc_cable_type: TODO          # type A (same side) vs B (opposite). Depends on the
+                                # final orientation of both connectors; wrong choice
+                                # silently reverses the pinout end to end.
 
 mounting:
   insert: M3 heat-set
