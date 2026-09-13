@@ -24,3 +24,6 @@ gerbers/
 *.bin
 .build/
 firmware/compile_commands.json
+
+# KiCad scripting venv (recreate: /usr/bin/python3 -m venv --system-site-packages .venv-kicad)
+.venv-kicad/

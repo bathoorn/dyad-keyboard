@@ -1,0 +1,3765 @@
+(kicad_sch (version 20250114) (generator "eeschema") (generator_version "9.0") (uuid "e8032acb-6cb2-470a-bcb8-84c273afb8bb") (paper "A3") (title_block (comment 1 "https://github.com/adamws/kicad-kbplacer") (comment 2 "Auto-generated with kicad-kbplacer, requires validation before production!")) (lib_symbols 
+
+(symbol "Device:C" (pin_numbers (hide yes)) (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "C" (at 0.635 2.54 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 0.635 -2.54 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 0.9652 -3.81 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "cap capacitor" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "C_*" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "C_0_1" 
+
+(polyline (pts 
+
+(xy -2.032 0.762) 
+
+(xy 2.032 0.762)) (stroke (width 0.508) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -2.032 -0.762) 
+
+(xy 2.032 -0.762)) (stroke (width 0.508) (type default)) (fill (type none)))) 
+
+(symbol "C_1_1" (pin passive line (at 0 3.81 270) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 2.794) (name "" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "LED:SK6812MINI-E" (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "D" (at 5.08 5.715 0) (effects (font (size 1.27 1.27)) (justify right bottom))) 
+
+(property "Value" "SK6812MINI-E" (at 1.27 -5.715 0) (effects (font (size 1.27 1.27)) (justify left top))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 1.27 -7.62 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left top))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 2.54 -9.525 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left top))) 
+
+(property "Description" "RGB LED with integrated controller" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "RGB LED NeoPixel addressable" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_fp_filters" "LED?SK6812MINI?E?3.2x2.8mm?P1.5mm*" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "SK6812MINI-E_0_0" 
+
+(text "RGB" (at 2.286 -4.191 0) (effects (font (size 0.762 0.762))))) 
+
+(symbol "SK6812MINI-E_0_1" 
+
+(polyline (pts 
+
+(xy 1.27 -2.54) 
+
+(xy 1.778 -2.54)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.27 -3.556) 
+
+(xy 1.778 -3.556)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.286 -1.524) 
+
+(xy 1.27 -2.54) 
+
+(xy 1.27 -2.032)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 2.286 -2.54) 
+
+(xy 1.27 -3.556) 
+
+(xy 1.27 -3.048)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 3.683 -1.016) 
+
+(xy 3.683 -3.556) 
+
+(xy 3.683 -4.064)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 4.699 -1.524) 
+
+(xy 2.667 -1.524) 
+
+(xy 3.683 -3.556) 
+
+(xy 4.699 -1.524)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 4.699 -3.556) 
+
+(xy 2.667 -3.556)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 5.08 5.08) (end -5.08 -5.08) (stroke (width 0.254) (type default)) (fill (type background)))) 
+
+(symbol "SK6812MINI-E_1_1" (pin power_in line (at 0 -7.62 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin input line (at -7.62 0 0) (length 2.54) (name "DIN" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27))))) (pin power_in line (at 0 7.62 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27))))) (pin output line (at 7.62 0 180) (length 2.54) (name "DOUT" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "power:GND" (power) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "#PWR" (at 0 -6.35 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 0 -3.81 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "global power" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "GND_0_1" 
+
+(polyline (pts 
+
+(xy 0 0) 
+
+(xy 0 -1.27) 
+
+(xy 1.27 -1.27) 
+
+(xy 0 -2.54) 
+
+(xy -1.27 -1.27) 
+
+(xy 0 -1.27)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "GND_1_1" (pin power_in line (at 0 0 270) (length 0) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "power:VCC" (power) (pin_numbers (hide yes)) (pin_names (offset 0) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "#PWR" (at 0 -3.81 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 0 3.556 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "ki_keywords" "global power" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(symbol "VCC_0_1" 
+
+(polyline (pts 
+
+(xy -0.762 1.27) 
+
+(xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0 2.54) 
+
+(xy 0.762 1.27)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0 0) 
+
+(xy 0 2.54)) (stroke (width 0) (type default)) (fill (type none)))) 
+
+(symbol "VCC_1_1" (pin power_in line (at 0 0 90) (length 0) (name "" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) 
+
+(text "WARNING: Assumes a shared 5V VCC - adjust if your supply differs.\nAdditional driving circuitry (e.g. a level shifter) may be needed depending on your setup and is not included." (exclude_from_sim no) (at 13.335 16.51 0) (effects (font (size 1.27 1.27) (thickness 0.1588)) (justify left)) (uuid "638ede5a-d948-41d5-8c3a-9bf6b15dccfc")) (sheet_instances (path "/" (page "2"))) (embedded_fonts no) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 46.355 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9fc2dc9a-7edb-4eeb-8e2e-a13c341177dd") 
+
+(property "Reference" "LED1" (at 51.943 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 55.245 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 46.355 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 46.355 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 46.355 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "29485ce4-8d1b-4af2-954f-e9ad4e66a47c")) (pin "2" (uuid "c44f6a2f-0db7-473a-947b-143d7b4d506c")) (pin "3" (uuid "63516366-ddd4-4b2b-ab87-58c16e9f0b06")) (pin "4" (uuid "ceb43350-ee05-4417-8d38-bd811d4061f6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED1") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 46.355 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "178013db-7c10-4112-b7a5-69ff7112f021") 
+
+(property "Reference" "#PWR1" (at 46.355 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 46.355 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 46.355 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9dac423b-013d-46b2-897e-3a264f1262dc")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR1") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 52.705) 
+
+(xy 46.355 51.435)) (stroke (width 0) (type default)) (uuid 97702300-cf4b-475d-baa7-0d0ccb45abf5)) 
+
+(symbol (lib_id "power:GND") (at 46.355 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c463fe94-a65a-44c8-92c6-57f10ee7e129") 
+
+(property "Reference" "#PWR2" (at 46.355 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 46.355 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 46.355 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "aa2bc33b-7d5d-4129-b663-e39ae4b55d28")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR2") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 67.945) 
+
+(xy 46.355 69.215)) (stroke (width 0) (type default)) (uuid c6efa75f-c39a-49b4-b9b4-c8e52079013a)) 
+
+(global_label "LEDIN" (shape input) (at 34.29 60.325 180) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid c5ac3540-235a-41d4-a2c7-89f9a1a114a1) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 28.0391 60.325 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 34.29 60.325) 
+
+(xy 38.735 60.325)) (stroke (width 0) (type default)) (uuid 0478ea9b-d3a6-4363-881d-56e07bbb2718)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 70.485 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f2165a56-d64c-43c6-a0dc-f2820800aaa6") 
+
+(property "Reference" "LED2" (at 76.073 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 79.375 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 70.485 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 70.485 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 70.485 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "380a6887-a145-49c5-8332-26e2f38ba16a")) (pin "2" (uuid "94d9c1df-e152-4b9d-b689-14dd92e944ea")) (pin "3" (uuid "6e5264a2-167e-4226-a126-e8336baaf55b")) (pin "4" (uuid "5d80f198-abe9-40ce-9d13-0c7ee5e24891")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED2") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 70.485 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "512b055d-c35c-45e7-8760-faa19a17245d") 
+
+(property "Reference" "#PWR3" (at 70.485 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 70.485 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 70.485 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6cfb5666-86ac-4176-8564-8cbb08b81cf1")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR3") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 52.705) 
+
+(xy 70.485 51.435)) (stroke (width 0) (type default)) (uuid 4cdd6a14-d0db-47de-bb4c-b3ac8ad99c77)) 
+
+(symbol (lib_id "power:GND") (at 70.485 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "831a796b-dc4a-4a67-8afe-12f81f3e4664") 
+
+(property "Reference" "#PWR4" (at 70.485 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 70.485 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 70.485 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "1b82f0d6-b866-4937-8c4a-10b8bfb31d16")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR4") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 67.945) 
+
+(xy 70.485 69.215)) (stroke (width 0) (type default)) (uuid 974b35b9-27ba-446b-8241-cf7ef7bf40f0)) 
+
+(wire (pts 
+
+(xy 53.975 60.325) 
+
+(xy 62.865 60.325)) (stroke (width 0) (type default)) (uuid 47feb061-4a76-4c2a-88ae-2129e2036090)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 94.615 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9b7fde43-5eda-4e6e-80f1-3bfcfa5e6df9") 
+
+(property "Reference" "LED3" (at 100.203 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 103.505 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 94.615 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 94.615 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 94.615 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "11387654-23ca-4986-867a-160ebff3e68d")) (pin "2" (uuid "e56af552-204b-463c-ae26-a62bae21dbab")) (pin "3" (uuid "8d720dc9-e8e6-4be8-baf1-0d1ce545a574")) (pin "4" (uuid "1a08db25-e918-4ca1-9d16-6805fdaf2747")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED3") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 94.615 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "28fb1908-ad56-4f93-8971-782946a70af5") 
+
+(property "Reference" "#PWR5" (at 94.615 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 94.615 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 94.615 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "3dd81257-7311-48f4-bf6e-f1f013f68b70")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR5") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 52.705) 
+
+(xy 94.615 51.435)) (stroke (width 0) (type default)) (uuid 03a5f125-bdac-47d0-98a9-ab800fe259e1)) 
+
+(symbol (lib_id "power:GND") (at 94.615 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9db51df0-4136-4b27-941d-3439f2a92821") 
+
+(property "Reference" "#PWR6" (at 94.615 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 94.615 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 94.615 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ba915069-7166-41c4-a2e7-25a741ea881f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR6") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 67.945) 
+
+(xy 94.615 69.215)) (stroke (width 0) (type default)) (uuid e4b6deb2-c301-4b6f-a523-b0f2deeff142)) 
+
+(wire (pts 
+
+(xy 78.105 60.325) 
+
+(xy 86.995 60.325)) (stroke (width 0) (type default)) (uuid e87442f9-c986-442d-afb4-7797b220e3f9)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 118.745 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "0016f24f-e0fe-4289-837f-160990cb2b89") 
+
+(property "Reference" "LED4" (at 124.333 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 127.635 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 118.745 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 118.745 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 118.745 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e03129b2-ea96-451c-bec9-74ef848b7d1d")) (pin "2" (uuid "9b91f9b8-8067-45ae-a226-aa819902e974")) (pin "3" (uuid "4712994b-d600-4abc-a7cf-00f165d1f1ac")) (pin "4" (uuid "27ec13b0-6f11-4a56-b257-89bcfb887648")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED4") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 118.745 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b1284d3c-79fe-4a4f-bacf-5b176693433b") 
+
+(property "Reference" "#PWR7" (at 118.745 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 118.745 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 118.745 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "30128f34-470f-4f78-b666-5fd8c31ed579")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR7") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 52.705) 
+
+(xy 118.745 51.435)) (stroke (width 0) (type default)) (uuid 5e2bc6ae-e4e7-42e5-83fa-4e4b53d19e43)) 
+
+(symbol (lib_id "power:GND") (at 118.745 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6e1fc8f6-5dd1-4795-9b6f-811f7cdfb754") 
+
+(property "Reference" "#PWR8" (at 118.745 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 118.745 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 118.745 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "aef25dea-2eed-4ed3-84de-ce50880ae044")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR8") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 67.945) 
+
+(xy 118.745 69.215)) (stroke (width 0) (type default)) (uuid d14d7ad0-5612-42fa-9958-0a3f32b69ed2)) 
+
+(wire (pts 
+
+(xy 102.235 60.325) 
+
+(xy 111.125 60.325)) (stroke (width 0) (type default)) (uuid 4e9f5700-0670-4f75-82d9-12c7905a6370)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 142.875 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "df207f1a-c457-426b-aa3a-e6aa9d52dac1") 
+
+(property "Reference" "LED5" (at 148.463 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 151.765 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 142.875 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 142.875 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 142.875 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6f387edd-68e3-4a80-9703-4d7a3f4443c4")) (pin "2" (uuid "53409b41-7358-43a4-b1be-e04d0dea981b")) (pin "3" (uuid "9bee06a6-9242-487f-955b-17bdd7c240b3")) (pin "4" (uuid "e9f4585d-4cdd-4094-bb91-4a70fc8d925b")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED5") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 142.875 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cbaaa9e8-7f77-4119-b3eb-c0e832176ea9") 
+
+(property "Reference" "#PWR9" (at 142.875 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 142.875 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 142.875 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "a62d716b-15df-4bb4-b196-e547ad4a266a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR9") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 52.705) 
+
+(xy 142.875 51.435)) (stroke (width 0) (type default)) (uuid 1e3f31a8-a0fc-4a24-aaee-358659457154)) 
+
+(symbol (lib_id "power:GND") (at 142.875 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "e2404271-0189-4b82-8722-ffd92b831bd0") 
+
+(property "Reference" "#PWR10" (at 142.875 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 142.875 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 142.875 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "77d219f5-d30e-44ba-a334-89a1cfbc886a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR10") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 67.945) 
+
+(xy 142.875 69.215)) (stroke (width 0) (type default)) (uuid 4e518742-9356-4a47-ad8c-8c0186eff613)) 
+
+(wire (pts 
+
+(xy 126.365 60.325) 
+
+(xy 135.255 60.325)) (stroke (width 0) (type default)) (uuid 5ab95ba1-77bf-4277-9139-33049a7985ae)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 167.005 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "91028cbb-7815-4996-aa0a-495541c3036c") 
+
+(property "Reference" "LED6" (at 172.593 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 175.895 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 167.005 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 167.005 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 167.005 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "c48a775f-ef1e-4670-8478-a05bae4191db")) (pin "2" (uuid "821131db-203e-4a73-95e3-76e0bf98f9fc")) (pin "3" (uuid "ca1a4d23-80a9-4333-a6e8-02ba1108cd11")) (pin "4" (uuid "78e29aba-90af-4035-a7a5-f8bf2fd252da")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED6") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 167.005 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "544bd263-fb0c-4d89-9ea6-7a43d2db639f") 
+
+(property "Reference" "#PWR11" (at 167.005 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 167.005 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 167.005 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "553f06bc-f6a8-4060-a239-87facabd4652")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR11") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 52.705) 
+
+(xy 167.005 51.435)) (stroke (width 0) (type default)) (uuid da2f1416-ee16-4347-93cd-86915af1aed6)) 
+
+(symbol (lib_id "power:GND") (at 167.005 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d3cb1407-a176-40cc-9235-e06eabeb9368") 
+
+(property "Reference" "#PWR12" (at 167.005 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 167.005 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 167.005 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "066af769-049b-41ef-88c8-993a19915cce")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR12") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 67.945) 
+
+(xy 167.005 69.215)) (stroke (width 0) (type default)) (uuid 58d159a7-3e03-46b9-a8dc-f9b83086bf7a)) 
+
+(wire (pts 
+
+(xy 150.495 60.325) 
+
+(xy 159.385 60.325)) (stroke (width 0) (type default)) (uuid 23cf4b70-8f9c-4346-b3b9-818ae6277acd)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 191.135 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "e113444a-fb62-44d1-9f7e-3933857a5c22") 
+
+(property "Reference" "LED7" (at 196.723 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 200.025 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 191.135 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 191.135 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 191.135 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "1a07f2b5-c23d-42e3-b372-eb6730c7d5b1")) (pin "2" (uuid "33daaee1-a192-4da0-ab30-cc8f3fa7f135")) (pin "3" (uuid "d90b3848-2da3-400e-91cd-2942b6c6443b")) (pin "4" (uuid "2322c5d7-1b5a-4540-8e7e-bab691f7b4b3")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED7") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 191.135 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8adbccaa-a0b1-4622-8546-a46bc5412214") 
+
+(property "Reference" "#PWR13" (at 191.135 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 191.135 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 191.135 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6155d8ea-f12b-4b55-bebf-086b48dea777")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR13") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 52.705) 
+
+(xy 191.135 51.435)) (stroke (width 0) (type default)) (uuid 5a1f6a14-5a5a-49c7-823e-9e50afb718bb)) 
+
+(symbol (lib_id "power:GND") (at 191.135 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "38d33767-ddf7-441d-8808-a8afa98efbb0") 
+
+(property "Reference" "#PWR14" (at 191.135 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 191.135 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 191.135 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "843bf562-2665-4e77-86e4-caf5b312f8e0")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR14") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 67.945) 
+
+(xy 191.135 69.215)) (stroke (width 0) (type default)) (uuid f784f4e2-bf82-45f6-965b-862f450d85dd)) 
+
+(wire (pts 
+
+(xy 174.625 60.325) 
+
+(xy 183.515 60.325)) (stroke (width 0) (type default)) (uuid d1264dae-2826-4c62-9412-cb666caf92f6)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 215.265 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b4ebf802-527e-4ad2-8f36-0652680626c7") 
+
+(property "Reference" "LED8" (at 220.853 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 224.155 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 215.265 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 215.265 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 215.265 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b1c87866-8edc-45ff-ad44-422550b75ed0")) (pin "2" (uuid "ea52a047-d259-4edf-b3a4-a1f16f359b7e")) (pin "3" (uuid "ebc83b75-dc4e-467d-b5fa-86988a04a5f9")) (pin "4" (uuid "02b0ebe7-8bc2-4ab0-b14d-665b27dbdf70")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED8") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 215.265 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4e3e89ba-76d5-44bc-9653-7261c37c3c9f") 
+
+(property "Reference" "#PWR15" (at 215.265 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 215.265 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 215.265 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "8b500e5e-e283-438f-8299-32c6046aea58")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR15") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 52.705) 
+
+(xy 215.265 51.435)) (stroke (width 0) (type default)) (uuid e1705269-9431-41d8-998c-96a92612a7aa)) 
+
+(symbol (lib_id "power:GND") (at 215.265 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1fed7347-5997-4746-90af-38fa157451d6") 
+
+(property "Reference" "#PWR16" (at 215.265 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 215.265 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 215.265 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ed4c46ad-2983-4a8e-befc-0e7fe10a7349")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR16") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 67.945) 
+
+(xy 215.265 69.215)) (stroke (width 0) (type default)) (uuid d163817f-d3c8-481b-bc9a-e8085882e13d)) 
+
+(wire (pts 
+
+(xy 198.755 60.325) 
+
+(xy 207.645 60.325)) (stroke (width 0) (type default)) (uuid ee4c60ad-03a5-442f-8b76-60f767b76ae3)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 239.395 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2b3a1a81-7898-4e88-96c2-fd146085aafd") 
+
+(property "Reference" "LED9" (at 244.983 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 248.285 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 239.395 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 239.395 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 239.395 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6fa366d7-41df-4922-87d8-b7b3ff75bdd3")) (pin "2" (uuid "21559784-8df7-4fb3-9d13-83e57dcc940c")) (pin "3" (uuid "f2d3c7da-253f-4c66-b768-6788cd596a86")) (pin "4" (uuid "ac8d682d-82c3-4fc5-96aa-5458982109a1")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED9") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 239.395 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ee82c76c-cc9d-4e27-ba9e-5b7e0c0a05f8") 
+
+(property "Reference" "#PWR17" (at 239.395 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 239.395 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 239.395 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5d170026-6421-4139-b80e-4b0ba491f241")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR17") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 52.705) 
+
+(xy 239.395 51.435)) (stroke (width 0) (type default)) (uuid 51ec8f03-8792-42b7-9901-cc1ca184112f)) 
+
+(symbol (lib_id "power:GND") (at 239.395 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7301cec8-f3fd-47bd-b940-eb2c0aa3b4d6") 
+
+(property "Reference" "#PWR18" (at 239.395 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 239.395 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 239.395 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7d39e347-3534-40e9-aeb3-9c2e18a06762")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR18") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 67.945) 
+
+(xy 239.395 69.215)) (stroke (width 0) (type default)) (uuid cad422c7-8111-4499-8445-5adaa5672bba)) 
+
+(wire (pts 
+
+(xy 222.885 60.325) 
+
+(xy 231.775 60.325)) (stroke (width 0) (type default)) (uuid a247aefe-9049-4cad-8096-02cc47be5993)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 263.525 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "077511b7-7beb-40d2-8896-cfcf7ce08a15") 
+
+(property "Reference" "LED10" (at 269.113 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 272.415 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 263.525 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 263.525 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 263.525 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "cbc80c71-0e3b-497c-be81-5e6fb3f3cce3")) (pin "2" (uuid "da8ffec4-e59a-44d3-94de-5b9f8daf5ac2")) (pin "3" (uuid "9d5985ca-11dd-4b8d-b79f-3f52bb5d78d0")) (pin "4" (uuid "abe58f67-d406-4b11-9798-544da2e526c4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED10") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 263.525 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ed958a38-6a73-4b74-aef0-10ea92a56c8d") 
+
+(property "Reference" "#PWR19" (at 263.525 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 263.525 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 263.525 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 263.525 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 263.525 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "07b76d96-c9eb-4d0b-bebe-b7d0baa8d76d")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR19") (unit 1))))) 
+
+(wire (pts 
+
+(xy 263.525 52.705) 
+
+(xy 263.525 51.435)) (stroke (width 0) (type default)) (uuid 992aa719-1d63-4940-989e-c2366a7f6d8f)) 
+
+(symbol (lib_id "power:GND") (at 263.525 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4bc03ee6-eed3-4c90-8e2b-23db4c06d672") 
+
+(property "Reference" "#PWR20" (at 263.525 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 263.525 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 263.525 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 263.525 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 263.525 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "27294b19-1346-4d2d-90d3-88255b5efc81")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR20") (unit 1))))) 
+
+(wire (pts 
+
+(xy 263.525 67.945) 
+
+(xy 263.525 69.215)) (stroke (width 0) (type default)) (uuid 3ee0e1b3-d44a-42f6-86d3-b1c9110e9829)) 
+
+(wire (pts 
+
+(xy 247.015 60.325) 
+
+(xy 255.905 60.325)) (stroke (width 0) (type default)) (uuid d5bd78ab-5079-4ab2-bac7-3cbd5e56074f)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 287.655 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "bafc0731-b668-46de-a088-e88db11c4fdd") 
+
+(property "Reference" "LED11" (at 293.243 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 296.545 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 287.655 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 287.655 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 287.655 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6e2f3c13-545f-4846-8692-23cb5f965ac6")) (pin "2" (uuid "beb08954-0b92-42b5-950b-11b4cab7e733")) (pin "3" (uuid "ed517418-3a38-4311-90e6-13a5f3991416")) (pin "4" (uuid "4fdb2b12-e999-4e12-9d59-9574e06bec3a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED11") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 287.655 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "919f66d4-6e07-4a28-8733-f6f10a72c894") 
+
+(property "Reference" "#PWR21" (at 287.655 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 287.655 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 287.655 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 287.655 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 287.655 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5bc1f848-e97d-47a2-acb5-c87caef34286")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR21") (unit 1))))) 
+
+(wire (pts 
+
+(xy 287.655 52.705) 
+
+(xy 287.655 51.435)) (stroke (width 0) (type default)) (uuid 487f73c4-0039-4eb0-bad1-8d0ec3e22f66)) 
+
+(symbol (lib_id "power:GND") (at 287.655 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d4a6c2bf-14cb-41a5-ac03-25fbc780bb06") 
+
+(property "Reference" "#PWR22" (at 287.655 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 287.655 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 287.655 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 287.655 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 287.655 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "56e2dc7c-7150-48de-9b63-b7c8d97c1bb4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR22") (unit 1))))) 
+
+(wire (pts 
+
+(xy 287.655 67.945) 
+
+(xy 287.655 69.215)) (stroke (width 0) (type default)) (uuid ad48ed37-c724-4972-9b37-6cb84e8e5774)) 
+
+(wire (pts 
+
+(xy 271.145 60.325) 
+
+(xy 280.035 60.325)) (stroke (width 0) (type default)) (uuid f0c1f879-4ba4-4bfc-b7ed-29ccf005e881)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 311.785 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a59a4081-f981-4fb0-a685-4b95471447b7") 
+
+(property "Reference" "LED12" (at 317.373 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 320.675 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 311.785 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 311.785 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 311.785 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "980e94ff-4f2f-4059-b48e-02efe4cbd310")) (pin "2" (uuid "50381d6c-9dbb-48a6-8ca9-d1c09a289032")) (pin "3" (uuid "062cf6e2-643f-4bb3-9149-d13eaffb7042")) (pin "4" (uuid "df0bded2-2514-4bcb-a8c2-8061bb815e47")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED12") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 311.785 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cfb6c714-dd24-4d66-9a40-b9b9939fe9c2") 
+
+(property "Reference" "#PWR23" (at 311.785 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 311.785 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 311.785 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 311.785 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 311.785 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "3d5e7c02-0bb4-471d-bc8f-4b64dfc3909f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR23") (unit 1))))) 
+
+(wire (pts 
+
+(xy 311.785 52.705) 
+
+(xy 311.785 51.435)) (stroke (width 0) (type default)) (uuid 0557c036-1b9c-47a5-b3cc-e02cf3f1dfed)) 
+
+(symbol (lib_id "power:GND") (at 311.785 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d014676c-33d3-46bd-9ba5-8fb0cca54896") 
+
+(property "Reference" "#PWR24" (at 311.785 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 311.785 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 311.785 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 311.785 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 311.785 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e3a07d2f-2c4e-4f9a-bb9c-f9cba3be7946")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR24") (unit 1))))) 
+
+(wire (pts 
+
+(xy 311.785 67.945) 
+
+(xy 311.785 69.215)) (stroke (width 0) (type default)) (uuid 51e1d1ae-0000-499e-89a1-a51305459e61)) 
+
+(wire (pts 
+
+(xy 295.275 60.325) 
+
+(xy 304.165 60.325)) (stroke (width 0) (type default)) (uuid eec4774b-0306-42f7-a811-557b04ee2c84)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 335.915 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8c79161c-9b00-4cdb-9c34-265516fe475a") 
+
+(property "Reference" "LED13" (at 341.503 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 344.805 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 335.915 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 335.915 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 335.915 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5a8f4822-e589-43b6-b83c-377dedaf1d63")) (pin "2" (uuid "ac520223-8000-43dd-b4e5-ebbb458e8529")) (pin "3" (uuid "245434fd-7602-41c2-a70b-229a7470fe5c")) (pin "4" (uuid "e2ca0e66-326f-48a6-b327-808e7e30f10f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED13") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 335.915 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7082520e-ff1b-4f3f-899e-df6c33afdb21") 
+
+(property "Reference" "#PWR25" (at 335.915 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 335.915 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 335.915 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 335.915 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 335.915 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "8a70cf8f-f0c6-4d92-b694-9fada0f19145")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR25") (unit 1))))) 
+
+(wire (pts 
+
+(xy 335.915 52.705) 
+
+(xy 335.915 51.435)) (stroke (width 0) (type default)) (uuid 2159cf11-7b2a-4127-9715-bdcb77774041)) 
+
+(symbol (lib_id "power:GND") (at 335.915 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "246f5a42-0669-4a7a-8375-8c1232370dc9") 
+
+(property "Reference" "#PWR26" (at 335.915 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 335.915 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 335.915 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 335.915 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 335.915 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ff69ba8b-ba8a-442c-a684-116b9bd4bdf2")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR26") (unit 1))))) 
+
+(wire (pts 
+
+(xy 335.915 67.945) 
+
+(xy 335.915 69.215)) (stroke (width 0) (type default)) (uuid d872f926-bab4-4e99-8967-e9a9d87998de)) 
+
+(wire (pts 
+
+(xy 319.405 60.325) 
+
+(xy 328.295 60.325)) (stroke (width 0) (type default)) (uuid 6b336b37-ba52-4610-8726-9e831d1f731b)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 360.045 60.325 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b05b3f8e-29d5-47a1-8e00-08cac56e7e7c") 
+
+(property "Reference" "LED14" (at 365.633 57.785 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 368.935 63.5 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 360.045 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 360.045 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 360.045 60.325 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2ccfea9c-fd8f-43e8-8657-5e83278987eb")) (pin "2" (uuid "ceef8ce7-504a-4391-aea3-968762f6f538")) (pin "3" (uuid "3f15847f-f4a3-4cf1-a264-31c9b64c4054")) (pin "4" (uuid "5d57938e-ae90-4595-b4ad-57fa80b1c55f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED14") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 360.045 51.435 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b07b17be-f15a-4b91-abe0-49653593f3ef") 
+
+(property "Reference" "#PWR27" (at 360.045 55.625 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 360.045 46.875 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 360.045 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 360.045 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 360.045 51.435 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "a2ac6325-e9c1-46a7-be0b-7073ecf90157")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR27") (unit 1))))) 
+
+(wire (pts 
+
+(xy 360.045 52.705) 
+
+(xy 360.045 51.435)) (stroke (width 0) (type default)) (uuid ee0195a6-3a91-4da9-b53f-446d8b5dc144)) 
+
+(symbol (lib_id "power:GND") (at 360.045 69.215 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c85118ec-8645-4d2b-8451-f9bf08d3b56d") 
+
+(property "Reference" "#PWR28" (at 360.045 75.565 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 360.045 73.66 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 360.045 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 360.045 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 360.045 69.215 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b23b4fbc-64e3-4036-a3cb-6147131bd9ee")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR28") (unit 1))))) 
+
+(wire (pts 
+
+(xy 360.045 67.945) 
+
+(xy 360.045 69.215)) (stroke (width 0) (type default)) (uuid 362ae74b-8d6b-41db-b650-1f1e6e7b09c0)) 
+
+(wire (pts 
+
+(xy 343.535 60.325) 
+
+(xy 352.425 60.325)) (stroke (width 0) (type default)) (uuid e52b2132-b15c-4bbe-b3fb-854787de3ec1)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 46.355 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "33093c87-523a-4d88-8aa7-e3123f6ab453") 
+
+(property "Reference" "LED15" (at 51.943 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 55.245 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 46.355 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 46.355 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 46.355 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "fcca6278-5134-4b52-9749-08d4d30d6602")) (pin "2" (uuid "029960d6-4e83-41f6-9d12-2ea4a28bedbc")) (pin "3" (uuid "5163a0ba-9ca6-4ce7-a04d-f0f957010696")) (pin "4" (uuid "9bbf710b-e2f1-4945-8bb6-19e39c40be71")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED15") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 46.355 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2758215f-f2d8-4cc9-8746-8ccb601709f6") 
+
+(property "Reference" "#PWR29" (at 46.355 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 46.355 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 46.355 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "378df80b-4d8f-4254-91f3-be69c90ae4a8")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR29") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 82.55) 
+
+(xy 46.355 81.28)) (stroke (width 0) (type default)) (uuid b0138c19-5a26-4116-ab57-538bd11930e5)) 
+
+(symbol (lib_id "power:GND") (at 46.355 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7af39e97-78b3-496b-af83-0dd0ea6225c0") 
+
+(property "Reference" "#PWR30" (at 46.355 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 46.355 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 46.355 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "d541a4b0-2b6d-493a-8342-a90df3c23966")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR30") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 97.79) 
+
+(xy 46.355 99.06)) (stroke (width 0) (type default)) (uuid 91724d1d-fc1c-4947-b94f-5786c3d58af2)) 
+
+(wire (pts 
+
+(xy 367.665 60.325) 
+
+(xy 375.92 60.325)) (stroke (width 0) (type default)) (uuid 04ee19de-bc6b-4119-b5c5-8cd66e39b6c6)) 
+
+(wire (pts 
+
+(xy 375.92 60.325) 
+
+(xy 375.92 75.2475)) (stroke (width 0) (type default)) (uuid c409a610-ed52-445f-bffd-cbddc342b12a)) 
+
+(wire (pts 
+
+(xy 375.92 75.2475) 
+
+(xy 31.75 75.2475)) (stroke (width 0) (type default)) (uuid c600bb11-aae2-47b8-b2a6-c434a7a89b83)) 
+
+(wire (pts 
+
+(xy 31.75 75.2475) 
+
+(xy 31.75 90.17)) (stroke (width 0) (type default)) (uuid a8e4e6f5-0881-4bef-ab36-baa2a26cb8e4)) 
+
+(wire (pts 
+
+(xy 31.75 90.17) 
+
+(xy 38.735 90.17)) (stroke (width 0) (type default)) (uuid be807d90-eda6-4c56-ac42-5a9b466e700a)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 70.485 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "dceef07b-0d5c-4053-a8f0-452688b9ed1f") 
+
+(property "Reference" "LED16" (at 76.073 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 79.375 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 70.485 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 70.485 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 70.485 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "20be4ef0-cd58-4945-bd0c-43edd6d48d0a")) (pin "2" (uuid "2566ddc4-1aa1-4625-9633-fb7353d098ad")) (pin "3" (uuid "bac028f5-1efe-45c6-894f-ea3dd68ad0b7")) (pin "4" (uuid "ce842320-fdda-4f2d-aa90-26cf30f68946")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED16") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 70.485 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1c87029c-7a9d-4d14-b6d1-72c4d162681a") 
+
+(property "Reference" "#PWR31" (at 70.485 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 70.485 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 70.485 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f74dd23e-a987-4d80-88c5-cf7765e76970")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR31") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 82.55) 
+
+(xy 70.485 81.28)) (stroke (width 0) (type default)) (uuid ab373d63-b2b3-45c3-870b-58aabff16856)) 
+
+(symbol (lib_id "power:GND") (at 70.485 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "3cfd529d-60ea-4e8e-a042-4bda70ea92df") 
+
+(property "Reference" "#PWR32" (at 70.485 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 70.485 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 70.485 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "246a2bd1-cdbf-4a8f-b697-c93923b08514")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR32") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 97.79) 
+
+(xy 70.485 99.06)) (stroke (width 0) (type default)) (uuid 73c07a9f-2eb9-41da-8355-78570aa89b13)) 
+
+(wire (pts 
+
+(xy 53.975 90.17) 
+
+(xy 62.865 90.17)) (stroke (width 0) (type default)) (uuid b7fd7e91-778a-489f-a9f8-0a9c2c265903)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 94.615 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "64d97c67-30be-4abf-ab58-dbcacec12508") 
+
+(property "Reference" "LED17" (at 100.203 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 103.505 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 94.615 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 94.615 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 94.615 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7ca33dac-3093-45ed-94a0-b31b4ff164aa")) (pin "2" (uuid "997aa2d6-cf28-422c-a116-b1be62fd3892")) (pin "3" (uuid "01ff4419-8b2f-4666-a688-37fd08663192")) (pin "4" (uuid "fac4f211-5f1a-4052-8aba-2469d6986a9f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED17") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 94.615 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "77c3893d-58b2-40a1-a470-ea8f3b400678") 
+
+(property "Reference" "#PWR33" (at 94.615 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 94.615 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 94.615 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b9e92606-2d05-4e32-a497-82801b26c88b")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR33") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 82.55) 
+
+(xy 94.615 81.28)) (stroke (width 0) (type default)) (uuid 694dd496-5e29-4d34-b462-0086b5b40e89)) 
+
+(symbol (lib_id "power:GND") (at 94.615 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "77d33240-261e-4dba-a774-d6b049c9cb9e") 
+
+(property "Reference" "#PWR34" (at 94.615 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 94.615 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 94.615 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9bb3b18f-5380-426d-9ee8-f44c330dd67f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR34") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 97.79) 
+
+(xy 94.615 99.06)) (stroke (width 0) (type default)) (uuid 22ad8ddd-6a63-4d2d-b37f-954c68cfd1e4)) 
+
+(wire (pts 
+
+(xy 78.105 90.17) 
+
+(xy 86.995 90.17)) (stroke (width 0) (type default)) (uuid 9230cc1e-ac1a-4147-a9d7-68786e92b9eb)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 118.745 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "07ed02eb-1efb-434c-aea9-2fa69cba3b4e") 
+
+(property "Reference" "LED18" (at 124.333 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 127.635 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 118.745 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 118.745 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 118.745 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "de5df035-aae7-4695-8942-02ceac58758c")) (pin "2" (uuid "d9fbf600-5d77-4a47-ab17-494e5df338c7")) (pin "3" (uuid "c704d80d-d8be-4085-b910-55b62794a05f")) (pin "4" (uuid "685b9c6a-d61a-4a43-8dbb-7b620a48107d")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED18") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 118.745 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d8ed5241-0907-4771-bc8d-6d603e2ebd0f") 
+
+(property "Reference" "#PWR35" (at 118.745 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 118.745 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 118.745 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9d50d7d3-20dc-41be-abb0-80ecf271b474")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR35") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 82.55) 
+
+(xy 118.745 81.28)) (stroke (width 0) (type default)) (uuid 0106e713-b216-4a19-a105-d195e1783a8b)) 
+
+(symbol (lib_id "power:GND") (at 118.745 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b5b5deea-3050-41c9-b6e2-971a7ac1406e") 
+
+(property "Reference" "#PWR36" (at 118.745 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 118.745 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 118.745 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "da13728c-83f5-4a74-adda-a505367987e2")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR36") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 97.79) 
+
+(xy 118.745 99.06)) (stroke (width 0) (type default)) (uuid 7a74f424-bfd3-4264-bf2b-0209af29ad7f)) 
+
+(wire (pts 
+
+(xy 102.235 90.17) 
+
+(xy 111.125 90.17)) (stroke (width 0) (type default)) (uuid b1eaa9d8-0db7-4df1-8e6b-ffd7aadaf55d)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 142.875 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c109e0ed-4af4-4f51-a8d3-0aa3d7f3897b") 
+
+(property "Reference" "LED19" (at 148.463 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 151.765 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 142.875 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 142.875 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 142.875 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "04b11c25-8bed-4bed-b8e4-15f1f89f659c")) (pin "2" (uuid "9876c972-014a-4b00-8fa3-3ffb1d013f91")) (pin "3" (uuid "c604f194-0097-4908-a2f6-23e81cc909a9")) (pin "4" (uuid "688ee305-b4ed-4916-9aff-de728de4d9db")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED19") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 142.875 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b6840bd2-67f3-4e09-a6db-9876da156b3d") 
+
+(property "Reference" "#PWR37" (at 142.875 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 142.875 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 142.875 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "d086dd82-4f01-4af6-8338-1ea700a575c6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR37") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 82.55) 
+
+(xy 142.875 81.28)) (stroke (width 0) (type default)) (uuid d84b439f-2ce8-4da7-9490-eee3613f714e)) 
+
+(symbol (lib_id "power:GND") (at 142.875 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c021bcee-d5e5-405d-960c-d8367b6406c7") 
+
+(property "Reference" "#PWR38" (at 142.875 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 142.875 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 142.875 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "34b86c36-ca92-490b-931e-555a83b2ba54")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR38") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 97.79) 
+
+(xy 142.875 99.06)) (stroke (width 0) (type default)) (uuid 426b118d-4d2a-43c1-a4a8-0598b10adbf9)) 
+
+(wire (pts 
+
+(xy 126.365 90.17) 
+
+(xy 135.255 90.17)) (stroke (width 0) (type default)) (uuid 93e98d83-8c22-4661-af3a-24aafd9475d2)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 167.005 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "71148415-3a8a-4a29-9593-64a3eefe8a76") 
+
+(property "Reference" "LED20" (at 172.593 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 175.895 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 167.005 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 167.005 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 167.005 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "657823e9-0a01-4f74-9602-9ee8ab18d5de")) (pin "2" (uuid "ba13421a-1863-4eea-9e47-437a0a32b887")) (pin "3" (uuid "363bcab9-38f3-4e44-ab67-dbc9a62cd14d")) (pin "4" (uuid "2d16a9bd-c190-4414-b9b7-e1c3d9aa7cde")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED20") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 167.005 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "667ed53b-a779-49fb-9053-34956803ef48") 
+
+(property "Reference" "#PWR39" (at 167.005 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 167.005 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 167.005 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "4068425d-c20d-4e57-800d-637b99c800a4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR39") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 82.55) 
+
+(xy 167.005 81.28)) (stroke (width 0) (type default)) (uuid 8ee130c9-837b-460a-b256-c3c71ae156c5)) 
+
+(symbol (lib_id "power:GND") (at 167.005 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "761e127e-7451-4dc1-989e-08a0a000ce29") 
+
+(property "Reference" "#PWR40" (at 167.005 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 167.005 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 167.005 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e9f6f853-cac9-426f-a918-e33894a0a221")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR40") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 97.79) 
+
+(xy 167.005 99.06)) (stroke (width 0) (type default)) (uuid 49f84ee5-86e4-47e5-a064-9048d0b8f07e)) 
+
+(wire (pts 
+
+(xy 150.495 90.17) 
+
+(xy 159.385 90.17)) (stroke (width 0) (type default)) (uuid 420b6e76-d18c-4d88-847d-21630b9c4a85)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 191.135 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4ce2a90e-491e-46fa-9c19-7a4f3daa1380") 
+
+(property "Reference" "LED21" (at 196.723 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 200.025 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 191.135 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 191.135 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 191.135 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "20de5b6c-94f1-41d9-a3af-ee8e2c32e67f")) (pin "2" (uuid "bc84858a-6ab0-4644-9da1-d274b495eb53")) (pin "3" (uuid "8889e14a-33ca-4a96-adae-654a5c468e6d")) (pin "4" (uuid "66a0895d-c9a1-453f-8291-afe6aa3c186e")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED21") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 191.135 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7917296e-42ee-452d-9cb8-b6e2fd0c45a1") 
+
+(property "Reference" "#PWR41" (at 191.135 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 191.135 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 191.135 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "62bf59f0-0ad5-4933-925d-5fd81fe2f03c")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR41") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 82.55) 
+
+(xy 191.135 81.28)) (stroke (width 0) (type default)) (uuid 6cf6fbb3-4d27-4662-9bda-f9d5421c32e3)) 
+
+(symbol (lib_id "power:GND") (at 191.135 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1f05b46a-438d-4730-9760-8ecad47b272d") 
+
+(property "Reference" "#PWR42" (at 191.135 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 191.135 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 191.135 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "fd660485-2fe9-4093-869f-2911eaf20c10")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR42") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 97.79) 
+
+(xy 191.135 99.06)) (stroke (width 0) (type default)) (uuid fb483b4a-b5e7-4495-ad3e-fd759239e3b4)) 
+
+(wire (pts 
+
+(xy 174.625 90.17) 
+
+(xy 183.515 90.17)) (stroke (width 0) (type default)) (uuid 6fef0bc2-d732-4be0-9ad7-a340bc7ef549)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 215.265 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b1fb5040-a08c-4880-be8b-1ad61411a320") 
+
+(property "Reference" "LED22" (at 220.853 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 224.155 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 215.265 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 215.265 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 215.265 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5d753b14-93b6-4fcc-857f-2d31eedb167d")) (pin "2" (uuid "4380b70b-992f-426e-a38c-69a185be41e8")) (pin "3" (uuid "29eee139-d106-4fa9-b102-662d89da23cb")) (pin "4" (uuid "a68600f2-4215-4947-86fc-013db0ee40f8")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED22") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 215.265 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cb76d9c3-15a5-4b6b-8ff0-b588aff8c8d5") 
+
+(property "Reference" "#PWR43" (at 215.265 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 215.265 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 215.265 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "299b6a82-aabe-4ea2-8d60-ca7102ee46cd")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR43") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 82.55) 
+
+(xy 215.265 81.28)) (stroke (width 0) (type default)) (uuid 56798e19-ca7d-4fcf-bdb0-fae954ab2034)) 
+
+(symbol (lib_id "power:GND") (at 215.265 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ce548467-ae7e-4a8b-8ae6-acd8ae92803d") 
+
+(property "Reference" "#PWR44" (at 215.265 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 215.265 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 215.265 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "202f3969-30e1-43ea-91f7-8dbf5dfca6b3")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR44") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 97.79) 
+
+(xy 215.265 99.06)) (stroke (width 0) (type default)) (uuid 7fc04548-c2fc-48a5-9f6f-eb640fc54c02)) 
+
+(wire (pts 
+
+(xy 198.755 90.17) 
+
+(xy 207.645 90.17)) (stroke (width 0) (type default)) (uuid 16dc195a-fbec-46e8-be56-9bb174d21ab9)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 239.395 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f4941e13-0911-4a24-812b-d29ce8d310b5") 
+
+(property "Reference" "LED23" (at 244.983 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 248.285 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 239.395 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 239.395 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 239.395 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "28ee3f2e-f12b-4e19-9842-22a6a4549355")) (pin "2" (uuid "167c7b70-95d9-4693-bf4e-4a809c26b82a")) (pin "3" (uuid "3835aee1-9a8d-4372-b05c-a8bec73ae605")) (pin "4" (uuid "e7aac2bc-4e9a-4688-ac5a-3ded067382ac")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED23") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 239.395 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6ed4dda3-99cc-4c68-a2c2-400330aa0463") 
+
+(property "Reference" "#PWR45" (at 239.395 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 239.395 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 239.395 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9ff470e4-318c-437a-8fc5-f81e341aed55")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR45") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 82.55) 
+
+(xy 239.395 81.28)) (stroke (width 0) (type default)) (uuid 130f3d86-cb49-419c-8b6a-89611abc9c58)) 
+
+(symbol (lib_id "power:GND") (at 239.395 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "fb769c53-1f30-455c-ab03-bf03304d09ad") 
+
+(property "Reference" "#PWR46" (at 239.395 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 239.395 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 239.395 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5d0549df-efd3-4e4d-8c4c-eea1703798ef")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR46") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 97.79) 
+
+(xy 239.395 99.06)) (stroke (width 0) (type default)) (uuid 0fe1de36-afff-4005-9a5e-d447d6cdf82c)) 
+
+(wire (pts 
+
+(xy 222.885 90.17) 
+
+(xy 231.775 90.17)) (stroke (width 0) (type default)) (uuid 125465c9-ca6c-41ff-84ac-acac0e13fd43)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 263.525 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "85304ca0-d882-44fa-aa5d-53b35df384c9") 
+
+(property "Reference" "LED24" (at 269.113 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 272.415 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 263.525 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 263.525 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 263.525 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7c75e50c-52d1-4698-9e4e-e026b0bbe83e")) (pin "2" (uuid "b1aa10be-7666-4f6e-ba38-c077a7569fc3")) (pin "3" (uuid "5105db82-68a8-480a-93f5-1d3b3d85b4ea")) (pin "4" (uuid "ce0a83d2-afb9-4f01-b525-6ca139ac9986")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED24") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 263.525 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9dd9f188-977f-4dc3-81ce-5af2e5521f87") 
+
+(property "Reference" "#PWR47" (at 263.525 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 263.525 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 263.525 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 263.525 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 263.525 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2638636a-25db-4df8-b82a-c88aff02b582")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR47") (unit 1))))) 
+
+(wire (pts 
+
+(xy 263.525 82.55) 
+
+(xy 263.525 81.28)) (stroke (width 0) (type default)) (uuid d7ce0462-6598-4b76-8d27-082be00cb00d)) 
+
+(symbol (lib_id "power:GND") (at 263.525 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1393e49c-01e3-45a4-ae28-c45f44d39711") 
+
+(property "Reference" "#PWR48" (at 263.525 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 263.525 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 263.525 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 263.525 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 263.525 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "33a7bdd7-7c27-47cf-bb20-b6625b842160")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR48") (unit 1))))) 
+
+(wire (pts 
+
+(xy 263.525 97.79) 
+
+(xy 263.525 99.06)) (stroke (width 0) (type default)) (uuid 515be9f9-8e7b-423b-bf64-be812df6ac74)) 
+
+(wire (pts 
+
+(xy 247.015 90.17) 
+
+(xy 255.905 90.17)) (stroke (width 0) (type default)) (uuid f7d73536-2ce8-471f-b785-59bb79a39a98)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 287.655 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "081536ca-df76-4372-bf30-312044dd79e1") 
+
+(property "Reference" "LED25" (at 293.243 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 296.545 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 287.655 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 287.655 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 287.655 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "01333677-4e96-479c-9234-2ec650c1123e")) (pin "2" (uuid "0fb82a9c-6880-49b7-9a85-52952db7810b")) (pin "3" (uuid "021eee67-8724-4615-918f-5e3c1506b8d7")) (pin "4" (uuid "c8e1a717-c8b2-4c16-a98c-97784cf27990")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED25") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 287.655 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "ec192563-d75d-4651-addf-c6c646b16a0c") 
+
+(property "Reference" "#PWR49" (at 287.655 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 287.655 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 287.655 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 287.655 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 287.655 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "fe3686d6-515e-4397-92e2-eb67ff06a3c4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR49") (unit 1))))) 
+
+(wire (pts 
+
+(xy 287.655 82.55) 
+
+(xy 287.655 81.28)) (stroke (width 0) (type default)) (uuid 76ea178d-69d5-4cff-9d09-6a2df5aeea9c)) 
+
+(symbol (lib_id "power:GND") (at 287.655 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d8959740-dede-41b2-b31b-7b2c72a589a5") 
+
+(property "Reference" "#PWR50" (at 287.655 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 287.655 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 287.655 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 287.655 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 287.655 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9c7f1137-b05d-474d-adf7-229229a724dd")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR50") (unit 1))))) 
+
+(wire (pts 
+
+(xy 287.655 97.79) 
+
+(xy 287.655 99.06)) (stroke (width 0) (type default)) (uuid 6ac544e7-ef2d-4b48-a023-da8755b42705)) 
+
+(wire (pts 
+
+(xy 271.145 90.17) 
+
+(xy 280.035 90.17)) (stroke (width 0) (type default)) (uuid e06d8432-9530-411a-9d01-95f618dfaf01)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 311.785 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c3fabf96-e9b8-44d7-bfa8-3842db53a5c9") 
+
+(property "Reference" "LED26" (at 317.373 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 320.675 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 311.785 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 311.785 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 311.785 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "4be0c6dd-eac2-4bd9-b2f9-6da3a847eed3")) (pin "2" (uuid "2ef45849-2407-4604-b64a-1ad828f43c51")) (pin "3" (uuid "59d7c3e9-239b-4a3c-b78f-4bfd384a6c6a")) (pin "4" (uuid "cb8ba9a9-08f5-4772-9430-060b24b1f26f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED26") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 311.785 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6f0eddc5-c440-4905-bcc3-9bf942b1aa35") 
+
+(property "Reference" "#PWR51" (at 311.785 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 311.785 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 311.785 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 311.785 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 311.785 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "85561d97-2b1f-4241-b2e4-ef03a9ae9a13")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR51") (unit 1))))) 
+
+(wire (pts 
+
+(xy 311.785 82.55) 
+
+(xy 311.785 81.28)) (stroke (width 0) (type default)) (uuid 7699c0b4-30db-4330-84c7-04f4187654ce)) 
+
+(symbol (lib_id "power:GND") (at 311.785 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "43e924ca-7761-4a15-aed7-3ec560dd682b") 
+
+(property "Reference" "#PWR52" (at 311.785 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 311.785 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 311.785 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 311.785 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 311.785 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "98cc640b-df26-436c-959e-d191924d689c")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR52") (unit 1))))) 
+
+(wire (pts 
+
+(xy 311.785 97.79) 
+
+(xy 311.785 99.06)) (stroke (width 0) (type default)) (uuid 21097043-a87c-489c-8c63-e976a9119667)) 
+
+(wire (pts 
+
+(xy 295.275 90.17) 
+
+(xy 304.165 90.17)) (stroke (width 0) (type default)) (uuid 5e30b1e4-c1ee-45ea-a506-b8e714efa40b)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 335.915 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f9a4a129-7682-4753-b684-bd2ed723ae6e") 
+
+(property "Reference" "LED27" (at 341.503 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 344.805 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 335.915 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 335.915 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 335.915 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "3f58f969-20ee-4621-a190-69d30e738e03")) (pin "2" (uuid "4796f3b1-4b23-43a9-9e0c-6e94faa74e55")) (pin "3" (uuid "068e0e7c-8d3e-4003-a83b-b466c3fdb877")) (pin "4" (uuid "888ee2b4-4f1c-42cd-a32e-27c0d1b5108a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED27") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 335.915 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2b984bd7-1629-4339-a9a9-ddca0fab6cd8") 
+
+(property "Reference" "#PWR53" (at 335.915 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 335.915 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 335.915 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 335.915 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 335.915 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e9cf3383-e83e-4ff6-b3a5-a9ec6c3b6cfd")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR53") (unit 1))))) 
+
+(wire (pts 
+
+(xy 335.915 82.55) 
+
+(xy 335.915 81.28)) (stroke (width 0) (type default)) (uuid a34d2311-6e2f-48db-9a09-69436d32774a)) 
+
+(symbol (lib_id "power:GND") (at 335.915 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "54cf34d4-c415-4d81-ab31-faf00a08530b") 
+
+(property "Reference" "#PWR54" (at 335.915 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 335.915 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 335.915 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 335.915 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 335.915 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9ef8f69d-63a6-454d-9bba-21bc319f2ba8")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR54") (unit 1))))) 
+
+(wire (pts 
+
+(xy 335.915 97.79) 
+
+(xy 335.915 99.06)) (stroke (width 0) (type default)) (uuid ea26e602-8ec4-42e9-9983-b513086ee784)) 
+
+(wire (pts 
+
+(xy 319.405 90.17) 
+
+(xy 328.295 90.17)) (stroke (width 0) (type default)) (uuid 40d7a8b1-496c-4f5a-af1f-088097249ba7)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 360.045 90.17 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "23f23248-342a-40e5-b8b9-faaa5cced690") 
+
+(property "Reference" "LED28" (at 365.633 87.63 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 368.935 93.345 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 360.045 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 360.045 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 360.045 90.17 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "410ecb7a-2028-4b95-96e1-9d817ceaf7cc")) (pin "2" (uuid "69e03d6a-7e8c-48c3-8359-05c449a38c76")) (pin "3" (uuid "116a8cf0-628e-485b-9db3-497654365259")) (pin "4" (uuid "19969387-650c-434e-a859-880034bcbb66")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED28") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 360.045 81.28 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7575490a-04e3-4970-b3e7-861f82f183ea") 
+
+(property "Reference" "#PWR55" (at 360.045 85.47 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 360.045 76.72 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 360.045 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 360.045 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 360.045 81.28 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "65e8d658-6f95-48b0-b5c3-1de442645ac8")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR55") (unit 1))))) 
+
+(wire (pts 
+
+(xy 360.045 82.55) 
+
+(xy 360.045 81.28)) (stroke (width 0) (type default)) (uuid 0b918a76-04b7-4fa9-a690-c5cb05c566dd)) 
+
+(symbol (lib_id "power:GND") (at 360.045 99.06 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "82fe5742-ed60-45bc-a2a6-f403b41b42ad") 
+
+(property "Reference" "#PWR56" (at 360.045 105.41 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 360.045 103.505 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 360.045 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 360.045 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 360.045 99.06 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "bd5aae9c-4e15-476b-a0d8-467f23492b8e")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR56") (unit 1))))) 
+
+(wire (pts 
+
+(xy 360.045 97.79) 
+
+(xy 360.045 99.06)) (stroke (width 0) (type default)) (uuid bf6d6dda-e6a8-4ed6-8442-13dae8f48d93)) 
+
+(wire (pts 
+
+(xy 343.535 90.17) 
+
+(xy 352.425 90.17)) (stroke (width 0) (type default)) (uuid e37995c4-17b2-412c-9208-79025be43dbb)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 46.355 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "df43cc03-dc80-4e9c-a8e2-910eeb22083b") 
+
+(property "Reference" "LED29" (at 51.943 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 55.245 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 46.355 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 46.355 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 46.355 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "baa32076-dc06-4630-9e76-6d52588b3da8")) (pin "2" (uuid "27cf6f29-31a8-4cbf-a344-6a0b451059ae")) (pin "3" (uuid "7a2e4149-8659-4e82-9d02-ab0cf6ea4358")) (pin "4" (uuid "b041d302-5aab-4afd-bc75-0bc68c90b7fa")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED29") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 46.355 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b006344e-fb81-42ac-a1df-3589ce104f71") 
+
+(property "Reference" "#PWR57" (at 46.355 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 46.355 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 46.355 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "0880e760-61ad-461f-bf8c-d3f1bef7e5e0")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR57") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 112.395) 
+
+(xy 46.355 111.125)) (stroke (width 0) (type default)) (uuid eb9bf76c-acc0-4359-a202-d79691a584a0)) 
+
+(symbol (lib_id "power:GND") (at 46.355 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "55ebf0ee-cae6-464e-b328-46c9544bad40") 
+
+(property "Reference" "#PWR58" (at 46.355 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 46.355 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 46.355 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 46.355 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ee2a7cc8-d3e3-49c4-9d0f-2520847f72f3")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR58") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 127.635) 
+
+(xy 46.355 128.905)) (stroke (width 0) (type default)) (uuid 52730629-48b0-4a0a-8604-b67b0b4e56c5)) 
+
+(wire (pts 
+
+(xy 367.665 90.17) 
+
+(xy 375.92 90.17)) (stroke (width 0) (type default)) (uuid 9b1f8690-c2fc-4ecc-bb46-f1366eef0b88)) 
+
+(wire (pts 
+
+(xy 375.92 90.17) 
+
+(xy 375.92 105.0925)) (stroke (width 0) (type default)) (uuid 96c096ec-101f-46dc-8bba-3423cdcbc794)) 
+
+(wire (pts 
+
+(xy 375.92 105.0925) 
+
+(xy 31.75 105.0925)) (stroke (width 0) (type default)) (uuid 6e57a67f-f76f-4f2f-afb0-62d4c8a59575)) 
+
+(wire (pts 
+
+(xy 31.75 105.0925) 
+
+(xy 31.75 120.015)) (stroke (width 0) (type default)) (uuid 473dac82-bcdb-4d28-adf6-4013bc2ab87d)) 
+
+(wire (pts 
+
+(xy 31.75 120.015) 
+
+(xy 38.735 120.015)) (stroke (width 0) (type default)) (uuid b1103607-9319-44c2-8f2b-4cd47495d292)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 70.485 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9834f141-5260-44c0-84a5-63b4d00c9e3a") 
+
+(property "Reference" "LED30" (at 76.073 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 79.375 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 70.485 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 70.485 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 70.485 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "44aba3c0-77b8-4e17-bbd1-a8a38011cda9")) (pin "2" (uuid "012e5793-4d01-434e-a870-6c1548088d12")) (pin "3" (uuid "119c1a34-27c0-4953-b154-eed5e8de922d")) (pin "4" (uuid "8451b1d0-9e3b-4277-9baf-66801e16dc22")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED30") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 70.485 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9702a870-d128-4b5e-a993-73c3732f6c28") 
+
+(property "Reference" "#PWR59" (at 70.485 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 70.485 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 70.485 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ffa8dd14-90e9-4b43-bb2c-5ae465e322c6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR59") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 112.395) 
+
+(xy 70.485 111.125)) (stroke (width 0) (type default)) (uuid 1079491b-b008-47b9-8ab9-b5a2b89ab856)) 
+
+(symbol (lib_id "power:GND") (at 70.485 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8b40da94-cfd9-4369-b454-bc9f2449f5ad") 
+
+(property "Reference" "#PWR60" (at 70.485 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 70.485 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 70.485 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 70.485 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 70.485 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "1a5d8fec-a470-41de-9c83-e9ed91cd325b")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR60") (unit 1))))) 
+
+(wire (pts 
+
+(xy 70.485 127.635) 
+
+(xy 70.485 128.905)) (stroke (width 0) (type default)) (uuid ef47ef47-a9cc-4d76-9920-5eb7173a8db2)) 
+
+(wire (pts 
+
+(xy 53.975 120.015) 
+
+(xy 62.865 120.015)) (stroke (width 0) (type default)) (uuid 4c2899bb-cff8-4bfc-86bd-57606050aabd)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 94.615 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "53d5682e-3299-4014-894a-24067c9271e2") 
+
+(property "Reference" "LED31" (at 100.203 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 103.505 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 94.615 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 94.615 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 94.615 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e4fd4a49-5e26-4c1f-bc42-b22dab7d51dd")) (pin "2" (uuid "692043a9-a02d-4bb8-8b41-96e155c3be45")) (pin "3" (uuid "ca7009ec-903a-44dc-b45f-f39778b135f2")) (pin "4" (uuid "16e02121-d865-466e-b70c-2fcf43655830")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED31") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 94.615 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "129b5cea-2af0-4384-b8bf-f5e133ef4a12") 
+
+(property "Reference" "#PWR61" (at 94.615 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 94.615 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 94.615 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2a1fa18b-799f-4bda-9fe9-c65219ce04e6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR61") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 112.395) 
+
+(xy 94.615 111.125)) (stroke (width 0) (type default)) (uuid b3d0148f-ed03-45ec-b184-39eea202c4b4)) 
+
+(symbol (lib_id "power:GND") (at 94.615 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "79f4626d-effb-4f9c-a8f6-62146063dbc1") 
+
+(property "Reference" "#PWR62" (at 94.615 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 94.615 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 94.615 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 94.615 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 94.615 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6f931bd7-5c9f-4f21-b8ed-07115ae5607e")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR62") (unit 1))))) 
+
+(wire (pts 
+
+(xy 94.615 127.635) 
+
+(xy 94.615 128.905)) (stroke (width 0) (type default)) (uuid e3469cfd-b5ea-4e16-ade0-967b951965f5)) 
+
+(wire (pts 
+
+(xy 78.105 120.015) 
+
+(xy 86.995 120.015)) (stroke (width 0) (type default)) (uuid 1617b1f7-e29d-4e32-834a-bb4652335aad)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 118.745 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c8506921-2851-46d3-86d0-1303f2967a1d") 
+
+(property "Reference" "LED32" (at 124.333 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 127.635 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 118.745 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 118.745 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 118.745 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e2cf2cb4-702c-44d9-9a4c-10b2f34718d7")) (pin "2" (uuid "f937be5d-0149-4923-8971-14f1357975d0")) (pin "3" (uuid "263d0344-372a-4f91-8a05-5dc175c7861e")) (pin "4" (uuid "19c2d01b-1ad9-456a-aace-558cc1826b65")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED32") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 118.745 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "772594d8-a2aa-4bad-9503-4b1b91aa35af") 
+
+(property "Reference" "#PWR63" (at 118.745 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 118.745 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 118.745 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2f5d7518-77a8-4359-b8c2-e80b9b5c616d")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR63") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 112.395) 
+
+(xy 118.745 111.125)) (stroke (width 0) (type default)) (uuid 41e2bc19-3d78-44d8-8d03-c583d9cdac9b)) 
+
+(symbol (lib_id "power:GND") (at 118.745 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "11fb8bfd-23a3-4d08-8c35-b6e9f314be09") 
+
+(property "Reference" "#PWR64" (at 118.745 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 118.745 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 118.745 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 118.745 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 118.745 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "01484871-29c7-4ab0-ba22-ca481baaa879")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR64") (unit 1))))) 
+
+(wire (pts 
+
+(xy 118.745 127.635) 
+
+(xy 118.745 128.905)) (stroke (width 0) (type default)) (uuid d40ba42d-4630-4912-a87f-b9ab76e6679a)) 
+
+(wire (pts 
+
+(xy 102.235 120.015) 
+
+(xy 111.125 120.015)) (stroke (width 0) (type default)) (uuid c37ec139-7094-40df-8bd3-f35b63a4b729)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 142.875 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d866b385-09e9-49b3-8d92-30a9f20f8842") 
+
+(property "Reference" "LED33" (at 148.463 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 151.765 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 142.875 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 142.875 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 142.875 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "3e02f740-8773-4cc5-9ca5-14a55ae22ded")) (pin "2" (uuid "63a0ffe5-9f3b-49cd-ac2b-7b8430cb27af")) (pin "3" (uuid "d3df0c4a-d122-4750-b908-ded07c6ac805")) (pin "4" (uuid "870d73b8-f9e9-4f3e-8d73-7d1766a59d45")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED33") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 142.875 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7f2de4d3-035f-4896-97a0-9031e64bace6") 
+
+(property "Reference" "#PWR65" (at 142.875 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 142.875 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 142.875 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "d67a4af6-54e9-4159-98a0-61f1bbcc0c14")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR65") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 112.395) 
+
+(xy 142.875 111.125)) (stroke (width 0) (type default)) (uuid f3383a69-da4b-445c-8e73-ab60e71a365b)) 
+
+(symbol (lib_id "power:GND") (at 142.875 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "40e240a5-16f8-4d57-bbf9-8930a78fbed7") 
+
+(property "Reference" "#PWR66" (at 142.875 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 142.875 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 142.875 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 142.875 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 142.875 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9d3282d8-b8d5-497a-a8e8-2a3a4e7734a0")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR66") (unit 1))))) 
+
+(wire (pts 
+
+(xy 142.875 127.635) 
+
+(xy 142.875 128.905)) (stroke (width 0) (type default)) (uuid e0779d8c-fc57-4c1a-83fa-9c220312fdd7)) 
+
+(wire (pts 
+
+(xy 126.365 120.015) 
+
+(xy 135.255 120.015)) (stroke (width 0) (type default)) (uuid 2be56e27-f5ab-473c-8130-64ea504c72c2)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 167.005 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "53cd34eb-2cfc-40f0-8163-c46c0f880300") 
+
+(property "Reference" "LED34" (at 172.593 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 175.895 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 167.005 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 167.005 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 167.005 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b24223eb-a400-4ba0-8ba2-2f461146b54c")) (pin "2" (uuid "ab194f25-1a6d-40bd-a55d-0c252a20e552")) (pin "3" (uuid "d10586c5-5e88-4aca-8b84-3850fc45ae53")) (pin "4" (uuid "ddfb7236-1527-46ae-abd9-8914443d814b")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED34") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 167.005 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "025489c8-7c62-4102-8eca-202254244774") 
+
+(property "Reference" "#PWR67" (at 167.005 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 167.005 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 167.005 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "94d3b8a6-78b4-4ac6-819d-d648fbdda3ba")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR67") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 112.395) 
+
+(xy 167.005 111.125)) (stroke (width 0) (type default)) (uuid c79abe9b-b8e2-4095-a8cb-7b3d24c2fec2)) 
+
+(symbol (lib_id "power:GND") (at 167.005 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "74be5a4a-fea9-4b80-a672-696bfd9d42d5") 
+
+(property "Reference" "#PWR68" (at 167.005 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 167.005 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 167.005 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 167.005 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 167.005 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "10918879-d2d6-4d1c-9135-43cea1b761db")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR68") (unit 1))))) 
+
+(wire (pts 
+
+(xy 167.005 127.635) 
+
+(xy 167.005 128.905)) (stroke (width 0) (type default)) (uuid 8e1ad8e7-c0f8-4324-9d9d-707f044215d1)) 
+
+(wire (pts 
+
+(xy 150.495 120.015) 
+
+(xy 159.385 120.015)) (stroke (width 0) (type default)) (uuid 8ab67e55-2190-413c-8365-2f1e899fe5b5)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 191.135 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a641dd47-22dd-4182-87a9-35d18d926313") 
+
+(property "Reference" "LED35" (at 196.723 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 200.025 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 191.135 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 191.135 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 191.135 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "0b2751d2-d111-4183-986d-aa5ca5d57fc8")) (pin "2" (uuid "eb9648cb-fba5-4bfb-97a9-1fab40f9b93a")) (pin "3" (uuid "d2b6e319-b712-4023-8886-815bb3649901")) (pin "4" (uuid "21897d05-407b-449c-88c7-b7c880df47af")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED35") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 191.135 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "38171cc4-1957-4449-99f6-28564886ab33") 
+
+(property "Reference" "#PWR69" (at 191.135 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 191.135 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 191.135 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "415d87ec-5b19-43f5-9143-89fcfdc12780")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR69") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 112.395) 
+
+(xy 191.135 111.125)) (stroke (width 0) (type default)) (uuid 3beaba42-79e1-4f25-97d3-23f616387267)) 
+
+(symbol (lib_id "power:GND") (at 191.135 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d7da8aa2-0610-4ccd-a380-8ea69a9dc748") 
+
+(property "Reference" "#PWR70" (at 191.135 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 191.135 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 191.135 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 191.135 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 191.135 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "429daf9d-27d4-4387-8f16-10082e7cad39")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR70") (unit 1))))) 
+
+(wire (pts 
+
+(xy 191.135 127.635) 
+
+(xy 191.135 128.905)) (stroke (width 0) (type default)) (uuid 2c3b0f00-ae3d-443f-ba17-5ba7807b0f19)) 
+
+(wire (pts 
+
+(xy 174.625 120.015) 
+
+(xy 183.515 120.015)) (stroke (width 0) (type default)) (uuid 4cfac8e9-7147-4e6d-b2eb-219b31a56584)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 215.265 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "e23c2346-8765-4cb0-bde8-a2394d34f5b0") 
+
+(property "Reference" "LED36" (at 220.853 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 224.155 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 215.265 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 215.265 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 215.265 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f38b6b15-8ce9-4ca7-8900-cc679f51aaba")) (pin "2" (uuid "a54d2e53-9ce7-4834-aefe-b76e9997d3fc")) (pin "3" (uuid "78f47849-fa33-4a13-962b-9eb96a132b3a")) (pin "4" (uuid "a99c7922-3bc9-42dc-992d-773d4c276d76")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED36") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 215.265 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "11a493c3-c341-4852-8930-79a329cc9ab6") 
+
+(property "Reference" "#PWR71" (at 215.265 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 215.265 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 215.265 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7cb6b9da-638c-4bd1-be96-9529b2bc13d2")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR71") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 112.395) 
+
+(xy 215.265 111.125)) (stroke (width 0) (type default)) (uuid 739a6485-9994-4393-8f1e-d0bba3cdd2ed)) 
+
+(symbol (lib_id "power:GND") (at 215.265 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f10ab995-7f38-4173-ab4c-6969ca59ca96") 
+
+(property "Reference" "#PWR72" (at 215.265 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 215.265 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 215.265 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 215.265 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 215.265 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2adf2724-1700-4525-b4bc-46a6674a8eea")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR72") (unit 1))))) 
+
+(wire (pts 
+
+(xy 215.265 127.635) 
+
+(xy 215.265 128.905)) (stroke (width 0) (type default)) (uuid b587d141-11e0-43ac-b4ec-c73dee565e91)) 
+
+(wire (pts 
+
+(xy 198.755 120.015) 
+
+(xy 207.645 120.015)) (stroke (width 0) (type default)) (uuid 78e2c5e1-1224-4806-a356-2c63d94907c4)) 
+
+(symbol (lib_id "LED:SK6812MINI-E") (at 239.395 120.015 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9c6fa9ff-c166-4f84-a29a-043e6d105660") 
+
+(property "Reference" "LED37" (at 244.983 117.475 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SK6812MINI-E" (at 248.285 123.19 0) (hide yes) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "LED_SMD:LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount" (at 239.395 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "https://www.lcsc.com/datasheet/C5149201.pdf" (at 239.395 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "RGB LED with integrated controller" (at 239.395 120.015 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "08e9acbd-7cb9-4d5f-aad8-352622d36f03")) (pin "2" (uuid "44aff3fa-8e29-4174-b42e-819daafc20a9")) (pin "3" (uuid "8a2e9f2a-2909-4627-bee0-960f078ac9b2")) (pin "4" (uuid "f028e5fd-8508-49fc-b599-9586fe79d8f5")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "LED37") (unit 1))))) 
+
+(symbol (lib_id "power:VCC") (at 239.395 111.125 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2ee575d0-a28c-48f4-9c1a-1a0b94c1f85a") 
+
+(property "Reference" "#PWR73" (at 239.395 115.315 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 239.395 106.565 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 239.395 111.125 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5675fbeb-e821-4707-9ea0-d693adf935aa")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR73") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 112.395) 
+
+(xy 239.395 111.125)) (stroke (width 0) (type default)) (uuid 1984a424-25af-4ed2-83b6-6414763d3956)) 
+
+(symbol (lib_id "power:GND") (at 239.395 128.905 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4073cf90-d5a0-483c-b64a-4fb9a1bbc211") 
+
+(property "Reference" "#PWR74" (at 239.395 135.255 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 239.395 133.35 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 239.395 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 239.395 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 239.395 128.905 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "54fe6c79-3cc4-4efa-9507-171db04a5aba")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR74") (unit 1))))) 
+
+(wire (pts 
+
+(xy 239.395 127.635) 
+
+(xy 239.395 128.905)) (stroke (width 0) (type default)) (uuid c04fe744-d46a-4b3f-96f7-dd2cab7de47a)) 
+
+(wire (pts 
+
+(xy 222.885 120.015) 
+
+(xy 231.775 120.015)) (stroke (width 0) (type default)) (uuid dcbbad70-99c6-4490-9644-672a5014f3af)) 
+
+(global_label "LEDOUT" (shape input) (at 255.27 120.015 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid 68dfbb1a-b454-4d71-b75e-7ce5f16d0930) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 249.0191 120.015 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(wire (pts 
+
+(xy 247.015 120.015) 
+
+(xy 255.27 120.015)) (stroke (width 0) (type default)) (uuid 53c512ac-c87c-48e3-9eba-6e950546de61)) 
+
+(symbol (lib_id "Device:C") (at 46.355 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "def9f05c-370c-4f07-9901-efc21fb388e6") 
+
+(property "Reference" "C1" (at 49.53 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 49.53 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 46.355 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 46.355 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "05300b4a-b9f4-4fb7-9a74-9a358587d5e9")) (pin "2" (uuid "40ce71b9-dd25-49f4-9eda-63082cfaffdc")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C1") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 149.225) 
+
+(xy 46.355 147.955)) (stroke (width 0) (type default)) (uuid 3b8dc81f-40e5-4b75-b6bb-a8644bc0cb37)) 
+
+(wire (pts 
+
+(xy 46.355 156.845) 
+
+(xy 46.355 158.115)) (stroke (width 0) (type default)) (uuid d18eee48-4eee-4c74-8720-bec837ba6bea)) 
+
+(junction (at 46.355 147.955) (diameter 0) (color 0 0 0 0) (uuid 6a22b83f-2162-439c-91f2-7da8c1d449be)) 
+
+(junction (at 46.355 158.115) (diameter 0) (color 0 0 0 0) (uuid 308337cd-1966-4b6a-b18f-ae35e2fa45c4)) 
+
+(symbol (lib_id "Device:C") (at 55.88 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "208b2486-f5f6-4925-81e0-46c073cba871") 
+
+(property "Reference" "C2" (at 59.055 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 59.055 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 55.88 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 55.88 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 55.88 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "db82de44-b631-44ce-8e07-1663aabf28c2")) (pin "2" (uuid "c69af6a4-b214-42a6-b567-78c57036a1ba")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C2") (unit 1))))) 
+
+(wire (pts 
+
+(xy 55.88 149.225) 
+
+(xy 55.88 147.955)) (stroke (width 0) (type default)) (uuid 2a83d152-9eed-4e13-a8de-140b7a81d65d)) 
+
+(wire (pts 
+
+(xy 55.88 156.845) 
+
+(xy 55.88 158.115)) (stroke (width 0) (type default)) (uuid a8c5d8bd-3eb8-4561-adfc-ff7d913a3435)) 
+
+(junction (at 55.88 147.955) (diameter 0) (color 0 0 0 0) (uuid 0378221d-8682-4430-b9e6-f02fa8a92431)) 
+
+(junction (at 55.88 158.115) (diameter 0) (color 0 0 0 0) (uuid c9ecf466-29bb-458e-ab55-b68047db34f7)) 
+
+(symbol (lib_id "Device:C") (at 65.405 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "e59aead2-b348-451d-8fec-11859d9ea359") 
+
+(property "Reference" "C3" (at 68.58 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 68.58 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 65.405 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 65.405 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 65.405 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5e0b644e-e7a0-441f-a25d-ec3c976eac1a")) (pin "2" (uuid "047e47cb-c04c-4f3d-9973-77d26205235c")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C3") (unit 1))))) 
+
+(wire (pts 
+
+(xy 65.405 149.225) 
+
+(xy 65.405 147.955)) (stroke (width 0) (type default)) (uuid 529d0a18-2700-4870-b69f-e35b06c4aab0)) 
+
+(wire (pts 
+
+(xy 65.405 156.845) 
+
+(xy 65.405 158.115)) (stroke (width 0) (type default)) (uuid 4731011d-c40c-4365-a958-c729251733d2)) 
+
+(junction (at 65.405 147.955) (diameter 0) (color 0 0 0 0) (uuid fa7c37e9-9025-42db-a85a-fe198e01ac51)) 
+
+(junction (at 65.405 158.115) (diameter 0) (color 0 0 0 0) (uuid f30080c0-80ff-4b70-ac34-b8a45795c670)) 
+
+(symbol (lib_id "Device:C") (at 74.93 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "62083cee-6f0d-4cfe-8274-f4af5cf87721") 
+
+(property "Reference" "C4" (at 78.105 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 78.105 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 74.93 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 74.93 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 74.93 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ca6fd103-a6fc-4ac2-988c-7b9b9ad1e229")) (pin "2" (uuid "27f7baca-83b7-45f0-b670-2b0bb9dc4403")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C4") (unit 1))))) 
+
+(wire (pts 
+
+(xy 74.93 149.225) 
+
+(xy 74.93 147.955)) (stroke (width 0) (type default)) (uuid de2d9817-4e5d-4ded-b1c8-2e3b1ed26120)) 
+
+(wire (pts 
+
+(xy 74.93 156.845) 
+
+(xy 74.93 158.115)) (stroke (width 0) (type default)) (uuid 47113d3d-8d00-4433-8e1b-75c1fdb179b1)) 
+
+(junction (at 74.93 147.955) (diameter 0) (color 0 0 0 0) (uuid 2091bb54-3a37-46be-a292-598ec3be4d3a)) 
+
+(junction (at 74.93 158.115) (diameter 0) (color 0 0 0 0) (uuid 87df389c-266a-4ae0-828a-f5b2b9776eff)) 
+
+(symbol (lib_id "Device:C") (at 84.455 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5f0a4a68-afe0-4d1f-a106-b0686fdc69bc") 
+
+(property "Reference" "C5" (at 87.63 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 87.63 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 84.455 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 84.455 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 84.455 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "401d940f-01b0-40fc-a977-1fc440fd2358")) (pin "2" (uuid "ebe7650c-73b9-4432-a3cf-336c06a13b1f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C5") (unit 1))))) 
+
+(wire (pts 
+
+(xy 84.455 149.225) 
+
+(xy 84.455 147.955)) (stroke (width 0) (type default)) (uuid d3085aa9-1d90-414f-a1ea-85baa5e9c9be)) 
+
+(wire (pts 
+
+(xy 84.455 156.845) 
+
+(xy 84.455 158.115)) (stroke (width 0) (type default)) (uuid 3a53f351-541b-4c43-bc10-e350a12203d0)) 
+
+(junction (at 84.455 147.955) (diameter 0) (color 0 0 0 0) (uuid ea61f9dc-c261-47a9-92c8-9e1ba91d70ea)) 
+
+(junction (at 84.455 158.115) (diameter 0) (color 0 0 0 0) (uuid 18ee4740-0bd1-464b-a89f-baae3253ed13)) 
+
+(symbol (lib_id "Device:C") (at 93.98 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "933182a7-87f5-4279-be3c-52d273bb4507") 
+
+(property "Reference" "C6" (at 97.155 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 97.155 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 93.98 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 93.98 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 93.98 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "cc6dcae1-3a38-4932-8783-8c1318a5b51c")) (pin "2" (uuid "d68ef29c-9019-4379-a355-2827339b3798")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C6") (unit 1))))) 
+
+(wire (pts 
+
+(xy 93.98 149.225) 
+
+(xy 93.98 147.955)) (stroke (width 0) (type default)) (uuid e7db199a-8655-4ee5-8fb6-347917670418)) 
+
+(wire (pts 
+
+(xy 93.98 156.845) 
+
+(xy 93.98 158.115)) (stroke (width 0) (type default)) (uuid 9e5fea19-9ae8-4610-a35d-69e668ba8b1d)) 
+
+(junction (at 93.98 147.955) (diameter 0) (color 0 0 0 0) (uuid afd9a497-90f1-4825-856a-acfcbda6b8d0)) 
+
+(junction (at 93.98 158.115) (diameter 0) (color 0 0 0 0) (uuid 8f1e8bc5-92e3-412a-9fa2-2d0d4d18d282)) 
+
+(symbol (lib_id "Device:C") (at 103.505 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7616a619-7a15-4f55-8b0b-a1b5f401fd30") 
+
+(property "Reference" "C7" (at 106.68 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 106.68 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 103.505 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 103.505 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 103.505 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ff336678-7094-48a9-a766-05b046d71e09")) (pin "2" (uuid "2cf25db3-d87e-45e5-aced-f0d6d100791c")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C7") (unit 1))))) 
+
+(wire (pts 
+
+(xy 103.505 149.225) 
+
+(xy 103.505 147.955)) (stroke (width 0) (type default)) (uuid 23958611-2ba5-4b7e-bd32-45d97a679b9f)) 
+
+(wire (pts 
+
+(xy 103.505 156.845) 
+
+(xy 103.505 158.115)) (stroke (width 0) (type default)) (uuid f923bc09-ebfe-4952-9b09-a945ba71f51f)) 
+
+(junction (at 103.505 147.955) (diameter 0) (color 0 0 0 0) (uuid afd4ac34-ba8a-4bc3-9d5e-51c53f6969e2)) 
+
+(junction (at 103.505 158.115) (diameter 0) (color 0 0 0 0) (uuid 383284ea-3b2e-4454-a719-4e7663f19720)) 
+
+(symbol (lib_id "Device:C") (at 113.03 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "62a2f6a6-d8ef-4d11-8856-7d4f5270b808") 
+
+(property "Reference" "C8" (at 116.205 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 116.205 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 113.03 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 113.03 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 113.03 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b4875e3e-f900-48b0-8ae6-0f63195a8547")) (pin "2" (uuid "cbc655b5-8a46-4fef-af44-b2f21856f561")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C8") (unit 1))))) 
+
+(wire (pts 
+
+(xy 113.03 149.225) 
+
+(xy 113.03 147.955)) (stroke (width 0) (type default)) (uuid 59cce1c4-4ed2-4445-8fd8-5941fcf1b80f)) 
+
+(wire (pts 
+
+(xy 113.03 156.845) 
+
+(xy 113.03 158.115)) (stroke (width 0) (type default)) (uuid 23d3c29d-475f-4656-adee-65634c07558b)) 
+
+(junction (at 113.03 147.955) (diameter 0) (color 0 0 0 0) (uuid 9bb51121-679f-425a-9f07-3b4879640468)) 
+
+(junction (at 113.03 158.115) (diameter 0) (color 0 0 0 0) (uuid 0c24181c-3172-4d53-a090-b26b2b0873e8)) 
+
+(symbol (lib_id "Device:C") (at 122.555 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cf42f78c-038b-411a-a282-efb0e8c37f04") 
+
+(property "Reference" "C9" (at 125.73 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 125.73 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 122.555 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 122.555 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 122.555 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7265731c-a408-485e-901c-060df6127a44")) (pin "2" (uuid "238692a9-9073-4a99-a14f-63abd4bde552")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C9") (unit 1))))) 
+
+(wire (pts 
+
+(xy 122.555 149.225) 
+
+(xy 122.555 147.955)) (stroke (width 0) (type default)) (uuid f2ff3b48-ce8b-4e51-99cb-71d5046a02fb)) 
+
+(wire (pts 
+
+(xy 122.555 156.845) 
+
+(xy 122.555 158.115)) (stroke (width 0) (type default)) (uuid 6c262d39-2dcb-44f3-bee8-ae8dbc061c9e)) 
+
+(junction (at 122.555 147.955) (diameter 0) (color 0 0 0 0) (uuid a650b603-be3a-4feb-bf54-be7f59cbb952)) 
+
+(junction (at 122.555 158.115) (diameter 0) (color 0 0 0 0) (uuid a164a6f8-2af3-4f7c-b971-8d5e8d329b99)) 
+
+(symbol (lib_id "Device:C") (at 132.08 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2adee3dd-13df-4260-bbde-334eeeb5984f") 
+
+(property "Reference" "C10" (at 135.255 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 135.255 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 132.08 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 132.08 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 132.08 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "043ddeef-55bb-4814-babe-b170d7817f00")) (pin "2" (uuid "ec4668f4-4c9c-4735-8e73-52364de46606")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C10") (unit 1))))) 
+
+(wire (pts 
+
+(xy 132.08 149.225) 
+
+(xy 132.08 147.955)) (stroke (width 0) (type default)) (uuid 6c1a3dd1-2e56-41fb-ab49-f0206337bd40)) 
+
+(wire (pts 
+
+(xy 132.08 156.845) 
+
+(xy 132.08 158.115)) (stroke (width 0) (type default)) (uuid 7731c16a-471c-4187-b16f-b9c55c50d08c)) 
+
+(junction (at 132.08 147.955) (diameter 0) (color 0 0 0 0) (uuid a161eaf1-fb19-4f97-82a5-85a8403b5573)) 
+
+(junction (at 132.08 158.115) (diameter 0) (color 0 0 0 0) (uuid ca43ed5d-59fb-45d2-b0f2-b03b167269cd)) 
+
+(symbol (lib_id "Device:C") (at 141.605 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "736e234a-ebc1-4d75-a3f8-2604eb7fd520") 
+
+(property "Reference" "C11" (at 144.78 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 144.78 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 141.605 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 141.605 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 141.605 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "865bbffa-ddcb-4343-9ac7-502c38f5bc9c")) (pin "2" (uuid "8f5a9439-9241-4176-b673-4bc82e16476d")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C11") (unit 1))))) 
+
+(wire (pts 
+
+(xy 141.605 149.225) 
+
+(xy 141.605 147.955)) (stroke (width 0) (type default)) (uuid 87fee55c-f85c-4acc-a5d4-00578bc25344)) 
+
+(wire (pts 
+
+(xy 141.605 156.845) 
+
+(xy 141.605 158.115)) (stroke (width 0) (type default)) (uuid 652165f6-ff8c-4f02-b6cc-020b7de1d12a)) 
+
+(junction (at 141.605 147.955) (diameter 0) (color 0 0 0 0) (uuid 0dc62ef1-24e1-449d-ad21-fb8779180d9f)) 
+
+(junction (at 141.605 158.115) (diameter 0) (color 0 0 0 0) (uuid d9481c87-88a7-4cde-8968-5cf93f559ae6)) 
+
+(symbol (lib_id "Device:C") (at 151.13 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1a5e4204-d4d4-4cec-a51d-e846e217ca62") 
+
+(property "Reference" "C12" (at 154.305 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 154.305 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 151.13 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 151.13 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 151.13 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "72774f05-8b35-4248-951e-e1cffefff571")) (pin "2" (uuid "efdcea3a-118d-439b-879f-fe680727abde")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C12") (unit 1))))) 
+
+(wire (pts 
+
+(xy 151.13 149.225) 
+
+(xy 151.13 147.955)) (stroke (width 0) (type default)) (uuid cf3f156c-c7bb-4155-a9aa-5e0d84f4fa35)) 
+
+(wire (pts 
+
+(xy 151.13 156.845) 
+
+(xy 151.13 158.115)) (stroke (width 0) (type default)) (uuid f22357c2-7fee-45fd-82ca-7b7712d6f26f)) 
+
+(junction (at 151.13 147.955) (diameter 0) (color 0 0 0 0) (uuid 54f28ae5-fd2d-4ec1-820e-421302ac5b77)) 
+
+(junction (at 151.13 158.115) (diameter 0) (color 0 0 0 0) (uuid edddd8ff-51fd-45c9-9d42-711e5f6838c8)) 
+
+(symbol (lib_id "Device:C") (at 160.655 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "35d4d2bf-c99e-48d1-a324-ddf35594e7ee") 
+
+(property "Reference" "C13" (at 163.83 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 163.83 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 160.655 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 160.655 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 160.655 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ea075a57-be9d-43be-ac8a-617dde0aefab")) (pin "2" (uuid "4584336d-c37d-4761-8434-437c8757fcb4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C13") (unit 1))))) 
+
+(wire (pts 
+
+(xy 160.655 149.225) 
+
+(xy 160.655 147.955)) (stroke (width 0) (type default)) (uuid 3a7523e8-9af1-46b3-8457-82ac60be8653)) 
+
+(wire (pts 
+
+(xy 160.655 156.845) 
+
+(xy 160.655 158.115)) (stroke (width 0) (type default)) (uuid fd131ba2-f1a9-46c5-8e75-b6a5af31391d)) 
+
+(junction (at 160.655 147.955) (diameter 0) (color 0 0 0 0) (uuid 9436e386-bfa3-412e-b4f8-7ebef6297aba)) 
+
+(junction (at 160.655 158.115) (diameter 0) (color 0 0 0 0) (uuid 8b948c37-d987-4cb5-9ed9-c22f61da7324)) 
+
+(symbol (lib_id "Device:C") (at 170.18 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5611f2cd-d011-4477-8621-a31bbc2d298f") 
+
+(property "Reference" "C14" (at 173.355 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 173.355 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 170.18 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 170.18 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 170.18 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "043bcfab-7403-435a-8e6e-8faf9d1d407f")) (pin "2" (uuid "d03747cb-1d77-4992-b019-6183df5ffc23")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C14") (unit 1))))) 
+
+(wire (pts 
+
+(xy 170.18 149.225) 
+
+(xy 170.18 147.955)) (stroke (width 0) (type default)) (uuid 6fbc2875-f1f4-4657-8b2d-bb39e6d6a4e2)) 
+
+(wire (pts 
+
+(xy 170.18 156.845) 
+
+(xy 170.18 158.115)) (stroke (width 0) (type default)) (uuid 24d558b0-ff6b-4785-b7d7-4704425aff2c)) 
+
+(junction (at 170.18 147.955) (diameter 0) (color 0 0 0 0) (uuid 02df2510-5b95-4b59-8a9e-d20e360b510c)) 
+
+(junction (at 170.18 158.115) (diameter 0) (color 0 0 0 0) (uuid 133836b7-1f7d-489f-9e4f-1847c8bf65c5)) 
+
+(symbol (lib_id "Device:C") (at 179.705 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5c36e6e5-0a48-466c-a2da-5794f6477a08") 
+
+(property "Reference" "C15" (at 182.88 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 182.88 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 179.705 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 179.705 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 179.705 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "05a46915-1c2f-43c2-ac65-0fdb2cb3659f")) (pin "2" (uuid "9f0d0151-03dd-4a78-8b2f-9c276df093e3")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C15") (unit 1))))) 
+
+(wire (pts 
+
+(xy 179.705 149.225) 
+
+(xy 179.705 147.955)) (stroke (width 0) (type default)) (uuid 5fa17bf6-a822-44dc-b177-4b6ec6be852c)) 
+
+(wire (pts 
+
+(xy 179.705 156.845) 
+
+(xy 179.705 158.115)) (stroke (width 0) (type default)) (uuid 7d1ff327-63dd-45df-bc1f-399d0d222358)) 
+
+(junction (at 179.705 147.955) (diameter 0) (color 0 0 0 0) (uuid 75c77f07-95d9-490c-8aeb-c098881aed29)) 
+
+(junction (at 179.705 158.115) (diameter 0) (color 0 0 0 0) (uuid eccdbd0e-8375-4a24-a006-409f2b8b4dd0)) 
+
+(symbol (lib_id "Device:C") (at 189.23 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f68d5596-b3d9-42b4-abe2-8d1bded8291d") 
+
+(property "Reference" "C16" (at 192.405 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 192.405 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 189.23 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 189.23 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 189.23 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "fdc08b54-0de1-4a92-8a00-2bc3eba32683")) (pin "2" (uuid "f4b7db44-607a-47f7-a428-a968ee3a1722")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C16") (unit 1))))) 
+
+(wire (pts 
+
+(xy 189.23 149.225) 
+
+(xy 189.23 147.955)) (stroke (width 0) (type default)) (uuid 536431b8-1ef9-46ef-a513-b60fabbe887f)) 
+
+(wire (pts 
+
+(xy 189.23 156.845) 
+
+(xy 189.23 158.115)) (stroke (width 0) (type default)) (uuid eed057ec-9dcf-45c7-b28c-0af723629f07)) 
+
+(junction (at 189.23 147.955) (diameter 0) (color 0 0 0 0) (uuid 4389ef55-8ab5-470e-8a45-6aaf96b11147)) 
+
+(junction (at 189.23 158.115) (diameter 0) (color 0 0 0 0) (uuid 727bdae1-2cf1-493f-afdd-9cc750716326)) 
+
+(symbol (lib_id "Device:C") (at 198.755 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a7004d80-1b99-4670-8bfa-dda447aea888") 
+
+(property "Reference" "C17" (at 201.93 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 201.93 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 198.755 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 198.755 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 198.755 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "22e88453-8ef1-4632-821f-a02563cd4ece")) (pin "2" (uuid "375b5dee-791e-4780-9a2f-0e48e3195af6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C17") (unit 1))))) 
+
+(wire (pts 
+
+(xy 198.755 149.225) 
+
+(xy 198.755 147.955)) (stroke (width 0) (type default)) (uuid c263631d-3ea1-4fb6-a206-f2d4d9d00ee9)) 
+
+(wire (pts 
+
+(xy 198.755 156.845) 
+
+(xy 198.755 158.115)) (stroke (width 0) (type default)) (uuid 0c980bb3-1a3b-413d-b30f-6d60f6be9aa7)) 
+
+(junction (at 198.755 147.955) (diameter 0) (color 0 0 0 0) (uuid e9623496-f5c8-4aef-a37d-b71ef114daa1)) 
+
+(junction (at 198.755 158.115) (diameter 0) (color 0 0 0 0) (uuid 59298b8f-5383-4dda-bbab-2630a9206a3d)) 
+
+(symbol (lib_id "Device:C") (at 208.28 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b6fce3fe-e6ca-4cf1-ae01-93fee6ce18d3") 
+
+(property "Reference" "C18" (at 211.455 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 211.455 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 208.28 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 208.28 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 208.28 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b5b9ea02-fc43-4cd8-8cde-62bda4608a6e")) (pin "2" (uuid "a6b3f219-ec67-4d9a-8ada-7b3a05c5d4be")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C18") (unit 1))))) 
+
+(wire (pts 
+
+(xy 208.28 149.225) 
+
+(xy 208.28 147.955)) (stroke (width 0) (type default)) (uuid 9b4e0b5b-5d5f-40e2-9d81-fdf3ec34b609)) 
+
+(wire (pts 
+
+(xy 208.28 156.845) 
+
+(xy 208.28 158.115)) (stroke (width 0) (type default)) (uuid 63ffab62-24b3-46e7-a2c1-9896dd83d3fe)) 
+
+(junction (at 208.28 147.955) (diameter 0) (color 0 0 0 0) (uuid 77085f81-2546-48a5-bb04-709ec6303268)) 
+
+(junction (at 208.28 158.115) (diameter 0) (color 0 0 0 0) (uuid b4d54da2-7c3f-4e7f-ae7b-24577553eb30)) 
+
+(symbol (lib_id "Device:C") (at 217.805 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b92e7332-4551-4482-b7ad-49d7a59c866c") 
+
+(property "Reference" "C19" (at 220.98 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 220.98 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 217.805 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 217.805 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 217.805 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "5b5199ac-1430-46ce-b442-a90d1b3468fc")) (pin "2" (uuid "ff8421b1-93be-4b4a-91ae-b68b2cd3e0a9")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C19") (unit 1))))) 
+
+(wire (pts 
+
+(xy 217.805 149.225) 
+
+(xy 217.805 147.955)) (stroke (width 0) (type default)) (uuid fcf2fd63-c508-4318-8091-10295dff6fac)) 
+
+(wire (pts 
+
+(xy 217.805 156.845) 
+
+(xy 217.805 158.115)) (stroke (width 0) (type default)) (uuid fe826acd-0bcd-47e0-97b6-ad178a00ce15)) 
+
+(junction (at 217.805 147.955) (diameter 0) (color 0 0 0 0) (uuid 212fb81a-6a5c-4a0f-9ca8-95c9e9ede6a9)) 
+
+(junction (at 217.805 158.115) (diameter 0) (color 0 0 0 0) (uuid 6e102e3f-39c9-4449-b05c-64f2ce4a3820)) 
+
+(symbol (lib_id "Device:C") (at 227.33 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "89669d8c-070d-41ac-bda0-12a43bcfa094") 
+
+(property "Reference" "C20" (at 230.505 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 230.505 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 227.33 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 227.33 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 227.33 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "46dee1b3-a0b7-4f8d-a330-12ac1521a188")) (pin "2" (uuid "9fad85ce-d1fe-4749-8cd8-f23077b1aeca")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C20") (unit 1))))) 
+
+(wire (pts 
+
+(xy 227.33 149.225) 
+
+(xy 227.33 147.955)) (stroke (width 0) (type default)) (uuid b0a3ae5a-257f-491f-af02-3679177f656f)) 
+
+(wire (pts 
+
+(xy 227.33 156.845) 
+
+(xy 227.33 158.115)) (stroke (width 0) (type default)) (uuid 9964b21a-024b-4fa4-816e-3b95d2a94385)) 
+
+(junction (at 227.33 147.955) (diameter 0) (color 0 0 0 0) (uuid 72e9ada7-c870-4969-b55a-8afc2ec91447)) 
+
+(junction (at 227.33 158.115) (diameter 0) (color 0 0 0 0) (uuid 0ceb9537-325d-4559-b87f-a76a16414910)) 
+
+(symbol (lib_id "Device:C") (at 236.855 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b8b2b761-ce68-4eec-802b-946720031f67") 
+
+(property "Reference" "C21" (at 240.03 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 240.03 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 236.855 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 236.855 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 236.855 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "a5084af8-fd0b-42a8-a6e7-452b4db72809")) (pin "2" (uuid "5e115f11-f7f2-41ba-a872-c07a4541e9e9")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C21") (unit 1))))) 
+
+(wire (pts 
+
+(xy 236.855 149.225) 
+
+(xy 236.855 147.955)) (stroke (width 0) (type default)) (uuid 2d79aeb9-7231-427f-919f-834813d45210)) 
+
+(wire (pts 
+
+(xy 236.855 156.845) 
+
+(xy 236.855 158.115)) (stroke (width 0) (type default)) (uuid 10231c95-afa0-4255-9ca6-77e376276bac)) 
+
+(junction (at 236.855 147.955) (diameter 0) (color 0 0 0 0) (uuid 25186d55-fdaf-46db-92a2-b3f197b36bb3)) 
+
+(junction (at 236.855 158.115) (diameter 0) (color 0 0 0 0) (uuid 692bfd07-9474-4cf9-a4fa-37fec7cb33b0)) 
+
+(symbol (lib_id "Device:C") (at 246.38 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9d1eafb7-1bd6-4432-86a7-a7bebbebb4a4") 
+
+(property "Reference" "C22" (at 249.555 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 249.555 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 246.38 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 246.38 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 246.38 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e2bde7f2-c926-4594-a53c-fdf97920fc4f")) (pin "2" (uuid "729495a5-0ea5-4609-8bc8-d513565cab21")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C22") (unit 1))))) 
+
+(wire (pts 
+
+(xy 246.38 149.225) 
+
+(xy 246.38 147.955)) (stroke (width 0) (type default)) (uuid 4827e2b1-8cf9-4757-82e2-1f91508ae0bf)) 
+
+(wire (pts 
+
+(xy 246.38 156.845) 
+
+(xy 246.38 158.115)) (stroke (width 0) (type default)) (uuid 4a297cca-c004-477c-a661-1a7b75d64f6d)) 
+
+(junction (at 246.38 147.955) (diameter 0) (color 0 0 0 0) (uuid f61b72cc-4eab-44f6-8c0e-5d464b62e450)) 
+
+(junction (at 246.38 158.115) (diameter 0) (color 0 0 0 0) (uuid 47ce76ff-4eed-4186-a950-6da3308af0cf)) 
+
+(symbol (lib_id "Device:C") (at 255.905 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "10962b64-5e99-4431-9283-8196f76d793c") 
+
+(property "Reference" "C23" (at 259.08 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 259.08 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 255.905 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 255.905 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 255.905 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "196be3d8-4e47-46af-ade1-770ce34cf418")) (pin "2" (uuid "8168b378-9286-4514-bf9e-98c55709ea99")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C23") (unit 1))))) 
+
+(wire (pts 
+
+(xy 255.905 149.225) 
+
+(xy 255.905 147.955)) (stroke (width 0) (type default)) (uuid be985884-4abf-44cc-a0f6-92c94c21f163)) 
+
+(wire (pts 
+
+(xy 255.905 156.845) 
+
+(xy 255.905 158.115)) (stroke (width 0) (type default)) (uuid 7d047689-e0d3-49f0-89f2-a62261827422)) 
+
+(junction (at 255.905 147.955) (diameter 0) (color 0 0 0 0) (uuid 555af361-ab42-46d2-bb20-3f9e6da94d60)) 
+
+(junction (at 255.905 158.115) (diameter 0) (color 0 0 0 0) (uuid 1c920f2e-4bdf-4118-897f-6473c9f52cce)) 
+
+(symbol (lib_id "Device:C") (at 265.43 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6ffb1143-0a67-4ca5-8511-786b2e2cfef8") 
+
+(property "Reference" "C24" (at 268.605 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 268.605 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 265.43 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 265.43 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 265.43 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "31cf53b5-0a3f-46d0-bc0e-703bd6c30f9f")) (pin "2" (uuid "ed53f990-97cc-4d65-9f95-5fd193d6cf70")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C24") (unit 1))))) 
+
+(wire (pts 
+
+(xy 265.43 149.225) 
+
+(xy 265.43 147.955)) (stroke (width 0) (type default)) (uuid 88dd9fc9-7e87-476b-b3ed-3632a345938e)) 
+
+(wire (pts 
+
+(xy 265.43 156.845) 
+
+(xy 265.43 158.115)) (stroke (width 0) (type default)) (uuid 8d19acb5-61d1-4899-add0-87222f774e08)) 
+
+(junction (at 265.43 147.955) (diameter 0) (color 0 0 0 0) (uuid 16b112be-dcd1-4185-b364-7789e169347a)) 
+
+(junction (at 265.43 158.115) (diameter 0) (color 0 0 0 0) (uuid 2f635755-8ff8-4a88-a740-f588e47cc133)) 
+
+(symbol (lib_id "Device:C") (at 274.955 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "03d67505-f7ea-4252-b5b2-90e141f0d7e0") 
+
+(property "Reference" "C25" (at 278.13 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 278.13 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 274.955 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 274.955 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 274.955 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "64a8e6ec-72f3-4910-a91d-7a1bf7e8e995")) (pin "2" (uuid "b3a967b2-e94d-4cec-b82b-b7adc172833a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C25") (unit 1))))) 
+
+(wire (pts 
+
+(xy 274.955 149.225) 
+
+(xy 274.955 147.955)) (stroke (width 0) (type default)) (uuid 1c502908-3913-4f1f-bf0d-48bc1a656978)) 
+
+(wire (pts 
+
+(xy 274.955 156.845) 
+
+(xy 274.955 158.115)) (stroke (width 0) (type default)) (uuid 4883d1ce-bc16-41a3-a109-16cf6f2a1d8c)) 
+
+(junction (at 274.955 147.955) (diameter 0) (color 0 0 0 0) (uuid 2d797f46-8677-49dc-9640-e3e24772cb4b)) 
+
+(junction (at 274.955 158.115) (diameter 0) (color 0 0 0 0) (uuid 96987034-15dd-4e60-abc3-f966176ee330)) 
+
+(symbol (lib_id "Device:C") (at 284.48 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "44a0757a-30d4-405b-91ac-9d404f7338e4") 
+
+(property "Reference" "C26" (at 287.655 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 287.655 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 284.48 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 284.48 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 284.48 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "a8bf9d49-3beb-4733-bf5e-55795f2b69df")) (pin "2" (uuid "e221a44d-69d6-48f6-87ea-b46025a40d13")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C26") (unit 1))))) 
+
+(wire (pts 
+
+(xy 284.48 149.225) 
+
+(xy 284.48 147.955)) (stroke (width 0) (type default)) (uuid 9cb56ab3-9a76-4737-a954-3f50043aca35)) 
+
+(wire (pts 
+
+(xy 284.48 156.845) 
+
+(xy 284.48 158.115)) (stroke (width 0) (type default)) (uuid d0f09d52-f9cf-4d57-b324-0e5be634b653)) 
+
+(junction (at 284.48 147.955) (diameter 0) (color 0 0 0 0) (uuid 3e996e16-1467-4eab-a6a4-34d3bf326663)) 
+
+(junction (at 284.48 158.115) (diameter 0) (color 0 0 0 0) (uuid f3b8cd6b-bd1b-44bf-99b2-f0a6b902a35d)) 
+
+(symbol (lib_id "Device:C") (at 294.005 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "23d15994-394c-483d-a6a6-1ffd19c7006f") 
+
+(property "Reference" "C27" (at 297.18 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 297.18 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 294.005 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 294.005 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 294.005 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "54861bac-0bd3-4162-8906-9e648105baf7")) (pin "2" (uuid "f3616480-6317-4f66-a7f2-48dfaf49900a")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C27") (unit 1))))) 
+
+(wire (pts 
+
+(xy 294.005 149.225) 
+
+(xy 294.005 147.955)) (stroke (width 0) (type default)) (uuid 6b77b257-7392-46fb-a75b-2e3c04ef3c81)) 
+
+(wire (pts 
+
+(xy 294.005 156.845) 
+
+(xy 294.005 158.115)) (stroke (width 0) (type default)) (uuid 35454bc0-4e5d-4a7d-83c6-2693764ec299)) 
+
+(junction (at 294.005 147.955) (diameter 0) (color 0 0 0 0) (uuid 2da0322f-6c10-432c-97cf-8673e5500c1e)) 
+
+(junction (at 294.005 158.115) (diameter 0) (color 0 0 0 0) (uuid 7619fe40-a4f0-4c20-b0d5-73c472c38088)) 
+
+(symbol (lib_id "Device:C") (at 303.53 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1077c4ac-621e-40ef-9d85-49205f76ad9b") 
+
+(property "Reference" "C28" (at 306.705 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 306.705 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 303.53 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 303.53 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 303.53 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6c114934-788a-4d34-9e9a-7e2711094aa6")) (pin "2" (uuid "477dddb6-fbb4-4629-843b-31a52c10ec94")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C28") (unit 1))))) 
+
+(wire (pts 
+
+(xy 303.53 149.225) 
+
+(xy 303.53 147.955)) (stroke (width 0) (type default)) (uuid 3ea79bdf-ffe1-4be4-90bb-c4f16f254a39)) 
+
+(wire (pts 
+
+(xy 303.53 156.845) 
+
+(xy 303.53 158.115)) (stroke (width 0) (type default)) (uuid 8f4f02e3-f570-4d21-9920-aa9d090057f3)) 
+
+(junction (at 303.53 147.955) (diameter 0) (color 0 0 0 0) (uuid ac13d43b-fbf7-461f-9b25-9921bbdba27c)) 
+
+(junction (at 303.53 158.115) (diameter 0) (color 0 0 0 0) (uuid c1d932f1-2579-4f91-bc5f-cba97838533b)) 
+
+(symbol (lib_id "Device:C") (at 313.055 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5784068e-9ea5-46ee-99ad-df1fcc1f50b3") 
+
+(property "Reference" "C29" (at 316.23 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 316.23 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 313.055 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 313.055 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 313.055 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "503d4fe1-eda3-40f1-939a-22e2ad55454d")) (pin "2" (uuid "f98cd044-2c11-4509-980d-0955ff75eceb")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C29") (unit 1))))) 
+
+(wire (pts 
+
+(xy 313.055 149.225) 
+
+(xy 313.055 147.955)) (stroke (width 0) (type default)) (uuid 21754a9b-0ad4-493c-bf03-5f5d9b64cb0a)) 
+
+(wire (pts 
+
+(xy 313.055 156.845) 
+
+(xy 313.055 158.115)) (stroke (width 0) (type default)) (uuid eb05fb64-47c9-41de-9682-b1b6a2adba6f)) 
+
+(junction (at 313.055 147.955) (diameter 0) (color 0 0 0 0) (uuid 75356d2e-0f99-458d-a2fe-d76355e5f1bd)) 
+
+(junction (at 313.055 158.115) (diameter 0) (color 0 0 0 0) (uuid a8386cf3-267a-4e7c-b5e6-ae534b577ec5)) 
+
+(symbol (lib_id "Device:C") (at 322.58 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "dd9df39a-b771-4167-a06b-0eae54988531") 
+
+(property "Reference" "C30" (at 325.755 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 325.755 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 322.58 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 322.58 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 322.58 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "4a29a5ac-bd7b-4a2b-8791-d53fb6498066")) (pin "2" (uuid "9dbee1fe-081b-4b1e-865b-3dc11b153b80")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C30") (unit 1))))) 
+
+(wire (pts 
+
+(xy 322.58 149.225) 
+
+(xy 322.58 147.955)) (stroke (width 0) (type default)) (uuid 2c614c52-7db4-45d8-b331-09c3d890e055)) 
+
+(wire (pts 
+
+(xy 322.58 156.845) 
+
+(xy 322.58 158.115)) (stroke (width 0) (type default)) (uuid 34b26321-7517-412c-9125-9697bc8c2cb3)) 
+
+(junction (at 322.58 147.955) (diameter 0) (color 0 0 0 0) (uuid 632b245d-6b87-437d-9c68-c56bf92c3084)) 
+
+(junction (at 322.58 158.115) (diameter 0) (color 0 0 0 0) (uuid fdd2ebcf-da8f-4332-bb4d-e139f47ea6f4)) 
+
+(symbol (lib_id "Device:C") (at 332.105 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4ae875b3-0f37-4bda-b1e8-91ae3cd3d7b1") 
+
+(property "Reference" "C31" (at 335.28 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 335.28 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 332.105 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 332.105 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 332.105 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6ae5fda4-a916-4dee-885b-3eb246dea8b5")) (pin "2" (uuid "867aa79b-d329-4eed-8bcc-db5235494bd4")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C31") (unit 1))))) 
+
+(wire (pts 
+
+(xy 332.105 149.225) 
+
+(xy 332.105 147.955)) (stroke (width 0) (type default)) (uuid e8ff3508-5cd0-4b12-87c2-e418dff0ab05)) 
+
+(wire (pts 
+
+(xy 332.105 156.845) 
+
+(xy 332.105 158.115)) (stroke (width 0) (type default)) (uuid acbdbb1f-bc46-4040-aff9-ade1d87adf77)) 
+
+(junction (at 332.105 147.955) (diameter 0) (color 0 0 0 0) (uuid 6aa311d4-0be3-41ec-a2ff-0d49d57d8fb0)) 
+
+(junction (at 332.105 158.115) (diameter 0) (color 0 0 0 0) (uuid ab181c36-6f2f-40c6-9f2e-9936e4445244)) 
+
+(symbol (lib_id "Device:C") (at 341.63 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c8f9f75e-4002-4e46-a8a8-5fa78594d526") 
+
+(property "Reference" "C32" (at 344.805 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 344.805 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 341.63 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 341.63 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 341.63 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "804dd088-27fe-4e30-9fac-57e9d6dd26ab")) (pin "2" (uuid "04d28bd3-387a-4ff0-83ec-2a9624204d0e")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C32") (unit 1))))) 
+
+(wire (pts 
+
+(xy 341.63 149.225) 
+
+(xy 341.63 147.955)) (stroke (width 0) (type default)) (uuid 6c9ff6a0-82f4-4f9a-8786-6ce19a200ddc)) 
+
+(wire (pts 
+
+(xy 341.63 156.845) 
+
+(xy 341.63 158.115)) (stroke (width 0) (type default)) (uuid c8aa55f5-0468-4dd3-8a34-e7b06016f2a5)) 
+
+(junction (at 341.63 147.955) (diameter 0) (color 0 0 0 0) (uuid 0eb1c3e9-0e00-4056-b826-5d8e598e96e6)) 
+
+(junction (at 341.63 158.115) (diameter 0) (color 0 0 0 0) (uuid a6208533-08fe-45ac-be1f-316762dfa38b)) 
+
+(symbol (lib_id "Device:C") (at 351.155 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cd09e9ce-2909-4ccb-a4be-d54b72d3ef2c") 
+
+(property "Reference" "C33" (at 354.33 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 354.33 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 351.155 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 351.155 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 351.155 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "43ff6e27-b0f1-426e-a74c-f6e53a976d78")) (pin "2" (uuid "e44de0eb-5025-41ab-af0a-a7b6d13d5778")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C33") (unit 1))))) 
+
+(wire (pts 
+
+(xy 351.155 149.225) 
+
+(xy 351.155 147.955)) (stroke (width 0) (type default)) (uuid b2ba011b-7307-41a5-ab20-29d97a65df01)) 
+
+(wire (pts 
+
+(xy 351.155 156.845) 
+
+(xy 351.155 158.115)) (stroke (width 0) (type default)) (uuid d7e3b3f8-adb6-4300-b10e-f8909fc1733d)) 
+
+(junction (at 351.155 147.955) (diameter 0) (color 0 0 0 0) (uuid f9b6b4af-81e7-41bc-9657-ceb894037edd)) 
+
+(junction (at 351.155 158.115) (diameter 0) (color 0 0 0 0) (uuid e633b211-c6cc-4f97-adce-3af18fadde60)) 
+
+(symbol (lib_id "Device:C") (at 360.68 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9a34a3c1-738d-4752-a0d6-770f86b64075") 
+
+(property "Reference" "C34" (at 363.855 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 363.855 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 360.68 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 360.68 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 360.68 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "34829203-464a-4650-b903-75f2bac663c8")) (pin "2" (uuid "bdbdf529-d4e9-4e91-bd40-0682269abf03")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C34") (unit 1))))) 
+
+(wire (pts 
+
+(xy 360.68 149.225) 
+
+(xy 360.68 147.955)) (stroke (width 0) (type default)) (uuid b1551f65-9074-40aa-bb30-9f951c5d4f7e)) 
+
+(wire (pts 
+
+(xy 360.68 156.845) 
+
+(xy 360.68 158.115)) (stroke (width 0) (type default)) (uuid 549051d3-68b4-4866-b72d-5ddc9ae4a5a1)) 
+
+(junction (at 360.68 147.955) (diameter 0) (color 0 0 0 0) (uuid e6a3b182-5961-429c-aa53-0f1912042797)) 
+
+(junction (at 360.68 158.115) (diameter 0) (color 0 0 0 0) (uuid 6532f2b0-f82d-4992-a8be-126d5733ad16)) 
+
+(symbol (lib_id "Device:C") (at 370.205 153.035 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1f0e59db-d076-4cd7-bec1-e16f78ac441b") 
+
+(property "Reference" "C35" (at 373.38 151.835 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 373.38 154.375 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 370.205 158.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 370.205 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 370.205 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "c227b4fd-a597-4b64-8416-8518a830b63e")) (pin "2" (uuid "990a3c15-0650-4b07-bad5-28c8178a1907")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C35") (unit 1))))) 
+
+(wire (pts 
+
+(xy 370.205 149.225) 
+
+(xy 370.205 147.955)) (stroke (width 0) (type default)) (uuid 19088c2e-a1df-4a4e-b8e7-14a2f98f94ef)) 
+
+(wire (pts 
+
+(xy 370.205 156.845) 
+
+(xy 370.205 158.115)) (stroke (width 0) (type default)) (uuid 54d8b12a-f270-46c5-8233-b69d9eb57d4f)) 
+
+(wire (pts 
+
+(xy 46.355 147.955) 
+
+(xy 55.88 147.955)) (stroke (width 0) (type default)) (uuid 8cd1d2a2-c38f-4e18-8802-e55d55db888a)) 
+
+(wire (pts 
+
+(xy 46.355 158.115) 
+
+(xy 55.88 158.115)) (stroke (width 0) (type default)) (uuid 39c904d4-70da-4e09-8834-a5c62cde08aa)) 
+
+(wire (pts 
+
+(xy 55.88 147.955) 
+
+(xy 65.405 147.955)) (stroke (width 0) (type default)) (uuid 2e5c55b3-da8a-4d2d-896d-5641f75f56e6)) 
+
+(wire (pts 
+
+(xy 55.88 158.115) 
+
+(xy 65.405 158.115)) (stroke (width 0) (type default)) (uuid 5d1ab1f9-df91-4e20-bc59-a53f88a5e5e3)) 
+
+(wire (pts 
+
+(xy 65.405 147.955) 
+
+(xy 74.93 147.955)) (stroke (width 0) (type default)) (uuid 08aa8393-f5a0-4cf0-a400-137db92a7efc)) 
+
+(wire (pts 
+
+(xy 65.405 158.115) 
+
+(xy 74.93 158.115)) (stroke (width 0) (type default)) (uuid 5a7198aa-0f74-419b-a99e-5355dc628484)) 
+
+(wire (pts 
+
+(xy 74.93 147.955) 
+
+(xy 84.455 147.955)) (stroke (width 0) (type default)) (uuid ba457ff7-0fba-4a13-9c79-27c511ff6952)) 
+
+(wire (pts 
+
+(xy 74.93 158.115) 
+
+(xy 84.455 158.115)) (stroke (width 0) (type default)) (uuid 5f75d7c5-78b1-43c1-b8ff-83540dc28be3)) 
+
+(wire (pts 
+
+(xy 84.455 147.955) 
+
+(xy 93.98 147.955)) (stroke (width 0) (type default)) (uuid 969d908b-7637-4141-9a8f-46dbbe677dc4)) 
+
+(wire (pts 
+
+(xy 84.455 158.115) 
+
+(xy 93.98 158.115)) (stroke (width 0) (type default)) (uuid 7dbcadfe-1986-420d-819f-1d9c52ae39fb)) 
+
+(wire (pts 
+
+(xy 93.98 147.955) 
+
+(xy 103.505 147.955)) (stroke (width 0) (type default)) (uuid 4c608c63-0ac9-4f3b-b8c9-355c4e1cc84f)) 
+
+(wire (pts 
+
+(xy 93.98 158.115) 
+
+(xy 103.505 158.115)) (stroke (width 0) (type default)) (uuid a9a2d00b-0a58-4206-8e6a-73b293897530)) 
+
+(wire (pts 
+
+(xy 103.505 147.955) 
+
+(xy 113.03 147.955)) (stroke (width 0) (type default)) (uuid 506d2d78-0496-45d8-8d65-261cb366d105)) 
+
+(wire (pts 
+
+(xy 103.505 158.115) 
+
+(xy 113.03 158.115)) (stroke (width 0) (type default)) (uuid 5bbaf7d9-c91b-40ef-8e0f-7312136f354e)) 
+
+(wire (pts 
+
+(xy 113.03 147.955) 
+
+(xy 122.555 147.955)) (stroke (width 0) (type default)) (uuid 6552522a-1c6d-46c5-80fc-7989e55b2112)) 
+
+(wire (pts 
+
+(xy 113.03 158.115) 
+
+(xy 122.555 158.115)) (stroke (width 0) (type default)) (uuid 01f066e9-701c-448f-b273-95644d735a8c)) 
+
+(wire (pts 
+
+(xy 122.555 147.955) 
+
+(xy 132.08 147.955)) (stroke (width 0) (type default)) (uuid ae06ad00-d333-435a-aa16-93fc52887df3)) 
+
+(wire (pts 
+
+(xy 122.555 158.115) 
+
+(xy 132.08 158.115)) (stroke (width 0) (type default)) (uuid d5aa4f04-1935-49ed-a0ab-d84cd2c5fdcc)) 
+
+(wire (pts 
+
+(xy 132.08 147.955) 
+
+(xy 141.605 147.955)) (stroke (width 0) (type default)) (uuid 3bd5d92a-390a-4f60-8524-e14b781e2e2b)) 
+
+(wire (pts 
+
+(xy 132.08 158.115) 
+
+(xy 141.605 158.115)) (stroke (width 0) (type default)) (uuid f29c1b57-50f8-45a9-ac1f-b9bcf910a3e3)) 
+
+(wire (pts 
+
+(xy 141.605 147.955) 
+
+(xy 151.13 147.955)) (stroke (width 0) (type default)) (uuid b98f433f-a2f0-4245-9974-3fa07253bd79)) 
+
+(wire (pts 
+
+(xy 141.605 158.115) 
+
+(xy 151.13 158.115)) (stroke (width 0) (type default)) (uuid 8abc18f3-0fa9-408b-9cf0-da905e8316fb)) 
+
+(wire (pts 
+
+(xy 151.13 147.955) 
+
+(xy 160.655 147.955)) (stroke (width 0) (type default)) (uuid 776f18d1-c4ae-498d-817a-10eb295890a5)) 
+
+(wire (pts 
+
+(xy 151.13 158.115) 
+
+(xy 160.655 158.115)) (stroke (width 0) (type default)) (uuid cf8d8022-f616-485d-8239-93a84e7cbbd7)) 
+
+(wire (pts 
+
+(xy 160.655 147.955) 
+
+(xy 170.18 147.955)) (stroke (width 0) (type default)) (uuid 16daf981-1bbd-4d99-a002-e0c673aacefa)) 
+
+(wire (pts 
+
+(xy 160.655 158.115) 
+
+(xy 170.18 158.115)) (stroke (width 0) (type default)) (uuid cb7aa11f-a3d9-4efa-962b-54d5286a8ed8)) 
+
+(wire (pts 
+
+(xy 170.18 147.955) 
+
+(xy 179.705 147.955)) (stroke (width 0) (type default)) (uuid 271687f6-ce3c-407b-a11d-3efdc1ae6c6b)) 
+
+(wire (pts 
+
+(xy 170.18 158.115) 
+
+(xy 179.705 158.115)) (stroke (width 0) (type default)) (uuid e8e1f217-b66b-4e94-8c23-1b5b79c15cf3)) 
+
+(wire (pts 
+
+(xy 179.705 147.955) 
+
+(xy 189.23 147.955)) (stroke (width 0) (type default)) (uuid 9833590f-3f9f-4bd1-a4ec-a39516766717)) 
+
+(wire (pts 
+
+(xy 179.705 158.115) 
+
+(xy 189.23 158.115)) (stroke (width 0) (type default)) (uuid da6694f4-557d-4481-a1b3-dd0b79677255)) 
+
+(wire (pts 
+
+(xy 189.23 147.955) 
+
+(xy 198.755 147.955)) (stroke (width 0) (type default)) (uuid 731adc83-71c3-4079-9cfb-ac48e747254b)) 
+
+(wire (pts 
+
+(xy 189.23 158.115) 
+
+(xy 198.755 158.115)) (stroke (width 0) (type default)) (uuid a7854c9e-f821-437a-92f3-0a8671e29b8b)) 
+
+(wire (pts 
+
+(xy 198.755 147.955) 
+
+(xy 208.28 147.955)) (stroke (width 0) (type default)) (uuid 7ec7b8b4-20ba-4625-9305-859a2b9b1184)) 
+
+(wire (pts 
+
+(xy 198.755 158.115) 
+
+(xy 208.28 158.115)) (stroke (width 0) (type default)) (uuid 6fa03b65-64a7-47cd-bd85-0cee99b30723)) 
+
+(wire (pts 
+
+(xy 208.28 147.955) 
+
+(xy 217.805 147.955)) (stroke (width 0) (type default)) (uuid 553e9558-be03-422e-af26-8784556290dd)) 
+
+(wire (pts 
+
+(xy 208.28 158.115) 
+
+(xy 217.805 158.115)) (stroke (width 0) (type default)) (uuid 5c952a35-4b10-4326-b8f3-551aa8a5d70d)) 
+
+(wire (pts 
+
+(xy 217.805 147.955) 
+
+(xy 227.33 147.955)) (stroke (width 0) (type default)) (uuid c61765cd-da1c-495c-af4c-e8c4f817194f)) 
+
+(wire (pts 
+
+(xy 217.805 158.115) 
+
+(xy 227.33 158.115)) (stroke (width 0) (type default)) (uuid 2f2a82db-43eb-4c15-b053-d3be8a3d87db)) 
+
+(wire (pts 
+
+(xy 227.33 147.955) 
+
+(xy 236.855 147.955)) (stroke (width 0) (type default)) (uuid 42f7a29a-5a24-4f69-956d-9c7e8de8b896)) 
+
+(wire (pts 
+
+(xy 227.33 158.115) 
+
+(xy 236.855 158.115)) (stroke (width 0) (type default)) (uuid b790325f-ed79-4611-aaa0-2bf517f507fb)) 
+
+(wire (pts 
+
+(xy 236.855 147.955) 
+
+(xy 246.38 147.955)) (stroke (width 0) (type default)) (uuid cf2d2406-dacd-4707-9201-f8b847e60f24)) 
+
+(wire (pts 
+
+(xy 236.855 158.115) 
+
+(xy 246.38 158.115)) (stroke (width 0) (type default)) (uuid 4b7f6e06-e982-476b-aa8a-4901839b4cd1)) 
+
+(wire (pts 
+
+(xy 246.38 147.955) 
+
+(xy 255.905 147.955)) (stroke (width 0) (type default)) (uuid 2d53c064-3a7f-421b-880d-cbdd23917a9f)) 
+
+(wire (pts 
+
+(xy 246.38 158.115) 
+
+(xy 255.905 158.115)) (stroke (width 0) (type default)) (uuid 03df60d9-e3ba-4d27-abbd-46d3a6fcb2d8)) 
+
+(wire (pts 
+
+(xy 255.905 147.955) 
+
+(xy 265.43 147.955)) (stroke (width 0) (type default)) (uuid afff7d31-8a74-4608-979a-2c8d61064cab)) 
+
+(wire (pts 
+
+(xy 255.905 158.115) 
+
+(xy 265.43 158.115)) (stroke (width 0) (type default)) (uuid 90a18911-b5ed-4546-b892-2ce86b231708)) 
+
+(wire (pts 
+
+(xy 265.43 147.955) 
+
+(xy 274.955 147.955)) (stroke (width 0) (type default)) (uuid 3359057c-2612-46f4-b47f-47355ada0d01)) 
+
+(wire (pts 
+
+(xy 265.43 158.115) 
+
+(xy 274.955 158.115)) (stroke (width 0) (type default)) (uuid 7631c2f7-148f-4578-97f5-9a14aeb2edb4)) 
+
+(wire (pts 
+
+(xy 274.955 147.955) 
+
+(xy 284.48 147.955)) (stroke (width 0) (type default)) (uuid 0b3c11ed-daca-46db-a3fe-b65b175de778)) 
+
+(wire (pts 
+
+(xy 274.955 158.115) 
+
+(xy 284.48 158.115)) (stroke (width 0) (type default)) (uuid 09f13e9a-a222-4949-b30f-d6a21df20ec1)) 
+
+(wire (pts 
+
+(xy 284.48 147.955) 
+
+(xy 294.005 147.955)) (stroke (width 0) (type default)) (uuid 7bf5470d-26cf-4ecb-b605-c572bc0c4517)) 
+
+(wire (pts 
+
+(xy 284.48 158.115) 
+
+(xy 294.005 158.115)) (stroke (width 0) (type default)) (uuid 27cacafd-c586-4968-90fd-07d1a150688b)) 
+
+(wire (pts 
+
+(xy 294.005 147.955) 
+
+(xy 303.53 147.955)) (stroke (width 0) (type default)) (uuid a2c2fd54-48b2-42bc-8995-602ab264016a)) 
+
+(wire (pts 
+
+(xy 294.005 158.115) 
+
+(xy 303.53 158.115)) (stroke (width 0) (type default)) (uuid 738ee9eb-335e-4a59-8265-43e18d9fa962)) 
+
+(wire (pts 
+
+(xy 303.53 147.955) 
+
+(xy 313.055 147.955)) (stroke (width 0) (type default)) (uuid 660fb4ac-1b20-4d3e-af56-6c9182c1c134)) 
+
+(wire (pts 
+
+(xy 303.53 158.115) 
+
+(xy 313.055 158.115)) (stroke (width 0) (type default)) (uuid 8efe1050-33bd-4670-b295-519133311061)) 
+
+(wire (pts 
+
+(xy 313.055 147.955) 
+
+(xy 322.58 147.955)) (stroke (width 0) (type default)) (uuid 83f3fc7c-512b-48e1-959e-43e87295b3af)) 
+
+(wire (pts 
+
+(xy 313.055 158.115) 
+
+(xy 322.58 158.115)) (stroke (width 0) (type default)) (uuid a6e750ac-3d37-4516-aab9-f2f70bf1891d)) 
+
+(wire (pts 
+
+(xy 322.58 147.955) 
+
+(xy 332.105 147.955)) (stroke (width 0) (type default)) (uuid c1fc8b66-a9cf-44ad-a217-589189f169fa)) 
+
+(wire (pts 
+
+(xy 322.58 158.115) 
+
+(xy 332.105 158.115)) (stroke (width 0) (type default)) (uuid eec0db44-cbf2-41d2-b624-3c15d8e59506)) 
+
+(wire (pts 
+
+(xy 332.105 147.955) 
+
+(xy 341.63 147.955)) (stroke (width 0) (type default)) (uuid 3821082a-448e-4172-ad0d-46b71d4cdcb8)) 
+
+(wire (pts 
+
+(xy 332.105 158.115) 
+
+(xy 341.63 158.115)) (stroke (width 0) (type default)) (uuid 05e312d5-0e52-484a-9b11-785c577cbcdb)) 
+
+(wire (pts 
+
+(xy 341.63 147.955) 
+
+(xy 351.155 147.955)) (stroke (width 0) (type default)) (uuid 5995cb9f-8c4c-4b6f-9b0f-cbf412171c28)) 
+
+(wire (pts 
+
+(xy 341.63 158.115) 
+
+(xy 351.155 158.115)) (stroke (width 0) (type default)) (uuid c0de3be7-353d-46cb-998b-ba0ca43567e8)) 
+
+(wire (pts 
+
+(xy 351.155 147.955) 
+
+(xy 360.68 147.955)) (stroke (width 0) (type default)) (uuid e73f16c4-83e0-480e-a681-986cc71f411f)) 
+
+(wire (pts 
+
+(xy 351.155 158.115) 
+
+(xy 360.68 158.115)) (stroke (width 0) (type default)) (uuid 0228222b-453a-40b6-87c8-9c4fe5b10cfe)) 
+
+(wire (pts 
+
+(xy 360.68 147.955) 
+
+(xy 370.205 147.955)) (stroke (width 0) (type default)) (uuid 1768104f-8c05-49c9-8501-352b967dc6cd)) 
+
+(wire (pts 
+
+(xy 360.68 158.115) 
+
+(xy 370.205 158.115)) (stroke (width 0) (type default)) (uuid 9d677c55-218e-4054-84a7-726d484f498b)) 
+
+(wire (pts 
+
+(xy 40.005 147.955) 
+
+(xy 46.355 147.955)) (stroke (width 0) (type default)) (uuid c8099733-04a6-4f9e-a0a1-f72d19809f1f)) 
+
+(wire (pts 
+
+(xy 33.655 158.115) 
+
+(xy 46.355 158.115)) (stroke (width 0) (type default)) (uuid 4d230113-af43-405a-baff-1a0b28675668)) 
+
+(symbol (lib_id "Device:C") (at 46.355 168.275 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "fcbd7776-efa2-4903-8078-467108ab57dd") 
+
+(property "Reference" "C36" (at 49.53 167.075 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 49.53 169.615 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 46.355 173.275 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 46.355 168.275 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 46.355 168.275 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "87324fad-6120-4e6a-920d-00deaf75ce54")) (pin "2" (uuid "f0df6a49-cf71-4037-bcd4-bb2967dd19d6")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C36") (unit 1))))) 
+
+(wire (pts 
+
+(xy 46.355 164.465) 
+
+(xy 46.355 163.195)) (stroke (width 0) (type default)) (uuid 5813d507-b007-4f1f-b95c-ab5b9098936c)) 
+
+(wire (pts 
+
+(xy 46.355 172.085) 
+
+(xy 46.355 173.355)) (stroke (width 0) (type default)) (uuid 62498df2-5364-490a-ba1a-2938632cf499)) 
+
+(junction (at 46.355 163.195) (diameter 0) (color 0 0 0 0) (uuid b3cd44fa-20e2-4a66-9878-1ddafb7ea5fc)) 
+
+(junction (at 46.355 173.355) (diameter 0) (color 0 0 0 0) (uuid 247a6662-54c2-483a-935b-b8ad108663f5)) 
+
+(symbol (lib_id "Device:C") (at 55.88 168.275 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c4e0b952-aa14-410b-86d5-5cefe4ebcd1c") 
+
+(property "Reference" "C37" (at 59.055 167.075 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "C" (at 59.055 169.615 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 55.88 173.275 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 55.88 168.275 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Unpolarized capacitor" (at 55.88 168.275 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "8a0b1c91-8b32-4c3f-8d5e-c84a603108a6")) (pin "2" (uuid "19069b3d-35bd-484e-b609-4cc457aed79f")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "C37") (unit 1))))) 
+
+(wire (pts 
+
+(xy 55.88 164.465) 
+
+(xy 55.88 163.195)) (stroke (width 0) (type default)) (uuid 84c677ce-12f7-469c-84f5-7ecd18987acc)) 
+
+(wire (pts 
+
+(xy 55.88 172.085) 
+
+(xy 55.88 173.355)) (stroke (width 0) (type default)) (uuid 92bfb89d-589c-4070-84de-0fb0f9412f68)) 
+
+(wire (pts 
+
+(xy 46.355 163.195) 
+
+(xy 55.88 163.195)) (stroke (width 0) (type default)) (uuid 8064f307-6a46-4c0b-8328-702274b1dc2d)) 
+
+(wire (pts 
+
+(xy 46.355 173.355) 
+
+(xy 55.88 173.355)) (stroke (width 0) (type default)) (uuid 5192c64a-1e1b-4954-a5a5-9a8cd50d0567)) 
+
+(wire (pts 
+
+(xy 40.005 163.195) 
+
+(xy 46.355 163.195)) (stroke (width 0) (type default)) (uuid 0a4f62e9-e25c-430c-bee3-bb632b5dbb61)) 
+
+(wire (pts 
+
+(xy 33.655 173.355) 
+
+(xy 46.355 173.355)) (stroke (width 0) (type default)) (uuid 4a5e4bba-6ae7-431d-9c87-0121c5b6ce85)) 
+
+(wire (pts 
+
+(xy 40.005 147.955) 
+
+(xy 40.005 163.195)) (stroke (width 0) (type default)) (uuid f3fffe0b-e532-4d02-89db-0ff888898b35)) 
+
+(wire (pts 
+
+(xy 33.655 158.115) 
+
+(xy 33.655 173.355)) (stroke (width 0) (type default)) (uuid 2a2c8eee-777b-4d0a-8ccc-f75db76e1acc)) 
+
+(symbol (lib_id "power:VCC") (at 40.005 146.685 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f6f63c52-dbd2-4333-8fc7-f006ae7aa870") 
+
+(property "Reference" "#PWR75" (at 40.005 150.875 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "VCC" (at 40.005 142.125 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 40.005 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 40.005 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"VCC\"" (at 40.005 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ab55d17a-5d12-4722-850b-9ff0b2c11026")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR75") (unit 1))))) 
+
+(wire (pts 
+
+(xy 40.005 147.955) 
+
+(xy 40.005 146.685)) (stroke (width 0) (type default)) (uuid 96a30059-2de8-4ede-9d1d-134bd01c7feb)) 
+
+(symbol (lib_id "power:GND") (at 33.655 146.685 180) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a06b950d-b020-408a-903b-7673ff508f58") 
+
+(property "Reference" "#PWR76" (at 33.655 153.035 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "GND" (at 33.655 142.24 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 33.655 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Datasheet" "" (at 33.655 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) 
+
+(property "Description" "Power symbol creates a global label with name \"GND\" , ground" (at 33.655 146.685 0) (hide yes) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "e0c7e9a3-c692-4347-be21-644fd0877f4c")) (instances (project "dyad-main-right" (path "/e8032acb-6cb2-470a-bcb8-84c273afb8bb" (reference "#PWR76") (unit 1))))) 
+
+(wire (pts 
+
+(xy 33.655 158.115) 
+
+(xy 33.655 146.685)) (stroke (width 0) (type default)) (uuid 77f219f4-2644-4fde-a072-7dbd93b37a28)) 
+
+(junction (at 40.005 147.955) (diameter 0) (color 0 0 0 0) (uuid 123e8d2e-ff7d-4e9e-95d6-1594d9cae659)) 
+
+(junction (at 33.655 158.115) (diameter 0) (color 0 0 0 0) (uuid 35831067-0567-4271-bc66-386c2e33f170)))

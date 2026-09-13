@@ -35,6 +35,17 @@
   - **easyeda2kicad.py** / **JLC2KiCad_lib** — pull footprint + 3D model straight from the LCSC part number for the JLCPCB-PCBA'd parts (W25Q128JVSIQ, AP2112K-3.3, USBLC6-2SC6, the RP2040 itself) so the design-side footprint matches the assembly-side part exactly, rather than trusting a hand-picked generic footprint.
   - Install marbastlib and kicad-kbplacer through **KiCad PCM** rather than manual vendoring, where possible (marbastlib repository URL above).
 
+### Environment gotchas found in practice (2026-09-13)
+
+- **`pcbnew` imports only under `/usr/bin/python3`.** `python3` is mise-shimmed and cannot see it. The project venv is created with `--system-site-packages` from the system interpreter for this reason.
+- **KiCad 10.0.6's own `pcbnew.py` is broken on Python 3.14.** Container `__iter__` methods call `it.next()`, a Python-2 idiom, while this SWIG build exposes only `__next__`. Any `GetTracks()` / `GetDrawings()` / `GetFootprints()` iteration raises `AttributeError`. `hardware/kicad_compat.py` patches it; import that before `pcbnew` in every script.
+- **kbplacer needs the `[schematic]` extra** (`kicad-skip`) or `--create-sch-file` fails with "Requires optional schematic dependencies".
+- **kbplacer takes absolute `.pretty` paths**, not library nicknames, so no fp-lib-table registration is needed. Handy, because PCM installed marbastlib without registering it anywhere.
+- **Width templates must match the library's own spelling.** marbastlib names widths `1u`, `1.25u`; a plain `{}` renders 1.0 as `1.0u` and fails to load. Use `{:g}`.
+- **`--additional-elements` REPLACES the default** rather than adding to it. Omitting `ST{}` silently leaves stabilizers stranded at the origin.
+- **`--create-led-pcb-elements` does not position anything.** It creates and nets the LEDs and capacitors but leaves every one stacked at (0,0) unless they are also named in `--additional-elements`.
+- **`GetBoardEdgesBoundingBox()` counts footprint-internal `Edge.Cuts`.** The reverse-mount SK6812MINI-E footprint cuts its own hole, so 640 of them inflate the reported board size. Measure the outline from board-level drawings only.
+
 ## Case CAD
 
 Parametric, driven by the same key-position data as the PCB (`hardware/layout/`), per PLAN.md §4/§6 Phase 4.
