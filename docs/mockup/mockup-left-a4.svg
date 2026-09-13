@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="297.0mm" height="210.0mm" viewBox="0 0 297.0 210.0" font-family="sans-serif">
 <rect width="297.0" height="210.0" fill="#ffffff"/>
-<text x="10.0" y="15.0" font-size="5" font-weight="bold" fill="#000">Hasukey both · LEFT half — GC9A01 display pod</text>
+<text x="10.0" y="15.0" font-size="5" font-weight="bold" fill="#000">Hasukey both · LEFT half — GC9A01 display pod (50 mm ring)</text>
 <text x="10.0" y="21.5" font-size="3.4" fill="#c00" font-weight="bold">PRINT AT 100% / "Actual size". Turn OFF "Fit to page" and "Shrink oversized pages".</text>
 <text x="10.0" y="27.0" font-size="3.2" fill="#444">1u = 19.05 mm · keycap outline = 18 mm · verify with the ruler before trusting this sheet.</text>
 <rect x="10.0" y="194.0" width="100" height="4" fill="none" stroke="#000" stroke-width="0.35"/>
@@ -48,13 +48,13 @@
 <g><rect x="77.200" y="112.725" width="22.762" height="18.000" rx="1.2" fill="none" stroke="#000" stroke-width="0.3"/><text x="88.581" y="123.025" font-size="3.6" text-anchor="middle" fill="#666">Alt</text></g>
 <g transform="rotate(15 124.300 116.963)"><rect x="105.775" y="117.488" width="18.000" height="18.000" rx="1.2" fill="none" stroke="#000" stroke-width="0.3"/><text x="114.775" y="127.788" font-size="3.6" text-anchor="middle" fill="#666">Del</text></g>
 <g transform="rotate(-45 138.588 116.963)"><rect x="110.538" y="117.488" width="27.525" height="18.000" rx="1.2" fill="none" stroke="#000" stroke-width="0.3"/><text x="124.300" y="127.788" font-size="3.6" text-anchor="middle" fill="#666">Space</text></g>
-<circle cx="175.735" cy="116.010" r="22.500" fill="none" stroke="#c00" stroke-width="0.6"/>
-<circle cx="175.735" cy="116.010" r="16.500" fill="none" stroke="#c00" stroke-width="0.4" stroke-dasharray="2 1.5"/>
-<line x1="169.735" y1="116.010" x2="181.735" y2="116.010" stroke="#c00" stroke-width="0.3"/>
-<line x1="175.735" y1="110.010" x2="175.735" y2="122.010" stroke="#c00" stroke-width="0.3"/>
-<text x="175.735" y="91.510" font-size="3.2" text-anchor="middle" fill="#c00" font-weight="bold">ring OD 45 mm</text>
-<text x="175.735" y="142.510" font-size="3.2" text-anchor="middle" fill="#c00">sensor 33 mm (dashed)</text>
-<circle cx="262.500" cy="64.500" r="22.500" fill="none" stroke="#000" stroke-width="0.4" stroke-dasharray="3 2"/>
-<text x="262.500" y="64.500" font-size="3.2" text-anchor="middle" fill="#666">cut out</text>
-<text x="262.500" y="69.000" font-size="3.2" text-anchor="middle" fill="#666">tape on pod</text>
+<circle cx="178.593" cy="116.010" r="25.000" fill="none" stroke="#c00" stroke-width="0.6"/>
+<circle cx="178.593" cy="116.010" r="16.500" fill="none" stroke="#c00" stroke-width="0.4" stroke-dasharray="2 1.5"/>
+<line x1="172.593" y1="116.010" x2="184.593" y2="116.010" stroke="#c00" stroke-width="0.3"/>
+<line x1="178.593" y1="110.010" x2="178.593" y2="122.010" stroke="#c00" stroke-width="0.3"/>
+<text x="178.593" y="89.010" font-size="3.2" text-anchor="middle" fill="#c00" font-weight="bold">ring OD 50 mm</text>
+<text x="178.593" y="145.010" font-size="3.2" text-anchor="middle" fill="#c00">sensor 33 mm (dashed)</text>
+<circle cx="260.000" cy="67.000" r="25.000" fill="none" stroke="#000" stroke-width="0.4" stroke-dasharray="3 2"/>
+<text x="260.000" y="67.000" font-size="3.2" text-anchor="middle" fill="#666">cut out</text>
+<text x="260.000" y="71.500" font-size="3.2" text-anchor="middle" fill="#666">tape on pod</text>
 </svg>

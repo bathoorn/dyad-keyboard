@@ -1,5 +1,10 @@
 import json, math
-keys=json.load(open('keys.json'))
+import os
+BASE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(BASE))
+P = lambda *a: os.path.join(BASE, *a)
+D = lambda *a: os.path.join(ROOT, 'docs', *a)
+keys=json.load(open(P('keys-resolved.json')))
 SPLIT=8.6
 for k in keys: k['half']='L' if k['cx']<SPLIT else 'R'
 
@@ -31,9 +36,11 @@ def solve(anchor, r, half, xrange, MIN=0.26):
         x+=0.05
     return best
 
-R_DISP = 45/2/19.05     # GC9A01 ring
-R_CIRQ = 50/2/19.05     # Cirque ring
-print(f"ring radii (u): display {R_DISP:.3f}  cirque {R_CIRQ:.3f}")
+# Both pods use the same 50 mm outside ring diameter, for visual symmetry.
+RING   = 50/2/19.05     # 50 mm OD, both sides
+R_DISP = RING           # left  pod: GC9A01 33 mm glass inside a 50 mm ring
+R_CIRQ = RING           # right pod: Cirque TM040040 40 mm inside a 50 mm ring
+print(f"ring radius (u): {RING:.3f} = {RING*19.05:.1f} mm OD {RING*2*19.05:.0f} mm, both sides")
 
 # LEFT: pocket between B (6.75,3.5) and Space thumb (6.57,5.13), inboard
 L=solve((6.66,4.32), R_DISP, 'L', (7.0,11.0))
@@ -44,4 +51,4 @@ for name,S,r,half in [("LEFT  display",L,R_DISP,'L'),("RIGHT cirque ",R,R_CIRQ,'
     print(f"\n{name}: centre=({x:.2f}, {y:.2f})  ring r={r:.2f}u  min clearance={c:.2f}u = {c*19.05:.1f} mm")
     near=sorted(((dist_to_key(x,y,k)-r, (k['label'].splitlines()[-1] if k['label'].strip() else '(blank)')) for k in keys if k['half']==half))[:4]
     for cl,lab in near: print(f"      {lab:>10}  {cl*19.05:6.1f} mm")
-json.dump({'left':{'x':L[1],'y':L[2],'r':R_DISP},'right':{'x':R[1],'y':R[2],'r':R_CIRQ}}, open('pods.json','w'))
+json.dump({'left':{'x':L[1],'y':L[2],'r':R_DISP},'right':{'x':R[1],'y':R[2],'r':R_CIRQ}}, open(P('pods.json'),'w'))

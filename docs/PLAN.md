@@ -30,10 +30,14 @@ The stock layout reserves no circular area, so each half grows a pod on its **in
 
 | | Centre (u) | Sensor | Ring OD | Clearances |
 |---|---|---|---|---|
-| Left — GC9A01 display | **(8.70, 4.20)** | 33 mm | ~45 mm (2.4u) | Space 5.2 mm · B 5.4 mm |
-| Right — Cirque TM035035 | **(8.40, 4.20)** | 35 mm | ~50 mm (2.6u) | thumb Enter 5.2 mm · unlabeled key 5.7 mm |
+| Left — GC9A01 display | **(8.85, 4.20)** | 33 mm | **50 mm** (2.6u) | Space 5.2 mm · B 5.7 mm |
+| Right — Cirque TM040040 | **(8.40, 4.20)** | 40 mm | **50 mm** (2.6u) | thumb Enter 5.2 mm · unlabeled key 5.7 mm |
+
+Both pods share a 50 mm outside diameter so the two halves look like a matched pair. The left grew from 45 mm to match, which cost it 2.5 mm of radius and pushed its clearance under the 5 mm floor — so it moved **2.9 mm outboard**, from (8.70, 4.20). The right did not move; it was already a 50 mm ring. The two halves now come out identically spaced from their neighbours.
 
 Both land against exactly the keys they were meant to: B and Space on the left, thumb Enter and the unlabeled key left of N on the right.
+
+**The 40 mm sensor constrains the mechanism.** A 50 mm ring around it leaves a 5.0 mm annulus, and no standard thin-section ball bearing fits — the bore must clear 42 mm while the OD stays under 48 mm, and 6808 (40×52), 6708 (40×50, no wall left) and 6809 (45×58) all miss. Phase 2 therefore picks between a printed race and rollers riding a downward skirt on the ring. If neither feels good, the symmetric fallback is to take **both** rings to ~60 mm OD, which admits a 6809. Deciding this is now part of gate G1.
 
 Two notes on reading the drawing. The two centres have almost the same x, which would be a collision on one board — but these are **two separate PCBs** (§5) that sit apart in use, so each pod extends into space the other never occupies. That inboard freedom is the whole reason the pods aren't outboard where they'd be a pinky reach. And 5 mm is deliberately tight: you grip the ring from its **open outer side**, so the key-side gap only has to clear the keycap, not a fingertip. Confirm that on the Phase 0 mockup before it goes into copper.
 
@@ -86,7 +90,7 @@ Ring rides on a thin-section ball bearing (6806-2RS class) or a printed race. **
 |---|---|---|
 | MCU | **Bare RP2040 (QFN-56) on a shared controller module** | One module design, used on *both* halves — see §4 and §5. 30 GPIO, one assembled design, one board to respin. |
 | Round display | **GC9A01 1.28" 240×240 SPI** | Confirmed in QMK Quantum Painter (`qp_gc9a01_make_spi_device`). Note: it's a round *LCD*, not an OLED — genuine round OLEDs have no QMK driver. If you insist on OLED, that becomes a driver-writing subproject. |
-| Trackpad | **Cirque Pinnacle TM035035** (35 mm) | QMK **`cirque_pinnacle_i2c`** — the well-trodden path, 3 wires, and open-drain edges tolerate a ribbon better than fast SPI. 23 mm variant exists if the right ring gets too large. |
+| Trackpad | **Cirque Pinnacle TM040040** (40 mm) | Owned already. QMK **`cirque_pinnacle_i2c`** — 3 wires, and open-drain edges tolerate a ribbon better than fast SPI. Set `#define CIRQUE_PINNACLE_DIAMETER_MM 40`; QMK's default is 35 and getting this wrong scales every cursor delta. |
 | Encoder | EC11 with detents, off-axis | Plus a separate ring push? Deferred — pressing a ring is mechanically awkward; put the encoder switch on a dedicated key instead. |
 | Switches | MX-compatible, Kailh hot-swap sockets | |
 | Diodes | 1N4148W SOD-123, one per key, column→row | |
@@ -298,7 +302,7 @@ Prove, in this order: GC9A01 renders under Quantum Painter → Cirque reports po
 **Exit:** one firmware binary driving every peripheral simultaneously. This phase de-risks ~80% of the project and costs about $40.
 
 ### Phase 2 — Knob mechanism prototype (weeks 3–5, parallel with Phase 1)
-Print-only, no electronics beyond a loose EC11 and the Cirque. Iterate ring diameter, gear ratio, bearing fit, detent feel, and the Cirque metal keep-out.
+Print-only, no electronics beyond a loose EC11 and the Cirque. Iterate gear ratio, detent feel, and the Cirque metal keep-out. **Ring OD is fixed at 50 mm both sides (§0), so the open question is the bearing strategy** — printed race versus rollers on a downward skirt, given that no standard ball bearing fits the 5 mm annulus.
 **Exit:** a ring you like turning, and a dimensioned sketch the PCB can be designed around.
 
 ### Phase 3 — KiCad (weeks 5–9)

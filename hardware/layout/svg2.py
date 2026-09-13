@@ -1,5 +1,10 @@
 import json, math
-keys=json.load(open('keys.json')); pods=json.load(open('pods.json'))
+import os
+BASE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(BASE))
+P = lambda *a: os.path.join(BASE, *a)
+D = lambda *a: os.path.join(ROOT, 'docs', *a)
+keys=json.load(open(P('keys-resolved.json'))); pods=json.load(open(P('pods.json')))
 SPLIT=8.6; DX=5.0            # visual separation of the two boards
 for k in keys: k['half']='L' if k['cx']<SPLIT else 'R'
 def sx(v,half): return v+(DX if half=='R' else 0)
@@ -27,16 +32,16 @@ for k in keys:
     fs=15 if len(lab)<=4 else 12
     o.append(f'<g{tr}><rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" rx="6" fill="{fill}" stroke="{strk}" stroke-width="2"/>'
              f'<text x="{x+w/2:.1f}" y="{y+h/2+5:.1f}" font-size="{fs}" text-anchor="middle" fill="#1a1a19">{lab}</text></g>')
-for side,inner,label,neigh in [('left',33/2/19.05,'GC9A01 display','Space 5.2mm &#183; B 5.4mm'),
-                               ('right',35/2/19.05,'Cirque TM035035','Enter 5.2mm &#183; blank 5.7mm')]:
+for side,inner,label,neigh in [('left',33/2/19.05,'GC9A01 display','Space 5.2mm &#183; B 5.7mm'),
+                               ('right',40/2/19.05,'Cirque TM040040','Enter 5.2mm &#183; blank 5.7mm')]:
     p=pods[side]; half='L' if side=='left' else 'R'
     cx,cy=X(sx(p['x'],half)),Y(p['y']); r=p['r']*U
     o.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="{r:.0f}" fill="#fff" stroke="#dc2626" stroke-width="3"/>')
     o.append(f'<circle cx="{cx:.0f}" cy="{cy:.0f}" r="{inner*U:.0f}" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>')
     o.append(f'<text x="{cx:.0f}" y="{cy-6:.0f}" font-size="13" text-anchor="middle" fill="#991b1b" font-weight="700">{label.split()[0]}</text>')
-    o.append(f'<text x="{cx:.0f}" y="{cy+12:.0f}" font-size="11" text-anchor="middle" fill="#991b1b">{"33mm" if side=="left" else "35mm"}</text>')
+    o.append(f'<text x="{cx:.0f}" y="{cy+12:.0f}" font-size="11" text-anchor="middle" fill="#991b1b">{"33mm" if side=="left" else "40mm"}</text>')
     o.append(f'<text x="{cx:.0f}" y="{cy+r+24:.0f}" font-size="14" text-anchor="middle" fill="#991b1b" font-weight="700">{label}</text>')
-    o.append(f'<text x="{cx:.0f}" y="{cy+r+42:.0f}" font-size="12" text-anchor="middle" fill="#991b1b">ring OD {"45" if side=="left" else "50"}mm &#183; {neigh}</text>')
+    o.append(f'<text x="{cx:.0f}" y="{cy+r+42:.0f}" font-size="12" text-anchor="middle" fill="#991b1b">ring OD 50mm &#183; {neigh}</text>')
 ly=H-24
 for i,(c,f,t) in enumerate([("#2563eb","#dbeafe","left board (32 keys)"),("#16a34a","#dcfce7","right board (37 keys)"),
                             ("#7c3aed","#ede9fe","angled thumb keys"),("#d97706","#fef3c7","unlabeled, real switches"),
@@ -45,5 +50,5 @@ for i,(c,f,t) in enumerate([("#2563eb","#dbeafe","left board (32 keys)"),("#16a3
     o.append(f'<rect x="{x}" y="{ly-13}" width="20" height="18" rx="4" fill="{f}" stroke="{c}" stroke-width="2"/>')
     o.append(f'<text x="{x+28}" y="{ly+1}" font-size="14" fill="#44403c">{t}</text>')
 o.append('</svg>')
-open('/home/b/workspace/split-keyboard/docs/layout.svg','w').write('\n'.join(o))
+open(D('layout.svg'),'w').write('\n'.join(o))
 print('ok')

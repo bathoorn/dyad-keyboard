@@ -8,12 +8,15 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 1
+version: 2
 units: mm
 key_unit: 19.05
 
 changelog:
   - "v1 - initial contract. Values marked TODO are unresolved and block G2."
+  - "v2 - Cirque is TM040040 (40 mm), not TM035035. Both pods now share a
+     50 mm outside ring diameter for visual symmetry. Left pod moved 2.9 mm
+     outboard to hold 5 mm clearance with the larger ring. Right unchanged."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -30,18 +33,20 @@ layout:
 boards:
   main_left:
     datum_in_kle_frame: [0.0, 0.0]
-    extent: [188.24, 114.64]
+    extent: [193.59, 114.64]
     key_count: 32
-    pod_centre: [165.74, 80.01]
-    ring_od: 45.0          # GC9A01 display ring
-    sensor_od: 33.0
+    pod_centre: [168.59, 80.01]
+    ring_od: 50.0          # matched to the right pod
+    sensor_od: 33.0        # GC9A01 active glass
+    module_od: TODO        # the 1.28in GC9A01 BREAKOUT is typically ~37.5 mm,
+                           # not 33 -- measure the exact module before G2
   main_right:
     datum_in_kle_frame: [135.02, 0.0]
     extent: [212.64, 114.64]
     key_count: 37
-    pod_centre: [25.00, 80.01]
-    ring_od: 50.0          # Cirque TM035035 ring
-    sensor_od: 35.0
+    pod_centre: [25.0, 80.01]
+    ring_od: 50.0
+    sensor_od: 40.0        # Cirque TM040040
 
 # ---------------------------------------------------------------------------
 # Fixed by decree, not negotiated. See "push uncertainty into the part with
@@ -96,7 +101,15 @@ fit_clearance: TODO             # from the tolerance strip coupon, printer + fil
 # ---------------------------------------------------------------------------
 knob:
   mechanism: "ring gear driving off-axis EC11 (PLAN.md section 2, option A)"
-  bearing: TODO                 # OD / ID / width
+  bearing: TODO                 # OD / ID / width. CONSTRAINED: see below.
+  bearing_constraint: >
+    The right pod has only a 5.0 mm annulus ((50 - 40) / 2). A conventional
+    thin-section deep-groove bearing needs a bore >= 42 mm to clear the
+    sensor and an OD <= 48 mm to leave ring wall. Nothing standard fits:
+    6808 is 40x52, 6708 is 40x50 (no wall left), 6809 is 45x58. So the
+    right pod must use a printed race, or rollers riding a downward skirt
+    on the ring. If Phase 2 rejects both, the symmetric fallback is to
+    raise BOTH rings to ~60 mm OD, which admits a 6809 (45x58x7).
   ring_od: TODO
   ring_height: TODO
   gear_ratio: TODO

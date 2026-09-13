@@ -1,8 +1,13 @@
 """Generate true 1:1 printable mockup sheets. 1u = 19.05 mm exactly."""
 import json, math, sys
+import os
+BASE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(BASE))
+P = lambda *a: os.path.join(BASE, *a)
+D = lambda *a: os.path.join(ROOT, 'docs', *a)
 U = 19.05                      # mm per key unit
 GAP = 1.05                     # cell - keycap
-keys = json.load(open('keys.json')); pods = json.load(open('pods.json'))
+keys = json.load(open(P('keys-resolved.json'))); pods = json.load(open(P('pods.json')))
 SPLIT = 8.6
 for k in keys: k['half'] = 'L' if k['cx'] < SPLIT else 'R'
 PAGES = {'a4': (297.0, 210.0), 'letter': (279.4, 215.9)}   # landscape
@@ -39,7 +44,7 @@ def sheet(half, page):
     o=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{PW}mm" height="{PH}mm" '
        f'viewBox="0 0 {PW} {PH}" font-family="sans-serif">',
        f'<rect width="{PW}" height="{PH}" fill="#ffffff"/>']
-    name = 'LEFT half — GC9A01 display pod' if half=='L' else 'RIGHT half — Cirque TM035035 pod'
+    name = 'LEFT half — GC9A01 display pod (50 mm ring)' if half=='L' else 'RIGHT half — Cirque TM040040 pod (50 mm ring)'
     o.append(f'<text x="{MARGIN}" y="{MARGIN+5}" font-size="5" font-weight="bold" fill="#000">Hasukey both · {name}</text>')
     o.append(f'<text x="{MARGIN}" y="{MARGIN+11.5}" font-size="3.4" fill="#c00" font-weight="bold">PRINT AT 100% / "Actual size". Turn OFF "Fit to page" and "Shrink oversized pages".</text>')
     o.append(f'<text x="{MARGIN}" y="{MARGIN+17}" font-size="3.2" fill="#444">1u = 19.05 mm · keycap outline = 18 mm · verify with the ruler before trusting this sheet.</text>')
@@ -65,7 +70,7 @@ def sheet(half, page):
     # pod
     p = pods['left' if half=='L' else 'right']
     px,py = p['x']*U+ox, p['y']*U+oy
-    ring = p['r']*U; sens = (33 if half=='L' else 35)/2
+    ring = p['r']*U; sens = (33 if half=='L' else 40)/2
     o.append(f'<circle cx="{px:.3f}" cy="{py:.3f}" r="{ring:.3f}" fill="none" stroke="#c00" stroke-width="0.6"/>')
     o.append(f'<circle cx="{px:.3f}" cy="{py:.3f}" r="{sens:.3f}" fill="none" stroke="#c00" stroke-width="0.4" stroke-dasharray="2 1.5"/>')
     for dx,dy in ((1,0),(0,1)):
@@ -84,7 +89,7 @@ def sheet(half, page):
     o.append('</svg>')
     return '\n'.join(o), fits, w, h, spare, placed
 
-out='/home/b/workspace/split-keyboard/docs/mockup'
+out=D('mockup')
 import os; os.makedirs(out, exist_ok=True)
 for page in ('a4','letter'):
     for half,nm in (('L','left'),('R','right')):

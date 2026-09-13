@@ -1,5 +1,10 @@
 import json, math
-rows = json.load(open('kle.json'))
+import os
+BASE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(BASE))
+P = lambda *a: os.path.join(BASE, *a)
+D = lambda *a: os.path.join(ROOT, 'docs', *a)
+rows = json.load(open(P('hasukey-both.kle.json')))
 keys=[]
 cur=dict(x=0,y=0,w=1,h=1,r=0,rx=0,ry=0)
 cluster=dict(x=0,y=0)
@@ -36,7 +41,7 @@ def centre(k):
     return cx,cy
 
 for k in keys: k['cx'],k['cy']=centre(k)
-json.dump(keys, open('keys.json','w'), indent=1)
+json.dump(keys, open(P('keys-resolved.json'),'w'), indent=1)
 
 print(f"total keys: {len(keys)}")
 xs=[k['cx'] for k in keys]
