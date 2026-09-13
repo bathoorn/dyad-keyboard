@@ -3,12 +3,14 @@
 
     ./.venv-kicad/bin/python hardware/generate_controller_outline.py
 
-Writes hardware/pcb-controller/dyad-controller.kicad_pcb with nothing but a
-50 x 35 mm rounded-rectangle Edge.Cuts outline. Everything else -- schematic,
-placement, routing -- is done by hand in KiCad from here.
+Writes a 50 x 35 mm rounded-rectangle Edge.Cuts outline.
 
-Refuses to overwrite an existing board, since that board will contain real
-work almost immediately.
+The controller board itself now starts from the vendored RP2040 design guide
+(see hardware/pcb-controller/upstream/), so this exists to regenerate the
+outline for import -- hardware/outlines/dyad-controller-outline.dxf -- rather
+than to create the board.
+
+Refuses to overwrite an existing board, since that board contains real work.
 """
 import os
 import sys
