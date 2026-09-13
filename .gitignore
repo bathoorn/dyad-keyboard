@@ -17,3 +17,10 @@ gerbers/
 
 # OS
 .DS_Store
+
+# QMK build output
+*.uf2
+*.hex
+*.bin
+.build/
+firmware/compile_commands.json

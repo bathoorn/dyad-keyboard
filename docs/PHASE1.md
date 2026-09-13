@@ -80,11 +80,44 @@ POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
 
 ---
 
-## 2. Toolchain first
+## 2. Toolchain — done
 
-Before wiring anything: install QMK, build a stock RP2040 keyboard, flash a
-Pico, confirm it types. A toolchain problem discovered later looks exactly
-like a hardware problem, and you will waste hours telling them apart.
+Working as of 2026-09-13. Recorded here because three things were not obvious.
+
+```bash
+qmk config user.qmk_home=~/qmk_firmware
+qmk config user.overlay_dir=/home/b/workspace/split-keyboard/firmware
+qmk compile -kb dyad/proto -km default
+```
+
+State on this machine: `qmk` 1.2.0 (uv-installed), and `arm-none-eabi-gcc`
+15.2.0 with newlib already present under `~/.local/share/qmk` from qmk's own
+toolchain build — not on `PATH`, which is fine because the CLI prepends it at
+build time. `qmk_firmware` is a shallow clone at `~/qmk_firmware`, 1.4 GB.
+
+**Gotcha 1 — external userspace does not hold keyboards.** It holds keymaps,
+modules and build targets only. `qmk.path.is_keyboard()` checks exactly one
+place:
+
+```python
+keyboard_json = QMK_FIRMWARE / 'keyboards' / keyboard_name / 'keyboard.json'
+```
+
+So `qmk compile -kb dyad/proto` fails with "invalid keyboard_folder_or_all"
+however valid the userspace is. Fix: symlink, keeping this repo as the source
+of truth.
+
+```bash
+ln -sfn ~/workspace/split-keyboard/firmware/keyboards/dyad ~/qmk_firmware/keyboards/dyad
+```
+
+**Gotcha 2 — SPI needs enabling at the ChibiOS HAL level**, or the build dies
+with `"SPI driver activated but no SPI peripheral assigned"`. Setting the pins
+in `config.h` is not enough. Needs `halconf.h` (`HAL_USE_SPI TRUE`) and
+`mcuconf.h` (`RP_SPI_USE_SPI0 TRUE`), both using `#include_next`.
+
+**Gotcha 3 — mouse keycodes are `MS_BTN1`, not `KC_BTN1`.** Renamed in current
+QMK; older guides and forum posts still show the old names.
 
 ---
 
@@ -95,6 +128,7 @@ the ordering is that when something breaks you know what caused it.
 
 | # | Step | Pass criterion |
 |---|---|---|
+| 0 | Toolchain | **Done** — `dyad/proto` compiles to UF2 |
 | 1 | Pico enumerates, QMK flashes | Appears as `RPI-RP2`, accepts a UF2, boots |
 | 2 | 2×2 matrix on one board | Four distinct keycodes |
 | 3 | EC11 in `encoder_map` | Clean detents, no double-steps or missed steps |

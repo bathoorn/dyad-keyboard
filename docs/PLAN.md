@@ -1,7 +1,8 @@
-# Split Keyboard Project Plan
+# Dyad — split keyboard project plan
 
 **Started:** 2026-09-05
 **Deliverables:** KiCad PCB design · 3D-printed case · QMK firmware
+**Name:** Dyad — a pair. Two halves, two dials, two boards. QMK keyboard directory `dyad`.
 **Headline feature:** each half has a rotary encoder ring; the left ring surrounds a round display, the right ring surrounds a round Cirque trackpad.
 
 ---
