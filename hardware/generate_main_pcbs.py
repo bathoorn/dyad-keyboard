@@ -74,8 +74,13 @@ def generate(half: str) -> None:
         # beside switch pin 2 at board-frame (2.54,-5.08) instead. Offsets are
         # in the switch's rotated frame, hence the inverted signs. 180 deg so
         # the ANODE faces the switch; at 0 the ROW pad faced it, landing
-        # 0.035 mm from the switch pin.
-        "-d", "D{} CUSTOM -6.2 5.08 180 BACK",
+        # 0.035 mm from the switch pin. Board-frame (+8.4,-5.08) rot 90:
+        # (+6.2,-5.08) sat directly on the pad-2 hotswap SMD pads at
+        # (4.34,-5.08) and (6.09,-5.08). Solved for the closest position to
+        # that socket with >=0.4 mm clearance to every pad of the switch, LED,
+        # cap and the four neighbouring key cells. Note the 2.25u stabilised
+        # key needs manual attention -- the stabiliser is not in this model.
+        "-d", "D{} CUSTOM -8.4 5.08 90 BACK",
         "--diode-footprint", DIODE,
         "--create-led-pcb-elements",
         "--create-led-sch-file",
