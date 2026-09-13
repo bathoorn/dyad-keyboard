@@ -37,6 +37,15 @@ convenient. It does not block anything here.
 | MX switches + 1N4148 diodes | 4 + 4 | 2×2 matrix. |
 | Breadboard, jumpers | — | |
 | **USB inline power meter** | 1 | ~$10. This phase's single most important output is a current number; a meter in series with a multimeter is far more painful. |
+| WS2812 strip, 32 + 37 LEDs | 1 | Current proxy for per-key RGB — see §4a. |
+| 5 V bench supply or powered hub | 1 | For the LED strip. Do not pull 2 A through the dev board. |
+
+### Still to order, highest value first
+
+1. **14-pin 0.5 mm FFC + 2 breakouts.** Gates step 5, the one remaining test that can change the design. Cheap and slow to ship — order first.
+2. **GC9A01 1.28" round module.** Get one with a pin header rather than a bare FPC tail, and check it breaks out **BLK/backlight** — the design budgets a BL control line. **Caliper its outside diameter on arrival**: that closes the `module_od` TODO blocking G2.
+3. **Second WinWin Pico_Mini RP2040**, same model. Plus 2× TRRS jacks and a cable.
+4. WS2812 strips, 5 V supply, USB power meter.
 
 ---
 
@@ -182,6 +191,21 @@ the changelog.
   you nothing.
 
 ---
+
+## 4a. The two current measurements are not the same measurement
+
+They size different things and must not be combined.
+
+| Measure | Sizes | Notes |
+|---|---|---|
+| RP2040 + display at full backlight + Cirque | The **3V3 LDO** | The only load the regulator actually carries |
+| LED strips, 32 and 37 | The **USB / TRRS budget** and the firmware brightness cap | LEDs hang off VBUS, never the LDO (PLAN.md §4) |
+
+Combining them oversizes the regulator for current it never sees.
+
+**On using strips as the proxy.** Valid, with caveats. A 5050 WS2812B is ~60 mA at full white; SK6812MINI-E is smaller-die and draws less, WS2812_2020 less again — so a strip **overestimates**, which is the safe direction for budgeting but not an exact figure. Do not run 69 LEDs at full white from the dev board: that is ~2 A and will brown out USB. Power the strip from 5 V with a common ground, and measure at **the brightness you intend to ship**, because the cap is the number that matters.
+
+**Free bonus test.** The strip answers the `74AHCT125` question from PLAN.md §4 — whether RP2040's 3.3 V data reliably drives 5 V LEDs. Try it *without* a level shifter first. If it is solid over a representative run length, the shifter footprint stays unpopulated.
 
 ## 5a. Decision: does the shipping design follow the bench rig?
 
