@@ -116,7 +116,7 @@ Ring rides on a thin-section ball bearing (6806-2RS class) or a printed race. **
 | Switches | MX-compatible, Kailh hot-swap sockets | |
 | Diodes | 1N4148W SOD-123, one per key, column→row | |
 | Per-key RGB | **SK6812MINI-E, reserved not committed** | Footprints on the mains from day one, populated later or never. Data pin, 5 V rail and ground return reserved on the main FFC — see §5. |
-| Split link | **4-pole (TRRS) jack, half-duplex, ring-2 unused** | Accepts either a TRS or a TRRS cable — see §5. USB-C-to-USB-C split cables risk shorting VBUS into a host; not worth it. |
+| Split link | **3-conductor jack, half-duplex** | Three conductors is all half-duplex needs, and a 3-pole jack accepts either cable type — see §5. USB-C-to-USB-C split cables risk shorting VBUS into a host; not worth it. |
 | USB | USB-C on **both** halves | |
 
 **Firmware stack:** QMK, data-driven `keyboard.json`, RP2040 split over PIO full-duplex serial (`SERIAL_DRIVER = vendor`), Quantum Painter for the display, Pointing Device + split pointing sync for the Cirque.
@@ -295,13 +295,15 @@ SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = vendor        # RP2040 PIO, half-duplex (see below)
 ```
 
-**Half-duplex, deliberately — and a 4-pole jack with ring-2 left unused.**
+**Half-duplex, deliberately — and three conductors is all it needs.**
 
 No QMK feature is lost. Pointing device, layer state, mods, WPM, display state and RGB all sync over half-duplex. The split transport is request/response — the master polls the slave and waits — so it is logically half-duplex even on a full-duplex link. The second conductor buys signal margin and a higher speed ceiling, not concurrency, and 460800 baud is ample for 37 keys plus a few bytes of pointer delta per poll.
 
-The reason to *choose* it is cable tolerance. In a 4-pole jack, a TRS plug's sleeve bridges the ring-2 and sleeve contacts. With ring-2 unused that short is harmless and **either cable works**. Put the full-duplex RX line there instead and the wrong cable out of the drawer ties RX to ground — a dead keyboard, and a driven pin into GND.
+The link carries VCC, GND and one data line. A **3-pole (TRS) jack provides exactly that**, and it accepts either cable type: plug a TRRS cable into TRS jacks and the jack's sleeve contact lands on the plug's ring-2 at *both* ends, which is consistent and works.
 
-Fit the 4-pole part regardless (it costs the same as a 3-pole, and the 5th pin is a switched insertion contact if presence detection is ever wanted), but leave ring-2 unconnected.
+Going 4-pole would only buy a future full-duplex upgrade, and would then carry a hazard a 3-pole cannot: in a 4-pole jack a TRS plug's sleeve bridges the ring-2 and sleeve contacts, so putting the RX line on ring-2 means the wrong cable from the drawer ties RX to ground. Since no QMK feature needs full-duplex, the 3-pole part is the better default, not merely the acceptable one.
+
+**Correction (2026-09-13):** an earlier revision specified a 4-pole part on the basis that LCSC C26230 had 5 pins. That inference was wrong — reading the actual pinout shows pins 4/5 on the tip and 2/3 on the ring, i.e. a 3-conductor jack with two normally-closed switch contacts that break on insertion. Pin count does not give pole count. Verify any replacement part by its pinout, not its pin count.
 ```c
 // config.h
 #define SPLIT_POINTING_ENABLE

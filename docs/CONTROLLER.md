@@ -97,7 +97,7 @@ FFC conductor is good for roughly half an amp. See PLAN.md §5.
 | 3V3 | AP2112K-3.3 | *verify* | Size from the Phase 1 measurement, not a datasheet guess |
 | USB | USB-C receptacle, 16-pin | *verify* | 27 Ω series on D+/D− |
 | ESD | USBLC6-2SC6 | *verify* | On D+/D− and again on the TRRS lines |
-| Split | PJ325 4-pole jack | **C26230** | Owned. Ring-2 left unconnected — see PLAN.md §5. |
+| Split | PJ325 **3-conductor** jack | **C26230** | Owned, and sufficient: half-duplex needs T/R/S only. Pins 4/5 are a tip switch, 2/3 a ring switch — not extra conductors. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, with a 0 Ω bypass link. RGB only. |
 | Connectors | 20-pin + 14-pin 0.5 mm FFC, locking | *verify* | |
 | Buttons | BOOTSEL (→QSPI_SS via 1 kΩ), RESET (→RUN) | *verify* | Both non-optional |
