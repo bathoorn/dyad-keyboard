@@ -153,7 +153,7 @@ worth keeping for bring-up.
 
 | # | Change | Why |
 |---|---|---|
-| 1 | **LDO: XC6206 → AP2112K-3.3** | XC6206 is **200 mA**. Estimated load is ~120 mA (RP2040, backlight, Cirque, flash) — that is 60% utilisation with no margin, and higher dropout. Decide against the real Phase 1 measurement; LEDs do **not** load this rail. |
+| 1 | **LDO: XC6206 → AP2112K-3.3** | XC6206 is **200 mA**. Load is ~70–130 mA — RP2040 ~30, flash ~5, Cirque ~3, and the GC9A01 backlight 20–60. At the top of that range there is no margin left. **Not a drop-in:** SOT-23 3-pin → SOT-23-**5**, and EN must be tied to Vin or the rail never comes up. LEDs do **not** load this rail. Confirm against the Phase 1 measurement. |
 | 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
 | 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
 | 4 | **Delete J3/J4/J5** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. |
@@ -198,8 +198,11 @@ Work the deltas from §4 in this order; it minimises rework.
 
 1. **Delete J3, J4, J5** — the three 1×11 breakout headers. Biggest cleanup, do
    it first so the sheet has room.
-2. **Swap the LDO.** Replace U4 (XC6206, SOT-23) with AP2112K-3.3. Same SOT-23-5
-   outline is common but *check the pinout* — they are not all the same.
+2. **Swap the LDO.** Replace U4 (XC6206) with AP2112K-3.3. This is a footprint
+   change, not a value change: **SOT-23 3-pin → SOT-23-5**. Tie **EN to Vin** —
+   left floating, the regulator never turns on and the board has no 3V3, which
+   presents as a dead board rather than as a missing jumper. Dropout is not a
+   factor either way: from 5 V there is 1.7 V of headroom.
 3. **Fix the buttons.** SW1's footprint is a `PinSocket_1x02`; change it to a
    real tactile switch. Add SW2 from `RUN` to `GND` for reset.
 4. **Add the new parts:** PJ-320A jack, 20-pin and 14-pin FFC connectors,
