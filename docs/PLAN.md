@@ -319,7 +319,7 @@ Regenerate with `hardware/layout/mockup.py`, then `rsvg-convert -f pdf`.
 ### Phase 1 — Electrical bring-up on dev boards (weeks 2–3)
 No custom PCB yet. Two RP2040 dev boards, breadboard, hand-wired 2×2 matrix.
 Prove, in this order: GC9A01 renders under Quantum Painter → Cirque reports pointer deltas → EC11 registers in `encoder_map` → both halves talk over TRRS → **pointing-device data crosses the split from the slave half** (`SPLIT_POINTING_ENABLE` + `POINTING_DEVICE_RIGHT`, USB in the left) → measure total current with the backlight at full brightness.
-**Exit:** one firmware binary driving every peripheral simultaneously. This phase de-risks ~80% of the project and costs about $40.
+**Exit:** one firmware binary driving every peripheral simultaneously. This phase de-risks ~80% of the project and costs about $40. Full kit list, ordered bring-up steps with pass criteria, and the measurements that feed later phases: **`docs/PHASE1.md`**.
 
 ### Phase 2 — Knob mechanism prototype (weeks 3–5, parallel with Phase 1)
 Print-only, no electronics beyond a loose EC11 and the Cirque. Ring OD is fixed at 50 mm both sides and the bearing is a stock 6806-2RS under a cantilevered sensor post (§0). Open questions are gear ratio, detent feel, post stiffness under thumb pressure, and whether the steel bearing sitting under the Cirque detunes it.
