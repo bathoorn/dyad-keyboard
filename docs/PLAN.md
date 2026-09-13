@@ -274,6 +274,28 @@ The intent is to keep the option open without paying for it now. Reserving it pr
 - The main FFC gets doubled 5 V and ground conductors.
 - If one USB port feeds both halves, that current crosses the **TRRS link**. Common practice, but it is the constraint that sets your real brightness ceiling — measure it in Phase 1 rather than trusting a number here.
 
+**2a. The real ceiling is the 5 V path, not the regulator.** The LEDs sit on VBUS,
+*upstream* of the 3V3 LDO, so they never load it. What they do load is a chain of
+500 mA parts:
+
+| Limit | Rating |
+|---|---|
+| USB, unnegotiated | 500 mA |
+| Fuse on VBUS | 500 mA (the reference fits a 500 mA part) |
+| 3.5 mm jack — the slave half's current crosses it | 500 mA |
+| Main FFC 5 V conductors, doubled | ~1 A |
+
+One USB port feeding both halves, minus 80–260 mA of logic, leaves **240–420 mA
+for 69 LEDs: 3.5–6 mA each, about 6–10% of full white.** That is the real
+brightness ceiling, and it is set by a fuse and a connector rather than by
+firmware taste.
+
+Two things follow. **Upsize the fuse** — it is on our board and cheap to change,
+though it only helps if the source actually supplies more. And the USB-C CC
+resistors let a Type-C source offer 1.5 A or 3 A, but a plain USB-A cable gives
+500 mA, so the ceiling cannot be *designed* around: measure it in Phase 1 and
+set the firmware cap to what the real supply gives.
+
 **3. Level shifting.** RP2040 drives 3.3 V logic into a 5 V-powered LED chain. That usually works and often doesn't, and a ribbon makes it more marginal. Put a 74AHCT125 (or equivalent) footprint on the controller and leave it unpopulated with a 0 Ω bypass link — a few cents of copper against a class of bug that is genuinely unpleasant to chase.
 
 **What actually has to happen at Phase 3:** put the SK6812MINI-E footprints on both main PCBs. Unpopulated footprints cost nothing at fab; adding them later is a respin of both mains. The pin, the rail and the shifter are all retrofittable — the footprints are not, and that's the decision this reservation is really about.

@@ -93,15 +93,15 @@ FFC conductor is good for roughly half an amp. See PLAN.md §5.
 **Inherited from the reference, LCSC codes already populated** (31 parts, 14
 distinct codes — nothing to look up):
 
-| Ref | Part | LCSC |
-|---|---|---|
+| Ref | Part | LCSC | |
+|---|---|---|---|
 | U3 | RP2040, QFN-56 | **C2040** |
 | U1 | W25Q128JVS, 16 MB SOIC-8 | **C131025** |
 | Y1 | 12 MHz crystal, 3225 4-pin | **C9002** |
 | U2 | USBLC6-2SC6 ESD, SOT-23-6 | **C2827654** |
 | U4 | XC6206 LDO 3.3 V / 200 mA, SOT-23 | **C5446** |
 | J1 | USB-C receptacle, HRO TYPE-C-31-M-12 | **C165948** |
-| F1 | 500 mA fuse, 1206 | **C70076** |
+| F1 | 500 mA fuse, 1206 | **C70076** | ← **upsize if RGB is populated**: it is in the LED path
 | C1–C17 | 10× 100 nF, 4× 1 µF, 1× 10 µF, 2× 22 pF, all 0402 | C1525 / C52923 / C15525 / C1555 |
 | R1,R2,R7 | 1 kΩ 0402 | C11702 |
 | R3,R4 | 5k1 CC 0402 | C25905 |
