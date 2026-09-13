@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 7
+version: 8
 units: mm
 key_unit: 19.05
 
@@ -37,6 +37,9 @@ changelog:
      GP0/GP1 are dual-function (SPI0 RX/CSn or I2C0 SDA/SCL), which defers
      the Cirque bus decision to firmware and knob-module wiring rather than
      baking it into the controller. See docs/CONTROLLER.md."
+  - "v8 - split jack changed to PJ-320A. PJ325 (C26230) is 12.3 mm tall and
+     exceeded max_height_above_pcb of 10.0; PJ-320A is 6 mm. Pole count on
+     both parts is to be verified by pinout, not by pin count."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -107,7 +110,7 @@ outlines:
 # ---------------------------------------------------------------------------
 controller_envelope:
   extent: [50.0, 35.0]
-  max_height_above_pcb: 10.0    # tallest part is the TRRS jack
+  max_height_above_pcb: 10.0    # tallest part is the 3.5 mm jack: PJ-320A at 6 mm
   pcb_thickness: 1.6
   outline: hardware/pcb-controller/dyad-controller.kicad_pcb  # 50 x 35, 2 mm corners
   pinout: docs/CONTROLLER.md

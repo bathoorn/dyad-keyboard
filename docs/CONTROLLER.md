@@ -4,6 +4,7 @@ One design, used on **both** halves. The only board in the project that needs
 an assembly service, and the one Phase 4.5 orders first and alone.
 
 Envelope: **50 × 35 mm, ≤10 mm above the PCB**, 2-layer, 1.6 mm.
+Tallest part is the 3.5 mm jack at 6 mm (PJ-320A), leaving 4 mm of headroom.
 Fixed by decree (`interface.yaml`) — the case guarantees the volume, the board
 fits inside it, neither renegotiates. See `docs/WORKFLOW.md` §2.
 
@@ -97,7 +98,7 @@ FFC conductor is good for roughly half an amp. See PLAN.md §5.
 | 3V3 | AP2112K-3.3 | *verify* | Size from the Phase 1 measurement, not a datasheet guess |
 | USB | USB-C receptacle, 16-pin | *verify* | 27 Ω series on D+/D− |
 | ESD | USBLC6-2SC6 | *verify* | On D+/D− and again on the TRRS lines |
-| Split | PJ325 **3-conductor** jack | **C26230** | Owned, and sufficient: half-duplex needs T/R/S only. Pins 4/5 are a tip switch, 2/3 a ring switch — not extra conductors. |
+| Split | **PJ-320A** 3.5 mm jack | *verify* (C2884926 XKB, others exist) | **14.1 × 5 × 6 mm.** Replaces PJ325/C26230, which at 12.3 mm tall busts the 10 mm envelope. Reported 4-pole — **leave ring-2 unconnected**. Verify the pinout on arrival. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, with a 0 Ω bypass link. RGB only. |
 | Connectors | 20-pin + 14-pin 0.5 mm FFC, locking | *verify* | |
 | Buttons | BOOTSEL (→QSPI_SS via 1 kΩ), RESET (→RUN) | *verify* | Both non-optional |

@@ -303,6 +303,12 @@ The link carries VCC, GND and one data line. A **3-pole (TRS) jack provides exac
 
 Going 4-pole would only buy a future full-duplex upgrade, and would then carry a hazard a 3-pole cannot: in a 4-pole jack a TRS plug's sleeve bridges the ring-2 and sleeve contacts, so putting the RX line on ring-2 means the wrong cable from the drawer ties RX to ground. Since no QMK feature needs full-duplex, the 3-pole part is the better default, not merely the acceptable one.
 
+**Part (2026-09-13):** **PJ-320A**, 14.1 × 5 × 6 mm, through-hole. Chosen on
+height: PJ325 / LCSC C26230 is 12.3 mm tall and exceeds the controller's 10 mm
+envelope. PJ-320A is also the de-facto split-keyboard jack, so cables and
+spares are commonplace. It is reported to be 4-pole; leave **ring-2
+unconnected** and either cable type works safely.
+
 **Correction (2026-09-13):** an earlier revision specified a 4-pole part on the basis that LCSC C26230 had 5 pins. That inference was wrong — reading the actual pinout shows pins 4/5 on the tip and 2/3 on the ring, i.e. a 3-conductor jack with two normally-closed switch contacts that break on insertion. Pin count does not give pole count. Verify any replacement part by its pinout, not its pin count.
 ```c
 // config.h
