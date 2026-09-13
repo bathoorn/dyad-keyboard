@@ -45,6 +45,10 @@
 - **`--additional-elements` REPLACES the default** rather than adding to it. Omitting `ST{}` silently leaves stabilizers stranded at the origin.
 - **`--create-led-pcb-elements` does not position anything.** It creates and nets the LEDs and capacitors but leaves every one stacked at (0,0) unless they are also named in `--additional-elements`.
 - **marbastlib hotswap switch footprints must be placed on the BACK.** Their socket pads are on `F.Cu` and the pin holes are drawn mirrored, i.e. the footprint is drawn as seen from underneath. Placed on the front (kbplacer's default) the socket ends up on the same side as the switch. Pass `-s "SW{} 0 BACK"`. Verify by the pin1->pin2 vector, which must be `(-6.35, 2.54)` to match KiCad's stock `SW_Cherry_MX_1.00u_PCB` — absolute pad coordinates are not comparable between libraries because the origins differ (marbastlib uses the switch centre, KiCad stock uses pin 1).
+- **Switch orientation must be checked against the centre post, not the pin vector.** A 180 deg rotation with swapped pin numbering leaves the pin1->pin2 vector unchanged, so that test passes on a board that is rotated wrong. KiCad's stock `SW_Cherry_MX_1.00u_PCB` puts pins NORTH of the switch centre: `(+2.54,-5.08)` and `(-3.81,-2.54)`. Compare absolute positions relative to the centre-post NPTH.
+- **`--additional-elements` / `-d` offsets are in the switch's ROTATED frame.** With `SW{} 180 BACK`, an offset of `+5.08` lands at `-5.08` on the board. Invert the signs.
+- **kbplacer leaves duplicate-numbered pads unnetted.** marbastlib's hotswap footprint has pad "1" three times (one PTH, two SMD); only one gets a net, and DRC then reports the switch shorting itself. `generate_main_pcbs.py` post-processes this.
+- **Saving a board rewrites its project file.** Any `.kicad_pro` rule change must be applied *after* the last `board.Save()`, or it is silently reverted.
 - **`GetBoardEdgesBoundingBox()` counts footprint-internal `Edge.Cuts`.** The reverse-mount SK6812MINI-E footprint cuts its own hole, so 640 of them inflate the reported board size. Measure the outline from board-level drawings only.
 
 ## Case CAD

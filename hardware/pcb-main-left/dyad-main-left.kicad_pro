@@ -142,7 +142,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.2,
         "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
@@ -328,12 +328,12 @@
       {
         "filename": "dyad-main-left.kicad_sch",
         "name": "Key Matrix",
-        "uuid": "0da0b2c1-a9cd-4cfd-ab97-5603a81188c0"
+        "uuid": "609963e4-c848-4022-b1a3-6fdda0fb2579"
       },
       {
         "filename": "dyad-main-left-led-chain.kicad_sch",
         "name": "Led Chain",
-        "uuid": "90b67844-1f52-4d50-8a3d-cc502afe9c4b"
+        "uuid": "95f6c76f-734a-449f-994d-85d78c7dd3ab"
       }
     ],
     "used_designators": "",
@@ -341,11 +341,11 @@
   },
   "sheets": [
     [
-      "0da0b2c1-a9cd-4cfd-ab97-5603a81188c0",
+      "609963e4-c848-4022-b1a3-6fdda0fb2579",
       "Key Matrix"
     ],
     [
-      "90b67844-1f52-4d50-8a3d-cc502afe9c4b",
+      "95f6c76f-734a-449f-994d-85d78c7dd3ab",
       "Led Chain"
     ]
   ],
