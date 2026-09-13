@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 3
+version: 4
 units: mm
 key_unit: 19.05
 
@@ -21,6 +21,10 @@ changelog:
      static centre post; it is not encircled by it. The bore only has to
      pass the post and its cable, so stock bearings fit after all and the
      v2 claim that none did was wrong. 6806-2RS picked."
+  - "v4 - display module resolved: Waveshare SKU 19192, 1.28in GC9A01.
+     37.5 mm round PCB, 40.4 mm overall including the header tab, 32.4 mm
+     active glass. Closes the module_od TODO. Both figures fit inside the
+     50 mm ring, so the tab hides within the pod."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -41,9 +45,14 @@ boards:
     key_count: 32
     pod_centre: [168.59, 80.01]
     ring_od: 50.0          # matched to the right pod
-    sensor_od: 33.0        # GC9A01 active glass
-    module_od: TODO        # the 1.28in GC9A01 BREAKOUT is typically ~37.5 mm,
-                           # not 33 -- measure the exact module before G2
+    sensor_od: 32.4        # GC9A01 active glass (was estimated 33.0)
+    module_od: 37.5        # Waveshare SKU 19192 round PCB
+    module_extent: 40.4    # overall, including the pin-header tab
+    module_note: >
+      Annulus is 6.25 mm on the round axis and 4.8 mm across the tab axis.
+      Both positive, so the tab hides inside the 50 mm ring rather than
+      protruding. Module has a BL pin, so backlight control is available as
+      the design assumed. 3.3 V / 5 V tolerant, 4-wire SPI.
   main_right:
     datum_in_kle_frame: [135.02, 0.0]
     extent: [212.64, 114.64]

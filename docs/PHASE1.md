@@ -43,7 +43,7 @@ convenient. It does not block anything here.
 ### Still to order, highest value first
 
 1. **14-pin 0.5 mm FFC + 2 breakouts.** Gates step 5, the one remaining test that can change the design. Cheap and slow to ship — order first.
-2. **GC9A01 1.28" round module.** Get one with a pin header rather than a bare FPC tail, and check it breaks out **BLK/backlight** — the design budgets a BL control line. **Caliper its outside diameter on arrival**: that closes the `module_od` TODO blocking G2.
+2. ~~GC9A01~~ **ordered** — Waveshare SKU 19192. 37.5 mm round PCB, 40.4 mm with the header tab, 32.4 mm active glass, BL pin present, 4-wire SPI. Verify with calipers on arrival, but the datasheet was enough to close `module_od`.
 3. **Second WinWin Pico_Mini RP2040**, same model. Plus 2× TRRS jacks and a cable.
 4. WS2812 strips, 5 V supply, USB power meter.
 
@@ -165,7 +165,7 @@ a decision that is expensive to revisit.
 | Peak current, display backlight at full | **LDO sizing** (PLAN.md §4). Do not size the regulator from a datasheet guess. |
 | Idle current | Sanity baseline |
 | Max stable SPI clock over the FFC | Quantum Painter config, and whether the ribbon risk is real |
-| **GC9A01 module outside diameter** | `interface.yaml` `module_od` — **this is a G2 blocker you can close with a caliper** |
+| ~~GC9A01 module outside diameter~~ | **CLOSED** from the Waveshare datasheet: 37.5 mm round, 40.4 mm with the tab. Confirm with calipers on arrival. |
 | GPIO actually consumed | Confirms the 27-of-30 budget before layout |
 | Current per WS2812 at your chosen brightness | The real per-key RGB ceiling |
 
