@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 9
+version: 10
 units: mm
 key_unit: 19.05
 
@@ -44,6 +44,10 @@ changelog:
      HC-FPC-0.5-14P-FH20 (C19273929) for the knob, 20P sibling for the main.
      Vertical variants rejected -- the ribbon would need bend headroom the
      10 mm envelope lacks."
+  - "v10 - split link changed from a 3.5 mm jack to USB-C. The jack's 0.5 A
+     rating, not the supply, was capping per-key RGB at ~17% of full white;
+     USB-C carries 3 A and lifts that to ~45%. CC pins unconnected, serial on
+     SBU1+SBU2 tied, split VBUS fused."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -114,7 +118,7 @@ outlines:
 # ---------------------------------------------------------------------------
 controller_envelope:
   extent: [50.0, 35.0]
-  max_height_above_pcb: 10.0    # tallest part is the 3.5 mm jack: PJ-320A at 6 mm
+  max_height_above_pcb: 10.0    # tallest are the tactile buttons ~5 mm; USB-C ~3.2 mm
   pcb_thickness: 1.6
   outline: hardware/pcb-controller/dyad-controller.kicad_pcb  # 50 x 35, 2 mm corners
   pinout: docs/CONTROLLER.md
@@ -145,7 +149,7 @@ connectors:
   main_ffc:  { pins: 20, pitch: 0.5, part: HC-FPC-0.5-20P-FH20, mount: right-angle, contact: bottom, position: TODO }
   knob_ffc:  { pins: 14, pitch: 0.5, part: HC-FPC-0.5-14P-FH20, lcsc: C19273929, mount: right-angle, contact: bottom, position: TODO }
   usb_c:     { position: TODO, cutout_clearance: TODO }
-  trrs:      { position: TODO, cutout_clearance: TODO }
+  split_usb_c: { position: TODO, cutout_clearance: TODO, note: "2nd USB-C; must be visually distinct from the host port" }
   service_loop: TODO            # slack length per cable, so assembly is possible
   ffc_cable_type: TODO          # type A (same side) vs B (opposite). Depends on the
                                 # final orientation of both connectors; wrong choice

@@ -4,7 +4,7 @@ One design, used on **both** halves. The only board in the project that needs
 an assembly service, and the one Phase 4.5 orders first and alone.
 
 Envelope: **50 × 35 mm, ≤10 mm above the PCB**, 2-layer, 1.6 mm.
-Tallest part is the 3.5 mm jack at 6 mm (PJ-320A), leaving 4 mm of headroom.
+Tallest parts are now the tactile buttons (~5 mm); the USB-C receptacles are ~3.2 mm. Dropping the 3.5 mm jack freed real height.
 Fixed by decree (`interface.yaml`) — the case guarantees the volume, the board
 fits inside it, neither renegotiates. See `docs/WORKFLOW.md` §2.
 
@@ -115,7 +115,7 @@ does not matter.
 
 | Block | Part | LCSC | Note |
 |---|---|---|---|
-| Split | PJ-320A 3.5 mm jack | *verify* | 14.1 × 5 × 6 mm. Verify pole count by pinout, not pin count. |
+| Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
 | Main FFC | HC-FPC-0.5-**20P**-FH20 | *confirm code* | 20-position sibling |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
@@ -177,7 +177,7 @@ Item 1 is conditional on a measurement; 2–6 are unconditional.
 | 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
 | 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
 | 4 | **Delete J3/J4/J5** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. |
-| 5 | **Add** 3.5 mm jack, 20-pin + 14-pin FFC, 74AHCT125 (DNP), power OR-ing diode | None are in a bare dev board. |
+| 5 | **Add** a 2nd USB-C (split link), 20-pin + 14-pin FFC, 74AHCT125 (DNP), power OR-ing diode, split-VBUS fuse | None are in a bare dev board. The 2nd USB-C reuses J1's part and footprint. |
 | 6 | **Reshape to 50 × 35 mm** | The guide's board is 45.3 × 93.5 mm. |
 
 Items 1–3 are the ones that would ship a broken or unflashable board if missed.
@@ -242,7 +242,9 @@ Work the deltas from §4 in this order; it minimises rework.
    `../outlines/dyad-controller-outline.dxf`, place it on **Edge.Cuts** at
    **scale 1.0**. It is 50 × 35 mm, normalised to the origin.
 9. **Place the edge parts first**, because they are the real constraint:
-   USB-C and the jack on one long edge, both FFC connectors on the other.
+   **both** USB-C receptacles on one long edge, both FFC connectors on the other.
+   Separate the two USB-C ports as far as the edge allows and silkscreen them
+   clearly — they are physically identical.
    Everything else fits around them.
 10. **Then the MCU block** — keep RP2040, crystal and decoupling together and
     as the guide has them. Do not redistribute the decoupling.

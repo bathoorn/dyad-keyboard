@@ -116,8 +116,8 @@ Ring rides on a thin-section ball bearing (6806-2RS class) or a printed race. **
 | Switches | MX-compatible, Kailh hot-swap sockets | |
 | Diodes | 1N4148W SOD-123, one per key, column→row | |
 | Per-key RGB | **SK6812MINI-E, reserved not committed** | Footprints on the mains from day one, populated later or never. Data pin, 5 V rail and ground return reserved on the main FFC — see §5. |
-| Split link | **3-conductor jack, half-duplex** | Three conductors is all half-duplex needs, and a 3-pole jack accepts either cable type — see §5. USB-C-to-USB-C split cables risk shorting VBUS into a host; not worth it. |
-| USB | USB-C on **both** halves | |
+| Split link | **USB-C to USB-C, half-duplex** | 3 A instead of the 0.5 A a 3.5 mm jack allows — the jack, not the source, was capping per-key RGB. Hazards are handled by three specific rules in §5. |
+| USB | **Two USB-C per half**: host and split link | Same receptacle part for both placements |
 
 **Firmware stack:** QMK, data-driven `keyboard.json`, RP2040 split over PIO full-duplex serial (`SERIAL_DRIVER = vendor`), Quantum Painter for the display, Pointing Device + split pointing sync for the Cirque.
 
@@ -332,27 +332,32 @@ SPLIT_KEYBOARD = yes
 SERIAL_DRIVER = vendor        # RP2040 PIO, half-duplex (see below)
 ```
 
-**Half-duplex, deliberately — and three conductors is all it needs.**
+**Half-duplex over USB-C.** Still half-duplex — no QMK feature needs the second
+wire, and the split transport is request/response anyway. The connector changed
+for **current**, not for data.
 
-No QMK feature is lost. Pointing device, layer state, mods, WPM, display state and RGB all sync over half-duplex. The split transport is request/response — the master polls the slave and waits — so it is logically half-duplex even on a full-duplex link. The second conductor buys signal margin and a higher speed ceiling, not concurrency, and 460800 baud is ample for 37 keys plus a few bytes of pointer delta per poll.
+A 3.5 mm jack is rated 0.5 A, and since the slave half's supply crosses it, that
+was the real cap on per-key RGB: ~17% of full white however generous the source.
+USB-C carries 3 A on a standard cable, which lifts the ceiling to ~45%, at which
+point the FFC power conductors become the limit instead.
 
-The link carries VCC, GND and one data line. A **3-pole (TRS) jack provides exactly that**, and it accepts either cable type: plug a TRRS cable into TRS jacks and the jack's sleeve contact lands on the plug's ring-2 at *both* ends, which is consistent and works.
+**Three rules make this safe.** The objection to USB-C split links is that the
+port is not a USB port, so plugging it into a computer meets non-USB signals:
 
-Going 4-pole would only buy a future full-duplex upgrade, and would then carry a hazard a 3-pole cannot: in a 4-pole jack a TRS plug's sleeve bridges the ring-2 and sleeve contacts, so putting the RX line on ring-2 means the wrong cable from the drawer ties RX to ground. Since no QMK feature needs full-duplex, the 3-pole part is the better default, not merely the acceptable one.
+1. **Leave CC1/CC2 unconnected on the split port.** A compliant Type-C source
+   only enables VBUS after detecting a 5.1 kΩ Rd. With no Rd it supplies
+   nothing, so plugging the split port into a host or charger is inert. This is
+   the primary protection and it costs nothing.
+2. **Carry the serial line on SBU1 and SBU2 tied together.** Hosts do not drive
+   SBU in USB 2.0. Tying both matters because USB-C is reversible — on a single
+   SBU pin the link would break when the plug is flipped.
+3. **Fuse the split VBUS, and keep the OR-ing Schottky.** A non-compliant
+   A-to-C charger cable carries its own 56 kΩ Rp and will push 5 V regardless of
+   what our CC pins do.
 
-**Part (2026-09-13):** **PJ-320A**, 14.1 × 5 × 6 mm, through-hole. Chosen on
-height: PJ325 / LCSC C26230 is 12.3 mm tall and exceeds the controller's 10 mm
-envelope. PJ-320A is also the de-facto split-keyboard jack, so cables and
-spares are commonplace. It is reported to be 4-pole; leave **ring-2
-unconnected** and either cable type works safely.
-
-**Correction (2026-09-13):** an earlier revision specified a 4-pole part on the basis that LCSC C26230 had 5 pins. That inference was wrong — reading the actual pinout shows pins 4/5 on the tip and 2/3 on the ring, i.e. a 3-conductor jack with two normally-closed switch contacts that break on insertion. Pin count does not give pole count. Verify any replacement part by its pinout, not its pin count.
-```c
-// config.h
-#define SPLIT_POINTING_ENABLE
-#define POINTING_DEVICE_RIGHT
-#define SPLIT_HAND_PIN GPxx           // from main PCB: high = left
-```
+**The residual cost is usability, not safety:** two identical USB-C ports per
+half invite the wrong cable. Distinguish them by case position and labelling.
+Getting it wrong is inert rather than damaging, given rule 1.
 
 **Decide the master half now — make it the left (display) half, and plug USB in there.** QMK's default is `MASTER_LEFT`, and everything a display wants to render (layer state, mods, WPM, caps) lives natively on the master. Putting the display on the *slave* means syncing each of those across the link (`SPLIT_LAYER_STATE_ENABLE`, `SPLIT_MODS_ENABLE`, …) and driving Quantum Painter from synced state — much less trodden ground than OLED-on-slave. The Cirque has the opposite property: it's explicitly supported on the slave via `SPLIT_POINTING_ENABLE` + `POINTING_DEVICE_RIGHT`. So with USB in the left, both peripherals sit on the half QMK makes easiest.
 
