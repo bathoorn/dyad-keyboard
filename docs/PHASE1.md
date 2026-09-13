@@ -140,7 +140,7 @@ the ordering is that when something breaks you know what caused it.
 | 0 | Toolchain | **PASS** 2026-09-13 — `dyad/proto` compiles to UF2 |
 | 1 | Pico enumerates, QMK flashes | **PASS** 2026-09-13 |
 | 2 | 2×2 matrix on one board | Four distinct keycodes |
-| 3 | EC11 in `encoder_map` | Clean detents, no double-steps or missed steps |
+| 3 | EC11 in `encoder_map` | **PASS** 2026-09-13 |
 | 4 | GC9A01 under Quantum Painter, **direct wiring** | Renders text and an image |
 | 5 | GC9A01 **over the 14-pin FFC** | Renders stably. **Record the highest stable SPI clock.** |
 | 6 | Cirque standalone (SPI, per the bench wiring) | **PASS** 2026-09-13 — cursor tracks |
@@ -206,6 +206,24 @@ Combining them oversizes the regulator for current it never sees.
 **On using strips as the proxy.** Valid, with caveats. A 5050 WS2812B is ~60 mA at full white; SK6812MINI-E is smaller-die and draws less, WS2812_2020 less again — so a strip **overestimates**, which is the safe direction for budgeting but not an exact figure. Do not run 69 LEDs at full white from the dev board: that is ~2 A and will brown out USB. Power the strip from 5 V with a common ground, and measure at **the brightness you intend to ship**, because the cap is the number that matters.
 
 **Free bonus test.** The strip answers the `74AHCT125` question from PLAN.md §4 — whether RP2040's 3.3 V data reliably drives 5 V LEDs. Try it *without* a level shifter first. If it is solid over a representative run length, the shifter footprint stays unpopulated.
+
+## 7a. The bench link is half-duplex, because a TRS cable has three conductors
+
+PLAN.md §5 specs **full-duplex** PIO serial, which needs four conductors:
+VCC, GND, TX, RX — i.e. TRRS. The cable on hand is **TRS**, three conductors,
+so the bench runs **half-duplex** on a single bidirectional data line.
+
+This is not a downgrade worth worrying about. Half-duplex is QMK's default and
+is what most splits carrying a trackball or trackpad actually use; the traffic
+is small — matrix state plus a few bytes of pointer delta per poll.
+
+**For the shipping design:** fit a **4-pole (TRRS) jack** on the controller
+regardless. It costs the same as a 3-pole, and it keeps full-duplex available
+if the ribbon-and-cable combination ever proves marginal. Plan on half-duplex,
+but do not design the option away.
+
+If the bench link proves flaky, the usual cause is the data line not idling
+high: add a 4.7 kΩ pull-up from the serial pin to 3V3 on one side.
 
 ## 5a. Decision: does the shipping design follow the bench rig?
 
