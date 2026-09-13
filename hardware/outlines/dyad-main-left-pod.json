@@ -1,0 +1,11 @@
+{
+ "pod_centre_in_pcb_coords": [
+  197.17,
+  108.58
+ ],
+ "ring_od": 50.0,
+ "kle_to_pcb_offset": [
+  28.575,
+  28.575
+ ]
+}

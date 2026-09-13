@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 4
+version: 5
 units: mm
 key_unit: 19.05
 
@@ -25,6 +25,10 @@ changelog:
      37.5 mm round PCB, 40.4 mm overall including the header tab, 32.4 mm
      active glass. Closes the module_od TODO. Both figures fit inside the
      50 mm ring, so the tab hides within the pod."
+  - "v5 - main PCB outlines exported to hardware/outlines/ for the case.
+     Left 148.97 x 120.74, right 167.21 x 120.74. Pod centres recorded in
+     PCB coordinates; the pod ring overhangs the main board edge by 2.3 mm
+     (left) and 1.5 mm (right), so the two boards overlap in plan view."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -60,6 +64,23 @@ boards:
     pod_centre: [25.0, 80.01]
     ring_od: 50.0
     sensor_od: 40.0        # Cirque TM040040
+
+outlines:
+  source: hardware/outlines/            # regenerate: hardware/export_outlines.py
+  formats: "DXF (perimeter, for CAD import), JSON (vertices), STEP (3D fit reference)"
+  main_left:  { size: [148.97, 120.74], vertices: 23, pod_centre: [197.17, 108.58] }
+  main_right: { size: [167.21, 120.74], vertices: 25, pod_centre: [2.86, 108.58] }
+  pod_overhang: >
+    The pod centres lie OUTSIDE their main board: the knob module is a
+    separate PCB sitting inboard of each half. Its 50 mm ring overhangs the
+    main board edge by 2.3 mm on the left and 1.5 mm on the right, so the two
+    boards overlap in plan view. The case must resolve this in Z, or the main
+    outline needs a notch. Decide at G3.
+  perimeter_only: >
+    Taken from the board's computed polygon outlines, not raw Edge.Cuts. The
+    reverse-mount LED footprint cuts its own light hole, so Edge.Cuts carries
+    ~640 extra loops per board that have nothing to do with the case. Those
+    are exported separately as *-holes.json.
 
 # ---------------------------------------------------------------------------
 # Fixed by decree, not negotiated. See "push uncertainty into the part with

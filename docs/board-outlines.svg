@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 912 371" width="912" height="371" font-family="sans-serif">
+<rect width="912" height="371" fill="#fbfaf9"/>
+<path d="M360.3,29.9 L361.8,31.4 L362.5,32.3 L386.0,79.3 L386.3,81.0 L386.3,127.7 L384.4,264.3 L383.3,266.9 L332.7,317.5 L330.0,318.6 L328.2,318.6 L327.6,318.5 L45.2,271.8 L43.2,270.7 L41.5,269.0 L40.4,266.9 L28.8,174.0 L28.8,173.6 L28.8,34.6 L29.9,32.0 L32.0,29.9 L34.6,28.8 L357.6,28.8 Z" fill="#dbeafe" fill-opacity="0.55" stroke="#2563eb" stroke-width="2.5"/>
+<circle cx="440.7" cy="228.1" r="60.0" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7 5"/>
+<line x1="426.7" y1="228.1" x2="454.7" y2="228.1" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="440.7" y1="214.1" x2="440.7" y2="242.1" stroke="#dc2626" stroke-width="1.6"/>
+<text x="219" y="19" font-size="17" font-weight="700" text-anchor="middle" fill="#2563eb">LEFT  149.0 x 120.7 mm</text>
+<text x="441" y="308" font-size="14" text-anchor="middle" fill="#991b1b" font-weight="600">pod &#8709;50 at (197.2, 108.6)</text>
+<path d="M880.4,29.9 L882.5,32.0 L883.6,34.6 L883.6,219.5 L883.5,220.4 L871.8,267.5 L870.8,269.2 L869.2,270.8 L867.1,271.8 L539.0,318.5 L538.5,318.6 L536.7,318.6 L534.0,317.5 L483.4,266.9 L482.3,264.2 L482.3,262.5 L482.4,262.1 L491.9,172.4 L503.4,80.3 L503.7,79.1 L527.1,32.3 L527.8,31.4 L529.3,29.9 L531.9,28.8 L877.8,28.8 Z" fill="#dcfce7" fill-opacity="0.55" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="426.0" cy="228.1" r="60.0" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7 5"/>
+<line x1="412.0" y1="228.1" x2="440.0" y2="228.1" stroke="#dc2626" stroke-width="1.6"/>
+<line x1="426.0" y1="214.1" x2="426.0" y2="242.1" stroke="#dc2626" stroke-width="1.6"/>
+<text x="659" y="19" font-size="17" font-weight="700" text-anchor="middle" fill="#16a34a">RIGHT  167.2 x 120.7 mm</text>
+<text x="426" y="308" font-size="14" text-anchor="middle" fill="#991b1b" font-weight="600">pod &#8709;50 at (2.9, 108.6)</text>
+<text x="14" y="359" font-size="14" fill="#57534e">Board outlines in PCB coordinates, drawn apart for clarity. Red = knob pod (a separate module PCB), which overhangs the main board edge.</text>
+</svg>

@@ -41357,7 +41357,7 @@
 	(footprint "Diode_SMD:D_SOD-123"
 		(layer "B.Cu")
 		(uuid "e36e5006-8f5b-4980-80ef-2979f28539a5")
-		(at 58.40625 90.170001 -90)
+		(at 58.40625 86.35 -90)
 		(descr "SOD-123")
 		(tags "SOD-123")
 		(property "Reference" "D21"
