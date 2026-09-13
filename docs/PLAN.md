@@ -247,6 +247,8 @@ Handedness moves to the *main* PCB precisely because the controller is now ident
 
 ### Pin budget — one controller must satisfy both halves
 
+> Assigned to concrete GPIOs in **`docs/CONTROLLER.md`**: 27 used, 3 spare.
+
 Because the module is shared, it has to carry the union of what either side needs:
 
 | | Pins |

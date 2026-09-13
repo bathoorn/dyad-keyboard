@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 6
+version: 7
 units: mm
 key_unit: 19.05
 
@@ -33,6 +33,10 @@ changelog:
      corner reliefs per marbastlib plate library; the 2.25u Shift also gets
      two 6.75 x 14.0 mm stabiliser cutouts. Replaces the LED light holes as
      the geometry the case consumes."
+  - "v7 - controller pin assignment fixed: 27 of 30 GPIO used, 3 spare.
+     GP0/GP1 are dual-function (SPI0 RX/CSn or I2C0 SDA/SCL), which defers
+     the Cirque bus decision to firmware and knob-module wiring rather than
+     baking it into the controller. See docs/CONTROLLER.md."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -105,6 +109,11 @@ controller_envelope:
   extent: [50.0, 35.0]
   max_height_above_pcb: 10.0    # tallest part is the TRRS jack
   pcb_thickness: 1.6
+  outline: hardware/pcb-controller/dyad-controller.kicad_pcb  # 50 x 35, 2 mm corners
+  pinout: docs/CONTROLLER.md
+  gpio_used: 27
+  gpio_spare: 3
+  mounting_holes: TODO          # positions unset; blocks G2
   note: >
     The case must guarantee this volume somewhere reachable by both FFCs.
     The controller PCB must fit inside it. Neither side may shrink or
