@@ -27,3 +27,6 @@ firmware/compile_commands.json
 
 # KiCad scripting venv (recreate: /usr/bin/python3 -m venv --system-site-packages .venv-kicad)
 .venv-kicad/
+
+# KiCad project version-history repos (created when a project is opened)
+.history/
