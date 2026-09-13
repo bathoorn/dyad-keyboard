@@ -37,7 +37,27 @@ Both pods share a 50 mm outside diameter so the two halves look like a matched p
 
 Both land against exactly the keys they were meant to: B and Space on the left, thumb Enter and the unlabeled key left of N on the right.
 
-**The 40 mm sensor constrains the mechanism.** A 50 mm ring around it leaves a 5.0 mm annulus, and no standard thin-section ball bearing fits — the bore must clear 42 mm while the OD stays under 48 mm, and 6808 (40×52), 6708 (40×50, no wall left) and 6809 (45×58) all miss. Phase 2 therefore picks between a printed race and rollers riding a downward skirt on the ring. If neither feels good, the symmetric fallback is to take **both** rings to ~60 mm OD, which admits a 6809. Deciding this is now part of gate G1.
+### The sensor sits above the mechanism, not inside it
+
+This is the geometry that makes the whole pod work, so it is worth stating explicitly.
+
+The bearing does **not** encircle the sensor. It sits in a plane *below* it. A static centre post rises through the bearing bore and cantilevers the display or trackpad above the moving parts; the ring rotates on the bearing's outer race, underneath. So the bore only has to pass the post and its cable — roughly 12 mm — and never has to clear 40 mm of Cirque.
+
+That leaves a wide choice of ordinary bearings. With a 50 mm ring and a ~2.25 mm wall, anything up to **45.5 mm OD** fits:
+
+| Bearing | Bore × OD × W | |
+|---|---|---|
+| **6806-2RS** | 30 × 42 × 7 | **pick** — generous bore for post and FFC, 3.5 mm of radial room for the carrier |
+| 6805-2RS | 25 × 37 × 7 | more ring wall, smaller bore |
+| 6905-2RS | 25 × 42 × 9 | taller section |
+
+The 5.0 mm annulus is therefore a **grip** dimension, not a bearing one. It reads as a 5 mm halo of ring visible around the sensor cap, with the full cylindrical outer wall exposed below it — which is what your fingers actually turn.
+
+Three consequences to carry into Phase 2:
+
+- **Z grows.** Stacking the sensor above the bearing is taller than a coplanar arrangement. The knob stack, not the switches, sets case height — see `hardware/interface.yaml`.
+- **The post is a cantilever.** You press on the Cirque with a thumb; deflection there means poor tracking and a cheap feel. Make the post stiff and seat it in a wide boss through the bore, rather than a thin pillar.
+- **The bearing is now steel directly beneath the Cirque.** This is *worse* than the coplanar arrangement for capacitive keep-out, not better. Bench-measure it in Phase 2 before committing; a POM or full-complement plastic bearing is the fallback if it detunes.
 
 Two notes on reading the drawing. The two centres have almost the same x, which would be a collision on one board — but these are **two separate PCBs** (§5) that sit apart in use, so each pod extends into space the other never occupies. That inboard freedom is the whole reason the pods aren't outboard where they'd be a pinky reach. And 5 mm is deliberately tight: you grip the ring from its **open outer side**, so the key-side gap only has to clear the keycap, not a fingertip. Confirm that on the Phase 0 mockup before it goes into copper.
 
@@ -302,7 +322,7 @@ Prove, in this order: GC9A01 renders under Quantum Painter → Cirque reports po
 **Exit:** one firmware binary driving every peripheral simultaneously. This phase de-risks ~80% of the project and costs about $40.
 
 ### Phase 2 — Knob mechanism prototype (weeks 3–5, parallel with Phase 1)
-Print-only, no electronics beyond a loose EC11 and the Cirque. Iterate gear ratio, detent feel, and the Cirque metal keep-out. **Ring OD is fixed at 50 mm both sides (§0), so the open question is the bearing strategy** — printed race versus rollers on a downward skirt, given that no standard ball bearing fits the 5 mm annulus.
+Print-only, no electronics beyond a loose EC11 and the Cirque. Ring OD is fixed at 50 mm both sides and the bearing is a stock 6806-2RS under a cantilevered sensor post (§0). Open questions are gear ratio, detent feel, post stiffness under thumb pressure, and whether the steel bearing sitting under the Cirque detunes it.
 **Exit:** a ring you like turning, and a dimensioned sketch the PCB can be designed around.
 
 ### Phase 3 — KiCad (weeks 5–9)

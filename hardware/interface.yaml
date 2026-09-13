@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 2
+version: 3
 units: mm
 key_unit: 19.05
 
@@ -17,6 +17,10 @@ changelog:
   - "v2 - Cirque is TM040040 (40 mm), not TM035035. Both pods now share a
      50 mm outside ring diameter for visual symmetry. Left pod moved 2.9 mm
      outboard to hold 5 mm clearance with the larger ring. Right unchanged."
+  - "v3 - corrected the pod stack. The sensor sits ABOVE the bearing on a
+     static centre post; it is not encircled by it. The bore only has to
+     pass the post and its cable, so stock bearings fit after all and the
+     v2 claim that none did was wrong. 6806-2RS picked."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -101,16 +105,21 @@ fit_clearance: TODO             # from the tolerance strip coupon, printer + fil
 # ---------------------------------------------------------------------------
 knob:
   mechanism: "ring gear driving off-axis EC11 (PLAN.md section 2, option A)"
-  bearing: TODO                 # OD / ID / width. CONSTRAINED: see below.
-  bearing_constraint: >
-    The right pod has only a 5.0 mm annulus ((50 - 40) / 2). A conventional
-    thin-section deep-groove bearing needs a bore >= 42 mm to clear the
-    sensor and an OD <= 48 mm to leave ring wall. Nothing standard fits:
-    6808 is 40x52, 6708 is 40x50 (no wall left), 6809 is 45x58. So the
-    right pod must use a printed race, or rollers riding a downward skirt
-    on the ring. If Phase 2 rejects both, the symmetric fallback is to
-    raise BOTH rings to ~60 mm OD, which admits a 6809 (45x58x7).
-  ring_od: TODO
+  bearing: 6806-2RS             # 30 x 42 x 7, both pods
+  stack: >
+    The sensor sits ABOVE the mechanism, on a static centre post rising
+    through the bearing bore. The bearing does not encircle the sensor, so
+    the bore only has to pass the post plus its cable (~12 mm), never the
+    40 mm Cirque. With a 50 mm ring and a ~2.25 mm wall, any bearing up to
+    45.5 mm OD fits. Alternates: 6805-2RS (25x37x7), 6905-2RS (25x42x9).
+    The 5.0 mm annulus is therefore a GRIP dimension, not a bearing one.
+  post_stiffness: TODO          # cantilever deflection under thumb load. Measure;
+                                # a soft post means poor tracking and a cheap feel.
+  bearing_under_cirque: TODO    # steel now sits directly beneath the sensor, which
+                                # is WORSE for capacitive keep-out than a coplanar
+                                # ring. Bench-measure; POM bearing is the fallback.
+  ring_od: 50.0                 # fixed, both pods (see boards.*.ring_od)
+  ring_wall: 2.25               # sets the 45.5 mm bearing OD ceiling
   ring_height: TODO
   gear_ratio: TODO
   cirque_metal_keepout: TODO    # capacitive; measured, not assumed
