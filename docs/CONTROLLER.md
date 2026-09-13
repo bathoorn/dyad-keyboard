@@ -162,7 +162,81 @@ worth keeping for bring-up.
 
 Items 1–3 are the ones that would ship a broken or unflashable board if missed.
 
-## 5. Before ordering
+## 5. Step by step
+
+### Before you start
+
+`upstream/` is a **read-only reference**. Nothing below edits it — after step 1,
+`git status` should show no changes under `hardware/pcb-controller/upstream/`.
+If it does, you saved into the wrong place.
+
+Close KiCad before running any generator script in this repo. KiCad writes on
+exit and will happily undo a regeneration.
+
+### 1. Make the working copy
+
+The upstream project carries its own project-local `fp-lib-table` and
+`sym-lib-table`, and they point at `Libraries/` by **relative** path. Save-As
+does not bring those along, so copy them first or the RP2040 symbol and
+footprint go missing:
+
+```bash
+cd hardware/pcb-controller
+cp -r upstream/Libraries upstream/fp-lib-table upstream/sym-lib-table .
+```
+
+Then in KiCad: open `upstream/RP2040-Guide.kicad_pro` → **File → Save As** →
+into `hardware/pcb-controller/`, filename **`dyad-controller`**. Accept the
+KiCad 6 → 10 format upgrade when prompted.
+
+Commit at this point, before editing anything. It gives you a clean "unmodified
+upstream, renamed" baseline to diff every later change against.
+
+### 2. Schematic (Eeschema) — always before the PCB
+
+Work the deltas from §4 in this order; it minimises rework.
+
+1. **Delete J3, J4, J5** — the three 1×11 breakout headers. Biggest cleanup, do
+   it first so the sheet has room.
+2. **Swap the LDO.** Replace U4 (XC6206, SOT-23) with AP2112K-3.3. Same SOT-23-5
+   outline is common but *check the pinout* — they are not all the same.
+3. **Fix the buttons.** SW1's footprint is a `PinSocket_1x02`; change it to a
+   real tactile switch. Add SW2 from `RUN` to `GND` for reset.
+4. **Add the new parts:** PJ-320A jack, 20-pin and 14-pin FFC connectors,
+   74AHCT125 (mark **DNP**, with a 0 Ω bypass), and the Schottky between VBUS
+   and the jack's 5 V.
+5. **Wire to the pin assignment in §1.** GP2/GP3 must be SPI0 SCK/MOSI and
+   GP0/GP1 the dual-function pair — those four are fixed by silicon. The rest
+   is free.
+6. **Annotate**, then run **ERC** and get it clean.
+
+### 3. PCB (Pcbnew)
+
+7. **Tools → Update PCB from Schematic** (F8). Everything new lands in a heap
+   off-board; that is expected.
+8. **Replace the outline.** Delete all existing `Edge.Cuts` — the guide's board
+   is 45.3 × 93.5 mm. Then **File → Import → Graphics**, choose
+   `../outlines/dyad-controller-outline.dxf`, place it on **Edge.Cuts** at
+   **scale 1.0**. It is 50 × 35 mm, normalised to the origin.
+9. **Place the edge parts first**, because they are the real constraint:
+   USB-C and the jack on one long edge, both FFC connectors on the other.
+   Everything else fits around them.
+10. **Then the MCU block** — keep RP2040, crystal and decoupling together and
+    as the guide has them. Do not redistribute the decoupling.
+11. **Route**, pour ground both sides, stitch the RP2040 centre pad with ~9
+    vias, and run **DRC**.
+
+### 4. Before ordering
+
+12. Run the §6 checklist below, diffing block by block against *Hardware design
+    with RP2040* Chapter 2.
+13. **Add LCSC part numbers** to a symbol field named `LCSC` for every
+    assembled part — that is what JLCPCB reads. Pull footprints with
+    `easyeda2kicad` so the design-side part matches the assembly-side one.
+14. Export gerbers, BOM and CPL (`kicad-cli pcb export gerbers` / `drill`, and
+    the BOM/position files from Eeschema and Pcbnew).
+
+## 6. Before ordering
 
 Run the §4 checklist in `PLAN.md` — schematic diffed block-by-block against
 Raspberry Pi's *Hardware design with RP2040* Chapter 2 minimal design example.
