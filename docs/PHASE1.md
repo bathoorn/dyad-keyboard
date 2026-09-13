@@ -95,7 +95,7 @@ Working as of 2026-09-13. Recorded here because three things were not obvious.
 
 ```bash
 qmk config user.qmk_home=~/qmk_firmware
-qmk config user.overlay_dir=/home/b/workspace/split-keyboard/firmware
+qmk config user.overlay_dir=/home/b/workspace/dyad-keyboard/firmware
 qmk compile -kb dyad/proto -km default
 ```
 
@@ -117,7 +117,7 @@ however valid the userspace is. Fix: symlink, keeping this repo as the source
 of truth.
 
 ```bash
-ln -sfn ~/workspace/split-keyboard/firmware/keyboards/dyad ~/qmk_firmware/keyboards/dyad
+ln -sfn ~/workspace/dyad-keyboard/firmware/keyboards/dyad ~/qmk_firmware/keyboards/dyad
 ```
 
 **Gotcha 2 — SPI needs enabling at the ChibiOS HAL level**, or the build dies
