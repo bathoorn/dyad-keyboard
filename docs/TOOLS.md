@@ -5,7 +5,19 @@
 - KiCad **10.0.6** (installed) — schematic + PCB, per PLAN.md §3/§5
 
 - AI tooling
-  - **kicad-happy** skill — file-based review/audit: DRC/ERC cross-checks, schematic-vs-PCB net tracing, BOM extraction, EMC pre-compliance. No running KiCad session needed. Use it as the automated pass for the §4 "MCU-section review checklist" (schematic diff against the minimal design example, decoupling coverage, ground-pour continuity) before ordering the controller module in Phase 4.5. https://github.com/aklofas/kicad-happy
+
+  **Where each one installs, and when.** Two of these go into Claude and two go into KiCad. None are needed before Phase 3 — Phase 1 is a breadboard and QMK, which needs no tooling beyond a shell.
+
+  | Tool | Installs into | Install at |
+  |---|---|---|
+  | kicad-happy | **Claude Code** (plugin) | Phase 3, before the first review |
+  | kicad-mcp | **Claude Code** (MCP server) | Phase 3, and only once a board exists — it bridges a *running* KiCad session, so it is inert before then |
+  | marbastlib | KiCad (PCM) | Phase 3 |
+  | kicad-kbplacer | KiCad (plugin) | Phase 3 |
+
+  Hold the MCP server until it is actually useful: an MCP server's tool schemas sit in context permanently, whereas a plugin costs nothing until invoked.
+
+  - **kicad-happy** skill — file-based review/audit: DRC/ERC cross-checks, schematic-vs-PCB net tracing, BOM extraction, EMC pre-compliance. No running KiCad session needed. Verified: it is packaged as a Claude Code plugin — `/plugin marketplace add aklofas/kicad-happy` then `/plugin install kicad-happy@kicad-happy`, both from an interactive terminal session. (Also ships as standalone zero-dependency Python 3.10+ scripts and a GitHub Action, if a non-agent path is ever wanted.) Use it as the automated pass for the §4 "MCU-section review checklist" (schematic diff against the minimal design example, decoupling coverage, ground-pour continuity) before ordering the controller module in Phase 4.5. https://github.com/aklofas/kicad-happy
   - **kicad-mcp** (Seeed-Studio) — live MCP bridge into an open KiCad 9+ session: inspect schematics/PCBs, trace nets, drive edits interactively. Complements kicad-happy rather than replacing it — this is for hands-on layout sessions, kicad-happy is the checklist gate. https://github.com/Seeed-Studio/kicad-mcp-server
 
 - Placement/routing
