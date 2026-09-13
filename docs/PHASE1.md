@@ -128,13 +128,13 @@ the ordering is that when something breaks you know what caused it.
 
 | # | Step | Pass criterion |
 |---|---|---|
-| 0 | Toolchain | **Done** — `dyad/proto` compiles to UF2 |
-| 1 | Pico enumerates, QMK flashes | Appears as `RPI-RP2`, accepts a UF2, boots |
+| 0 | Toolchain | **PASS** 2026-09-13 — `dyad/proto` compiles to UF2 |
+| 1 | Pico enumerates, QMK flashes | **PASS** 2026-09-13 |
 | 2 | 2×2 matrix on one board | Four distinct keycodes |
 | 3 | EC11 in `encoder_map` | Clean detents, no double-steps or missed steps |
 | 4 | GC9A01 under Quantum Painter, **direct wiring** | Renders text and an image |
 | 5 | GC9A01 **over the 14-pin FFC** | Renders stably. **Record the highest stable SPI clock.** |
-| 6 | Cirque over I²C, standalone | Pointer moves. `CIRQUE_PINNACLE_DIAMETER_MM 40` set. |
+| 6 | Cirque standalone (SPI, per the bench wiring) | **PASS** 2026-09-13 — cursor tracks |
 | 7 | Split over TRRS, both halves | Both matrices work, `SPLIT_HAND_PIN` distinguishes them |
 | 8 | Cirque on the **slave** half | `SPLIT_POINTING_ENABLE` + `POINTING_DEVICE_RIGHT`, USB in the left, cursor still moves |
 | 9 | Everything simultaneously | One binary, both halves, all peripherals live |
@@ -183,16 +183,18 @@ the changelog.
 
 ---
 
-## 5a. Open decision: does the shipping design follow the bench rig?
+## 5a. Decision: does the shipping design follow the bench rig?
 
-PLAN.md §5 puts the Cirque on **I²C**, and that choice is what let us drop MISO from the knob connector entirely. The bench module is strapped for **SPI**. Two ways to resolve it, and the bench work proceeds either way:
+PLAN.md §5 puts the Cirque on **I²C**, which is what let us drop MISO from the knob connector. Step 6 passing over **SPI** settles the factual half: the module is genuinely SPI-strapped, not merely SPI-wired.
 
 | | Consequence |
 |---|---|
-| **Reflow the module's jumper to I²C** | Design unchanged. 14-pin knob FFC, 27 GPIO, no MISO. Costs one fiddly rework on a flex module. |
-| **Keep SPI in the shipping design** | MISO returns. It fits the knob FFC's **spare pin** — still 14 pins — and GPIO goes 27 → 28 of 30, leaving two spare. No connector change. |
+| Reflow the module's jumper to I²C | Design unchanged. 14-pin knob FFC, 27 GPIO, no MISO. Costs a fiddly rework on a flex module, and re-tests something already proven working. |
+| **Keep SPI — recommended** | MISO returns and takes the knob FFC's **already-specced spare pin**. Still 14 pins, no connector change. GPIO 27 → 28 of 30, two spare. |
 
-The second is cheaper than it first looks, because the connector was already specced with a spare. Decide before Phase 3 layout, not before Phase 1 — the bench build simply matches whatever the module is strapped for today.
+**Recommendation: keep SPI.** It is working on real hardware, it costs a pin we had already reserved, and it avoids reworking a flex module to re-reach a state we are already in. The original reason for choosing I²C — fewer wires, and open-drain edges surviving a ribbon better — still holds in the abstract, but not enough to pay rework for.
+
+Still to confirm at step 5/9: that SPI stays reliable **over the 14-pin FFC**, since the bench rig is currently short jumpers. If the ribbon degrades it, revisit.
 
 ## 6. Exit criteria
 
