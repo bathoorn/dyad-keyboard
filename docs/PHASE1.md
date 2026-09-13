@@ -40,6 +40,46 @@ convenient. It does not block anything here.
 
 ---
 
+## 1a. Bench rig on hand
+
+**Board: WinWin Pico_Mini RP2040** (`hardware/devboard/rp2040-mini.avif`). Exposes GP0–GP23 and GP25–GP29 — 29 GPIO, comfortably more than the 27 the final design needs, so the pin budget can be confirmed for real on this board.
+
+Note the flash-size variants silkscreened on it (2M/4M/8M/16M). **Check which you have** — Quantum Painter assets live in flash, and the final design specs 16 MB.
+
+**Cirque, already wired — and it is on SPI, not I²C:**
+
+| Pad | RP2040 function | Cirque |
+|---|---|---|
+| GP2 | SPI0 SCK | SCK |
+| GP3 | SPI0 TX | SDI / MOSI |
+| GP4 | SPI0 RX | SDO / MISO |
+| GP5 | SPI0 CSn | CS |
+| GND, 3V3 | — | power |
+
+Four signals plus power is an SPI Cirque. I²C would be two signals; the only I²C reading of GP2–GP5 puts them on *two different buses*, which nobody wires on purpose. **DR is not connected**, so QMK polls rather than using the interrupt — acceptable on the bench.
+
+Build step 6 to match the wiring:
+
+```make
+# rules.mk
+POINTING_DEVICE_ENABLE = yes
+POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
+```
+```c
+// config.h
+#define SPI_DRIVER  SPID0
+#define SPI_SCK_PIN  GP2
+#define SPI_MOSI_PIN GP3
+#define SPI_MISO_PIN GP4
+#define CIRQUE_PINNACLE_SPI_CS_PIN GP5
+#define CIRQUE_PINNACLE_SPI_DIVISOR 8
+#define CIRQUE_PINNACLE_DIAMETER_MM 40   // NOT the default 35
+```
+
+**This has a design consequence — see §5a.**
+
+---
+
 ## 2. Toolchain first
 
 Before wiring anything: install QMK, build a stock RP2040 keyboard, flash a
@@ -108,6 +148,17 @@ the changelog.
   you nothing.
 
 ---
+
+## 5a. Open decision: does the shipping design follow the bench rig?
+
+PLAN.md §5 puts the Cirque on **I²C**, and that choice is what let us drop MISO from the knob connector entirely. The bench module is strapped for **SPI**. Two ways to resolve it, and the bench work proceeds either way:
+
+| | Consequence |
+|---|---|
+| **Reflow the module's jumper to I²C** | Design unchanged. 14-pin knob FFC, 27 GPIO, no MISO. Costs one fiddly rework on a flex module. |
+| **Keep SPI in the shipping design** | MISO returns. It fits the knob FFC's **spare pin** — still 14 pins — and GPIO goes 27 → 28 of 30, leaving two spare. No connector change. |
+
+The second is cheaper than it first looks, because the connector was already specced with a spare. Decide before Phase 3 layout, not before Phase 1 — the bench build simply matches whatever the module is strapped for today.
 
 ## 6. Exit criteria
 
