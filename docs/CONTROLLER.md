@@ -131,7 +131,38 @@ layout fixes the orientations, not before.
 
 ---
 
-## 4. Before ordering
+## 4. Starting point: the RP2040 design guide
+
+The MCU subsystem is not being drawn from scratch. `hardware/pcb-controller/upstream/`
+vendors **calliah333/RP2040-designguide** (MIT, © 2021 Sleepdealer) as a
+read-only reference — see its `PROVENANCE.md`. It is 2-layer, carries a vetted
+QFN-56 footprint with a STEP model, and its decoupling already matches the
+minimal design example.
+
+Verified to load in KiCad 10.0.6 despite being KiCad 6 format: 36 footprints,
+59 nets, 2 copper layers.
+
+### What transfers unchanged
+
+RP2040 + QFN-56 footprint, W25Q128JVS (exactly our 16 MB flash), 12 MHz crystal
+with 22 pF loads, USBLC6-2SC6 ESD, USB-C with 27 Ω series and 5k1 CC resistors,
+the full decoupling network, and a 500 mA VBUS fuse. It also has an SWD header
+worth keeping for bring-up.
+
+### What must change
+
+| # | Change | Why |
+|---|---|---|
+| 1 | **LDO: XC6206 → AP2112K-3.3** | XC6206 is **200 mA**. Estimated load is ~120 mA (RP2040, backlight, Cirque, flash) — that is 60% utilisation with no margin, and higher dropout. Decide against the real Phase 1 measurement; LEDs do **not** load this rail. |
+| 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
+| 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
+| 4 | **Delete J3/J4/J5** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. |
+| 5 | **Add** 3.5 mm jack, 20-pin + 14-pin FFC, 74AHCT125 (DNP), power OR-ing diode | None are in a bare dev board. |
+| 6 | **Reshape to 50 × 35 mm** | The guide's board is 45.3 × 93.5 mm. |
+
+Items 1–3 are the ones that would ship a broken or unflashable board if missed.
+
+## 5. Before ordering
 
 Run the §4 checklist in `PLAN.md` — schematic diffed block-by-block against
 Raspberry Pi's *Hardware design with RP2040* Chapter 2 minimal design example.
