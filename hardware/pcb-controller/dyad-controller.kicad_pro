@@ -151,7 +151,7 @@
         "allow_blind_buried_vias": false,
         "allow_microvias": false,
         "max_error": 0.005,
-        "min_clearance": 0.2,
+        "min_clearance": 0.15,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.0,
         "min_groove_width": 0.0,
@@ -267,7 +267,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "0.1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -740,7 +740,7 @@
       {
         "filename": "dyad-controller.kicad_sch",
         "name": "dyad-controller",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "ba62e47e-9e07-4e97-ab08-24b670d50f97"
       }
     ],
     "used_designators": "",
@@ -749,7 +749,7 @@
   "sheets": [
     [
       "ba62e47e-9e07-4e97-ab08-24b670d50f97",
-      ""
+      "dyad-controller"
     ]
   ],
   "text_variables": {},

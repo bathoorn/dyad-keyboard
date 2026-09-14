@@ -2,7 +2,7 @@
   (tedit 5EF32B43)
   (descr "QFN, 56 Pin (http://www.cypress.com/file/416486/download#page=40), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py")
   (tags "QFN DFN_QFN")
-  (attr smd)
+  (attr through_hole)
   (fp_text reference "REF**" (at 0 -4.82) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 94ec11cf-5c3f-4978-bba0-0d274b9e5842)
