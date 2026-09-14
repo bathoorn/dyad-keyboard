@@ -54596,11 +54596,11 @@
 	)
 	(segment
 		(start 170.02125 73.66)
-		(end 158.115 61.75375)
+		(end 160.011 64.144)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "COL6")
-		(uuid "ae340a5f-ca17-49ab-a75c-a5d178264ba5")
+		(uuid "3cec8063-64da-4635-9aa7-06e606821f73")
 	)
 	(segment
 		(start 172.4025 40.3225)
@@ -54609,6 +54609,14 @@
 		(layer "F.Cu")
 		(net "COL6")
 		(uuid "b1eff323-0c14-41c7-9212-00b1d4b0a1db")
+	)
+	(segment
+		(start 160.011 64.144)
+		(end 158.115 61.75375)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "COL6")
+		(uuid "d7f99a55-6978-496a-bcad-26cdd91ff19f")
 	)
 	(segment
 		(start 158.115 54.61)
