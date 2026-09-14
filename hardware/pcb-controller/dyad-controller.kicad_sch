@@ -3947,7 +3947,7 @@
 						)
 					)
 				)
-				(pin input clock
+				(pin output clock
 					(at -20.32 -21.59 0)
 					(length 2.54)
 					(name "QSPI_SCLK"

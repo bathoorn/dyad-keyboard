@@ -210,7 +210,7 @@
         (name "QSPI_SD3" (effects (font (size 1.27 1.27))))
         (number "51" (effects (font (size 1.27 1.27))))
       )
-      (pin input clock (at -20.32 -21.59 0) (length 2.54)
+      (pin output clock (at -20.32 -21.59 0) (length 2.54)
         (name "QSPI_SCLK" (effects (font (size 1.27 1.27))))
         (number "52" (effects (font (size 1.27 1.27))))
       )
