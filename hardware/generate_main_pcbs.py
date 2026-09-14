@@ -84,6 +84,15 @@ def generate(half: str) -> None:
         "--diode-footprint", DIODE,
         "--create-led-pcb-elements",
         "--create-led-sch-file",
+        # kbplacer auto-selects "flat" bundling on KiCad 10, tying the two
+        # sheets together only through the .kicad_pro "sheets" list. That is
+        # valid and is where KiCad is heading, but kicad-cli
+        # --schematic-parity and every hierarchy-scoped audit read a single
+        # .kicad_sch, so they see the other sheet's parts as orphans: 64
+        # phantom "Extra footprint" findings on left, 74 on right, and BOM
+        # audits that count 65 of ~195 components. Force the traditional
+        # hierarchical root so those checks are actually meaningful.
+        "--bundle-strategy", "hierarchical",
         "--led-footprint", LED,
         "--led-capacitor-footprint", LED_CAP,
         # LEDs are reverse-mount on the BACK, centred on the switch --
