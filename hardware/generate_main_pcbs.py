@@ -9,6 +9,7 @@ Regenerates from hardware/layout/. Anything hand-edited in the .kicad_pcb
 files afterwards will be lost, so treat this as the source of truth only
 until layout work starts in earnest.
 """
+import math
 import os
 import sys
 
@@ -41,6 +42,11 @@ LED = (
     "LED_SK6812MINI-E_3.2x2.8mm_P1.5mm_ReverseMount"
 )
 LED_CAP = f"{KFP}/Capacitor_SMD.pretty:C_0603_1608Metric"
+
+# Copper-to-edge rule. Shared by the nudge pass and _relax_edge_clearance so
+# the two cannot drift apart: the first bends tracks to satisfy it, the
+# second writes it into the project.
+EDGE_CLEARANCE_MM = 0.2
 
 
 def generate(half: str) -> None:
@@ -123,6 +129,7 @@ def generate(half: str) -> None:
     # Order matters: saving the board rewrites the project file, so the
     # project-level rule change has to come last or it is silently undone.
     _propagate_pad_nets(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
+    _nudge_traces_off_led_cutouts(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _relax_edge_clearance(os.path.join(out, f"dyad-main-{half}.kicad_pro"))
 
 
@@ -156,6 +163,120 @@ def _propagate_pad_nets(pcb_path: str) -> None:
     print(f"    net-propagated {fixed} pads")
 
 
+def _bend_away(board, track, cutout, clearance) -> bool:
+    """Split `track` at a waypoint pushed clear of `cutout`, in place.
+
+    Returns False without touching anything if no offset works, or if the
+    closest approach is so near an end that splitting would leave a stub.
+    """
+    import pcbnew
+
+    start = pcbnew.VECTOR2I(track.GetStart())
+    end = pcbnew.VECTOR2I(track.GetEnd())
+    dx, dy = end.x - start.x, end.y - start.y
+    span = dx * dx + dy * dy
+    if not span:
+        return False
+
+    centre = cutout.GetBoundingBox().GetCenter()
+    # Parameter of the point on the track closest to the cutout centre.
+    t = ((centre.x - start.x) * dx + (centre.y - start.y) * dy) / span
+    if not 0.05 < t < 0.95:
+        return False
+    px, py = start.x + t * dx, start.y + t * dy
+    ax, ay = px - centre.x, py - centre.y
+    norm = math.hypot(ax, ay)
+    if not norm:
+        return False
+    ax, ay = ax / norm, ay / norm
+
+    # Probe geometry without mutating the board until an offset is proven.
+    probe = pcbnew.PCB_TRACK(board)
+    probe.SetLayer(track.GetLayer())
+    probe.SetWidth(track.GetWidth())
+
+    def clears(a, b) -> bool:
+        probe.SetStart(a)
+        probe.SetEnd(b)
+        return not cutout.GetEffectiveShape().Collide(
+            probe.GetEffectiveShape(), clearance
+        )
+
+    for step_mm in (0.35, 0.5, 0.75, 1.0, 1.5):
+        step = pcbnew.FromMM(step_mm)
+        way = pcbnew.VECTOR2I(int(px + ax * step), int(py + ay * step))
+        if clears(start, way) and clears(way, end):
+            track.SetEnd(way)
+            tail = pcbnew.PCB_TRACK(board)
+            tail.SetStart(way)
+            tail.SetEnd(end)
+            tail.SetWidth(track.GetWidth())
+            tail.SetLayer(track.GetLayer())
+            tail.SetNet(track.GetNet())
+            board.Add(tail)
+            return True
+    return False
+
+
+def _nudge_traces_off_led_cutouts(pcb_path: str) -> None:
+    """Bend copper clear of footprint-internal Edge.Cuts openings.
+
+    LED_SK6812MINI-E_..._ReverseMount cuts its own light hole, so the
+    footprint carries Edge.Cuts geometry of its own. kbplacer routes rows and
+    columns without seeing those holes: on the right half COL6 ends up
+    0.036 mm from LED14's cutout against the 0.2 mm rule, close enough that
+    the routing slot could sever the trace. It reproduces identically on every
+    run, so fixing it by hand after each regeneration is pointless.
+
+    Each offending track is split at a waypoint pushed away from the hole.
+    Endpoints never move, so pad connections and the joins to neighbouring
+    segments are preserved. Anything that cannot be resolved is reported and
+    left alone rather than mangled.
+    """
+    import pcbnew
+
+    board = pcbnew.LoadBoard(pcb_path)
+    clearance = pcbnew.FromMM(EDGE_CLEARANCE_MM)
+    cutouts = [
+        (fp.GetReference(), item)
+        for fp in board.GetFootprints()
+        for item in fp.GraphicalItems()
+        if item.GetLayer() == pcbnew.Edge_Cuts
+    ]
+
+    fixed, stuck = 0, []
+    # Bending a track can walk it into a neighbouring cutout, so re-scan until
+    # the board settles. The bound stops a pathological ping-pong.
+    for _ in range(4):
+        changed = False
+        for track in list(board.GetTracks()):
+            if track.GetClass() != "PCB_TRACK":
+                continue
+            box = track.GetBoundingBox()
+            box.Inflate(clearance)
+            for ref, cutout in cutouts:
+                if not box.Intersects(cutout.GetBoundingBox()):
+                    continue
+                if not cutout.GetEffectiveShape().Collide(
+                    track.GetEffectiveShape(), clearance
+                ):
+                    continue
+                if _bend_away(board, track, cutout, clearance):
+                    fixed += 1
+                    changed = True
+                else:
+                    stuck.append((track.GetNetname(), ref))
+                break
+        if not changed:
+            break
+
+    board.Save(pcb_path)
+    print(f"    nudged {fixed} track(s) off LED cutouts")
+    for net, ref in dict.fromkeys(stuck):
+        print(f"    WARNING: {net} still inside {EDGE_CLEARANCE_MM} mm of "
+              f"{ref}'s cutout -- route it by hand")
+
+
 def _relax_edge_clearance(pro_path: str) -> None:
     """Lower the copper-to-edge rule to suit the reverse-mount LED footprint.
 
@@ -168,7 +289,7 @@ def _relax_edge_clearance(pro_path: str) -> None:
     with open(pro_path) as f:
         pro = json.load(f)
     rules = pro.setdefault("board", {}).setdefault("design_settings", {}).setdefault("rules", {})
-    rules["min_copper_edge_clearance"] = 0.2
+    rules["min_copper_edge_clearance"] = EDGE_CLEARANCE_MM
     with open(pro_path, "w") as f:
         json.dump(pro, f, indent=2)
 
