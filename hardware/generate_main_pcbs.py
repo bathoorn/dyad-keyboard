@@ -84,8 +84,11 @@ def generate(half: str) -> None:
         # (+6.2,-5.08) sat directly on the pad-2 hotswap SMD pads at
         # (4.34,-5.08) and (6.09,-5.08). Solved for the closest position to
         # that socket with >=0.4 mm clearance to every pad of the switch, LED,
-        # cap and the four neighbouring key cells. Note the 2.25u stabilised
-        # key needs manual attention -- the stabiliser is not in this model.
+        # cap and the four neighbouring key cells. The stabiliser is not in
+        # that model, but the only stabilised key -- SW21/ST21, the 2.25u on
+        # the left half -- was measured afterwards: D21's nearest pad clears
+        # ST21's nearest hole by 1.53 mm, 3.8x the 0.4 mm target. Re-measure
+        # if the diode offset or the layout changes.
         "-d", "D{} CUSTOM -8.4 5.08 90 BACK",
         "--diode-footprint", DIODE,
         "--create-led-pcb-elements",
