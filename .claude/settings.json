@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(kicad-cli sch erc *)",
+      "Bash(kicad-cli sch export *)",
+      "Bash(kicad-cli pcb drc *)",
+      "Bash(kicad-cli pcb export *)",
+      "Bash(kicad-cli pcb render *)",
+      "Bash(kicad-cli fp *)",
+      "Bash(kicad-cli sym *)",
+      "Bash(kicad-cli version *)",
+      "Bash(.venv-kicad/bin/python *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git check-ignore *)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "konnect"
+  ]
+}

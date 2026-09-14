@@ -30,3 +30,6 @@ firmware/compile_commands.json
 
 # KiCad project version-history repos (created when a project is opened)
 .history/
+
+# Claude Code personal overrides (.claude/settings.json is committed)
+.claude/settings.local.json
