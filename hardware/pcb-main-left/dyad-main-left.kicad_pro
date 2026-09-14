@@ -327,13 +327,8 @@
     "top_level_sheets": [
       {
         "filename": "dyad-main-left.kicad_sch",
-        "name": "Key Matrix",
-        "uuid": "06af0038-3ddf-4e0a-95d2-809550106141"
-      },
-      {
-        "filename": "dyad-main-left-led-chain.kicad_sch",
-        "name": "Led Chain",
-        "uuid": "f53c4816-1ade-4adc-a926-8b7691145adb"
+        "name": "Root",
+        "uuid": "d859e60a-10d9-4f56-b778-fa81b487a1fc"
       }
     ],
     "used_designators": "",
@@ -341,11 +336,15 @@
   },
   "sheets": [
     [
-      "06af0038-3ddf-4e0a-95d2-809550106141",
+      "d859e60a-10d9-4f56-b778-fa81b487a1fc",
+      "Root"
+    ],
+    [
+      "00daa1e0-c01f-4d15-a533-89f62612aa81",
       "Key Matrix"
     ],
     [
-      "f53c4816-1ade-4adc-a926-8b7691145adb",
+      "a29ed782-e855-43c8-89ad-c48cd1fe66fe",
       "Led Chain"
     ]
   ],

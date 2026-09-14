@@ -1,0 +1,2571 @@
+(kicad_sch (version 20250114) (generator "eeschema") (generator_version "9.0") (uuid "ec826f2b-400f-435b-ad0b-75de7b55d9e6") (paper "A4") (title_block (comment 1 "https://github.com/adamws/kicad-kbplacer") (comment 2 "Auto-generated with kicad-kbplacer, requires validation before production!")) (lib_symbols 
+
+(symbol "Device:D_Small" (pin_numbers (hide yes)) (pin_names (offset 0.254) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "D" (at -1.27 2.032 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "D_Small" (at -3.81 -2.032 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 0 0 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 0 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Diode, small symbol" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Device" "D" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "diode" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "D_Small_0_1" 
+
+(polyline (pts 
+
+(xy -0.762 0) 
+
+(xy 0.762 0)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -0.762 -1.016) 
+
+(xy -0.762 1.016)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.762 -1.016) 
+
+(xy -0.762 0) 
+
+(xy 0.762 1.016) 
+
+(xy 0.762 -1.016)) (stroke (width 0.254) (type default)) (fill (type none)))) 
+
+(symbol "D_Small_1_1" (pin passive line (at -2.54 0 0) (length 1.778) (name "K" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 0 180) (length 1.778) (name "A" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Device:RotaryEncoder_Switch" (pin_names (offset 0.254) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "ROT" (at 0 6.604 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "RotaryEncoder_Switch" (at 0 -6.604 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at -3.81 4.064 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 6.604 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Rotary encoder, dual channel, incremental quadrate outputs, with switch" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "rotary switch encoder switch push button" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_fp_filters" "RotaryEncoder*Switch*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "RotaryEncoder_Switch_0_1" 
+
+(rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0.254) (type default)) (fill (type background))) 
+
+(polyline (pts 
+
+(xy -5.08 2.54) 
+
+(xy -3.81 2.54) 
+
+(xy -3.81 2.032)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -5.08 0) 
+
+(xy -3.81 0) 
+
+(xy -3.81 -1.016) 
+
+(xy -3.302 -2.032)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -5.08 -2.54) 
+
+(xy -3.81 -2.54) 
+
+(xy -3.81 -2.032)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -4.318 0) 
+
+(xy -3.81 0) 
+
+(xy -3.81 1.016) 
+
+(xy -3.302 2.032)) (stroke (width 0) (type default)) (fill (type none))) (circle (center -3.81 0) (radius 0.254) (stroke (width 0) (type default)) (fill (type outline))) 
+
+(polyline (pts 
+
+(xy -0.635 -1.778) 
+
+(xy -0.635 1.778)) (stroke (width 0.254) (type default)) (fill (type none))) (circle (center -0.381 0) (radius 1.905) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -0.381 -1.778) 
+
+(xy -0.381 1.778)) (stroke (width 0.254) (type default)) (fill (type none))) (arc (start -0.381 -2.794) (mid -3.0988 -0.0635) (end -0.381 2.667) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -0.127 1.778) 
+
+(xy -0.127 -1.778)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.254 2.921) 
+
+(xy -0.508 2.667) 
+
+(xy 0.127 2.286)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 0.254 -3.048) 
+
+(xy -0.508 -2.794) 
+
+(xy 0.127 -2.413)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 3.81 1.016) 
+
+(xy 3.81 -1.016)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 3.81 0) 
+
+(xy 3.429 0)) (stroke (width 0.254) (type default)) (fill (type none))) (circle (center 4.318 1.016) (radius 0.127) (stroke (width 0.254) (type default)) (fill (type none))) (circle (center 4.318 -1.016) (radius 0.127) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 5.08 2.54) 
+
+(xy 4.318 2.54) 
+
+(xy 4.318 1.016)) (stroke (width 0.254) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 5.08 -2.54) 
+
+(xy 4.318 -2.54) 
+
+(xy 4.318 -1.016)) (stroke (width 0.254) (type default)) (fill (type none)))) 
+
+(symbol "RotaryEncoder_Switch_1_1" (pin passive line (at -7.62 2.54 0) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "A" (effects (font (size 1.27 1.27))))) (pin passive line (at -7.62 0 0) (length 2.54) (name "C" (effects (font (size 1.27 1.27)))) (number "C" (effects (font (size 1.27 1.27))))) (pin passive line (at -7.62 -2.54 0) (length 2.54) (name "B" (effects (font (size 1.27 1.27)))) (number "B" (effects (font (size 1.27 1.27))))) (pin passive line (at 7.62 2.54 180) (length 2.54) (name "S1" (effects (font (size 1.27 1.27)))) (number "S1" (effects (font (size 1.27 1.27))))) (pin passive line (at 7.62 -2.54 180) (length 2.54) (name "S2" (effects (font (size 1.27 1.27)))) (number "S2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no)) 
+
+(symbol "Mechanical:SW_stab" (pin_names (offset 1.016)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "S" (at -5.08 6.35 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SW_stab" (at -5.08 3.81 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Switch stabilizer" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "stabilizer stab" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "SW_stab_0_1" 
+
+(rectangle (start -5.08 1.27) (end -2.54 -2.54) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start -5.08 -1.524) (end -2.54 -2.54) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start -4.826 2.794) (end -2.794 1.27) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start -4.064 1.27) (end -3.556 2.794) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start -4.064 -1.778) (end 4.064 -2.286) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start -4.064 -2.286) (end -3.556 -1.016) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 2.54 1.27) (end 5.08 -2.54) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 2.54 -1.524) (end 5.08 -2.54) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 2.794 2.794) (end 4.826 1.27) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 3.556 1.27) (end 4.064 2.794) (stroke (width 0) (type default)) (fill (type none))) 
+
+(rectangle (start 4.064 -2.286) (end 3.556 -1.016) (stroke (width 0) (type default)) (fill (type none)))) (embedded_fonts no)) 
+
+(symbol "Switch:SW_Push_45deg" (pin_numbers (hide yes)) (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) 
+
+(property "Reference" "SW" (at 3.048 1.016 0) (effects (font (size 1.27 1.27)) (justify left))) 
+
+(property "Value" "SW_Push_45deg" (at 0 -3.81 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "Push button switch, normally open, two pins, 45° tilted" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "ki_keywords" "switch normally-open pushbutton push-button" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(symbol "SW_Push_45deg_0_1" 
+
+(polyline (pts 
+
+(xy -2.54 2.54) 
+
+(xy -1.524 1.524) 
+
+(xy -1.524 1.524)) (stroke (width 0) (type default)) (fill (type none))) (circle (center -1.1684 1.1684) (radius 0.508) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy -0.508 2.54) 
+
+(xy 2.54 -0.508)) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.016 1.016) 
+
+(xy 2.032 2.032)) (stroke (width 0) (type default)) (fill (type none))) (circle (center 1.143 -1.1938) (radius 0.508) (stroke (width 0) (type default)) (fill (type none))) 
+
+(polyline (pts 
+
+(xy 1.524 -1.524) 
+
+(xy 2.54 -2.54) 
+
+(xy 2.54 -2.54) 
+
+(xy 2.54 -2.54)) (stroke (width 0) (type default)) (fill (type none))) (pin passive line (at -2.54 2.54 0) (length 0) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 2.54 -2.54 180) (length 0) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))) (embedded_fonts no) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 29.21 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c0ff0091-f4e6-4d86-98b2-4f80305b33c1") 
+
+(property "Reference" "SW1" (at 29.21 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 29.21 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 29.21 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 29.21 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 29.21 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b0d181dd-4c4b-4186-92ac-aef8fc943fd7")) (pin "2" (uuid "5c1d1f68-d0d5-4caf-8267-46329b4257ac")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW1") (unit 1))))) 
+
+(wire (pts 
+
+(xy 26.67 20.32) 
+
+(xy 25.4 20.32)) (stroke (width 0) (type default)) (uuid 8c44cf20-7340-43ad-90a2-736a6128f479)) 
+
+(wire (pts 
+
+(xy 25.4 20.32) 
+
+(xy 25.4 120.65)) (stroke (width 0) (type default)) (uuid 2652e3b9-9789-4079-a556-3a6a5f9faee6)) 
+
+(global_label "COL0" (shape input) (at 25.4 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 477e53aa-8341-4b80-bf14-eebffdf40c2c) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 19.1491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 31.75 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d034732e-3a2e-4c80-aa21-ac17cc488192") 
+
+(property "Reference" "D1" (at 33.02 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 33.02 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 31.75 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 31.75 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 31.75 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 31.75 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 31.75 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "2c2bed1d-eca2-4fd7-8cc0-3c0a22e0f224")) (pin "2" (uuid "8c3ab2f0-0374-4610-86ca-258dc97198bd")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D1") (unit 1))))) 
+
+(wire (pts 
+
+(xy 31.75 25.4) 
+
+(xy 31.75 29.21)) (stroke (width 0) (type default)) (uuid 7c12021e-6789-4017-ba6a-5175456323c7)) 
+
+(wire (pts 
+
+(xy 31.75 34.29) 
+
+(xy 31.75 35.56)) (stroke (width 0) (type default)) (uuid 2909251b-33a5-4bb0-9a85-f465fcf30438)) 
+
+(wire (pts 
+
+(xy 31.75 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid 4ba255b4-33da-4f49-8773-cd08bd750e21)) 
+
+(global_label "ROW0" (shape input) (at 127.0 35.56 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid 4b25bc1d-6784-4d3b-b835-21ab9274a92e) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.7491 35.56 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 41.91 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1ea79306-305b-4176-a907-c7d4d0bfb857") 
+
+(property "Reference" "SW2" (at 41.91 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 41.91 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 41.91 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 41.91 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 41.91 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "97497ca2-038a-4f15-85d4-2a4ea5520a76")) (pin "2" (uuid "0b6e800a-a1d6-44d1-a7d0-34010151cf37")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW2") (unit 1))))) 
+
+(wire (pts 
+
+(xy 39.37 20.32) 
+
+(xy 38.1 20.32)) (stroke (width 0) (type default)) (uuid 053d9dcd-f1c2-49fa-83c8-b87fbcc7c402)) 
+
+(wire (pts 
+
+(xy 38.1 20.32) 
+
+(xy 38.1 120.65)) (stroke (width 0) (type default)) (uuid f47db300-e767-463a-abf7-2bd9d443f8bd)) 
+
+(global_label "COL1" (shape input) (at 38.1 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 1f0a61fe-4cbe-4163-bac2-c446eb8a610a) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 31.8491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 44.45 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5e1c10b6-52ef-4f28-a210-370e303157eb") 
+
+(property "Reference" "D2" (at 45.72 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 45.72 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 44.45 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 44.45 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 44.45 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 44.45 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 44.45 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "5fa0d7ef-710d-4e63-82f7-90ab0cf50d9f")) (pin "2" (uuid "f17e530e-9aa7-42b5-96eb-225f9a8338fa")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D2") (unit 1))))) 
+
+(wire (pts 
+
+(xy 44.45 25.4) 
+
+(xy 44.45 29.21)) (stroke (width 0) (type default)) (uuid 9a62ed6a-3386-4729-b71c-c9b9fafa5377)) 
+
+(wire (pts 
+
+(xy 44.45 34.29) 
+
+(xy 44.45 35.56)) (stroke (width 0) (type default)) (uuid dc151b42-a694-4a7f-940b-fb2bae67f5c9)) 
+
+(junction (at 44.45 35.56) (diameter 0) (color 0 0 0 0) (uuid c9d73c95-845f-4b40-83a8-d0ad32c24b04)) 
+
+(wire (pts 
+
+(xy 44.45 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid c2d85900-25ae-47a1-9a62-4c1e5c7dd104)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 54.61 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8d287a6d-6924-4ae8-b58d-9713cfda0f7d") 
+
+(property "Reference" "SW3" (at 54.61 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 54.61 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 54.61 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 54.61 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 54.61 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f5df5906-e3ec-4be8-ba0a-5067812b8e70")) (pin "2" (uuid "76bea3e3-6a61-4e73-854e-186b2fc9ebe0")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW3") (unit 1))))) 
+
+(wire (pts 
+
+(xy 52.07 20.32) 
+
+(xy 50.8 20.32)) (stroke (width 0) (type default)) (uuid 44359554-6c07-4d6c-b6db-4bb3cc6e27c8)) 
+
+(wire (pts 
+
+(xy 50.8 20.32) 
+
+(xy 50.8 120.65)) (stroke (width 0) (type default)) (uuid 14786f1e-42ce-491b-a6ec-cbb05f7b444b)) 
+
+(global_label "COL2" (shape input) (at 50.8 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 93eca151-cb41-47e3-8775-174265daa5b0) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 44.5491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 57.15 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5eb39238-10d1-4cb7-8c9c-99108eaed077") 
+
+(property "Reference" "D3" (at 58.42 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 58.42 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 57.15 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 57.15 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 57.15 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 57.15 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 57.15 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "99bb774c-bdf2-4982-bb28-f76ff8c53e34")) (pin "2" (uuid "a6fc3799-f33a-462a-a852-8890517e3875")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D3") (unit 1))))) 
+
+(wire (pts 
+
+(xy 57.15 25.4) 
+
+(xy 57.15 29.21)) (stroke (width 0) (type default)) (uuid 99effd73-1c94-4aaf-93fd-1e362356dbe8)) 
+
+(wire (pts 
+
+(xy 57.15 34.29) 
+
+(xy 57.15 35.56)) (stroke (width 0) (type default)) (uuid 4a7792c1-5c67-471c-bf4f-014c75e62f7b)) 
+
+(junction (at 57.15 35.56) (diameter 0) (color 0 0 0 0) (uuid 4ca29e12-970f-4c90-b6b6-719ea5939479)) 
+
+(wire (pts 
+
+(xy 57.15 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid 3a187dbe-1dae-4bd1-9cae-15234c3f0730)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 67.31 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "218c573e-c85c-4746-816e-58f55a8ea5e7") 
+
+(property "Reference" "SW4" (at 67.31 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 67.31 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 67.31 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 67.31 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 67.31 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ae1ec6e3-2ec3-4239-83e2-468906f87961")) (pin "2" (uuid "ba9024f1-9e13-4fef-b08c-c23899aa6887")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW4") (unit 1))))) 
+
+(wire (pts 
+
+(xy 64.77 20.32) 
+
+(xy 63.5 20.32)) (stroke (width 0) (type default)) (uuid 255c2d28-687c-48eb-bacc-82159d56def1)) 
+
+(wire (pts 
+
+(xy 63.5 20.32) 
+
+(xy 63.5 120.65)) (stroke (width 0) (type default)) (uuid 9054f38e-c5d7-4fc0-ba87-ee44e99ad0ca)) 
+
+(global_label "COL3" (shape input) (at 63.5 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid ec498e75-de74-4da0-9233-2e8a930d4c9c) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 57.2491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 69.85 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "af2b0978-def1-49f3-b445-49b949452dfe") 
+
+(property "Reference" "D4" (at 71.12 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 71.12 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 69.85 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 69.85 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 69.85 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 69.85 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 69.85 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "4130e6be-ef12-4909-b9aa-6514a1eba084")) (pin "2" (uuid "425f9609-e7a1-412e-bf92-5c5e87b8ba32")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D4") (unit 1))))) 
+
+(wire (pts 
+
+(xy 69.85 25.4) 
+
+(xy 69.85 29.21)) (stroke (width 0) (type default)) (uuid c5941455-4dff-4a28-a602-994a3eb9da72)) 
+
+(wire (pts 
+
+(xy 69.85 34.29) 
+
+(xy 69.85 35.56)) (stroke (width 0) (type default)) (uuid e618e525-4556-47ca-b880-95295476678f)) 
+
+(junction (at 69.85 35.56) (diameter 0) (color 0 0 0 0) (uuid 2f41786e-5e09-4ec4-8869-c13dcae31e13)) 
+
+(wire (pts 
+
+(xy 69.85 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid ea3a4925-3640-4fa2-9fc8-e1b8d58c5aa5)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 80.01 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "35ea8666-71c3-4f6c-a042-bc7162df8d06") 
+
+(property "Reference" "SW5" (at 80.01 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 80.01 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 80.01 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 80.01 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 80.01 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f5e19ae5-a775-40a3-abe0-9fbc10138ece")) (pin "2" (uuid "2365aded-9f4d-40aa-9abc-1d125d8b727b")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW5") (unit 1))))) 
+
+(wire (pts 
+
+(xy 77.47 20.32) 
+
+(xy 76.2 20.32)) (stroke (width 0) (type default)) (uuid 13259f12-3993-4f09-b385-d50e49b404fd)) 
+
+(wire (pts 
+
+(xy 76.2 20.32) 
+
+(xy 76.2 120.65)) (stroke (width 0) (type default)) (uuid 90e2e2e1-0d3e-49c6-a7ff-b3a8f04b41fc)) 
+
+(global_label "COL4" (shape input) (at 76.2 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 6fb11efd-efb8-4638-a5f4-42621fd01a7a) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 69.9491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 82.55 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4fc94d1c-c91d-45a1-8313-9d22b23b356e") 
+
+(property "Reference" "D5" (at 83.82 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 83.82 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 82.55 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 82.55 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 82.55 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 82.55 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 82.55 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "2920c085-288b-4f4f-ab75-ccb56adb50f9")) (pin "2" (uuid "3d5f2de7-8d19-4186-99e0-fee3918ad183")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D5") (unit 1))))) 
+
+(wire (pts 
+
+(xy 82.55 25.4) 
+
+(xy 82.55 29.21)) (stroke (width 0) (type default)) (uuid abea5785-f60f-4c89-801c-eda754989181)) 
+
+(wire (pts 
+
+(xy 82.55 34.29) 
+
+(xy 82.55 35.56)) (stroke (width 0) (type default)) (uuid d9e70939-7438-4681-9b15-0468198692d9)) 
+
+(junction (at 82.55 35.56) (diameter 0) (color 0 0 0 0) (uuid 9d98762f-a7ac-428c-8d2e-f43668d17bfd)) 
+
+(wire (pts 
+
+(xy 82.55 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid f0759f0c-f02d-4472-9a99-94d097703abf)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 92.71 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "86f89bc3-97c4-41be-bb5d-618f292a4a75") 
+
+(property "Reference" "SW6" (at 92.71 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 92.71 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 92.71 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 92.71 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 92.71 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "98652bad-f618-471c-baa5-fe6379963336")) (pin "2" (uuid "cda5a35f-395d-4437-b5f3-247418ed8953")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW6") (unit 1))))) 
+
+(wire (pts 
+
+(xy 90.17 20.32) 
+
+(xy 88.9 20.32)) (stroke (width 0) (type default)) (uuid db4dac56-f512-4c90-a297-15af6fda16be)) 
+
+(wire (pts 
+
+(xy 88.9 20.32) 
+
+(xy 88.9 120.65)) (stroke (width 0) (type default)) (uuid c3d5c49d-5828-4371-90f4-41e2b7534940)) 
+
+(global_label "COL5" (shape input) (at 88.9 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid d4949a6e-5cc0-49b9-9ea9-07ab5fee84ef) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 82.6491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 95.25 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7c5159ff-9fb4-4339-b6b3-bd196681f3e5") 
+
+(property "Reference" "D6" (at 96.52 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 96.52 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 95.25 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 95.25 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 95.25 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 95.25 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 95.25 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b8ac78d4-21f7-443b-8a69-12ca3617eaf8")) (pin "2" (uuid "4f1d6543-16cb-4847-8ef4-b366f1848db6")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D6") (unit 1))))) 
+
+(wire (pts 
+
+(xy 95.25 25.4) 
+
+(xy 95.25 29.21)) (stroke (width 0) (type default)) (uuid 629e094f-f8e2-4a6d-baff-d6c4a59fc65c)) 
+
+(wire (pts 
+
+(xy 95.25 34.29) 
+
+(xy 95.25 35.56)) (stroke (width 0) (type default)) (uuid 99e6fade-ffc6-4690-ae51-eda85c3e3f77)) 
+
+(junction (at 95.25 35.56) (diameter 0) (color 0 0 0 0) (uuid 2f5814f1-f656-45d6-aae4-6053ff848a7c)) 
+
+(wire (pts 
+
+(xy 95.25 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid c90edd93-9e85-477c-9cdd-ead03c966559)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 105.41 22.86 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f3aa1b58-30d4-4821-9c85-3e9adffb4d3c") 
+
+(property "Reference" "SW7" (at 105.41 17.78 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 105.41 19.05 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.5u" (at 105.41 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 105.41 22.86 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 105.41 22.86 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "bcb7af9d-d500-434b-9413-582a52025029")) (pin "2" (uuid "9cb2c381-d1fa-4a9d-9fe5-6ec54015695f")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW7") (unit 1))))) 
+
+(wire (pts 
+
+(xy 102.87 20.32) 
+
+(xy 101.6 20.32)) (stroke (width 0) (type default)) (uuid 124ae00a-370e-4f96-9b24-8de7396eb33f)) 
+
+(wire (pts 
+
+(xy 101.6 20.32) 
+
+(xy 101.6 120.65)) (stroke (width 0) (type default)) (uuid 29c34a29-2dea-468f-a604-dfa3e5a45718)) 
+
+(global_label "COL6" (shape input) (at 101.6 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid 9ecfc266-ff3e-4d5b-899e-73699162e89f) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 95.3491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 107.95 31.75 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a01aa4fc-afa5-4562-a8e6-b3ddc60d6ca7") 
+
+(property "Reference" "D7" (at 109.22 30.48 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 109.22 33.02 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 107.95 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 107.95 31.75 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 107.95 31.75 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 107.95 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 107.95 31.75 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6880089b-cb9b-4564-b562-78bdb4b3502e")) (pin "2" (uuid "503f6c55-d426-408d-8975-53d2392a054d")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D7") (unit 1))))) 
+
+(wire (pts 
+
+(xy 107.95 25.4) 
+
+(xy 107.95 29.21)) (stroke (width 0) (type default)) (uuid 9d2ad802-d46b-4d46-b98b-f5a110ccbb37)) 
+
+(wire (pts 
+
+(xy 107.95 34.29) 
+
+(xy 107.95 35.56)) (stroke (width 0) (type default)) (uuid 86de7efa-9562-4481-95dc-2c627ccd4851)) 
+
+(junction (at 107.95 35.56) (diameter 0) (color 0 0 0 0) (uuid 13ef3e24-0ea7-4e64-954b-670bf02df512)) 
+
+(wire (pts 
+
+(xy 107.95 35.56) 
+
+(xy 127.0 35.56)) (stroke (width 0) (type default)) (uuid 8b7bdc4a-2578-4a6a-a95a-331a1f99198a)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 29.21 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "db4803a1-a755-4d59-b596-b5fc7855c779") 
+
+(property "Reference" "SW8" (at 29.21 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 29.21 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 29.21 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 29.21 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 29.21 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "1db430a5-0706-458f-b57d-b0a9045622ac")) (pin "2" (uuid "80c7c749-d70d-45d1-8082-7db1b797b0af")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW8") (unit 1))))) 
+
+(wire (pts 
+
+(xy 26.67 40.64) 
+
+(xy 25.4 40.64)) (stroke (width 0) (type default)) (uuid 6b94cfcc-ca06-4876-bfff-0e33f315abec)) 
+
+(junction (at 25.4 40.64) (diameter 0) (color 0 0 0 0) (uuid e722bfc2-26cc-4fb8-a14d-d5143f8e4993)) 
+
+(wire (pts 
+
+(xy 25.4 40.64) 
+
+(xy 25.4 120.65)) (stroke (width 0) (type default)) (uuid ac6fe668-538e-45ae-8026-702869c03092)) 
+
+(symbol (lib_id "Device:D_Small") (at 31.75 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2290ad08-92cb-47fd-abe8-773703bba740") 
+
+(property "Reference" "D8" (at 33.02 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 33.02 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 31.75 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 31.75 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "95ca1f8a-b7fc-4bb9-8821-dea00ee515ae")) (pin "2" (uuid "d7e82752-c53b-43cf-891d-b99108d840b8")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D8") (unit 1))))) 
+
+(wire (pts 
+
+(xy 31.75 45.72) 
+
+(xy 31.75 49.53)) (stroke (width 0) (type default)) (uuid 6e2889dd-fe22-41d0-9e19-cdc4dadb3179)) 
+
+(wire (pts 
+
+(xy 31.75 54.61) 
+
+(xy 31.75 55.88)) (stroke (width 0) (type default)) (uuid ccde4360-f0d4-448d-8734-7c4d94a5906d)) 
+
+(wire (pts 
+
+(xy 31.75 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid 76503475-1484-419e-a22c-ad4f81258251)) 
+
+(global_label "ROW1" (shape input) (at 127.0 55.88 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid f5a0ffc3-2273-478b-bb8a-50b0f85f30bd) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.7491 55.88 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 41.91 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1b829618-49a6-4095-bc8c-a4fdd17173a0") 
+
+(property "Reference" "SW9" (at 41.91 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 41.91 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 41.91 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 41.91 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 41.91 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "36013642-e179-45be-9264-5644d44899d8")) (pin "2" (uuid "185eba76-ee82-4db5-b851-185be1d70402")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW9") (unit 1))))) 
+
+(wire (pts 
+
+(xy 39.37 40.64) 
+
+(xy 38.1 40.64)) (stroke (width 0) (type default)) (uuid 02c9b3f3-4347-4597-88a1-2d3d602f31e4)) 
+
+(junction (at 38.1 40.64) (diameter 0) (color 0 0 0 0) (uuid c9a246a9-8a08-4e55-84af-04c7d934cb25)) 
+
+(wire (pts 
+
+(xy 38.1 40.64) 
+
+(xy 38.1 120.65)) (stroke (width 0) (type default)) (uuid fa9e128a-83fd-4cfc-82cb-4adb6aec707d)) 
+
+(symbol (lib_id "Device:D_Small") (at 44.45 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5654ab7d-81fd-4295-be85-d07da38ea905") 
+
+(property "Reference" "D9" (at 45.72 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 45.72 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 44.45 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 44.45 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 44.45 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 44.45 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 44.45 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "eace6631-8888-43d2-b0c9-5120142ba639")) (pin "2" (uuid "5175ec35-ecf7-475e-bd5b-bffa21456afe")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D9") (unit 1))))) 
+
+(wire (pts 
+
+(xy 44.45 45.72) 
+
+(xy 44.45 49.53)) (stroke (width 0) (type default)) (uuid 6876a1b2-2370-4671-ac0f-8850f24f5104)) 
+
+(wire (pts 
+
+(xy 44.45 54.61) 
+
+(xy 44.45 55.88)) (stroke (width 0) (type default)) (uuid 43bf123c-dc86-4388-953c-747eb51991c3)) 
+
+(junction (at 44.45 55.88) (diameter 0) (color 0 0 0 0) (uuid 5e865bfd-7b3d-4e5a-9fe4-76f86f240422)) 
+
+(wire (pts 
+
+(xy 44.45 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid 3225e64b-7b9f-45cb-9f43-ad5d94af6430)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 54.61 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "28534e0d-958c-437a-ae71-30f11bc668a3") 
+
+(property "Reference" "SW10" (at 54.61 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 54.61 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 54.61 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 54.61 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 54.61 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "df68b399-d76e-44a1-80a1-ed9db69e011b")) (pin "2" (uuid "0ae4fa79-1432-4d2f-815e-c8c6be09c622")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW10") (unit 1))))) 
+
+(wire (pts 
+
+(xy 52.07 40.64) 
+
+(xy 50.8 40.64)) (stroke (width 0) (type default)) (uuid f4f42325-002a-41a1-af23-0bdc960e7e3b)) 
+
+(junction (at 50.8 40.64) (diameter 0) (color 0 0 0 0) (uuid 65e2d4fd-7d5e-4992-8aa3-9272513cd6a0)) 
+
+(wire (pts 
+
+(xy 50.8 40.64) 
+
+(xy 50.8 120.65)) (stroke (width 0) (type default)) (uuid 0436779e-1ef5-46ab-9a4c-7b22d9e8ff12)) 
+
+(symbol (lib_id "Device:D_Small") (at 57.15 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8ece9d6e-fd0b-46be-b610-6551a4867ec6") 
+
+(property "Reference" "D10" (at 58.42 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 58.42 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 57.15 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 57.15 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 57.15 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 57.15 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 57.15 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6e2f0969-df30-40ed-8609-faf47ae52d6b")) (pin "2" (uuid "30dd5821-0ab7-4eda-9260-85af1c2cf8aa")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D10") (unit 1))))) 
+
+(wire (pts 
+
+(xy 57.15 45.72) 
+
+(xy 57.15 49.53)) (stroke (width 0) (type default)) (uuid 460d167f-8ce7-4075-a5bd-94d66f801bf0)) 
+
+(wire (pts 
+
+(xy 57.15 54.61) 
+
+(xy 57.15 55.88)) (stroke (width 0) (type default)) (uuid b48dab4c-aed2-40e0-8a9f-d655aed6012d)) 
+
+(junction (at 57.15 55.88) (diameter 0) (color 0 0 0 0) (uuid f01d8673-621d-409e-b327-792d038f26d4)) 
+
+(wire (pts 
+
+(xy 57.15 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid dbe97096-dc5d-4ca0-b02f-dcb7f18f682d)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 67.31 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "6760c95c-e081-4373-abcf-344f8587490a") 
+
+(property "Reference" "SW11" (at 67.31 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 67.31 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 67.31 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 67.31 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 67.31 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "c0afc130-f2fe-4317-9819-d19ae812627f")) (pin "2" (uuid "7f3cef49-a5ec-4693-a034-9a8be3dd9b13")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW11") (unit 1))))) 
+
+(wire (pts 
+
+(xy 64.77 40.64) 
+
+(xy 63.5 40.64)) (stroke (width 0) (type default)) (uuid f19b9756-648a-4a13-af4a-65f69a8b5a93)) 
+
+(junction (at 63.5 40.64) (diameter 0) (color 0 0 0 0) (uuid 61a0b442-1d10-4a57-b051-b3f21dd76a46)) 
+
+(wire (pts 
+
+(xy 63.5 40.64) 
+
+(xy 63.5 120.65)) (stroke (width 0) (type default)) (uuid 80aada85-adc4-4c0a-83dc-1d3e85a4c2df)) 
+
+(symbol (lib_id "Device:D_Small") (at 69.85 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a2ba3a97-dd22-4846-9fd1-1fb943255c35") 
+
+(property "Reference" "D11" (at 71.12 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 71.12 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 69.85 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 69.85 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 69.85 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 69.85 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 69.85 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "00dc08a8-4bc0-4e4a-b5ab-69af56a85956")) (pin "2" (uuid "eb17748a-5086-40e4-91d9-63a4e9826227")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D11") (unit 1))))) 
+
+(wire (pts 
+
+(xy 69.85 45.72) 
+
+(xy 69.85 49.53)) (stroke (width 0) (type default)) (uuid 8208ff61-3679-4484-824a-6ddc3dcbb0a0)) 
+
+(wire (pts 
+
+(xy 69.85 54.61) 
+
+(xy 69.85 55.88)) (stroke (width 0) (type default)) (uuid dc92cb1f-aeff-4ce7-b28f-0f2e15b93014)) 
+
+(junction (at 69.85 55.88) (diameter 0) (color 0 0 0 0) (uuid 47db12f6-acda-4cb0-9381-a4122cb994d1)) 
+
+(wire (pts 
+
+(xy 69.85 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid 2429c92c-8d18-447a-8323-eace0d552a05)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 80.01 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cd0295ca-ffaa-468f-86f7-05695f176f58") 
+
+(property "Reference" "SW12" (at 80.01 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 80.01 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 80.01 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 80.01 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 80.01 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "10823b22-929e-418c-b167-d8e44909c8d4")) (pin "2" (uuid "56fe4ec7-531b-4e9e-afa4-11493a6a0abe")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW12") (unit 1))))) 
+
+(wire (pts 
+
+(xy 77.47 40.64) 
+
+(xy 76.2 40.64)) (stroke (width 0) (type default)) (uuid b2487e19-82ab-4954-9e1d-058656cc7446)) 
+
+(junction (at 76.2 40.64) (diameter 0) (color 0 0 0 0) (uuid ae832eb9-2303-41ba-993f-61e1fc72b2ec)) 
+
+(wire (pts 
+
+(xy 76.2 40.64) 
+
+(xy 76.2 120.65)) (stroke (width 0) (type default)) (uuid 0004c952-212a-4f57-95c7-e416fecab918)) 
+
+(symbol (lib_id "Device:D_Small") (at 82.55 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b6f6a8ec-8bc6-41fe-a7b4-64acf1929d93") 
+
+(property "Reference" "D12" (at 83.82 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 83.82 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 82.55 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 82.55 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 82.55 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 82.55 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 82.55 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "9cd77e8f-0b7b-441e-ab5e-97a9a37c8ea3")) (pin "2" (uuid "5eb753f8-b1fe-47fc-9300-d068ff26e8e7")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D12") (unit 1))))) 
+
+(wire (pts 
+
+(xy 82.55 45.72) 
+
+(xy 82.55 49.53)) (stroke (width 0) (type default)) (uuid 0b17ccf9-7eec-4e10-a749-fbd86ebc6019)) 
+
+(wire (pts 
+
+(xy 82.55 54.61) 
+
+(xy 82.55 55.88)) (stroke (width 0) (type default)) (uuid 926521e6-aa66-44a9-a2f8-6dfe49f31500)) 
+
+(junction (at 82.55 55.88) (diameter 0) (color 0 0 0 0) (uuid fc8df239-b948-4e17-8733-06b0236693c9)) 
+
+(wire (pts 
+
+(xy 82.55 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid 34ddc5f2-5e77-41db-badb-f38ad7aa8a5a)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 92.71 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "804f1a56-8de5-4277-8761-fd3cdde0cfeb") 
+
+(property "Reference" "SW13" (at 92.71 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 92.71 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 92.71 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 92.71 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 92.71 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "b55b9e2d-7362-4e67-9834-1c9c64f84162")) (pin "2" (uuid "df76d90c-98f3-4684-8583-5543e1e13d7e")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW13") (unit 1))))) 
+
+(wire (pts 
+
+(xy 90.17 40.64) 
+
+(xy 88.9 40.64)) (stroke (width 0) (type default)) (uuid 8f1331fd-b47b-4361-93c6-815563ce8ec5)) 
+
+(junction (at 88.9 40.64) (diameter 0) (color 0 0 0 0) (uuid 8e692358-bb22-4ffd-9b43-d66ff314b42c)) 
+
+(wire (pts 
+
+(xy 88.9 40.64) 
+
+(xy 88.9 120.65)) (stroke (width 0) (type default)) (uuid 7a5b17a0-0cc6-4340-9967-410df13f80d3)) 
+
+(symbol (lib_id "Device:D_Small") (at 95.25 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "efb6367d-d9f6-41da-9bf4-bca1377930fd") 
+
+(property "Reference" "D13" (at 96.52 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 96.52 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 95.25 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 95.25 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 95.25 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 95.25 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 95.25 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d893452e-59fb-4b1c-b4eb-3efcbbadabd0")) (pin "2" (uuid "abdd66b2-0686-40dc-9241-7435d92aef35")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D13") (unit 1))))) 
+
+(wire (pts 
+
+(xy 95.25 45.72) 
+
+(xy 95.25 49.53)) (stroke (width 0) (type default)) (uuid a07205a2-9165-4e2e-8f81-91b43a3401ec)) 
+
+(wire (pts 
+
+(xy 95.25 54.61) 
+
+(xy 95.25 55.88)) (stroke (width 0) (type default)) (uuid d0039602-f0cd-4170-9348-f5e720f63a76)) 
+
+(junction (at 95.25 55.88) (diameter 0) (color 0 0 0 0) (uuid cf0aa526-d3fc-402a-8565-0d4c06a5d238)) 
+
+(wire (pts 
+
+(xy 95.25 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid e826f965-a0a3-4511-a6c2-215a10db5acb)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 105.41 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2da28537-c5ae-4755-b3b8-f8e6ecae4673") 
+
+(property "Reference" "SW14" (at 105.41 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 105.41 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 105.41 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 105.41 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 105.41 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "678a37e0-4a4f-4548-ac79-3ec9c8d75355")) (pin "2" (uuid "417092e0-1f41-4597-a176-9f4550ff57ea")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW14") (unit 1))))) 
+
+(wire (pts 
+
+(xy 102.87 40.64) 
+
+(xy 101.6 40.64)) (stroke (width 0) (type default)) (uuid 50c8f24a-ab4f-4ff4-a543-63597e3b7227)) 
+
+(junction (at 101.6 40.64) (diameter 0) (color 0 0 0 0) (uuid 53fe8233-f625-43d7-bf79-d4b994af2ed8)) 
+
+(wire (pts 
+
+(xy 101.6 40.64) 
+
+(xy 101.6 120.65)) (stroke (width 0) (type default)) (uuid c0cacc2e-e65e-45e1-9db9-6319e1c28167)) 
+
+(symbol (lib_id "Device:D_Small") (at 107.95 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "88c5ce6c-4855-4a01-8b6c-4db8b49e9cf7") 
+
+(property "Reference" "D14" (at 109.22 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 109.22 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 107.95 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 107.95 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 107.95 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 107.95 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 107.95 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6cbba0d3-b59f-443a-bb6d-c971be224721")) (pin "2" (uuid "d753eabd-8153-453f-a101-8ef098db87bd")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D14") (unit 1))))) 
+
+(wire (pts 
+
+(xy 107.95 45.72) 
+
+(xy 107.95 49.53)) (stroke (width 0) (type default)) (uuid 083e3351-f307-45eb-acb8-361c6eb7be28)) 
+
+(wire (pts 
+
+(xy 107.95 54.61) 
+
+(xy 107.95 55.88)) (stroke (width 0) (type default)) (uuid 8c98b970-5b9c-4390-ba46-be306d0dd1a2)) 
+
+(junction (at 107.95 55.88) (diameter 0) (color 0 0 0 0) (uuid 8448a793-3eb2-4790-93f2-a7729b555b57)) 
+
+(wire (pts 
+
+(xy 107.95 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid 67f332d0-9da1-4c7b-9efe-9db1c56acb11)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 118.11 43.18 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "840bd71d-fc54-4198-ad2e-b53a60769434") 
+
+(property "Reference" "SW15" (at 118.11 38.1 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 118.11 39.37 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 118.11 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 118.11 43.18 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 118.11 43.18 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "219f0d8c-70df-4fec-843a-cb8634ab31fe")) (pin "2" (uuid "90a7618a-2549-43ea-880d-bd141389ab45")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW15") (unit 1))))) 
+
+(wire (pts 
+
+(xy 115.57 40.64) 
+
+(xy 114.3 40.64)) (stroke (width 0) (type default)) (uuid e08419c1-50fd-4885-80d6-14d3a172b663)) 
+
+(wire (pts 
+
+(xy 114.3 40.64) 
+
+(xy 114.3 120.65)) (stroke (width 0) (type default)) (uuid 6352ccd3-7ad6-4eb1-85d6-b54db68188db)) 
+
+(global_label "COL7" (shape input) (at 114.3 120.65 270) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify right)) (uuid f7ab9df0-2726-46e6-92ac-fa50a7f3a730) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 108.0491 120.65 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Device:D_Small") (at 120.65 52.07 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a5870bfa-5bc5-4f70-b61b-f8f28472f32b") 
+
+(property "Reference" "D15" (at 121.92 50.8 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 121.92 53.34 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 120.65 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 120.65 52.07 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 120.65 52.07 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 120.65 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 120.65 52.07 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "9ad444a5-499e-4829-bc89-51664f22f6b8")) (pin "2" (uuid "e3f3da05-7d14-4ef8-b686-d06aba173e94")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D15") (unit 1))))) 
+
+(wire (pts 
+
+(xy 120.65 45.72) 
+
+(xy 120.65 49.53)) (stroke (width 0) (type default)) (uuid f065db67-2675-427b-a44e-9eacbd0024e2)) 
+
+(wire (pts 
+
+(xy 120.65 54.61) 
+
+(xy 120.65 55.88)) (stroke (width 0) (type default)) (uuid 3771327d-b4d6-4ae0-986d-755bb7d8d4c8)) 
+
+(junction (at 120.65 55.88) (diameter 0) (color 0 0 0 0) (uuid fc8451f3-c634-400d-a457-b0c63a69351c)) 
+
+(wire (pts 
+
+(xy 120.65 55.88) 
+
+(xy 127.0 55.88)) (stroke (width 0) (type default)) (uuid fc6cea8c-88db-4ca2-af4d-032cd9e5b6b5)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 29.21 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "381a6428-5238-45ea-95ad-25f824c1135b") 
+
+(property "Reference" "SW16" (at 29.21 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 29.21 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 29.21 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 29.21 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 29.21 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2a24963b-8775-4516-ac87-c2527e3ae0d1")) (pin "2" (uuid "1c1b5f05-8a89-4d2f-bce9-1e42cf319623")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW16") (unit 1))))) 
+
+(wire (pts 
+
+(xy 26.67 60.96) 
+
+(xy 25.4 60.96)) (stroke (width 0) (type default)) (uuid 3b6cf167-adb8-4696-9989-772558670f74)) 
+
+(junction (at 25.4 60.96) (diameter 0) (color 0 0 0 0) (uuid acff5596-e7c2-4d40-9311-f47fdff1b998)) 
+
+(wire (pts 
+
+(xy 25.4 60.96) 
+
+(xy 25.4 120.65)) (stroke (width 0) (type default)) (uuid 10d8838f-8742-42b2-8ebc-cd6e8e46d6b8)) 
+
+(symbol (lib_id "Device:D_Small") (at 31.75 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "090e9799-9980-40aa-9698-d9df69a13136") 
+
+(property "Reference" "D16" (at 33.02 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 33.02 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 31.75 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 31.75 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 31.75 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 31.75 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 31.75 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e992da45-1a2e-4690-9c4b-4f469a2089fc")) (pin "2" (uuid "ee3ea6c8-353f-4751-8e2e-320b77b89252")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D16") (unit 1))))) 
+
+(wire (pts 
+
+(xy 31.75 66.04) 
+
+(xy 31.75 69.85)) (stroke (width 0) (type default)) (uuid db224d33-7249-4c4f-a427-69476972f164)) 
+
+(wire (pts 
+
+(xy 31.75 74.93) 
+
+(xy 31.75 76.2)) (stroke (width 0) (type default)) (uuid b79e2230-140a-4111-af2f-3d385e144a64)) 
+
+(wire (pts 
+
+(xy 31.75 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid bbb775e2-4050-43e4-958c-9c6b368b5f01)) 
+
+(global_label "ROW2" (shape input) (at 127.0 76.2 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid 93d189a6-055c-49df-9a82-3a77f07054d4) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.7491 76.2 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 41.91 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2edd7d90-e6a9-4cdd-8fb1-a37946a3b23f") 
+
+(property "Reference" "SW17" (at 41.91 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 41.91 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 41.91 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 41.91 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 41.91 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "806fd6fe-aa56-44d4-a465-4dbf5240e3b4")) (pin "2" (uuid "4ca5172d-0077-4866-a764-21b2382123d3")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW17") (unit 1))))) 
+
+(wire (pts 
+
+(xy 39.37 60.96) 
+
+(xy 38.1 60.96)) (stroke (width 0) (type default)) (uuid b3422b36-f1e4-401d-adf2-87643f57a9a4)) 
+
+(junction (at 38.1 60.96) (diameter 0) (color 0 0 0 0) (uuid f0507510-4f70-48de-ba1e-6e28e3a62565)) 
+
+(wire (pts 
+
+(xy 38.1 60.96) 
+
+(xy 38.1 120.65)) (stroke (width 0) (type default)) (uuid 9d998ddf-6a33-4c8f-9f07-3376fb5f09c1)) 
+
+(symbol (lib_id "Device:D_Small") (at 44.45 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "826d3516-0321-41f3-8b42-f526394977d2") 
+
+(property "Reference" "D17" (at 45.72 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 45.72 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 44.45 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 44.45 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 44.45 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 44.45 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 44.45 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "02d00ee5-6ba8-4cb9-8df9-1387c079dc72")) (pin "2" (uuid "f486bd0f-603f-4843-bcf1-f5e74764958f")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D17") (unit 1))))) 
+
+(wire (pts 
+
+(xy 44.45 66.04) 
+
+(xy 44.45 69.85)) (stroke (width 0) (type default)) (uuid 6214948f-3c34-4c19-98d5-1247eff74f6e)) 
+
+(wire (pts 
+
+(xy 44.45 74.93) 
+
+(xy 44.45 76.2)) (stroke (width 0) (type default)) (uuid 0f806673-30e2-4b40-b616-4b11e4a88b56)) 
+
+(junction (at 44.45 76.2) (diameter 0) (color 0 0 0 0) (uuid 8fc16c9b-ab53-48a2-8eb7-3aa0691bb043)) 
+
+(wire (pts 
+
+(xy 44.45 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid b4fde883-3dd6-404d-9166-e1715297bbb2)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 54.61 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "a6a40532-74ce-4de6-8ff5-31352aaeeed8") 
+
+(property "Reference" "SW18" (at 54.61 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 54.61 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 54.61 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 54.61 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 54.61 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "60acf6c8-36df-4574-bac4-05060cda794d")) (pin "2" (uuid "a9ab62b6-70cd-4d20-877f-834c135a1638")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW18") (unit 1))))) 
+
+(wire (pts 
+
+(xy 52.07 60.96) 
+
+(xy 50.8 60.96)) (stroke (width 0) (type default)) (uuid c625343c-ecec-462b-990d-169cee215bdd)) 
+
+(junction (at 50.8 60.96) (diameter 0) (color 0 0 0 0) (uuid 418997db-7a45-4488-b1c8-5a856bedb6d0)) 
+
+(wire (pts 
+
+(xy 50.8 60.96) 
+
+(xy 50.8 120.65)) (stroke (width 0) (type default)) (uuid 2306ef3c-b495-4252-a0fe-1904a9a40f34)) 
+
+(symbol (lib_id "Device:D_Small") (at 57.15 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "08c19e35-f3b7-4938-9eb0-00ec8e150e6b") 
+
+(property "Reference" "D18" (at 58.42 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 58.42 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 57.15 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 57.15 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 57.15 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 57.15 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 57.15 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c59e02a6-5e0d-4c45-8937-cc78bdbfe663")) (pin "2" (uuid "c1a8fedd-6fe8-4516-95c0-dca985416896")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D18") (unit 1))))) 
+
+(wire (pts 
+
+(xy 57.15 66.04) 
+
+(xy 57.15 69.85)) (stroke (width 0) (type default)) (uuid 6f72761b-df43-422b-8168-617de68df578)) 
+
+(wire (pts 
+
+(xy 57.15 74.93) 
+
+(xy 57.15 76.2)) (stroke (width 0) (type default)) (uuid 5e54b5d3-dbb7-43f5-808a-422ca2e3caf2)) 
+
+(junction (at 57.15 76.2) (diameter 0) (color 0 0 0 0) (uuid 8f1ce9d3-cfc7-48db-8a65-066d51c8f4ae)) 
+
+(wire (pts 
+
+(xy 57.15 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid ea526fcb-7cbb-4307-ac58-2e16e5c75f7f)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 67.31 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f648d909-b570-4cbe-9f9e-74180065bd7b") 
+
+(property "Reference" "SW19" (at 67.31 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 67.31 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 67.31 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 67.31 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 67.31 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "02f28bc2-6918-4e3a-923c-a65fccb9337e")) (pin "2" (uuid "c2915aa3-122a-45fc-a5a3-b5dcbb308648")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW19") (unit 1))))) 
+
+(wire (pts 
+
+(xy 64.77 60.96) 
+
+(xy 63.5 60.96)) (stroke (width 0) (type default)) (uuid 820e9f01-4cbb-46ba-ab35-5381527180ba)) 
+
+(junction (at 63.5 60.96) (diameter 0) (color 0 0 0 0) (uuid e654189d-c8be-493f-86cb-5e4f41b1c826)) 
+
+(wire (pts 
+
+(xy 63.5 60.96) 
+
+(xy 63.5 120.65)) (stroke (width 0) (type default)) (uuid 21e17141-3f33-4ed0-8056-f1da7ce1ed73)) 
+
+(symbol (lib_id "Device:D_Small") (at 69.85 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "27dbed44-98e2-439f-8862-ec32973f46aa") 
+
+(property "Reference" "D19" (at 71.12 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 71.12 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 69.85 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 69.85 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 69.85 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 69.85 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 69.85 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ce007202-9f1e-46cf-aee5-d53b000de91d")) (pin "2" (uuid "95697c1c-69c8-4d35-b147-3510d6548cca")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D19") (unit 1))))) 
+
+(wire (pts 
+
+(xy 69.85 66.04) 
+
+(xy 69.85 69.85)) (stroke (width 0) (type default)) (uuid ed84c882-b607-49cf-aecc-e655473fa304)) 
+
+(wire (pts 
+
+(xy 69.85 74.93) 
+
+(xy 69.85 76.2)) (stroke (width 0) (type default)) (uuid 0679ee70-f318-4624-b304-fa5873e7db2a)) 
+
+(junction (at 69.85 76.2) (diameter 0) (color 0 0 0 0) (uuid 32787cf6-2b9b-4942-bdd3-f2b8b7c86743)) 
+
+(wire (pts 
+
+(xy 69.85 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid ed678715-b8e6-40c9-bf72-a523ccfad249)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 80.01 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "30155095-6d18-4e53-b67f-f06897483b30") 
+
+(property "Reference" "SW20" (at 80.01 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 80.01 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 80.01 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 80.01 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 80.01 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "540c09b5-cc41-45e7-80e2-e4ea28e2d8ab")) (pin "2" (uuid "30496a45-e9b4-4e26-bd54-1d158afc4426")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW20") (unit 1))))) 
+
+(wire (pts 
+
+(xy 77.47 60.96) 
+
+(xy 76.2 60.96)) (stroke (width 0) (type default)) (uuid 35c5a18b-cf69-499d-bc1e-cea41e534b03)) 
+
+(junction (at 76.2 60.96) (diameter 0) (color 0 0 0 0) (uuid 9183c1bb-b395-4521-81f7-1e76180a7960)) 
+
+(wire (pts 
+
+(xy 76.2 60.96) 
+
+(xy 76.2 120.65)) (stroke (width 0) (type default)) (uuid a16c8eea-ef6a-483f-b117-540891b63430)) 
+
+(symbol (lib_id "Device:D_Small") (at 82.55 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5ea8488f-4376-4bb4-acdc-30906214d4e2") 
+
+(property "Reference" "D20" (at 83.82 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 83.82 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 82.55 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 82.55 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 82.55 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 82.55 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 82.55 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "0b71a1cd-8dd3-42b3-9034-b39eab2a0eef")) (pin "2" (uuid "e4ec69d9-a5c8-480d-ad3c-ffc0f7b030f5")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D20") (unit 1))))) 
+
+(wire (pts 
+
+(xy 82.55 66.04) 
+
+(xy 82.55 69.85)) (stroke (width 0) (type default)) (uuid 40310a3f-f322-4856-9ae6-f0f8f635032e)) 
+
+(wire (pts 
+
+(xy 82.55 74.93) 
+
+(xy 82.55 76.2)) (stroke (width 0) (type default)) (uuid bb518e0f-e93d-40f9-9558-410f16e45830)) 
+
+(junction (at 82.55 76.2) (diameter 0) (color 0 0 0 0) (uuid 5c92ec6d-0c16-4fd4-afae-e211de18398d)) 
+
+(wire (pts 
+
+(xy 82.55 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid cb4c89a2-5982-4748-aaa4-554252d9975b)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 92.71 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2d58c981-2517-4580-ab89-9541212326a3") 
+
+(property "Reference" "SW21" (at 92.71 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 92.71 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 92.71 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 92.71 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 92.71 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ba641744-5757-4e6a-82c4-0c667c8769e1")) (pin "2" (uuid "4f13c505-23b6-45d2-b174-57a3e2ba9691")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW21") (unit 1))))) 
+
+(wire (pts 
+
+(xy 90.17 60.96) 
+
+(xy 88.9 60.96)) (stroke (width 0) (type default)) (uuid 743667f5-dbbe-46b4-9a07-59894d8959c4)) 
+
+(junction (at 88.9 60.96) (diameter 0) (color 0 0 0 0) (uuid 5d7cc62b-3d4c-405b-a898-03373178e0fb)) 
+
+(wire (pts 
+
+(xy 88.9 60.96) 
+
+(xy 88.9 120.65)) (stroke (width 0) (type default)) (uuid b9a3ec7a-d95b-48d2-a3f2-8570ff7abe20)) 
+
+(symbol (lib_id "Device:D_Small") (at 95.25 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "5fa58776-6b42-4321-b960-1d566da6fa31") 
+
+(property "Reference" "D21" (at 96.52 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 96.52 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 95.25 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 95.25 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 95.25 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 95.25 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 95.25 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b5b05c97-dd12-4c72-9ac7-8fbf5ff9497d")) (pin "2" (uuid "fe9ccb3a-2101-4a6f-9194-4e7bb89d0a98")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D21") (unit 1))))) 
+
+(wire (pts 
+
+(xy 95.25 66.04) 
+
+(xy 95.25 69.85)) (stroke (width 0) (type default)) (uuid 0a85074a-aa95-48ea-99b5-1aa88ecaabd1)) 
+
+(wire (pts 
+
+(xy 95.25 74.93) 
+
+(xy 95.25 76.2)) (stroke (width 0) (type default)) (uuid 9608bbff-61d5-4fb2-9231-e12cd971039f)) 
+
+(junction (at 95.25 76.2) (diameter 0) (color 0 0 0 0) (uuid 37f5b518-a163-4dc5-a064-74e2627a2b3e)) 
+
+(wire (pts 
+
+(xy 95.25 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid f15356ef-2ac3-4b35-a789-548f08f15084)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 105.41 63.5 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4e0d036a-deee-418f-81c0-0e67a8ec121c") 
+
+(property "Reference" "SW22" (at 105.41 58.42 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 105.41 59.69 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.75u" (at 105.41 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 105.41 63.5 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 105.41 63.5 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7cc6ddad-3573-4bf0-98d8-792e50988ab1")) (pin "2" (uuid "09de6802-7f7d-4408-9d84-d78f32189f8c")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW22") (unit 1))))) 
+
+(wire (pts 
+
+(xy 102.87 60.96) 
+
+(xy 101.6 60.96)) (stroke (width 0) (type default)) (uuid 98c4f63b-0af1-42d5-8b0e-e3dbb87a81ea)) 
+
+(junction (at 101.6 60.96) (diameter 0) (color 0 0 0 0) (uuid 857395e2-e973-4bc9-bb09-b0ba0d70bf8b)) 
+
+(wire (pts 
+
+(xy 101.6 60.96) 
+
+(xy 101.6 120.65)) (stroke (width 0) (type default)) (uuid 8d560764-311f-414c-8224-1e384a428279)) 
+
+(symbol (lib_id "Device:D_Small") (at 107.95 72.39 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "8a5899f2-5d4e-4254-8bfb-9708a23d8c51") 
+
+(property "Reference" "D22" (at 109.22 71.12 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 109.22 73.66 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 107.95 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 107.95 72.39 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 107.95 72.39 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 107.95 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 107.95 72.39 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ebf5d0b2-967f-4d31-99b7-d83520a13dbc")) (pin "2" (uuid "356fac81-0b3f-4ab7-aa4c-86f6bff3c866")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D22") (unit 1))))) 
+
+(wire (pts 
+
+(xy 107.95 66.04) 
+
+(xy 107.95 69.85)) (stroke (width 0) (type default)) (uuid f1a86b2c-0b32-47bb-9afc-f334ca471816)) 
+
+(wire (pts 
+
+(xy 107.95 74.93) 
+
+(xy 107.95 76.2)) (stroke (width 0) (type default)) (uuid 746ef392-7dcc-4571-84b2-ba0c37876eef)) 
+
+(junction (at 107.95 76.2) (diameter 0) (color 0 0 0 0) (uuid 84a90f88-3200-46bb-91f0-06af92ed09e0)) 
+
+(wire (pts 
+
+(xy 107.95 76.2) 
+
+(xy 127.0 76.2)) (stroke (width 0) (type default)) (uuid c25bf31a-898c-4859-b4ee-260d8ddca5b4)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 29.21 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "eb90db50-be84-443d-878c-5c3fa813a5a0") 
+
+(property "Reference" "SW23" (at 29.21 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 29.21 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 29.21 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 29.21 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 29.21 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "d9c3e7f6-75e3-4a3e-b7a3-4b57d90e65d2")) (pin "2" (uuid "7a31f6c1-9955-4066-a724-0e8978498c70")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW23") (unit 1))))) 
+
+(wire (pts 
+
+(xy 26.67 81.28) 
+
+(xy 25.4 81.28)) (stroke (width 0) (type default)) (uuid 232ccb86-7027-49b0-8749-16ca2acc22d6)) 
+
+(junction (at 25.4 81.28) (diameter 0) (color 0 0 0 0) (uuid 30c2993d-0113-447d-8d55-a6a6439e6bc2)) 
+
+(wire (pts 
+
+(xy 25.4 81.28) 
+
+(xy 25.4 120.65)) (stroke (width 0) (type default)) (uuid d126a217-1f2f-4eec-8d15-38bfe3568c75)) 
+
+(symbol (lib_id "Device:D_Small") (at 31.75 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "d63521c6-3c79-4a5c-95a1-b51855d59a6c") 
+
+(property "Reference" "D23" (at 33.02 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 33.02 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 31.75 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 31.75 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 31.75 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 31.75 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 31.75 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ad3c8d87-9cbd-4dd9-bce1-ebbd16180549")) (pin "2" (uuid "c2afff66-104c-418a-b956-b1d7caae2d7b")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D23") (unit 1))))) 
+
+(wire (pts 
+
+(xy 31.75 86.36) 
+
+(xy 31.75 90.17)) (stroke (width 0) (type default)) (uuid 8037bb6b-730d-472c-846e-004c42381c1a)) 
+
+(wire (pts 
+
+(xy 31.75 95.25) 
+
+(xy 31.75 96.52)) (stroke (width 0) (type default)) (uuid f9cd6b28-6f44-4aa0-bd72-6b241f77253e)) 
+
+(wire (pts 
+
+(xy 31.75 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid 84046bf6-0722-4c12-a980-08771564bbb8)) 
+
+(global_label "ROW3" (shape input) (at 127.0 96.52 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid 94917176-9e6e-4f45-b174-f24b2da33eb0) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.7491 96.52 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 41.91 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "08dfb4d0-87c9-4a92-bba9-81834950c277") 
+
+(property "Reference" "SW24" (at 41.91 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 41.91 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 41.91 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 41.91 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 41.91 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "87bb587c-a1e5-4398-be55-ce4d2bfde3fc")) (pin "2" (uuid "5fef9d5f-4249-4f3e-bee5-16a9d4745110")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW24") (unit 1))))) 
+
+(wire (pts 
+
+(xy 39.37 81.28) 
+
+(xy 38.1 81.28)) (stroke (width 0) (type default)) (uuid 1cb371a0-6539-4bfd-b854-fb49d64dd312)) 
+
+(junction (at 38.1 81.28) (diameter 0) (color 0 0 0 0) (uuid f285cdcf-b554-401c-bfb0-551646957a72)) 
+
+(wire (pts 
+
+(xy 38.1 81.28) 
+
+(xy 38.1 120.65)) (stroke (width 0) (type default)) (uuid 18a3780c-ecd1-4f1e-8e51-6cf082221235)) 
+
+(symbol (lib_id "Device:D_Small") (at 44.45 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "135fb1d0-facf-4eab-a338-e4da0502ed44") 
+
+(property "Reference" "D24" (at 45.72 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 45.72 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 44.45 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 44.45 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 44.45 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 44.45 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 44.45 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "09d864db-07aa-4c37-83a7-b7323c704827")) (pin "2" (uuid "7124c4d1-e2bb-4983-a6fc-6d0188ed3a8d")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D24") (unit 1))))) 
+
+(wire (pts 
+
+(xy 44.45 86.36) 
+
+(xy 44.45 90.17)) (stroke (width 0) (type default)) (uuid 12936b0e-9b4b-4e84-a4c5-cfb4b4de97e2)) 
+
+(wire (pts 
+
+(xy 44.45 95.25) 
+
+(xy 44.45 96.52)) (stroke (width 0) (type default)) (uuid deb0a262-fab4-42b8-8a5b-8b44bef6d0b2)) 
+
+(junction (at 44.45 96.52) (diameter 0) (color 0 0 0 0) (uuid 33451679-b92b-493a-8cce-ffbf8b86829c)) 
+
+(wire (pts 
+
+(xy 44.45 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid 3a7fdb97-e901-4cf3-876a-be5cfbae0023)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 54.61 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "98df1d5a-a80b-44c6-82eb-388f2a69e805") 
+
+(property "Reference" "SW25" (at 54.61 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 54.61 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 54.61 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 54.61 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 54.61 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "aa94e2df-5e60-4af3-ba88-333e26468253")) (pin "2" (uuid "7a3f0a8d-3e5d-4539-aa98-7ef8190586af")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW25") (unit 1))))) 
+
+(wire (pts 
+
+(xy 52.07 81.28) 
+
+(xy 50.8 81.28)) (stroke (width 0) (type default)) (uuid 5f85718a-d613-4eb4-b52c-be51496c4c12)) 
+
+(junction (at 50.8 81.28) (diameter 0) (color 0 0 0 0) (uuid 2f973607-9c0c-42a2-bce7-d664518c0459)) 
+
+(wire (pts 
+
+(xy 50.8 81.28) 
+
+(xy 50.8 120.65)) (stroke (width 0) (type default)) (uuid 2d0e9d9b-bd76-458d-afa4-34a19780f4c2)) 
+
+(symbol (lib_id "Device:D_Small") (at 57.15 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "34e61b3f-291c-4561-92da-dbc0641fdf90") 
+
+(property "Reference" "D25" (at 58.42 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 58.42 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 57.15 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 57.15 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 57.15 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 57.15 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 57.15 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "577afeae-5743-475d-ab91-e7cc56a44692")) (pin "2" (uuid "1806ebd8-a682-4726-9f4b-f1510898b8e0")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D25") (unit 1))))) 
+
+(wire (pts 
+
+(xy 57.15 86.36) 
+
+(xy 57.15 90.17)) (stroke (width 0) (type default)) (uuid bb0d9ed1-941a-4463-8633-3b35442934a0)) 
+
+(wire (pts 
+
+(xy 57.15 95.25) 
+
+(xy 57.15 96.52)) (stroke (width 0) (type default)) (uuid 9823bb21-0773-431d-9845-e53549f2530a)) 
+
+(junction (at 57.15 96.52) (diameter 0) (color 0 0 0 0) (uuid bcff05a7-4918-426f-959b-d7793c341308)) 
+
+(wire (pts 
+
+(xy 57.15 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid 1f72993d-2f05-4503-b03f-fe902ed5ca69)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 67.31 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "82f3a909-45dc-42fc-8838-22a98b5dae0f") 
+
+(property "Reference" "SW26" (at 67.31 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 67.31 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 67.31 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 67.31 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 67.31 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "8d30fcd7-fffb-4aa1-b569-03079ab2cd4a")) (pin "2" (uuid "c1b86803-2262-4c17-b4c3-fcc21d8b7900")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW26") (unit 1))))) 
+
+(wire (pts 
+
+(xy 64.77 81.28) 
+
+(xy 63.5 81.28)) (stroke (width 0) (type default)) (uuid f37d7323-5b1b-41c3-90eb-6fbef59366db)) 
+
+(junction (at 63.5 81.28) (diameter 0) (color 0 0 0 0) (uuid 535cb970-2c6a-46bd-82eb-d8cdd6e5d557)) 
+
+(wire (pts 
+
+(xy 63.5 81.28) 
+
+(xy 63.5 120.65)) (stroke (width 0) (type default)) (uuid 1dddbf97-0827-443f-8046-e7a33d6e18bd)) 
+
+(symbol (lib_id "Device:D_Small") (at 69.85 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "30d52690-3c46-46c2-9b8c-ca407e4c0a6c") 
+
+(property "Reference" "D26" (at 71.12 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 71.12 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 69.85 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 69.85 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 69.85 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 69.85 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 69.85 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "925909d5-0916-496c-9505-a506d660337e")) (pin "2" (uuid "0071ed4c-754f-4d46-bdfe-4a1145a6a1d1")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D26") (unit 1))))) 
+
+(wire (pts 
+
+(xy 69.85 86.36) 
+
+(xy 69.85 90.17)) (stroke (width 0) (type default)) (uuid b322ff60-036e-44dc-a2c2-42abfcfdf96f)) 
+
+(wire (pts 
+
+(xy 69.85 95.25) 
+
+(xy 69.85 96.52)) (stroke (width 0) (type default)) (uuid 1e1398b1-8f0f-404a-a59d-a38f732649a2)) 
+
+(junction (at 69.85 96.52) (diameter 0) (color 0 0 0 0) (uuid 4edbdf75-2379-4d2b-97e4-de30064d4965)) 
+
+(wire (pts 
+
+(xy 69.85 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid c8a9bf33-a34b-4372-920b-7257bdc9116e)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 80.01 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "dbdefe53-a359-4192-9b29-8012bd2a8822") 
+
+(property "Reference" "SW27" (at 80.01 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 80.01 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 80.01 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 80.01 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 80.01 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "d1550a18-e6da-47ee-8b90-d966d73735c2")) (pin "2" (uuid "aaa2e8be-23a1-463a-b30c-f91f9583192d")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW27") (unit 1))))) 
+
+(wire (pts 
+
+(xy 77.47 81.28) 
+
+(xy 76.2 81.28)) (stroke (width 0) (type default)) (uuid 2fabe5d9-3ddb-44ea-b632-1bb6aacdf5a6)) 
+
+(junction (at 76.2 81.28) (diameter 0) (color 0 0 0 0) (uuid b3fde24c-e3d5-4aae-b045-6324df0465d8)) 
+
+(wire (pts 
+
+(xy 76.2 81.28) 
+
+(xy 76.2 120.65)) (stroke (width 0) (type default)) (uuid e85040a4-c82a-47e9-8cff-5184a46eac83)) 
+
+(symbol (lib_id "Device:D_Small") (at 82.55 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "cdd53c3d-f23d-4ca9-9a08-b2b2e519dd5d") 
+
+(property "Reference" "D27" (at 83.82 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 83.82 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 82.55 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 82.55 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 82.55 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 82.55 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 82.55 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "5e837d5b-9334-4abc-8b92-4ed46b827c3f")) (pin "2" (uuid "a47147cb-7103-4cd7-98a8-c161d2931768")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D27") (unit 1))))) 
+
+(wire (pts 
+
+(xy 82.55 86.36) 
+
+(xy 82.55 90.17)) (stroke (width 0) (type default)) (uuid afa66c10-4132-478e-b215-bdc1610e7ed2)) 
+
+(wire (pts 
+
+(xy 82.55 95.25) 
+
+(xy 82.55 96.52)) (stroke (width 0) (type default)) (uuid c082403d-e1e9-434d-bdab-ae62f2681703)) 
+
+(junction (at 82.55 96.52) (diameter 0) (color 0 0 0 0) (uuid aa725089-4e9d-42ec-a812-f1daa1dca32a)) 
+
+(wire (pts 
+
+(xy 82.55 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid 731fb31f-2693-4597-8851-d64c707ad1cc)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 92.71 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1fa2a7ee-c8bd-453f-8d9f-6e8b0a44375f") 
+
+(property "Reference" "SW28" (at 92.71 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 92.71 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 92.71 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 92.71 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 92.71 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9d36d633-94e3-43ba-92d3-d9085a43a5a2")) (pin "2" (uuid "d51cba55-6707-44aa-bca7-98bcaa1c7914")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW28") (unit 1))))) 
+
+(wire (pts 
+
+(xy 90.17 81.28) 
+
+(xy 88.9 81.28)) (stroke (width 0) (type default)) (uuid 722e6ec7-0932-43f4-bc0b-a5e658c0e2b7)) 
+
+(junction (at 88.9 81.28) (diameter 0) (color 0 0 0 0) (uuid 8996a9e1-77d1-4544-9055-e82f836a0db7)) 
+
+(wire (pts 
+
+(xy 88.9 81.28) 
+
+(xy 88.9 120.65)) (stroke (width 0) (type default)) (uuid 39241f9d-f825-4f26-872d-0300a67ee578)) 
+
+(symbol (lib_id "Device:D_Small") (at 95.25 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "61981933-353e-4b0b-9068-df87ecf660dd") 
+
+(property "Reference" "D28" (at 96.52 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 96.52 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 95.25 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 95.25 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 95.25 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 95.25 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 95.25 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e060ba32-5359-4c36-96d7-f19d79d0db15")) (pin "2" (uuid "2b8b01b2-5a25-4750-b1f6-c519c33d7ad7")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D28") (unit 1))))) 
+
+(wire (pts 
+
+(xy 95.25 86.36) 
+
+(xy 95.25 90.17)) (stroke (width 0) (type default)) (uuid 2f9003af-bd29-4412-b5ea-d3f6a279e4ec)) 
+
+(wire (pts 
+
+(xy 95.25 95.25) 
+
+(xy 95.25 96.52)) (stroke (width 0) (type default)) (uuid ab580370-5496-4f65-97b8-4d9ee2373f35)) 
+
+(junction (at 95.25 96.52) (diameter 0) (color 0 0 0 0) (uuid 11fd13dd-809f-4105-a989-7770f8d876be)) 
+
+(wire (pts 
+
+(xy 95.25 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid faef9dd7-7fe6-4246-9cc3-7098cf380aed)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 105.41 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1897f45f-4134-41dd-bdec-affc95035e39") 
+
+(property "Reference" "SW29" (at 105.41 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 105.41 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 105.41 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 105.41 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 105.41 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "2532989b-1ed5-442a-b79b-6afe8ed0eaad")) (pin "2" (uuid "59604358-fcff-4266-8f21-42c5d5ed6973")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW29") (unit 1))))) 
+
+(wire (pts 
+
+(xy 102.87 81.28) 
+
+(xy 101.6 81.28)) (stroke (width 0) (type default)) (uuid 0863c8fb-f2a6-4046-9c3a-8a80af26dac5)) 
+
+(junction (at 101.6 81.28) (diameter 0) (color 0 0 0 0) (uuid 89ad24b0-1735-4ef1-b638-a5404f1dc0d4)) 
+
+(wire (pts 
+
+(xy 101.6 81.28) 
+
+(xy 101.6 120.65)) (stroke (width 0) (type default)) (uuid 066da243-eb6a-433a-8016-93aee42df6a7)) 
+
+(symbol (lib_id "Device:D_Small") (at 107.95 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4ce59907-0cfd-46c9-a31a-e1e4ae5f19fc") 
+
+(property "Reference" "D29" (at 109.22 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 109.22 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 107.95 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 107.95 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 107.95 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 107.95 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 107.95 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "66ee757d-3308-4e6f-bab4-9b53039ba0d4")) (pin "2" (uuid "e99a9a64-0139-48e1-b012-f49f2ea82259")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D29") (unit 1))))) 
+
+(wire (pts 
+
+(xy 107.95 86.36) 
+
+(xy 107.95 90.17)) (stroke (width 0) (type default)) (uuid d34f1cbc-e745-4468-85fa-dc67efea8482)) 
+
+(wire (pts 
+
+(xy 107.95 95.25) 
+
+(xy 107.95 96.52)) (stroke (width 0) (type default)) (uuid 22e33716-6996-4613-b372-373271a1916f)) 
+
+(junction (at 107.95 96.52) (diameter 0) (color 0 0 0 0) (uuid 381b3725-f98a-49af-adfa-25d53a0781e8)) 
+
+(wire (pts 
+
+(xy 107.95 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid 37bfd700-f1d0-448c-8968-eb5b57594982)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 118.11 83.82 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7f3036b6-61f7-45a8-9f06-200359de9106") 
+
+(property "Reference" "SW30" (at 118.11 78.74 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 118.11 80.01 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.25u" (at 118.11 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 118.11 83.82 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 118.11 83.82 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "11af4231-1316-42ff-afe4-527052a20aaf")) (pin "2" (uuid "5c09312c-2c51-40de-9583-fbedeabd8150")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW30") (unit 1))))) 
+
+(wire (pts 
+
+(xy 115.57 81.28) 
+
+(xy 114.3 81.28)) (stroke (width 0) (type default)) (uuid 08d4b264-954a-4d43-b537-34f043e326e2)) 
+
+(junction (at 114.3 81.28) (diameter 0) (color 0 0 0 0) (uuid fc12d0b7-4f6f-46c3-943c-324da5ae6980)) 
+
+(wire (pts 
+
+(xy 114.3 81.28) 
+
+(xy 114.3 120.65)) (stroke (width 0) (type default)) (uuid 734f1dd2-4fb2-4f34-a965-bbb25d544056)) 
+
+(symbol (lib_id "Device:D_Small") (at 120.65 92.71 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "9ca97704-d795-4f4b-af40-d9ace199c6f2") 
+
+(property "Reference" "D30" (at 121.92 91.44 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 121.92 93.98 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 120.65 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 120.65 92.71 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 120.65 92.71 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 120.65 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 120.65 92.71 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "9484c9e4-e451-4fe7-a299-60ab7c6e280f")) (pin "2" (uuid "60bfc63b-be6a-46fd-8db2-58fcf4e1e67f")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D30") (unit 1))))) 
+
+(wire (pts 
+
+(xy 120.65 86.36) 
+
+(xy 120.65 90.17)) (stroke (width 0) (type default)) (uuid 8715a296-d9f8-40d3-8430-37c72667d153)) 
+
+(wire (pts 
+
+(xy 120.65 95.25) 
+
+(xy 120.65 96.52)) (stroke (width 0) (type default)) (uuid a3daeb99-6299-4eba-a16c-0ee8f73d60b9)) 
+
+(junction (at 120.65 96.52) (diameter 0) (color 0 0 0 0) (uuid f979ffec-236e-437e-adda-23516d727bc7)) 
+
+(wire (pts 
+
+(xy 120.65 96.52) 
+
+(xy 127.0 96.52)) (stroke (width 0) (type default)) (uuid e2655630-a787-4f84-9849-6f3b1f66d8c0)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 29.21 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "525f4232-5192-4654-91b6-7b0a8953bc1a") 
+
+(property "Reference" "SW31" (at 29.21 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 29.21 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.25u" (at 29.21 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 29.21 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 29.21 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "32defd48-2022-4475-a2c3-9be377241615")) (pin "2" (uuid "f62d9de6-e50a-44cb-9fc0-12180a366bd4")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW31") (unit 1))))) 
+
+(wire (pts 
+
+(xy 26.67 101.6) 
+
+(xy 25.4 101.6)) (stroke (width 0) (type default)) (uuid cb740817-5bc1-40c1-9d75-880921df29de)) 
+
+(junction (at 25.4 101.6) (diameter 0) (color 0 0 0 0) (uuid 87f1b98a-a5e6-4b15-9972-f7422774f67c)) 
+
+(wire (pts 
+
+(xy 25.4 101.6) 
+
+(xy 25.4 120.65)) (stroke (width 0) (type default)) (uuid 0232a646-0619-45a6-af32-ff835f605ee9)) 
+
+(symbol (lib_id "Device:D_Small") (at 31.75 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1426861f-f8c7-4f83-b8b3-ba43beb3cc5c") 
+
+(property "Reference" "D31" (at 33.02 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 33.02 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 31.75 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 31.75 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 31.75 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 31.75 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 31.75 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "34598d68-c348-4138-9d5a-37ed43139e34")) (pin "2" (uuid "d530f752-337a-438c-bffb-3daded5a2565")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D31") (unit 1))))) 
+
+(wire (pts 
+
+(xy 31.75 106.68) 
+
+(xy 31.75 110.49)) (stroke (width 0) (type default)) (uuid bafa453e-faab-4b9e-9b5a-99c29cedfd43)) 
+
+(wire (pts 
+
+(xy 31.75 115.57) 
+
+(xy 31.75 116.84)) (stroke (width 0) (type default)) (uuid fdabd491-1488-4038-a74f-7d106e59af08)) 
+
+(wire (pts 
+
+(xy 31.75 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid a46ae19e-359a-4bc3-a577-f1478d33f664)) 
+
+(global_label "ROW4" (shape input) (at 127.0 116.84 0) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify left)) (uuid 0744a8e2-ef0b-4ff1-81da-fc8868a11cd7) 
+
+(property "Intersheetrefs" "${INTERSHEET_REFS}" (at 120.7491 116.84 0) (effects (font (size 1.27 1.27)) (justify right) hide))) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 41.91 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "16c8ecc0-aa21-4c97-81f3-0e7a8f9c8484") 
+
+(property "Reference" "SW32" (at 41.91 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 41.91 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.25u" (at 41.91 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 41.91 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 41.91 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f05d1c67-6ced-414c-a302-aa2aa20a1b5c")) (pin "2" (uuid "6bc3d70b-abca-4b73-a81d-22e0c94b2ecc")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW32") (unit 1))))) 
+
+(wire (pts 
+
+(xy 39.37 101.6) 
+
+(xy 38.1 101.6)) (stroke (width 0) (type default)) (uuid 5c6d9ee7-dacc-4528-8c12-2caccc0bfe23)) 
+
+(junction (at 38.1 101.6) (diameter 0) (color 0 0 0 0) (uuid 96fbfcab-5bf6-44d6-a123-8f46df4a4f5f)) 
+
+(wire (pts 
+
+(xy 38.1 101.6) 
+
+(xy 38.1 120.65)) (stroke (width 0) (type default)) (uuid f9a96d8a-9e15-42bf-a0d0-807911959589)) 
+
+(symbol (lib_id "Device:D_Small") (at 44.45 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "f8b4f847-3f41-40a2-9ce8-dadd40504a42") 
+
+(property "Reference" "D32" (at 45.72 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 45.72 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 44.45 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 44.45 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 44.45 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 44.45 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 44.45 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a3b97805-0cde-447f-90a5-bbbbe8104ff3")) (pin "2" (uuid "555b5a24-61b1-4b17-8d65-d82de8ebaa4a")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D32") (unit 1))))) 
+
+(wire (pts 
+
+(xy 44.45 106.68) 
+
+(xy 44.45 110.49)) (stroke (width 0) (type default)) (uuid 94e8a183-6a9e-4e18-b1ca-4f143307eba0)) 
+
+(wire (pts 
+
+(xy 44.45 115.57) 
+
+(xy 44.45 116.84)) (stroke (width 0) (type default)) (uuid ebba7276-a508-4a83-b0e3-10624d1f4685)) 
+
+(junction (at 44.45 116.84) (diameter 0) (color 0 0 0 0) (uuid ea647b03-bb5d-4a63-8357-bd724504ed25)) 
+
+(wire (pts 
+
+(xy 44.45 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid 5eac1416-49b9-43c1-a15d-024b3dc101e5)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 54.61 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "69816a87-7a55-4c95-8fca-2dbf772a7597") 
+
+(property "Reference" "SW33" (at 54.61 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 54.61 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 54.61 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 54.61 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 54.61 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "7c71cbf0-9f34-4848-9f2b-8e25acf96c75")) (pin "2" (uuid "ae828dc9-424b-4312-ba9c-127c0b215b03")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW33") (unit 1))))) 
+
+(wire (pts 
+
+(xy 52.07 101.6) 
+
+(xy 50.8 101.6)) (stroke (width 0) (type default)) (uuid c89943b8-979d-4cc6-867c-dde4160437d3)) 
+
+(junction (at 50.8 101.6) (diameter 0) (color 0 0 0 0) (uuid 2f196472-ef26-41dd-9c54-139e784a2c6f)) 
+
+(wire (pts 
+
+(xy 50.8 101.6) 
+
+(xy 50.8 120.65)) (stroke (width 0) (type default)) (uuid 2934742b-f62f-4e9e-827a-736a69ba4117)) 
+
+(symbol (lib_id "Device:D_Small") (at 57.15 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "83263259-74a5-44c0-86be-ea3486cac3dd") 
+
+(property "Reference" "D33" (at 58.42 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 58.42 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 57.15 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 57.15 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 57.15 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 57.15 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 57.15 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c1e33180-5085-4f76-8eac-0a5d7a094036")) (pin "2" (uuid "4d23f101-ad60-49aa-9b3e-bc5edb6431b3")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D33") (unit 1))))) 
+
+(wire (pts 
+
+(xy 57.15 106.68) 
+
+(xy 57.15 110.49)) (stroke (width 0) (type default)) (uuid 5fc91f79-454d-44b9-8180-ce7d4cb6a8c5)) 
+
+(wire (pts 
+
+(xy 57.15 115.57) 
+
+(xy 57.15 116.84)) (stroke (width 0) (type default)) (uuid f0db30b5-f3fd-44b8-b316-441d7fa126e4)) 
+
+(junction (at 57.15 116.84) (diameter 0) (color 0 0 0 0) (uuid c2e5a663-51a7-4f83-8299-2312b822d0b1)) 
+
+(wire (pts 
+
+(xy 57.15 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid 26119d55-1bcd-4f68-b136-a69bbde55a31)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 67.31 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b2cc37b6-2f46-42d7-b30f-7959475e2e95") 
+
+(property "Reference" "SW34" (at 67.31 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 67.31 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 67.31 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 67.31 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 67.31 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "88f65f2f-31c0-420b-b820-2f3d3a6f1da5")) (pin "2" (uuid "d7db519e-3dcc-4732-a46c-dc2a51fb4ced")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW34") (unit 1))))) 
+
+(wire (pts 
+
+(xy 64.77 101.6) 
+
+(xy 63.5 101.6)) (stroke (width 0) (type default)) (uuid 071308f0-ae0f-4403-91e8-c1c87652798e)) 
+
+(junction (at 63.5 101.6) (diameter 0) (color 0 0 0 0) (uuid be41569c-3f2c-47aa-80df-ff04e6167d9c)) 
+
+(wire (pts 
+
+(xy 63.5 101.6) 
+
+(xy 63.5 120.65)) (stroke (width 0) (type default)) (uuid 439fb577-4457-4f4c-b2ec-4eb590134813)) 
+
+(symbol (lib_id "Device:D_Small") (at 69.85 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "c2b5353b-abbf-4907-a08c-8c672d08a5fc") 
+
+(property "Reference" "D34" (at 71.12 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 71.12 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 69.85 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 69.85 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 69.85 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 69.85 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 69.85 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "04cee3d3-d06b-4b9f-b47c-1b4ea1d9cc6f")) (pin "2" (uuid "44e84e93-4077-40c4-bbff-c83de43c1929")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D34") (unit 1))))) 
+
+(wire (pts 
+
+(xy 69.85 106.68) 
+
+(xy 69.85 110.49)) (stroke (width 0) (type default)) (uuid 309d4f9d-8ae1-44a8-a3db-e276dd16381e)) 
+
+(wire (pts 
+
+(xy 69.85 115.57) 
+
+(xy 69.85 116.84)) (stroke (width 0) (type default)) (uuid 4cdb2970-5084-4d22-a436-65b4c21bb006)) 
+
+(junction (at 69.85 116.84) (diameter 0) (color 0 0 0 0) (uuid 589c9862-a06a-42a1-8e74-2b18d9618218)) 
+
+(wire (pts 
+
+(xy 69.85 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid 4faaa50a-1942-42c2-b911-1cfb0752a7cc)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 80.01 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "4ed3839f-2e34-4b25-ab4c-b73493dedbc9") 
+
+(property "Reference" "SW35" (at 80.01 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 80.01 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 80.01 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 80.01 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 80.01 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "bea4dc05-294d-4e1b-874b-786d05674126")) (pin "2" (uuid "10c9f75d-a263-4847-9434-ebd991a344cf")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW35") (unit 1))))) 
+
+(wire (pts 
+
+(xy 77.47 101.6) 
+
+(xy 76.2 101.6)) (stroke (width 0) (type default)) (uuid 595b42a7-276f-4be3-9922-b9b9e486b6e4)) 
+
+(junction (at 76.2 101.6) (diameter 0) (color 0 0 0 0) (uuid fb130984-734e-4947-a31f-a62f8261b49f)) 
+
+(wire (pts 
+
+(xy 76.2 101.6) 
+
+(xy 76.2 120.65)) (stroke (width 0) (type default)) (uuid 8a901229-5f31-4ea4-8c84-9b620b171bd4)) 
+
+(symbol (lib_id "Device:D_Small") (at 82.55 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "7514ef8b-e618-47ce-bb87-f9dba76ec9cd") 
+
+(property "Reference" "D35" (at 83.82 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 83.82 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 82.55 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 82.55 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 82.55 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 82.55 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 82.55 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "840862a4-121f-484a-8aab-105f5916c561")) (pin "2" (uuid "91bb9b41-8c21-43ca-9274-7c547ef4c77b")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D35") (unit 1))))) 
+
+(wire (pts 
+
+(xy 82.55 106.68) 
+
+(xy 82.55 110.49)) (stroke (width 0) (type default)) (uuid f7d2b224-33cf-4bce-b966-1c9015b75ffe)) 
+
+(wire (pts 
+
+(xy 82.55 115.57) 
+
+(xy 82.55 116.84)) (stroke (width 0) (type default)) (uuid 24e0ffe7-6d84-46e1-80cf-576b5f73d9ea)) 
+
+(junction (at 82.55 116.84) (diameter 0) (color 0 0 0 0) (uuid c47cf5e0-1237-4cac-80dc-31c7215ff595)) 
+
+(wire (pts 
+
+(xy 82.55 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid a6dc9c4b-59c3-4473-a8f9-4eab99a115d9)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 92.71 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1886f89c-49d3-4388-bec0-e511e63788b8") 
+
+(property "Reference" "SW36" (at 92.71 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 92.71 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1.5u" (at 92.71 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 92.71 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 92.71 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "6219fa3c-b10e-4006-8c7e-263c17c82ef2")) (pin "2" (uuid "4ccd836c-09fe-4fd2-96d6-7150064dd894")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW36") (unit 1))))) 
+
+(wire (pts 
+
+(xy 90.17 101.6) 
+
+(xy 88.9 101.6)) (stroke (width 0) (type default)) (uuid f2a271b2-ac3a-4a04-8919-64fdd67bd228)) 
+
+(junction (at 88.9 101.6) (diameter 0) (color 0 0 0 0) (uuid 98bba25f-8813-47bd-974e-a59b2c4bc4c9)) 
+
+(wire (pts 
+
+(xy 88.9 101.6) 
+
+(xy 88.9 120.65)) (stroke (width 0) (type default)) (uuid ffc06d07-65ff-43e6-bcaf-3b8843022698)) 
+
+(symbol (lib_id "Device:D_Small") (at 95.25 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "b96f1fc3-b09f-4767-8c0b-f3c3485e7e25") 
+
+(property "Reference" "D36" (at 96.52 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 96.52 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 95.25 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 95.25 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 95.25 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 95.25 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 95.25 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b89dc577-1445-4eda-b176-441d03bca993")) (pin "2" (uuid "10a97e2a-d639-47d4-9a28-b244f2bea48b")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D36") (unit 1))))) 
+
+(wire (pts 
+
+(xy 95.25 106.68) 
+
+(xy 95.25 110.49)) (stroke (width 0) (type default)) (uuid 0a6038b1-bef4-494e-8f99-0ebca5a8abdf)) 
+
+(wire (pts 
+
+(xy 95.25 115.57) 
+
+(xy 95.25 116.84)) (stroke (width 0) (type default)) (uuid bc53f1f4-aa30-4a3c-a98e-9c1f509e5e61)) 
+
+(junction (at 95.25 116.84) (diameter 0) (color 0 0 0 0) (uuid 215261b2-aaba-4c2a-b25e-d1fdee591d2f)) 
+
+(wire (pts 
+
+(xy 95.25 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid 932ce7f0-55b1-41fa-af53-b3f481ef34d7)) 
+
+(symbol (lib_id "Switch:SW_Push_45deg") (at 105.41 104.14 0) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "230107e9-e891-4c7e-be4e-437f8785ddfa") 
+
+(property "Reference" "SW37" (at 105.41 99.06 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Value" "SW_Push" (at 105.41 100.33 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Footprint" "marbastlib-mx:SW_MX_HS_CPG151101S11_1u" (at 105.41 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 105.41 104.14 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 105.41 104.14 0) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "119b0da6-d085-423a-9e09-2169c63834e6")) (pin "2" (uuid "c44604cf-39e8-4fc7-887c-c3b5fc359cbf")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "SW37") (unit 1))))) 
+
+(wire (pts 
+
+(xy 102.87 101.6) 
+
+(xy 101.6 101.6)) (stroke (width 0) (type default)) (uuid 70bef489-db75-4669-9e3d-3c27a1d6b9d9)) 
+
+(junction (at 101.6 101.6) (diameter 0) (color 0 0 0 0) (uuid 9d2bd875-50ff-42e4-a5ab-42dbe230d677)) 
+
+(wire (pts 
+
+(xy 101.6 101.6) 
+
+(xy 101.6 120.65)) (stroke (width 0) (type default)) (uuid b4223aec-c5ee-45d8-b5e1-b46dc8eac172)) 
+
+(symbol (lib_id "Device:D_Small") (at 107.95 113.03 90) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "1f5b2d96-6c2a-4954-b4f0-d711bf3c8e54") 
+
+(property "Reference" "D37" (at 109.22 111.76 90) (effects (font (size 1.27 1.27)) (justify right))) 
+
+(property "Value" "D" (at 109.22 114.3 90) (effects (font (size 1.27 1.27)) (justify right) (hide yes))) 
+
+(property "Footprint" "Diode_SMD:D_SOD-123" (at 107.95 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Datasheet" "~" (at 107.95 113.03 90) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Description" "" (at 107.95 113.03 0) (effects (font (size 1.27 1.27)))) 
+
+(property "Sim.Device" "D" (at 107.95 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) 
+
+(property "Sim.Pins" "1=K 2=A" (at 107.95 113.03 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d78171e4-a75e-4552-8ed7-e503166b4a15")) (pin "2" (uuid "43577b2c-77f5-4fb3-9cc3-f40d4e14587e")) (instances (project "dyad-main-right" (path "/3605bab3-3c5a-4e8c-bc09-b27923f2dd3d/504db246-d182-4b26-a7f0-2675eb04b3df" (reference "D37") (unit 1))))) 
+
+(wire (pts 
+
+(xy 107.95 106.68) 
+
+(xy 107.95 110.49)) (stroke (width 0) (type default)) (uuid 7340448f-7256-474f-8daf-8c3dad7dd6ce)) 
+
+(wire (pts 
+
+(xy 107.95 115.57) 
+
+(xy 107.95 116.84)) (stroke (width 0) (type default)) (uuid eab4d5da-9d7e-4a91-9a91-e2ecccef2889)) 
+
+(junction (at 107.95 116.84) (diameter 0) (color 0 0 0 0) (uuid 760c306a-bad1-4066-a8f8-1085fd5e3efa)) 
+
+(wire (pts 
+
+(xy 107.95 116.84) 
+
+(xy 127.0 116.84)) (stroke (width 0) (type default)) (uuid 8d74c1f5-447d-4648-870e-022f63275708)))
