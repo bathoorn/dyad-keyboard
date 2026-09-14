@@ -9791,7 +9791,7 @@
 		)
 	)
 	(gr_text "JLCJLCJLCJLC"
-		(at 200.787 33.575625 0)
+		(at 180 60 0)
 		(layer "B.SilkS")
 		(uuid "c56d0e34-f2b7-4c7a-9312-ea062995fae8")
 		(effects
@@ -9799,6 +9799,7 @@
 				(size 1 1)
 				(thickness 0.15)
 			)
+			(justify mirror)
 		)
 	)
 	(gr_text "~{RESET}"
