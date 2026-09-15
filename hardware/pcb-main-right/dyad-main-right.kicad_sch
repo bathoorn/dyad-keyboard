@@ -1,106 +1,106 @@
 (kicad_sch
-    (version 20250114)
-    (generator "eeschema")
-    (generator_version "9.0")
-    (uuid "3624da76-22b3-4b3d-b023-8fda4d7cb478")
-    (paper "A4")
-    (lib_symbols)
-    (sheet
-        (at 21.59 20.32)
-        (size 23.495 12.065)
-        (exclude_from_sim no)
-        (in_bom yes)
-        (on_board yes)
-        (dnp no)
-        (fields_autoplaced yes)
-        (stroke
-            (width 0.1524)
-            (type solid)
-        )
-        (fill
-            (color 0 0 0 0)
-        )
-        (uuid "2e098da9-a8bf-4b9b-bff4-3794acc27a0a")
-        (property "Sheetname" "Key Matrix"
-            (at 21.59 19.6084 0)
-            (show_name no)
-            (do_not_autoplace no)
-            (effects
-                (font
-                    (size 1.27 1.27)
-                )
-                (justify left bottom)
-            )
-        )
-        (property "Sheetfile" "dyad-main-right-key-matrix.kicad_sch"
-            (at 21.59 32.9696 0)
-            (show_name no)
-            (do_not_autoplace no)
-            (effects
-                (font
-                    (size 1.27 1.27)
-                )
-                (justify left top)
-            )
-        )
-        (instances
-            (project "dyad-main-right"
-                (path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
-                    (page "2")
-                )
-            )
-        )
-    )
-    (sheet
-        (at 21.59 40.32)
-        (size 23.495 12.065)
-        (exclude_from_sim no)
-        (in_bom yes)
-        (on_board yes)
-        (dnp no)
-        (fields_autoplaced yes)
-        (stroke
-            (width 0.1524)
-            (type solid)
-        )
-        (fill
-            (color 0 0 0 0)
-        )
-        (uuid "8a7f6ae2-b858-4134-a337-d1fe3a02ecf2")
-        (property "Sheetname" "Led Chain"
-            (at 21.59 39.6084 0)
-            (show_name no)
-            (do_not_autoplace no)
-            (effects
-                (font
-                    (size 1.27 1.27)
-                )
-                (justify left bottom)
-            )
-        )
-        (property "Sheetfile" "dyad-main-right-led-chain.kicad_sch"
-            (at 21.59 52.9696 0)
-            (show_name no)
-            (do_not_autoplace no)
-            (effects
-                (font
-                    (size 1.27 1.27)
-                )
-                (justify left top)
-            )
-        )
-        (instances
-            (project "dyad-main-right"
-                (path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
-                    (page "3")
-                )
-            )
-        )
-    )
-    (sheet_instances
-        (path "/"
-            (page "1")
-        )
-    )
-    (embedded_fonts no)
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "ef8e27db-4762-4149-a11e-18691d2260a9")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 21.59 40.32)
+		(size 23.495 12.065)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "1632cef0-cae9-4e46-95ea-0f0ca3250f80")
+		(property "Sheetname" "Led Chain"
+			(at 21.59 39.6084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dyad-main-right-led-chain.kicad_sch"
+			(at 21.59 52.9696 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "dyad-main-right"
+				(path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 21.59 20.32)
+		(size 23.495 12.065)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b9f11753-98bd-47ee-b830-00229f802306")
+		(property "Sheetname" "Key Matrix"
+			(at 21.59 19.6084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dyad-main-right-key-matrix.kicad_sch"
+			(at 21.59 32.9696 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "dyad-main-right"
+				(path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
