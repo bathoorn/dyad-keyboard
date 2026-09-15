@@ -5,9 +5,20 @@ Run with the project venv, which must see KiCad's pcbnew:
 
     ./.venv-kicad/bin/python hardware/generate_main_pcbs.py
 
-Regenerates from hardware/layout/. Anything hand-edited in the .kicad_pcb
-files afterwards will be lost, so treat this as the source of truth only
-until layout work starts in earnest.
+RETIRED for the existing boards as of 2026-09-15 -- do not run it against
+hardware/pcb-main-left or hardware/pcb-main-right. It deletes and recreates
+every .kicad_pcb and .kicad_sch it owns, and those files now carry hand work
+it cannot reproduce: the serpentine LED chain, the routing, and any layout
+done since. Running it once already destroyed a hand-laid LED chain, which
+was only recovered from KiCad's .history repo.
+
+It stays here because it is still the record of how the boards were built,
+and because it is the right tool if a half is ever started from scratch. In
+that case, point --pcb-file somewhere new rather than at the existing
+projects.
+
+The .kicad_pcb and .kicad_sch files are now the source of truth.
+See docs/MANUAL_TASKS.md for what is left to do by hand.
 """
 import math
 import os

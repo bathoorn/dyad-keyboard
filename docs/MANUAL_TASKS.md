@@ -1,13 +1,20 @@
 # Manual tasks
 
-`hardware/generate_main_pcbs.py` owns placement, matrix nets, the LED/cap
-creation, kbplacer's first-pass routing, the LED-cutout nudge and the two
-power pours. **Everything below has to be done by hand in KiCad, and is lost
-every time the generator runs.** Do all of it in one sitting, after the last
-regeneration, not before.
+> **Do not run `hardware/generate_main_pcbs.py` against these boards.**
+> It is retired as of 2026-09-15. It deletes and recreates every `.kicad_pcb`
+> and `.kicad_sch` it owns, and those files now carry hand work it cannot
+> reproduce. Running it once already destroyed a hand-laid serpentine LED
+> chain, recovered only from KiCad's `.history` repo.
 
-Its docstring says the same thing more bluntly: *"Anything hand-edited in the
-.kicad_pcb files afterwards will be lost."*
+The generator did its job: placement, matrix nets, LED and capacitor creation,
+kbplacer's first-pass routing, the LED-cutout nudge, the two power pours, and
+the footprint-to-symbol links. **The board and schematic files are now the
+source of truth.** Everything below is hand work in KiCad, and it accumulates
+rather than being regenerated away.
+
+Commit as you go. The one thing that saved the LED chain was
+`hardware/pcb-main-right/.history` -- KiCad's own version-history git repo,
+gitignored but real. `git log` and `git show` work in it.
 
 ## Baseline after a clean regeneration
 
