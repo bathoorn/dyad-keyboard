@@ -11,6 +11,7 @@ until layout work starts in earnest.
 """
 import math
 import os
+import re
 import sys
 
 import pcbnew
@@ -140,10 +141,107 @@ def generate(half: str) -> None:
     app()
     # Order matters: saving the board rewrites the project file, so the
     # project-level rule change has to come last or it is silently undone.
+    _link_footprints_to_symbols(
+        os.path.join(out, f"dyad-main-{half}.kicad_pcb"),
+        os.path.join(out, f"dyad-main-{half}.kicad_sch"),
+    )
     _propagate_pad_nets(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _nudge_traces_off_led_cutouts(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _add_power_pours(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _relax_edge_clearance(os.path.join(out, f"dyad-main-{half}.kicad_pro"))
+
+
+def _symbol_paths(root_sch_path: str) -> dict:
+    """Map each reference to the symbol path KiCad links footprints by.
+
+    Parses by bracket matching rather than indentation: kbplacer writes the
+    sheets unindented, and KiCad rewrites them tab-indented on first save, so
+    anything keyed to whitespace works on only one of the two.
+    """
+    import glob
+
+    root = open(root_sch_path).read()
+    m = re.search(r'\(uuid "([0-9a-f-]{36})"\)', root)
+    if not m:
+        return {}
+    prefix = "/" + m.group(1)
+
+    stem = root_sch_path[: -len(".kicad_sch")]
+    by_ref = {}
+    for sheet in sorted(glob.glob(f"{stem}-*.kicad_sch")) or [root_sch_path]:
+        text = open(sheet).read()
+        for start in (s.start() for s in re.finditer(r"\(symbol\b", text)):
+            depth, j = 0, start
+            while j < len(text):
+                if text[j] == "(":
+                    depth += 1
+                elif text[j] == ")":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            blk = text[start : j + 1]
+            inst = re.search(
+                r'\(path "([^"]+)"\s*\(reference "([^"]+)"', blk.replace("\n", " ")
+            )
+            if not inst:                      # lib_symbols entries have no instances
+                continue
+            ref = inst.group(2)
+            if ref.startswith("#"):           # power symbols carry no footprint
+                continue
+            # the symbol's own uuid is written before its first property
+            head = blk[: blk.find('(property')] if '(property' in blk else blk
+            own = re.search(r'\(uuid "([0-9a-f-]{36})"\)', head)
+            if not own:
+                continue
+            sheet_path = inst.group(1)
+            tail = (
+                sheet_path[len(prefix):]
+                if sheet_path.startswith(prefix)
+                else sheet_path
+            )
+            by_ref[ref] = f"{tail}/{own.group(1)}"
+    return by_ref
+
+
+def _link_footprints_to_symbols(pcb_path: str, root_sch_path: str) -> None:
+    """Give every footprint the path of the schematic symbol it belongs to.
+
+    kbplacer writes the board and the schematic independently and never links
+    them, so every footprint lands with an empty `(path)`. KiCad matches
+    symbols to footprints by that path, so with it blank "Update PCB from
+    Schematic" treats all 148 symbols as new and re-adds the whole board --
+    which makes any schematic-side edit, the LED chain especially, impossible
+    to push through to the PCB.
+
+    KiCad's format is `<sheet path without the root uuid>/<symbol uuid>`,
+    confirmed against the controller board that KiCad itself produced, where a
+    root-level symbol carries `/<symbol uuid>` alone.
+    """
+    import pcbnew
+
+    by_ref = _symbol_paths(root_sch_path)
+    if not by_ref:
+        print("    WARNING: no schematic symbols parsed; footprints left unlinked")
+        return
+    if len(set(by_ref.values())) != len(by_ref):
+        print("    WARNING: symbol paths not unique; footprints left unlinked")
+        return
+
+    board = pcbnew.LoadBoard(pcb_path)
+    linked, missing = 0, []
+    for fp in board.GetFootprints():
+        path = by_ref.get(fp.GetReference())
+        if path is None:
+            missing.append(fp.GetReference())
+            continue
+        fp.SetPath(pcbnew.KIID_PATH(path))
+        linked += 1
+    board.Save(pcb_path)
+    print(f"    linked {linked} footprint(s) to their symbols")
+    if missing:
+        print(f"    WARNING: no symbol for {len(missing)} footprint(s): "
+              f"{', '.join(sorted(missing)[:8])}")
 
 
 def _propagate_pad_nets(pcb_path: str) -> None:

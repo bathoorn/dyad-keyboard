@@ -328,7 +328,7 @@
       {
         "filename": "dyad-main-right.kicad_sch",
         "name": "Root",
-        "uuid": "ef8e27db-4762-4149-a11e-18691d2260a9"
+        "uuid": "3624da76-22b3-4b3d-b023-8fda4d7cb478"
       }
     ],
     "used_designators": "",
@@ -336,15 +336,15 @@
   },
   "sheets": [
     [
-      "ef8e27db-4762-4149-a11e-18691d2260a9",
+      "3624da76-22b3-4b3d-b023-8fda4d7cb478",
       "Root"
     ],
     [
-      "b9f11753-98bd-47ee-b830-00229f802306",
+      "2e098da9-a8bf-4b9b-bff4-3794acc27a0a",
       "Key Matrix"
     ],
     [
-      "1632cef0-cae9-4e46-95ea-0f0ca3250f80",
+      "8a7f6ae2-b858-4134-a337-d1fe3a02ecf2",
       "Led Chain"
     ]
   ],

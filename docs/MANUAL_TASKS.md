@@ -27,6 +27,21 @@ diode-under-switch placement, not a defect. The single `isolated_copper`
 warning per half is the VCC pour, which has nothing to connect to until
 task 1 is done.
 
+## 0. Push schematic edits to the PCB
+
+The generator now writes each footprint's `(path)` link, so **Update PCB from
+Schematic matches the existing footprints instead of re-adding all of them.**
+
+Before this, kbplacer wrote the board and the schematic independently and left
+every `(path)` empty. KiCad matches symbols to footprints by that path, so with
+it blank every symbol looked new and the update re-added the whole board --
+which made any schematic-side edit, the LED chain especially, impossible to
+push through.
+
+When you update, tick **"Re-link footprints to schematic symbols based on their
+reference designators"** only if you have re-annotated; otherwise leave it off,
+since the paths are already correct.
+
 ## 1. VCC vias
 
 The GND pour is on B.Cu, the component side, so it reaches all its pads

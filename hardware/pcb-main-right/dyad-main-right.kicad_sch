@@ -2,7 +2,7 @@
     (version 20250114)
     (generator "eeschema")
     (generator_version "9.0")
-    (uuid "ef8e27db-4762-4149-a11e-18691d2260a9")
+    (uuid "3624da76-22b3-4b3d-b023-8fda4d7cb478")
     (paper "A4")
     (lib_symbols)
     (sheet
@@ -20,7 +20,7 @@
         (fill
             (color 0 0 0 0)
         )
-        (uuid "b9f11753-98bd-47ee-b830-00229f802306")
+        (uuid "2e098da9-a8bf-4b9b-bff4-3794acc27a0a")
         (property "Sheetname" "Key Matrix"
             (at 21.59 19.6084 0)
             (show_name no)
@@ -45,7 +45,7 @@
         )
         (instances
             (project "dyad-main-right"
-                (path "/ef8e27db-4762-4149-a11e-18691d2260a9"
+                (path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
                     (page "2")
                 )
             )
@@ -66,7 +66,7 @@
         (fill
             (color 0 0 0 0)
         )
-        (uuid "1632cef0-cae9-4e46-95ea-0f0ca3250f80")
+        (uuid "8a7f6ae2-b858-4134-a337-d1fe3a02ecf2")
         (property "Sheetname" "Led Chain"
             (at 21.59 39.6084 0)
             (show_name no)
@@ -91,7 +91,7 @@
         )
         (instances
             (project "dyad-main-right"
-                (path "/ef8e27db-4762-4149-a11e-18691d2260a9"
+                (path "/3624da76-22b3-4b3d-b023-8fda4d7cb478"
                     (page "3")
                 )
             )
