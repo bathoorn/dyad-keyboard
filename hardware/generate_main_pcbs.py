@@ -48,6 +48,15 @@ LED_CAP = f"{KFP}/Capacitor_SMD.pretty:C_0603_1608Metric"
 # second writes it into the project.
 EDGE_CLEARANCE_MM = 0.2
 
+# Power pours. GND goes on the component side: every GND pad on this board is
+# B.Cu-only, so a B.Cu pour reaches all 74 of them with no vias, and each LED's
+# decoupling loop to its own capacitor stays local copper. VCC takes the
+# quieter layer (F.Cu carries only the column traces) for a continuous plane,
+# but it cannot reach its pads without a via each -- see docs/MANUAL_TASKS.md.
+POWER_POURS = (("GND", "B.Cu"), ("VCC", "F.Cu"))
+ZONE_CLEARANCE_MM = 0.2
+ZONE_MIN_WIDTH_MM = 0.2
+
 
 def generate(half: str) -> None:
     out = os.path.join(ROOT, "hardware", f"pcb-main-{half}")
@@ -133,6 +142,7 @@ def generate(half: str) -> None:
     # project-level rule change has to come last or it is silently undone.
     _propagate_pad_nets(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _nudge_traces_off_led_cutouts(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
+    _add_power_pours(os.path.join(out, f"dyad-main-{half}.kicad_pcb"))
     _relax_edge_clearance(os.path.join(out, f"dyad-main-{half}.kicad_pro"))
 
 
@@ -278,6 +288,59 @@ def _nudge_traces_off_led_cutouts(pcb_path: str) -> None:
     for net, ref in dict.fromkeys(stuck):
         print(f"    WARNING: {net} still inside {EDGE_CLEARANCE_MM} mm of "
               f"{ref}'s cutout -- route it by hand")
+
+
+def _add_power_pours(pcb_path: str) -> None:
+    """Pour GND and VCC over the board outline, one rail per layer.
+
+    Uses KiCad's own board-outline extraction rather than reassembling the 25
+    Edge.Cuts segments, so the pour follows the real keyboard shape. Pads
+    connect solid rather than through thermal reliefs: everything here is
+    reflow SMD, thermal relief exists to make hand-soldering easier and buys
+    nothing, while costing current capacity the LED rail needs.
+
+    GND lands on all 74 of its pads unaided. VCC will read as unconnected
+    until vias are added by hand -- its pads are B.Cu-only and the pour is on
+    F.Cu. That is expected after every regeneration; see docs/MANUAL_TASKS.md.
+    """
+    import pcbnew
+
+    board = pcbnew.LoadBoard(pcb_path)
+    outline = pcbnew.SHAPE_POLY_SET()
+    if not board.GetBoardPolygonOutlines(outline, False) or not outline.OutlineCount():
+        print("    WARNING: no board outline resolved; skipping power pours")
+        return
+    boundary = outline.Outline(0)
+
+    zones = []
+    for net_name, layer_name in POWER_POURS:
+        net = board.FindNet(net_name)
+        if net is None:
+            print(f"    WARNING: net {net_name} absent; skipping its pour")
+            continue
+        zone = pcbnew.ZONE(board)
+        zone.SetLayer(board.GetLayerID(layer_name))
+        zone.SetNet(net)
+        zone.SetZoneName(f"{net_name} pour")
+        zone.SetLocalClearance(pcbnew.FromMM(ZONE_CLEARANCE_MM))
+        zone.SetMinThickness(pcbnew.FromMM(ZONE_MIN_WIDTH_MM))
+        zone.SetPadConnection(pcbnew.ZONE_CONNECTION_FULL)
+        zone.SetAssignedPriority(0)
+        poly = zone.Outline()
+        poly.NewOutline()
+        for i in range(boundary.PointCount()):
+            pt = boundary.CPoint(i)
+            poly.Append(pt.x, pt.y)
+        board.Add(zone)
+        zones.append((net_name, layer_name, zone))
+
+    if not zones:
+        return
+    pcbnew.ZONE_FILLER(board).Fill([z for _, _, z in zones])
+    board.Save(pcb_path)
+    for net_name, layer_name, zone in zones:
+        area = pcbnew.ToMM(pcbnew.ToMM(zone.GetFilledArea()))
+        print(f"    poured {net_name} on {layer_name}: {area:.0f} mm2")
 
 
 def _relax_edge_clearance(pro_path: str) -> None:
