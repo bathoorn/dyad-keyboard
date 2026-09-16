@@ -16,69 +16,87 @@ Commit as you go. The one thing that saved the LED chain was
 `hardware/pcb-main-right/.history` -- KiCad's own version-history git repo,
 gitignored but real. `git log` and `git show` work in it.
 
-## Baseline after a clean regeneration
+## Current state
 
-Check against this before starting — anything else is a real anomaly, not a
-known gap. Measured 2026-09-15.
+Both halves are fully routed. Measured 2026-09-16.
 
 | | main-left | main-right |
 |---|---|---|
-| DRC violations | 193 | 223 |
+| Unconnected | **0** | **0** |
+| Schematic parity | **0** | **0** |
+| Shorts | **0** | **0** |
 | DRC errors | 32 | 37 |
-| Unconnected | 125 | 145 |
-| GND unconnected | 0 | 0 |
-| VCC unconnected | 63 | 73 |
+| DRC violations | 195 | 253 |
 
-Every error is `courtyards_overlap` on a D/SW pair — kbplacer's deliberate
-diode-under-switch placement, not a defect. The single `isolated_copper`
-warning per half is the VCC pour, which has nothing to connect to until
-task 1 is done.
+Every error is `courtyards_overlap` on a D/SW pair -- the deliberate
+diode-under-switch placement, not a defect. Everything else is silkscreen.
+Check against this before starting work; anything outside it is a real
+anomaly rather than a known gap.
+
 
 ## 0. Push schematic edits to the PCB
 
-The generator now writes each footprint's `(path)` link, so **Update PCB from
+The generator writes each footprint's `(path)` link, so **Update PCB from
 Schematic matches the existing footprints instead of re-adding all of them.**
+Without that link KiCad treats every symbol as new and re-adds the whole
+board, which is what once made schematic-side edits impossible to push.
 
-Before this, kbplacer wrote the board and the schematic independently and left
-every `(path)` empty. KiCad matches symbols to footprints by that path, so with
-it blank every symbol looked new and the update re-added the whole board --
-which made any schematic-side edit, the LED chain especially, impossible to
-push through.
+When you update, leave **"Re-link footprints to schematic symbols based on
+their reference designators"** unticked -- the paths are already correct and
+that option would override them.
 
-When you update, tick **"Re-link footprints to schematic symbols based on their
-reference designators"** only if you have re-annotated; otherwise leave it off,
-since the paths are already correct.
+If `kicad-cli --schematic-parity` ever floods with `net_conflict` /
+"No corresponding pin found in schematic" while the KiCad GUI sees nothing
+wrong, suspect the root sheet uuid rather than the board: the root
+`.kicad_sch`'s own `(uuid ...)`, the first component of the child sheets'
+symbol instance paths, and the Root entry in the `.kicad_pro` `sheets` list
+must all agree. See docs/TOOLS.md.
 
-## 1. VCC vias
+## 1. FFC connector to the controller -- NOT YET PLACED
 
-The GND pour is on B.Cu, the component side, so it reaches all its pads
-unaided. VCC is poured on F.Cu — the quieter layer, only column traces — but
-every VCC pad is B.Cu-only, so **the pour currently connects to nothing.**
+**Neither half has any connector.** Their footprints are switches, diodes,
+LEDs, capacitors and one stabiliser -- nothing else. The matrix, power and
+LED-chain nets currently terminate at no external connection point, so as
+drawn the halves cannot reach the controller at all.
 
-For each LED and its own decoupling capacitor:
+Nets that must leave each half:
 
-1. Short B.Cu trace from the LED's VCC pad (pad 3) to the cap's VCC pad
-2. One via on that trace, up to the F.Cu pour
+| | count | nets |
+|---|---|---|
+| main-left | **16** | COL0-6, ROW0-4, VCC, GND, LEDIN, LEDOUT |
+| main-right | **17** | COL0-7, ROW0-4, VCC, GND, LEDIN, LEDOUT |
 
-That is **~32 vias on the left, ~37 on the right** — one per LED/cap pair
-rather than one per pad. Geometry: the cap sits 3.52 mm below its LED; at
-`rot=180` the LED's VCC pad is at local (+2.725, +0.750) and the cap's VCC
-pad at local (-0.775, 0).
+A 20-pin part covers both with 3-4 spare. Footprints already available:
 
-Do not reach for via-in-pad; these are 1.35 x 0.82 mm SMD pads and JLCPCB
-charges extra for filled vias.
+- `marbastlib-various`: `XUNPU_FPC-05F-20PH20_1x20-1MP_P0.5mm_Horizontal`,
+  `XUNPU_FPC-0.5AL-20PB_1x20-1MP_P0.5mm_Vertical`. XUNPU is JLCPCB-stocked,
+  so this is the likely pick for PCBA -- but `marbastlib-various` is **not**
+  in either project's `fp-lib-table` yet; only `marbastlib-mx` is registered.
+- KiCad global `Connector_FFC-FPC`: `Hirose_FH12-20S-0.5SH` (0.5 mm),
+  `Amphenol_F32Q-1A7x1-11020`, `JUSHUO_AFA07-S20FCA-00` (1.0 mm).
 
-## 2. Route ROW and COL
+Symbol: `Connector_Generic:Conn_01x20`.
 
-kbplacer routes what it can and declines the rest. Four pairs per half get
-refused outright with *"Could not route pads when parent footprints not
-rotated the same"* — the rotated thumb keys. Their column runs are short now
-that the matrix matches the physical columns, so these are local hops rather
-than the ~92 mm cross-board runs they used to be.
+**The controller side needs a matching decision.** It currently exposes
+J3/J4/J5 -- three 1x11 through-hole pin sockets, 33 pins at 2.54 mm -- and no
+FFC connector at all. Moving the halves to FFC means either giving the
+controller two FFC connectors, or rethinking how the three boards mate.
+Settle that before committing to a pitch, since it fixes the cable too.
 
-Straight or L-bend paths do not work for these. Every direct path probed hit
-3-9 other pads. They need obstacle avoidance, i.e. KiCad's interactive
-router with your judgement, which is exactly what kbplacer lacks.
+Workflow: add the symbol in the key-matrix sheet, wire the 16/17 nets, then
+Update PCB from Schematic (task 0). Then place and route it -- roughly 17
+more connections per half, all of which have to reach one corner of the
+board, so give some thought to where it lands before routing.
+
+## 2. Done -- VCC vias and matrix routing
+
+Both halves are routed: 0 unconnected on each. main-left carries 330 segments
+and 32 vias, main-right 413 segments and 37 vias. The VCC vias bridge the
+F.Cu pour to the B.Cu-only pads, one per LED/capacitor pair.
+
+Kept here because a regeneration would destroy all of it -- see the warning
+at the top.
+
 
 ## 3. LED serpentine chain
 
