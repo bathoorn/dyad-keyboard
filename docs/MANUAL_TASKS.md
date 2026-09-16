@@ -56,37 +56,76 @@ must all agree. See docs/TOOLS.md.
 
 **Neither half has any connector.** Their footprints are switches, diodes,
 LEDs, capacitors and one stabiliser -- nothing else. The matrix, power and
-LED-chain nets currently terminate at no external connection point, so as
-drawn the halves cannot reach the controller at all.
+LED-chain nets terminate at no external connection point, so as drawn the
+halves cannot reach the controller at all.
 
-Nets that must leave each half:
+The pinout is already specified in **PLAN.md §Interfaces** and
+**CONTROLLER.md §2**. It is exactly 20 lines with **no spare**:
 
-| | count | nets |
-|---|---|---|
-| main-left | **16** | COL0-6, ROW0-4, VCC, GND, LEDIN, LEDOUT |
-| main-right | **17** | COL0-7, ROW0-4, VCC, GND, LEDIN, LEDOUT |
+| Lines | |
+|---|---|
+| 13 | matrix -- 5 rows + 8 columns (left uses 7 and leaves one idle) |
+| 1 | handedness -- pulled to 3V3 on the left main PCB, to GND on the right |
+| 1 | RGB data (reserved) |
+| 1 | 3V3 -- handedness reference only, negligible current |
+| 2 | **5 V, doubled** -- a 0.5 mm FFC conductor is good for ~0.5 A |
+| 2 | **GND, doubled** -- the per-key RGB return path |
 
-A 20-pin part covers both with 3-4 spare. Footprints already available:
+The doubling is not optional headroom: it is what gives ~1 A against ~0.4 A
+per half for RGB at capped brightness. PLAN.md §5 works the budget through a
+chain of 500 mA limits and lands on 3.5-6 mA per LED as the real ceiling.
 
-- `marbastlib-various`: `XUNPU_FPC-05F-20PH20_1x20-1MP_P0.5mm_Horizontal`,
-  `XUNPU_FPC-0.5AL-20PB_1x20-1MP_P0.5mm_Vertical`. XUNPU is JLCPCB-stocked,
-  so this is the likely pick for PCBA -- but `marbastlib-various` is **not**
-  in either project's `fp-lib-table` yet; only `marbastlib-mx` is registered.
-- KiCad global `Connector_FFC-FPC`: `Hirose_FH12-20S-0.5SH` (0.5 mm),
-  `Amphenol_F32Q-1A7x1-11020`, `JUSHUO_AFA07-S20FCA-00` (1.0 mm).
+### Two signals the boards do not have yet
+
+Both halves are missing **handedness** and **3V3**. Adding the connector is
+not just placing a part:
+
+- **Handedness** needs a tie on each half -- to 3V3 on the left, to GND on the
+  right. That is what makes the two controllers identical and is why it lives
+  on the main PCB rather than the controller.
+- **3V3** exists on the controller but not on either main PCB; today the mains
+  carry only VCC (5 V, the LED rail) and GND. It is needed solely as the
+  handedness reference.
+
+Mapping the rest: ROW0-4 and COL0-7 are the 13 matrix lines; VCC is the 5 V
+rail and takes two pins; GND takes two; LEDIN is RGB data. **LEDOUT does not
+leave the board** -- it is the chain end, and the spec carries only one RGB
+data line.
+
+### Part
+
+CONTROLLER.md §3 already chose **HC-FPC-0.5-20P-FH20**, 0.5 mm pitch,
+flip-top, right-angle, bottom contact. The 14-pin knob sibling is LCSC
+C19273929; the 20-pin code is marked *confirm* and still needs looking up.
+
+Reasoning already settled there, do not re-litigate: 0.5 mm over 1.0 mm
+because a 20-position 1.0 mm part is ~23 mm of board edge against ~13 mm, on a
+50 mm board whose other long edge already carries USB-C and the jack.
+Right-angle `FH20` over vertical `LH20` (C49166895) because a vertical part
+makes the ribbon exit perpendicular and then bend, which wants headroom the
+10 mm envelope does not have.
+
+**Cable type is a live trap.** These are bottom-contact. Type A has contacts
+on the same side at both ends, type B on opposite sides, and the wrong one
+silently reverses the pinout end to end. Settle it once layout fixes both
+connectors' orientations -- not before.
+
+Footprint: `marbastlib-various` carries
+`XUNPU_FPC-05F-20PH20_1x20-1MP_P0.5mm_Horizontal`, which is the right pitch,
+position count and orientation -- but it is a different vendor to the chosen
+part, so check the land pattern against the HC datasheet before trusting it.
+That library is **not** in either project's `fp-lib-table`; only
+`marbastlib-mx` is registered. KiCad's own `Connector_FFC-FPC` has
+`Hirose_FH12-20S-0.5SH` as a further alternative.
 
 Symbol: `Connector_Generic:Conn_01x20`.
 
-**The controller side needs a matching decision.** It currently exposes
-J3/J4/J5 -- three 1x11 through-hole pin sockets, 33 pins at 2.54 mm -- and no
-FFC connector at all. Moving the halves to FFC means either giving the
-controller two FFC connectors, or rethinking how the three boards mate.
-Settle that before committing to a pitch, since it fixes the cable too.
+### Workflow
 
-Workflow: add the symbol in the key-matrix sheet, wire the 16/17 nets, then
-Update PCB from Schematic (task 0). Then place and route it -- roughly 17
-more connections per half, all of which have to reach one corner of the
-board, so give some thought to where it lands before routing.
+Add the symbol in the key-matrix sheet, wire the 20 lines, add the handedness
+tie and the 3V3 reference, then Update PCB from Schematic (task 0). Then place
+and route -- 20 connections converging on one board edge, so decide where it
+lands before routing rather than after.
 
 ## 2. Done -- VCC vias and matrix routing
 
