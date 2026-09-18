@@ -18,21 +18,39 @@ gitignored but real. `git log` and `git show` work in it.
 
 ## Current state
 
-Both halves are fully routed. Measured 2026-09-16.
+Measured 2026-09-18. **Check against this before starting work; anything
+outside it is a real anomaly rather than a known gap.**
 
-| | main-left | main-right |
-|---|---|---|
-| Unconnected | **0** | **0** |
-| Schematic parity | **0** | **0** |
-| Shorts | **0** | **0** |
-| DRC errors | 32 | 37 |
-| DRC violations | 195 | 253 |
+| | main-left | main-right | controller |
+|---|---|---|---|
+| ERC errors | **0** | **0** | 3 |
+| ERC violations | 113 | 127 | 152 |
+| Unconnected | **0** | **0** | **0** |
+| Schematic parity | 1 | 1 | 22 |
+| DRC violations | 195 | 253 | 51 |
+| DRC errors | 32 | 37 | **0** |
 
-**Schematic parity on main-right is now 1, deliberately.** J1, the FFC
-connector, was added to the right schematic on 2026-09-16 and is not on the
-board yet, so the parity check reports `Missing footprint J1`. Unconnected is
-still 0 and violations still 253. That single parity issue clears when task 0
-is run against main-right; until then it is the expected state, not a defect.
+**Every non-zero number above is explained. None is a defect.**
+
+- **main-left parity 1** -- `Missing footprint J1`. The FFC connector is in
+  the schematic but the board has not been updated from it yet. Clears with
+  Update PCB from Schematic.
+- **main-right parity 1** -- `footprint_symbol_field_mismatch` on J1's
+  `Pinout` text: the schematic says `ROW4..ROW0` and the board still carries
+  the old `ROW0-4` string. Documentation text only, no nets. Clears the same
+  way.
+- **controller ERC errors 3** -- `pin_not_driven` on GPIO27, GPIO28, GPIO29,
+  the three genuine spares. They are unconnected because nothing uses them;
+  they want no-connect flags once that is confirmed final.
+- **controller parity 22** -- the whole controller schematic has been rebuilt
+  (all five connectors, the OR-ing network, both buttons) and **none of it
+  has been pushed to the board**, which is still the 45.3 x 93.5 mm reference
+  layout. Breakdown: 8 `missing_footprint` (D1, F2, J6-J10, SW2), 3
+  `extra_footprint` (J3/J4/J5, deleted from the schematic but still placed),
+  and 11 field/net mismatches from SW1's footprint swap and the `VBUS_FUSED`
+  rename. All clear when the controller board is rebuilt -- which it must be
+  anyway, to reach the 50 x 35 envelope.
+- **main DRC errors 32 / 37** -- see below.
 
 Every error is `courtyards_overlap` on a D/SW pair -- the deliberate
 diode-under-switch placement, not a defect. Everything else is silkscreen.
