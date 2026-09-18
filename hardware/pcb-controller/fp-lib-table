@@ -1,4 +1,5 @@
 (fp_lib_table
   (lib (name "Footprints")(type "KiCad")(uri "${KIPRJMOD}/Libraries/Footprints")(options "")(descr ""))
 
-  (lib (name "Sleep-Lib") (type "KiCad") (uri "${KIPRJMOD}/Libraries/Footprints") (options "") (descr "")))
+  (lib (name "Sleep-Lib") (type "KiCad") (uri "${KIPRJMOD}/Libraries/Footprints") (options "") (descr ""))
+  (lib (name "dyad") (type "KiCad") (uri "${KIPRJMOD}/../libraries/dyad.pretty") (options "") (descr "")))

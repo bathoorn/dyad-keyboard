@@ -130,24 +130,32 @@ on the left it joins controller pad 1 to main pin 20. Same `21-n` relation.
 So **both controller footprints take the same net-to-pad assignment**, and
 both mains keep the same pinout. The reversal is absorbed once, here.
 
-Written out, the controller pads carry:
+Written out -- **corrected 2026-09-18**, the first transcription of this
+table was wrong and is why it carried a "not verified" warning. It repeated
+COL0-6 in both halves and omitted ROW3, ROW4, both GNDs, LEDIN and both
+VCCs. Derived here pad by pad as `pad m = main pin (21 - m)`, and the
+right-hand column gives the controller's own net name:
 
-| Pad | Net | | Pad | Net |
-|---|---|---|---|---|
-| 1 | HAND | | 11 | COL6 |
-| 2 | +3V3 | | 12 | COL5 |
-| 3 | COL7 | | 13 | COL4 |
-| 4 | COL6 *(see note)* | | 14 | COL3 |
-| 5 | COL5 | | 15 | COL2 |
-| 6 | COL4 | | 16 | COL1 |
-| 7 | COL3 | | 17 | COL0 |
-| 8 | COL2 | | 18 | ROW0 |
-| 9 | COL1 | | 19 | ROW1 |
-| 10 | COL0 | | 20 | ROW2 |
+| Pad | Signal | Net | | Pad | Signal | Net |
+|---|---|---|---|---|---|---|
+| 1 | HAND | GPIO12 | | 11 | ROW0 | GPIO14 |
+| 2 | +3V3 | +3V3 | | 12 | ROW1 | GPIO15 |
+| 3 | COL7 | GPIO26 | | 13 | ROW2 | GPIO16 |
+| 4 | COL6 | GPIO25 | | 14 | ROW3 | GPIO17 |
+| 5 | COL5 | GPIO24 | | 15 | ROW4 | GPIO18 |
+| 6 | COL4 | GPIO23 | | 16 | GND | GND |
+| 7 | COL3 | GPIO22 | | 17 | LEDIN | GPIO13 |
+| 8 | COL2 | GPIO21 | | 18 | GND | GND |
+| 9 | COL1 | GPIO20 | | 19 | VCC 5 V | **+5V** |
+| 10 | COL0 | GPIO19 | | 20 | VCC 5 V | **+5V** |
 
-*(The table above is the mechanical reversal of the main pinout and is
-**not yet verified pad by pad** -- derive it from the main table at
-schematic time rather than trusting this transcription.)*
+Count check: HAND 1, +3V3 1, COL0-7 8, ROW0-4 5, GND 2, LEDIN 1, VCC 2 = 20.
+
+**The 5 V pins land on `+5V`, not `VBUS`.** `VBUS -> F1 -> +5V`, so `+5V` is
+the *fused* rail, and §3 already notes the fuse is deliberately in the LED
+path -- which is the whole reason it needs upsizing if RGB is populated.
+Taking the FFC's 5 V from VBUS instead would put the LED current outside the
+fuse and quietly defeat that.
 
 ### The two footprints need not share an assignment -- and probably should not
 
@@ -255,13 +263,16 @@ Passives are 0402. That is finer than the "0805, hand-solderable" assumption in
 PLAN.md §10, but these are on the *assembly* BOM — JLCPCB places them, so it
 does not matter.
 
-**Still to add — none of these exist on a bare dev board:**
+**Still to add — none of these exist on a bare dev board.** The two main FFC
+connectors are now **in the schematic** (J6 left, J7 right, both wired and
+footprinted); everything else in this table is still absent.
+
 
 | Block | Part | LCSC | Note |
 |---|---|---|---|
 | Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
-| Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints, one populated** -- see §2. Assembly quantity is 1 per board; the second is DNP. |
+| Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints** -- see §2. **In the schematic as J6 (left) and J7 (right) since 2026-09-18**; population per board still open. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
 | Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
 | Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |
