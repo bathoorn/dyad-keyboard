@@ -167,11 +167,26 @@ both J1s so the halves are related by translation rather than reflection
 (would mean redoing main-right's placement and routing); and flipping the
 controller over.
 
-The escape hatch remains if routing main-left ever wants the opposite order:
-QMK supports `MATRIX_ROW_PINS_RIGHT` / `MATRIX_COL_PINS_RIGHT`, so the
-halves *may* legitimately differ. It is no longer needed for the mirror, and
-would now be a deliberate trade of a routing convenience against a permanent
-asymmetry.
+**If main-left wants a reversed pinout for routing, the controller absorbs
+it -- not the firmware.** The two controller footprints are separate copper
+and need not share a net-to-pad order, so reversing main-left is paid for by
+reversing the controller's left-edge footprint. The MCU never sees it.
+
+That **supersedes** the `MATRIX_ROW_PINS_RIGHT` / `MATRIX_COL_PINS_RIGHT`
+hatch named here previously, which would have cost a permanent left/right
+difference in the firmware build. Same freedom, no asymmetry.
+
+There is even a controller-side argument *for* the reversal: with both
+footprints opening outward 180 degrees apart, an identical assignment makes
+the 20 nets cross on their way to the second connector, while a reversed one
+lets them fan out in parallel. On a 2-layer board whose B.Cu is the ground
+pour, that is 20 via pairs saved through exactly the copper PLAN.md wants
+continuous. See CONTROLLER.md §2 -- it is a topology argument about a layout
+that does not exist yet, so confirm it before relying on it.
+
+So the left pinout is still **decided at main-left's routing**, but the cost
+of choosing either way is now known to be low, and the absorbing mechanism
+is copper on the controller rather than a firmware fork.
 
 Three choices in there are load-bearing:
 

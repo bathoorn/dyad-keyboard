@@ -149,6 +149,45 @@ Written out, the controller pads carry:
 **not yet verified pad by pad** -- derive it from the main table at
 schematic time rather than trusting this transcription.)*
 
+### The two footprints need not share an assignment -- and probably should not
+
+The footprints are separate copper. Nothing forces them to carry the same
+net-to-pad order, and **that is the mechanism for reversing one half's
+pinout without touching the other.** If main-left wants its pins reversed to
+ease routing, the controller's left-edge footprint absorbs it and the MCU
+never knows. No firmware asymmetry: this **supersedes** the
+`MATRIX_ROW_PINS_RIGHT` escape hatch named in MANUAL_TASKS.md, which cost a
+permanent left/right difference in the build.
+
+There is a second, independent reason to expect the reversal, and it is
+about the *controller's own* routing. Number pad positions by height `y`,
+with both footprints opening outward on opposite edges so they sit 180
+degrees apart:
+
+    identical assignment   net j at y = 21-j  (right)   y = K-j  (left)
+                           -> the two run in OPPOSITE directions, so a
+                              centre-mounted MCU must cross all 20 nets to
+                              reach the left connector
+
+    reversed on the left   left pad m = net m, right pad m = net 21-m
+                           -> net j at y = 21-j and y = K-j, both falling
+                              at the same rate: a PARALLEL fan-out, no
+                              crossings
+
+The controller is **2 layers**, and B.Cu is the ground pour that PLAN.md
+requires to stay continuous under the MCU. Twenty crossings would be twenty
+via pairs punched through exactly that copper. So the reversal plausibly
+buys clean routing here as well as on main-left.
+
+**Not proven.** This is a topology argument about a layout that does not
+exist -- the controller outline is still the 45.31 x 93.52 mm reference
+shape, not the 50 x 35 envelope. It assumes both footprints sit on the same
+side of the board, on opposite edges, opening outward. Put one on the
+opposite copper layer and they are mirrored rather than rotated, and the
+ordering changes. Confirm it against the real placement before relying on
+it, and **derive both pad tables from geometry at schematic time rather than
+transcribing them.**
+
 **Caveat, and it is the live one.** All of the above assumes the boards are
 effectively coplanar and the ribbon runs **straight and unfolded**. If the
 controller ends up stacked under the main PCB with a folded ribbon, the
