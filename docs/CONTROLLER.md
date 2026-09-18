@@ -215,6 +215,40 @@ and the other follows. Neither can be finalised until
 `positions_controller` and the ribbon path are settled -- both still TODO in
 `interface.yaml`. The main pinout is the only part that is genuinely frozen.
 
+### The 5 V OR-ing network (added 2026-09-18)
+
+PLAN.md §5 rule 3 asks for a fused split VBUS and an OR-ing Schottky. Where
+the Schottky goes is not free choice — it is what decides whether one half
+can power the other:
+
+```
+  host VBUS ──F1──► VBUS_FUSED ──►|D1──┬──► +5V  (LDO, ESD, LED rail via J6/J7)
+                                        │
+                     split VBUS ──F2────┘        (J9/J10, to the other half)
+```
+
+`+5V` is the **shared node**: it feeds this half and reaches the other half
+through F2 and the cable. Each half's own VBUS enters through its own D1,
+so two hosts can never be connected VBUS-to-VBUS — which is the actual
+hazard rule 3 names. One port still powers both halves, because the shared
+node crosses the link.
+
+**Why not the obvious alternatives.** A diode on *each* input into +5V
+(host and split) blocks cross-half power entirely — neither half can feed
+the other. A diode only on the split *input* is worse: the receiving half
+gets power but no half can ever send it. The Schottky has to sit in the
+**host** path for the shared node to work.
+
+**Consequence worth pricing in: `+5V` is now ~4.6 V, not 5.0 V.** SS34 drops
+about 0.4 V at 1 A. Everything downstream still has margin — XC6206 needs
+~3.55 V in for 3.3 V out, and SK6812MINI-E is specified from 3.7 V — but
+**PLAN.md §5's per-key RGB brightness budget assumes a 5 V rail** and should
+be re-checked against 4.6 V before the LED ceiling is treated as final.
+
+SS34 was chosen over the 1 A B5819W (C8598, also Basic) for headroom: with
+one port feeding both halves at capped RGB brightness the diode carries the
+whole board, and 3 A leaves room. F2 reuses F1's part and footprint.
+
 ### Port placement: host to the rear, split duplicated on the side edges
 
 **Decided 2026-09-18.** The host USB-C (J1) stays a **single** footprint on
@@ -314,9 +348,9 @@ does not matter.
 
 **Still to add — none of these exist on a bare dev board.** Now **in the
 schematic** and footprinted: J6 (main FFC, left), J7 (main FFC, right),
-J8 (knob FFC), J9 and J10 (split USB-C, one per side edge). Still absent:
-the split-VBUS fuse and OR-ing Schottky, the buttons, the DNP level shifter,
-and conditionally the LDO swap.
+J8 (knob FFC), J9/J10 (split USB-C, one per side edge), F2 (split-VBUS
+fuse) and D1 (OR-ing Schottky). Still absent: the buttons, the DNP level
+shifter, and conditionally the LDO swap.
 
 
 | Block | Part | LCSC | Note |
@@ -325,7 +359,7 @@ and conditionally the LDO swap.
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact. **In the schematic as J8 since 2026-09-18**, footprint `dyad:FPC-SMD_14P-P0.50_HC-FPC-0.5-14P-FH20`. |
 | Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints** -- see §2. **In the schematic as J6 (left) and J7 (right) since 2026-09-18**; population per board still open. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
-| Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
+| Power OR | **SS34** Schottky, SMA | **C8678** | Stops one half back-feeding the other. JLCPCB **Basic**, 3 A / 40 V. **In the schematic as D1 since 2026-09-18.** |
 | Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |
 | LDO *(conditional)* | AP2112K-3.3, SOT-23-**5** | *verify* | Only if Phase 1 measures above ~120 mA. Not a drop-in — see §4. |
 

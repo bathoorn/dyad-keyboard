@@ -6666,6 +6666,181 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635)
+						(xy -1.905 1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -0.635 -1.27)
+						(xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 192.405 66.04)
@@ -7090,17 +7265,6 @@
 			(type default)
 		)
 		(uuid "1bf49753-2ca0-4bea-a3dc-7704d1256f8a")
-	)
-	(wire
-		(pts
-			(xy 272.415 29.21)
-			(xy 277.495 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1fb5c07d-9fb6-4e6a-aef3-64a06ec1b4ee")
 	)
 	(wire
 		(pts
@@ -10156,6 +10320,36 @@
 			)
 		)
 	)
+  (label "VBUS_FUSED"
+    (at 272.415 29.21 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "7919ef74-6e98-4df9-8cf1-b5607b4864a2")
+  )
+  (label "VBUS_FUSED"
+    (at 144.78 175.26 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "afba8a4a-4aa0-4784-a0d1-bd68086f7c4f")
+  )
+  (label "+5V"
+    (at 137.16 175.26 180)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify right bottom))
+    (uuid "c431a3be-47d6-4fb1-aa54-b0c29e435989")
+  )
+  (label "+5V"
+    (at 140.97 199.39 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "e790a87e-ebee-4324-89de-4d7e514ecfee")
+  )
+  (label "VBUS_SPLIT"
+    (at 140.97 194.31 0)
+    (fields_autoplaced yes)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid "9c97374f-cbd0-4063-ab8b-bcf9ab1f86be")
+  )
 	(symbol
 		(lib_id "Device:R_Small")
 		(at 267.335 36.83 90)
@@ -10909,83 +11103,6 @@
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
 					(reference "F1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 277.495 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced)
-		(uuid "1be7bad1-03e1-4c28-80f1-6f366ded255f")
-		(property "Reference" "#PWR09"
-			(at 277.495 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 277.495 24.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 277.495 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 277.495 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 277.495 29.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "c0b45f5c-dc5d-431f-a128-24ee9cfb9f18")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -16061,15 +16178,6 @@
 				)
 			)
 		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "Serves" "Split link, RIGHT-edge placement - populated on the LEFT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
 			(at 330.2 180.34 0)
 			(hide yes)
@@ -16078,7 +16186,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Connector:USB_C_Receptacle_USB2.0")
 		(at 250.19 180.34 0)
@@ -16132,6 +16249,15 @@
 				)
 			)
 		)
+		(property "Serves" "Split link, LEFT-edge placement - populated on the RIGHT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
+			(at 250.19 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
@@ -16140,9 +16266,138 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 140.97 175.26 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b00b2148-e3c1-4b07-abd4-3d65d353d5a2")
+		(property "Reference" "D1"
+			(at 140.97 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS34"
+			(at 140.97 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 140.97 175.26 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 175.26 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 140.97 175.26 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
 	
-		(property "Serves" "Split link, LEFT-edge placement - populated on the RIGHT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
-			(at 250.19 180.34 0)
+		(property "LCSC" "C8678"
+			(at 140.97 175.26 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Device:Polyfuse_Small")
+		(at 140.97 196.85 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8ac9873d-2df7-48fd-8906-c0fee1bea48a")
+		(property "Reference" "F2"
+			(at 139.065 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "500mA"
+			(at 142.875 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuse_1206_3216Metric"
+			(at 140.97 196.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 196.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient, small symbol"
+			(at 140.97 196.85 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "LCSC" "C70076"
+			(at 140.97 196.85 0)
 			(hide yes)
 			(effects
 				(font
