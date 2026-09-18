@@ -58,20 +58,33 @@ wrong, suspect the root sheet uuid rather than the board: the root
 symbol instance paths, and the Root entry in the `.kicad_pro` `sheets` list
 must all agree. See docs/TOOLS.md.
 
-## 1. FFC connector to the controller -- RIGHT SCHEMATIC DONE
+## 1. FFC connector to the controller -- BOTH SCHEMATICS DONE
 
-**Right schematic: done (2026-09-16).** J1 is placed in
-`dyad-main-right-key-matrix.kicad_sch` as `Connector_Generic:Conn_01x20`,
-value `HC-FPC-0.5-20P-FH20`, all 20 pins wired, handedness tied to GND and
-+3V3 brought onto the board. ERC errors on main-right went 3 -> 0.
-Footprint assigned 2026-09-18 (`dyad:FPC-SMD_20P-P0.50_HC-FPC-0.5-20P-FH20`,
-LCSC C19273932) -- see *Part* below. It is **not on the board yet**; task 0
-has not been run for it.
+**Right: schematic done (2026-09-16), routed (2026-09-18).** J1 in
+`dyad-main-right-key-matrix.kicad_sch`, all 20 pins wired, handedness tied
+to GND. ERC errors 3 -> 0. Footprint
+`dyad:FPC-SMD_20P-P0.50_HC-FPC-0.5-20P-FH20` (LCSC C19273932). On the board,
+routed, 0 unconnected.
 
-**Left half: still nothing.** Its footprints are switches, diodes, LEDs,
-capacitors and one stabiliser -- nothing else, so as drawn it cannot reach
-the controller at all. It needs the same connector with the same pin
-assignment, differing only in the handedness tie.
+**Left: schematic done (2026-09-18), not yet on the board.** J1 in
+`dyad-main-left-key-matrix.kicad_sch`, same symbol, same footprint, same
+pin assignment, with two differences the left half forces:
+
+- **Handedness ties to +3V3, not GND.** Pins 19 and 20 are therefore the
+  same net here, bussed together under one `+3V3` symbol. On the right they
+  are two different nets.
+- **Pin 18 (COL7) is idle.** The left half has only COL0-6, as PLAN.md
+  specifies. The pin is still *labelled* `COL7` rather than no-connected, so
+  the cable line is documented and an eighth column stays wireable. The cost
+  is one `isolated_pin_label` warning, which is the same class of accepted
+  warning as `LEDOUT` -- correct by spec, not a defect.
+
+ERC errors on main-left 3 -> 0; violations 116 -> 113. The two remaining
+`isolated_pin_label` warnings are `COL7` and `LEDOUT`, both expected. The
+one `lib_symbol_issues` warning is pre-existing and unrelated.
+
+The `dyad` footprint library is registered in main-left's `fp-lib-table`
+with the same relative URI as main-right.
 
 ### Pin assignment -- fixed by the right half, match it everywhere
 
@@ -97,6 +110,31 @@ cross each other on the way to J1. Columns were not touched. Schematic and
 board were both updated, and parity is 0 -- but this is now the order the
 **controller and the left half must match**. The earlier ascending table is
 wrong wherever it survives.
+
+#### The left pinout is PROVISIONAL until main-left is routed
+
+The left connector faces the other way. Its inner edge is the board's right
+edge, and a right-angle part has a fixed ribbon exit, so it ends up rotated
+180 degrees with pin 1 physically at the opposite end.
+
+**That does not by itself mean the pin assignment should be mirrored**, and
+it is currently *not* -- main-left is wired identically to main-right. Two
+reasons:
+
+- A physical flip reverses **all twenty** pins, not just the rows: VCC would
+  land where HAND is. Reversing only the row block matches no physical
+  reality.
+- An end-to-end reversal is exactly what **FFC cable type A vs B** already
+  provides. Absorbing the flip in the cable keeps one cable part number, one
+  controller pinout and no firmware asymmetry. Mirroring it in copper
+  instead would need two visually identical but non-interchangeable cables.
+
+The escape hatch, if routing main-left turns out to want the opposite order:
+QMK supports `MATRIX_ROW_PINS_RIGHT` / `MATRIX_COL_PINS_RIGHT`, so the
+halves *may* legitimately differ. That is a deliberate trade -- a routing
+convenience against a permanent asymmetry -- and it is the decision to make
+when main-left is placed, not before. J1's `Pinout` property on main-left is
+marked `PROVISIONAL` until then.
 
 Three choices in there are load-bearing:
 
@@ -234,20 +272,20 @@ Symbol: `Connector_Generic:Conn_01x20`.
 
 ### Workflow
 
-Done for the right half: symbol in the key-matrix sheet, 20 lines wired,
-handedness tie and 3V3 reference in place.
-
-Part confirmed (C19273932) and footprint assigned, both 2026-09-18.
+Both schematics carry J1 with the footprint assigned. Right half is routed.
 
 Remaining, in order:
 
-1. **Update PCB from Schematic** on main-right (task 0). This clears the one
-   expected parity issue.
-2. **Place and route** the connector -- 20 connections converging on one
-   board edge, so decide where it lands *before* routing rather than after.
-3. **Repeat the whole thing on the left half**, same pin assignment, with
-   handedness tied to +3V3 instead of GND. Register the `dyad` library there
-   too -- the same relative URI works unchanged.
+1. **Update PCB from Schematic** on main-left, then **place and route** its
+   connector. 20 connections converging on one board edge, so decide where
+   it lands *before* routing rather than after. Watch the B.Cu GND pour --
+   on the right half, routing the connector split it into three islands, and
+   the fix was putting horizontal LED links on one layer and vertical on the
+   other. F.Cu is the VCC pour, so a fragmented GND cannot be stitched
+   through the other layer.
+2. **Settle the left pinout** -- see the provisional note above.
+3. **Settle cable type A vs B**, now possible: both connector orientations
+   are fixed once main-left is placed.
 
 Cable type (A vs B) stays open until layout fixes both connectors'
 orientations -- see the warning above.
