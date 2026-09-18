@@ -331,7 +331,7 @@ Item 1 is conditional on a measurement; 2–6 are unconditional.
 | 1 | **LDO: XC6206 → AP2112K-3.3** *(only if measured >~120 mA)* | XC6206 is **200 mA**. Load is ~70–130 mA — RP2040 ~30, flash ~5, Cirque ~3, and the GC9A01 backlight 20–60. At the top of that range there is no margin left. **Not a drop-in:** SOT-23 3-pin → SOT-23-**5**, and EN must be tied to Vin or the rail never comes up. LEDs do **not** load this rail. Confirm against the Phase 1 measurement. |
 | 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
 | 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
-| 4 | **Delete J3/J4/J5** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. |
+| 4 | ~~**Delete J3/J4/J5**~~ **DONE 2026-09-18** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. Removed with their 33 stubs, 30 labels and 3 now-orphaned GND symbols. |
 | 5 | **Add** a 2nd USB-C (split link), 20-pin + 14-pin FFC, 74AHCT125 (DNP), power OR-ing diode, split-VBUS fuse | None are in a bare dev board. The 2nd USB-C reuses J1's part and footprint. |
 | 6 | **Reshape to 50 × 35 mm** | The guide's board is 45.3 × 93.5 mm. |
 
@@ -371,8 +371,19 @@ upstream, renamed" baseline to diff every later change against.
 
 Work the deltas from §4 in this order; it minimises rework.
 
-1. **Delete J3, J4, J5** — the three 1×11 breakout headers. Biggest cleanup, do
-   it first so the sheet has room.
+1. ~~**Delete J3, J4, J5**~~ — **done 2026-09-18**, along with the 33 wire
+   stubs, 30 labels and 3 GND symbols that fed only them.
+
+   **This deliberately leaves 15 ERC errors**, and they are the map of what is
+   still missing. Each removed header was the second connection on its GPIO
+   net, so 15 nets now reach only the RP2040 pin: `pin_not_driven` plus
+   `isolated_pin_label` on each of GPIO0-11 and GPIO27-29. They clear as the
+   remaining blocks land — **GPIO0-10 with the knob FFC** (step 5),
+   **GPIO11 with the second USB-C**, and **GPIO27-29 are the three genuine
+   spares**, which want no-connect flags once that is confirmed final.
+   Nothing else regressed: `endpoint_off_grid` fell 136 -> 94 and
+   `lib_symbol_mismatch` 52 -> 49, because the headers took their own
+   off-grid pins with them.
 2. **Swap the LDO.** Replace U4 (XC6206) with AP2112K-3.3. This is a footprint
    change, not a value change: **SOT-23 3-pin → SOT-23-5**. Tie **EN to Vin** —
    left floating, the regulator never turns on and the board has no 3V3, which
