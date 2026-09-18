@@ -53,10 +53,14 @@ Two safe consequences of the same rule:
   work in KiCad. Hand-editing conflict markers in an s-expression graph is
   how you lose an afternoon of routing and not notice for a week.
 
-> **Recommended, not yet set up:** a `.gitattributes` marking
-> `*.kicad_pcb`, `*.kicad_sch`, `*.kicad_sym` and `*.kicad_mod` as
-> unmergeable, so git refuses to invent a merge instead of producing a
-> plausible-looking broken file.
+`.gitattributes` enforces this rather than leaving it to discipline: the
+KiCad file types are marked `-merge`, so git refuses to invent a result. On
+conflict it leaves your version in the worktree and marks the path
+conflicted, without writing markers into the file. You still have to resolve
+it — but the failure is now loud instead of silent.
+
+Library tables (`fp-lib-table`, `sym-lib-table`) are deliberately *not*
+marked: they are line-oriented and merge sanely.
 
 ---
 

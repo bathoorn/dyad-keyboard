@@ -1,0 +1,33 @@
+# KiCad design files must never be auto-merged.
+#
+# A .kicad_pcb or .kicad_sch is a serialized object graph -- UUIDs,
+# cross-references and order-sensitive structure that merely happen to be
+# stored as text. Git's three-way merge will produce a file that usually
+# still parses, carrying duplicate UUIDs, orphaned references and silently
+# detached nets rather than an honest error.
+#
+# `-merge` makes git refuse to invent a result: on conflict it leaves our
+# version in the worktree and marks the path conflicted, with no markers
+# written into the file. Resolve by taking one side whole
+# (git checkout --ours/--theirs) and redoing the other side's work in KiCad.
+#
+# See docs/GIT.md §2. Diffs stay enabled -- they are unreadable as prose but
+# useful for counting what changed.
+
+*.kicad_pcb     -merge
+*.kicad_sch     -merge
+*.kicad_sym     -merge
+*.kicad_mod     -merge
+*.kicad_pro     -merge
+
+# Library tables are line-oriented and do merge sanely, so they are
+# deliberately absent from the list above.
+
+# 3D models: text formats, but large and never usefully diffed.
+*.wrl           -merge -diff
+*.step          -merge -diff
+*.stp           -merge -diff
+
+# Generated exports, checked in for the case designer.
+*.svg           -merge
+*.dxf           -merge
