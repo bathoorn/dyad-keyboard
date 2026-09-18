@@ -59,8 +59,8 @@ thumb keys.
 ## Repository
 
 ```
-docs/          PLAN.md, WORKFLOW.md, CONTROLLER.md, PHASE1.md, TOOLS.md
-               plus printable 1:1 mock-ups
+docs/          PLAN.md, WORKFLOW.md, CONTROLLER.md, PHASE1.md, TOOLS.md,
+               GIT.md, plus printable 1:1 mock-ups
 hardware/
   interface.yaml   the contract between the PCB and case designs
   layout/          KLE source of truth, parser, pod-placement solver
@@ -98,6 +98,8 @@ the shipping keyboard definition.
   build steps
 - **[PHASE1.md](docs/PHASE1.md)** — bench bring-up, with results
 - **[TOOLS.md](docs/TOOLS.md)** — toolchain, and the traps found in it
+- **[GIT.md](docs/GIT.md)** — feature branches, and why KiCad files change how
+  git is used here
 
 ## Licence
 
