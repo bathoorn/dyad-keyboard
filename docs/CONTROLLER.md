@@ -215,6 +215,48 @@ and the other follows. Neither can be finalised until
 `positions_controller` and the ribbon path are settled -- both still TODO in
 `interface.yaml`. The main pinout is the only part that is genuinely frozen.
 
+### Port placement: host to the rear, split duplicated on the side edges
+
+**Decided 2026-09-18.** The host USB-C (J1) stays a **single** footprint on
+the **rear** edge. The split USB-C is **duplicated** on the left and right
+edges as J9/J10, one populated per half — whichever faces the other half.
+
+The single controller orientation that the two-FFC decision buys means a
+rear-edge port lands identically in both halves, so the host needs no
+duplicating. The split port is duplicated for **usability, not geometry**:
+§5 of PLAN.md warns that "two identical USB-C ports per half invite the
+wrong cable. Distinguish them by case position and labelling." Two ports
+side by side on the rear are *not* distinguishable by position — and on the
+slave half, where no host cable is plugged in, there is nothing to compare
+against. Putting the split port on the inboard edge makes it structurally
+unmistakable: the cable that goes to the other half comes out of the side
+that faces it.
+
+Each side edge therefore carries one main FFC and one split USB-C, and
+exactly one of each pair is populated, on **opposite** edges:
+
+| Edge | Left half populates | Right half populates |
+|---|---|---|
+| left | J6 main FFC | J10 split USB-C |
+| right | J9 split USB-C | J7 main FFC |
+| rear | J1 host USB-C (always) | J1 host USB-C (always) |
+| front | J8 knob FFC (always) | J8 knob FFC (always) |
+
+Edge budget: each side edge carries 13 mm of FFC + ~9 mm of USB-C = 22 mm,
+against 35 mm if the board is oriented 50 wide by 35 deep. Tight but
+workable; if it binds, orienting the board the other way gives the side
+edges 50 mm.
+
+**Stubs are not a concern here.** RP2040 is USB 1.1 **Full Speed, 12 Mbps**
+(PLAN.md §Routing), so the unpopulated footprint's stub is electrically
+irrelevant. That is why duplicating a USB-C costs only board area.
+
+**D+/D- is deliberately left unconnected on the split ports.** The split
+link is not USB — it carries half-duplex serial on SBU. Wiring D+/D- there
+would mean a C-to-C split cable shorting the two halves' RP2040 USB data
+lines together, with both device PHYs driving. CC1/CC2 and both D pairs
+carry explicit no-connect flags on J9 and J10.
+
 ### Two main-FFC footprints, one populated (decided 2026-09-18)
 
 **The controller carries the 20-pin footprint on two edges, wired to the
@@ -270,15 +312,16 @@ Passives are 0402. That is finer than the "0805, hand-solderable" assumption in
 PLAN.md §10, but these are on the *assembly* BOM — JLCPCB places them, so it
 does not matter.
 
-**Still to add — none of these exist on a bare dev board.** All three FFC
-connectors are now **in the schematic** and footprinted: J6 (main, left),
-J7 (main, right) and J8 (knob). Everything else in this table is still
-absent.
+**Still to add — none of these exist on a bare dev board.** Now **in the
+schematic** and footprinted: J6 (main FFC, left), J7 (main FFC, right),
+J8 (knob FFC), J9 and J10 (split USB-C, one per side edge). Still absent:
+the split-VBUS fuse and OR-ing Schottky, the buttons, the DNP level shifter,
+and conditionally the LDO swap.
 
 
 | Block | Part | LCSC | Note |
 |---|---|---|---|
-| Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
+| Split | **USB-C receptacle** (**two** placements) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. **In the schematic as J9 and J10 since 2026-09-18**, one per side edge, **one populated per half**. |
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact. **In the schematic as J8 since 2026-09-18**, footprint `dyad:FPC-SMD_14P-P0.50_HC-FPC-0.5-14P-FH20`. |
 | Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints** -- see §2. **In the schematic as J6 (left) and J7 (right) since 2026-09-18**; population per board still open. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |

@@ -6878,6 +6878,54 @@
 		(at 257.175 57.15)
 		(uuid "64db077b-86dd-46fe-b6c1-960d66e34271")
 	)
+	(no_connect
+		(at 345.44 170.18)
+		(uuid "b3e678a2-ecbd-4018-bb0f-1c105a42a018")
+	)
+	(no_connect
+		(at 345.44 172.72)
+		(uuid "60d6f08e-877d-41f2-93bc-fa699a116190")
+	)
+	(no_connect
+		(at 345.44 177.8)
+		(uuid "4f305361-31c6-47da-bfc0-9a5b7567bd8e")
+	)
+	(no_connect
+		(at 345.44 180.34)
+		(uuid "5fd797ad-7648-49f6-b24d-588bd0a866b5")
+	)
+	(no_connect
+		(at 345.44 182.88)
+		(uuid "356b0c9b-9395-4ab1-88d7-a941f5977614")
+	)
+	(no_connect
+		(at 345.44 185.42)
+		(uuid "731a0e52-944c-4fb2-8a67-d5f51a1d3b90")
+	)
+	(no_connect
+		(at 265.43 170.18)
+		(uuid "c671d753-148f-4b68-869d-89a9aaa071fc")
+	)
+	(no_connect
+		(at 265.43 172.72)
+		(uuid "d8a4b2b9-a4a2-492c-96f5-a3919a09a7af")
+	)
+	(no_connect
+		(at 265.43 177.8)
+		(uuid "457da6a4-62ed-40d4-8f40-5fe1661d792d")
+	)
+	(no_connect
+		(at 265.43 180.34)
+		(uuid "94f6ccbf-6d7a-46b7-b615-79cf20d59c5e")
+	)
+	(no_connect
+		(at 265.43 182.88)
+		(uuid "732fd61f-4edc-4cf0-ac03-c184c7bf049c")
+	)
+	(no_connect
+		(at 265.43 185.42)
+		(uuid "b82d60f7-9f3d-4c59-b206-cb9923c7e00e")
+	)
 	(wire
 		(pts
 			(xy 93.98 83.82)
@@ -9178,6 +9226,246 @@
 		)
 		(uuid "33573a28-eb35-4717-84b5-bea4015bcd78")
 	)
+	(label "+3V3"
+		(at 320.04 99.06 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ed98e3c4-cc35-4f01-9b03-8cf909b84d77")
+	)
+	(label "GND"
+		(at 320.04 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5b069989-8e04-470d-bc2f-b8cac63ff983")
+	)
+	(label "GND"
+		(at 320.04 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d1d8f57c-8753-4d6f-9926-ae2032b3f91d")
+	)
+	(label "GPIO2"
+		(at 320.04 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "acdc62a9-3a21-4ad6-b278-23a3c5cd0a49")
+	)
+	(label "GPIO3"
+		(at 320.04 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "09df0883-8788-4838-8a74-909e7607462e")
+	)
+	(label "GPIO0"
+		(at 320.04 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4ece8ec4-24e1-4eb1-a07c-2f7f0ad7e0a7")
+	)
+	(label "GPIO1"
+		(at 320.04 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "067aa5f9-8fa3-42f2-8391-92556d79372a")
+	)
+	(label "GPIO4"
+		(at 320.04 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9c5b691a-06af-405c-bf79-c754083e3e05")
+	)
+	(label "GPIO5"
+		(at 320.04 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6eeb20c0-9cd0-4504-97cc-db403bcbe3bd")
+	)
+	(label "GPIO6"
+		(at 320.04 119.38 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "478006ba-d485-4063-ae6f-215811cc499e")
+	)
+	(label "GPIO7"
+		(at 320.04 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "29421939-3331-4e01-9bdd-4f6ea16ed237")
+	)
+	(label "GPIO8"
+		(at 320.04 124.46 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7361e144-fe24-4300-bfda-410fac2b77e6")
+	)
+	(label "GPIO9"
+		(at 320.04 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "222eb37a-8004-4f16-ae0d-9e0ab4d0f8cc")
+	)
+	(label "GPIO10"
+		(at 320.04 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ffe04175-2801-4fe6-9efd-092fd440171e")
+	)
+	(label "GND"
+		(at 330.2 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "22faf0f3-f98c-49d7-8f79-e7d15973d4a8")
+	)
+	(label "GND"
+		(at 322.58 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0ccfc2be-c8ba-4af1-b9d2-fcb1e951d7e1")
+	)
+	(label "GND"
+		(at 250.19 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f1092ee9-6ea4-4872-94d7-07bf7377b4fd")
+	)
+	(label "GND"
+		(at 242.57 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "02af5af4-e378-4fa9-b9a8-f393e38b78a3")
+	)
+	(label "VBUS_SPLIT"
+		(at 345.44 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3003a0ad-11e9-490b-b881-47bf66ad3904")
+	)
+	(label "VBUS_SPLIT"
+		(at 265.43 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c90ff5b6-54b4-46b1-b9bd-40e5bb3dcbe6")
+	)
+	(label "GPIO11"
+		(at 345.44 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0137d2ac-b9d8-4b3f-a0e2-5396189d2c6a")
+	)
+	(label "GPIO11"
+		(at 345.44 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42a133e0-9287-4e2e-ac28-e1fd70dce9a6")
+	)
+	(label "GPIO11"
+		(at 265.43 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "664eb3b4-b338-439b-a800-604edada1f93")
+	)
+	(label "GPIO11"
+		(at 265.43 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2791eafa-81bc-48b7-b29e-517e32bf619c")
+	)
 	(global_label "SWCLK"
 		(shape input)
 		(at 48.26 87.63 180)
@@ -9868,90 +10156,6 @@
 			)
 		)
 	)
-  (label "+3V3"
-    (at 320.04 99.06 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "ed98e3c4-cc35-4f01-9b03-8cf909b84d77")
-  )
-  (label "GND"
-    (at 320.04 101.6 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "5b069989-8e04-470d-bc2f-b8cac63ff983")
-  )
-  (label "GND"
-    (at 320.04 132.07999999999998 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "d1d8f57c-8753-4d6f-9926-ae2032b3f91d")
-  )
-  (label "GPIO2"
-    (at 320.04 104.14 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "acdc62a9-3a21-4ad6-b278-23a3c5cd0a49")
-  )
-  (label "GPIO3"
-    (at 320.04 106.67999999999999 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "09df0883-8788-4838-8a74-909e7607462e")
-  )
-  (label "GPIO0"
-    (at 320.04 109.22 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "4ece8ec4-24e1-4eb1-a07c-2f7f0ad7e0a7")
-  )
-  (label "GPIO1"
-    (at 320.04 111.75999999999999 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "067aa5f9-8fa3-42f2-8391-92556d79372a")
-  )
-  (label "GPIO4"
-    (at 320.04 114.3 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "9c5b691a-06af-405c-bf79-c754083e3e05")
-  )
-  (label "GPIO5"
-    (at 320.04 116.84 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "6eeb20c0-9cd0-4504-97cc-db403bcbe3bd")
-  )
-  (label "GPIO6"
-    (at 320.04 119.38 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "478006ba-d485-4063-ae6f-215811cc499e")
-  )
-  (label "GPIO7"
-    (at 320.04 121.92 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "29421939-3331-4e01-9bdd-4f6ea16ed237")
-  )
-  (label "GPIO8"
-    (at 320.04 124.46 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "7361e144-fe24-4300-bfda-410fac2b77e6")
-  )
-  (label "GPIO9"
-    (at 320.04 127 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "222eb37a-8004-4f16-ae0d-9e0ab4d0f8cc")
-  )
-  (label "GPIO10"
-    (at 320.04 129.54 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "ffe04175-2801-4fe6-9efd-092fd440171e")
-  )
 	(symbol
 		(lib_id "Device:R_Small")
 		(at 267.335 36.83 90)
@@ -15777,15 +15981,6 @@
 				)
 			)
 		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "J8")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C19273929"
 			(at 325.12 114.3 0)
 			(hide yes)
@@ -15797,6 +15992,157 @@
 		)
 		(property "Serves" "Knob module FFC. Pin numbering here is the CONTROLLER's; the knob module's pads are the reverse (pad m = controller pin 15-m) for a facing, straight, unfolded ribbon. See CONTROLLER.md §2."
 			(at 325.12 114.3 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:USB_C_Receptacle_USB2.0")
+		(at 330.2 180.34 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "08caa522-e0da-4e1d-af4d-ef76f1b05fff")
+		(property "Reference" "J9"
+			(at 320.04 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "USB-C split link"
+			(at 349.25 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+			(at 330.2 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+			(at 330.2 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "USB 2.0-only Type-C Receptacle connector"
+			(at 330.2 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Serves" "Split link, RIGHT-edge placement - populated on the LEFT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
+			(at 330.2 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		))
+	(symbol
+		(lib_id "Connector:USB_C_Receptacle_USB2.0")
+		(at 250.19 180.34 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "779edf19-439a-4023-8c41-0595864579bd")
+		(property "Reference" "J10"
+			(at 240.03 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "USB-C split link"
+			(at 269.24 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+			(at 250.19 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+			(at 250.19 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "USB 2.0-only Type-C Receptacle connector"
+			(at 250.19 180.34 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	
+		(property "Serves" "Split link, LEFT-edge placement - populated on the RIGHT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
+			(at 250.19 180.34 0)
 			(hide yes)
 			(effects
 				(font
