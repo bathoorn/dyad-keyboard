@@ -1,0 +1,25 @@
+# Python tooling for the KiCad side of this project.
+#
+# The venv MUST be created with --system-site-packages, because `pcbnew` ships
+# with KiCad itself and is not installable from PyPI:
+#
+#     /usr/bin/python3 -m venv --system-site-packages .venv-kicad
+#     .venv-kicad/bin/pip install -r requirements.txt
+#
+# .venv-kicad/ is gitignored, so this file is the only record of what goes in it.
+
+# Keyboard matrix placement and first-pass routing. Used by
+# hardware/generate_main_pcbs.py, which is retired (see docs/MANUAL_TASKS.md)
+# but is still the tool of record for how the boards were first built.
+kbplacer==0.19
+
+# Schematic s-expression manipulation.
+kicad-skip==0.2.5
+
+# Pulls footprints and 3D models straight from an LCSC part number, so the
+# design-side land pattern is the assembly-side part's own. Used for J1
+# (C19273932). See docs/TOOLS.md and docs/MANUAL_TASKS.md §1.
+easyeda2kicad==1.0.1
+
+# Transitive: kicad-skip's parser. Pinned because it is what was tested.
+sexpdata==1.0.2
