@@ -129,6 +129,13 @@ reasons:
   controller pinout and no firmware asymmetry. Mirroring it in copper
   instead would need two visually identical but non-interchangeable cables.
 
+**Facing connectors reverse, and that is a separate thing from the mirror.**
+The main PCB's connector and the controller's face each other, so
+`main pin n <-> controller pad (21 - n)`. That reversal is **identical on
+both halves**, so it is absorbed once in the controller's pad assignment and
+changes neither main's pinout. Do not wire the controller off the main table
+above -- see CONTROLLER.md §2, *Facing connectors reverse*.
+
 **The decision: the controller gets two 20-pin FFC footprints, one on each
 of two edges, wired to the same nets, and only the one facing that half's
 main PCB is populated.** Each footprint's orientation is chosen

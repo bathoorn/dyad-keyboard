@@ -86,7 +86,13 @@ knob variants. Neither costs an extra pin.
 + 2× GND. The doubled 5 V and GND are the per-key RGB return path; a 0.5 mm
 FFC conductor is good for roughly half an amp. See PLAN.md §5.
 
-Pin assignment, fixed by main-right and matched by main-left:
+**This table is the MAIN PCB's pin numbering, not the controller's.** The
+controller's pads are the reverse of it -- see *Facing connectors reverse*
+below. Wiring the controller straight off this table is the single easiest
+way to get the whole link backwards.
+
+Pin assignment on **both main PCBs**, fixed by main-right and matched by
+main-left:
 
 | Pin | Net | | Pin | Net |
 |---|---|---|---|---|
@@ -104,6 +110,56 @@ Pin assignment, fixed by main-right and matched by main-left:
 Rows descend where columns ascend -- ascending rows made the five row traces
 cross on their way to the connector. LEDIN sits between the two GNDs because
 it is the only fast edge on the cable.
+
+### Facing connectors reverse: controller pad n carries main pin 21-n
+
+The main PCB's connector and the controller's face each other across the
+ribbon. Two identical right-angle parts opening toward one another are
+rotated 180 degrees about z relative to each other, so the topmost conductor
+in the ribbon lands on pin 1 at one end and pin 20 at the other:
+
+    main pin n  <->  controller pad (21 - n)
+
+**This reversal is identical on both halves, which is why it costs nothing.**
+Right half: main-right opens inward (-x), the controller's right-edge part
+opens +x -- 180 degrees apart. Left half: main-left opens inward (+x), the
+controller's left-edge part opens -x -- also 180 degrees apart. Check it on
+the topmost conductor: on the right it joins controller pad 20 to main pin 1;
+on the left it joins controller pad 1 to main pin 20. Same `21-n` relation.
+
+So **both controller footprints take the same net-to-pad assignment**, and
+both mains keep the same pinout. The reversal is absorbed once, here.
+
+Written out, the controller pads carry:
+
+| Pad | Net | | Pad | Net |
+|---|---|---|---|---|
+| 1 | HAND | | 11 | COL6 |
+| 2 | +3V3 | | 12 | COL5 |
+| 3 | COL7 | | 13 | COL4 |
+| 4 | COL6 *(see note)* | | 14 | COL3 |
+| 5 | COL5 | | 15 | COL2 |
+| 6 | COL4 | | 16 | COL1 |
+| 7 | COL3 | | 17 | COL0 |
+| 8 | COL2 | | 18 | ROW0 |
+| 9 | COL1 | | 19 | ROW1 |
+| 10 | COL0 | | 20 | ROW2 |
+
+*(The table above is the mechanical reversal of the main pinout and is
+**not yet verified pad by pad** -- derive it from the main table at
+schematic time rather than trusting this transcription.)*
+
+**Caveat, and it is the live one.** All of the above assumes the boards are
+effectively coplanar and the ribbon runs **straight and unfolded**. If the
+controller ends up stacked under the main PCB with a folded ribbon, the
+mapping changes -- a fold reverses conductor order *and* flips the contact
+face.
+
+So treat **(controller pad assignment, cable type A/B)** as a pair with one
+degree of freedom: a type-B cable flips the reversal straight back. Fix one
+and the other follows. Neither can be finalised until
+`positions_controller` and the ribbon path are settled -- both still TODO in
+`interface.yaml`. The main pinout is the only part that is genuinely frozen.
 
 ### Two main-FFC footprints, one populated (decided 2026-09-18)
 
