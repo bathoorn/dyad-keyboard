@@ -9630,6 +9630,66 @@
 		)
 		(uuid "2791eafa-81bc-48b7-b29e-517e32bf619c")
 	)
+	(label "VBUS_FUSED"
+		(at 272.415 29.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7919ef74-6e98-4df9-8cf1-b5607b4864a2")
+	)
+	(label "VBUS_FUSED"
+		(at 144.78 175.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "afba8a4a-4aa0-4784-a0d1-bd68086f7c4f")
+	)
+	(label "+5V"
+		(at 137.16 175.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c431a3be-47d6-4fb1-aa54-b0c29e435989")
+	)
+	(label "+5V"
+		(at 140.97 199.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e790a87e-ebee-4324-89de-4d7e514ecfee")
+	)
+	(label "VBUS_SPLIT"
+		(at 140.97 194.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9c97374f-cbd0-4063-ab8b-bcf9ab1f86be")
+	)
+	(label "GND"
+		(at 146.05 218.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ac06db33-72e4-44fb-bbe5-413fbfc887d7")
+	)
 	(global_label "SWCLK"
 		(shape input)
 		(at 48.26 87.63 180)
@@ -10320,36 +10380,17 @@
 			)
 		)
 	)
-  (label "VBUS_FUSED"
-    (at 272.415 29.21 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "7919ef74-6e98-4df9-8cf1-b5607b4864a2")
-  )
-  (label "VBUS_FUSED"
-    (at 144.78 175.26 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "afba8a4a-4aa0-4784-a0d1-bd68086f7c4f")
-  )
-  (label "+5V"
-    (at 137.16 175.26 180)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid "c431a3be-47d6-4fb1-aa54-b0c29e435989")
-  )
-  (label "+5V"
-    (at 140.97 199.39 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "e790a87e-ebee-4324-89de-4d7e514ecfee")
-  )
-  (label "VBUS_SPLIT"
-    (at 140.97 194.31 0)
-    (fields_autoplaced yes)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid "9c97374f-cbd0-4063-ab8b-bcf9ab1f86be")
-  )
+	(global_label "~{RESET}"
+		(shape input)
+		(at 135.89 218.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d63fa8d1-7841-450d-ab2c-ce558157b0d0")
+	)
 	(symbol
 		(lib_id "Device:R_Small")
 		(at 267.335 36.83 90)
@@ -11694,7 +11735,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_Push"
+		(property "Value" "BOOTSEL"
 			(at 118.11 21.59 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11704,7 +11745,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
 			(at 118.11 21.59 0)
 			(hide yes)
 			(show_name no)
@@ -11730,6 +11771,15 @@
 			(at 118.11 26.67 0)
 			(show_name no)
 			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 118.11 26.67 0)
+			(hide yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16318,15 +16368,6 @@
 				)
 			)
 		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C8678"
 			(at 140.97 175.26 0)
 			(hide yes)
@@ -16335,7 +16376,16 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:Polyfuse_Small")
 		(at 140.97 196.85 0)
@@ -16387,15 +16437,6 @@
 				)
 			)
 		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "F2")
-					(unit 1)
-				)
-			)
-		)
-	
 		(property "LCSC" "C70076"
 			(at 140.97 196.85 0)
 			(hide yes)
@@ -16404,7 +16445,86 @@
 					(size 1.27 1.27)
 				)
 			)
-		))
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 140.97 218.44 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "72f02675-cfc1-463f-acc4-f71e132b6302")
+		(property "Reference" "SW2"
+			(at 142.24 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "RESET"
+			(at 140.97 219.964 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+			(at 140.97 218.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 218.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 140.97 218.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 140.97 218.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "dyad-controller"
+				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(polyline
 		(pts
 			(xy 175.895 13.97)

@@ -349,8 +349,9 @@ does not matter.
 **Still to add — none of these exist on a bare dev board.** Now **in the
 schematic** and footprinted: J6 (main FFC, left), J7 (main FFC, right),
 J8 (knob FFC), J9/J10 (split USB-C, one per side edge), F2 (split-VBUS
-fuse) and D1 (OR-ing Schottky). Still absent: the buttons, the DNP level
-shifter, and conditionally the LDO swap.
+fuse), D1 (OR-ing Schottky), and SW1/SW2 (BOOTSEL and RESET). Still absent:
+the DNP 74AHCT125 level shifter, and conditionally the LDO swap — which is
+the only remaining item from §4, and is gated on a Phase 1 measurement.
 
 
 | Block | Part | LCSC | Note |
@@ -360,7 +361,7 @@ shifter, and conditionally the LDO swap.
 | Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints** -- see §2. **In the schematic as J6 (left) and J7 (right) since 2026-09-18**; population per board still open. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
 | Power OR | **SS34** Schottky, SMA | **C8678** | Stops one half back-feeding the other. JLCPCB **Basic**, 3 A / 40 V. **In the schematic as D1 since 2026-09-18.** |
-| Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |
+| Buttons | **TS-1187A-B-A-B**, 5.1×5.1 mm SMD | **C318884** | SW1 (BOOTSEL) + SW2 (RESET). JLCPCB **Basic**, 679k stock. KiCad ships the matching footprint, `Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A`, whose pads are numbered 1,1,2,2 so the 2-pin `SW_Push` symbol fits directly. **In the schematic since 2026-09-18.** |
 | LDO *(conditional)* | AP2112K-3.3, SOT-23-**5** | *verify* | Only if Phase 1 measures above ~120 mA. Not a drop-in — see §4. |
 
 LCSC codes marked *verify* should be pulled with `easyeda2kicad` at schematic
@@ -414,8 +415,8 @@ Item 1 is conditional on a measurement; 2–6 are unconditional.
 | # | Change | Why |
 |---|---|---|
 | 1 | **LDO: XC6206 → AP2112K-3.3** *(only if measured >~120 mA)* | XC6206 is **200 mA**. Load is ~70–130 mA — RP2040 ~30, flash ~5, Cirque ~3, and the GC9A01 backlight 20–60. At the top of that range there is no margin left. **Not a drop-in:** SOT-23 3-pin → SOT-23-**5**, and EN must be tied to Vin or the rail never comes up. LEDs do **not** load this rail. Confirm against the Phase 1 measurement. |
-| 2 | **Add a RESET button** | The guide has none. PLAN.md §4 treats it as non-optional. |
-| 3 | **Replace SW1** | Its BOOTSEL "switch" is a `PinSocket_1x02` header, not a button. Fit a real tactile switch. |
+| 2 | ~~**Add a RESET button**~~ **DONE 2026-09-18** | The guide has none. PLAN.md §4 treats it as non-optional. Added as SW2, `~{RESET}` to GND. |
+| 3 | ~~**Replace SW1**~~ **DONE 2026-09-18** | Its BOOTSEL "switch" was a `PinSocket_1x02` header, not a button. Now a real tactile switch, same part as SW2. |
 | 4 | ~~**Delete J3/J4/J5**~~ **DONE 2026-09-18** | Three 1×11 pin sockets — it is a Pico-style breakout. We want FFC connectors instead. Removed with their 33 stubs, 30 labels and 3 now-orphaned GND symbols. |
 | 5 | **Add** a 2nd USB-C (split link), 20-pin + 14-pin FFC, 74AHCT125 (DNP), power OR-ing diode, split-VBUS fuse | None are in a bare dev board. The 2nd USB-C reuses J1's part and footprint. |
 | 6 | **Reshape to 50 × 35 mm** | The guide's board is 45.3 × 93.5 mm. |
@@ -472,8 +473,14 @@ Work the deltas from §4 in this order; it minimises rework.
    left floating, the regulator never turns on and the board has no 3V3, which
    presents as a dead board rather than as a missing jumper. Dropout is not a
    factor either way: from 5 V there is 1.7 V of headroom.
-3. **Fix the buttons.** SW1's footprint is a `PinSocket_1x02`; change it to a
-   real tactile switch. Add SW2 from `RUN` to `GND` for reset.
+3. ~~**Fix the buttons.**~~ **done 2026-09-18.** SW1's footprint was a
+   `PinSocket_1x02`; it is now `Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A`.
+   SW2 added from `~{RESET}` (the RP2040's `RUN`, U3 pin 26) to `GND`, same
+   part.
+
+   Note when wiring to `~{RESET}`: it is a **global** label on this sheet, and
+   `batch_connect_to_net` only writes local ones — which raises
+   `same_local_global_label`. Use a global label there.
 4. **Add the new parts:** PJ-320A jack, 20-pin and 14-pin FFC connectors,
    74AHCT125 (mark **DNP**, with a 0 Ω bypass), and the Schottky between VBUS
    and the jack's 5 V.
