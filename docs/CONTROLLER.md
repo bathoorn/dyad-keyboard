@@ -63,7 +63,14 @@ knob variants. Neither costs an extra pin.
 
 ## 2. Connector pinouts
 
-**Knob FFC, 14-pin 0.5 mm** — 11 signals + power:
+**Knob FFC, 14-pin 0.5 mm** — 11 signals + power. **In the schematic as J8
+since 2026-09-18.**
+
+**The `#` column below is the CONTROLLER's pin numbering**, which is how J8
+is wired. The knob module does not exist yet, so it will be designed to
+match: for a facing, straight, unfolded ribbon its pads are the reverse,
+`knob pad m = controller pin (15 - m)` — the same relation as the main FFC,
+for the same reason. Do not wire the knob module off this table directly.
 
 | # | Signal | Display variant | Cirque variant |
 |---|---|---|---|
@@ -263,15 +270,16 @@ Passives are 0402. That is finer than the "0805, hand-solderable" assumption in
 PLAN.md §10, but these are on the *assembly* BOM — JLCPCB places them, so it
 does not matter.
 
-**Still to add — none of these exist on a bare dev board.** The two main FFC
-connectors are now **in the schematic** (J6 left, J7 right, both wired and
-footprinted); everything else in this table is still absent.
+**Still to add — none of these exist on a bare dev board.** All three FFC
+connectors are now **in the schematic** and footprinted: J6 (main, left),
+J7 (main, right) and J8 (knob). Everything else in this table is still
+absent.
 
 
 | Block | Part | LCSC | Note |
 |---|---|---|---|
 | Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
-| Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
+| Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact. **In the schematic as J8 since 2026-09-18**, footprint `dyad:FPC-SMD_14P-P0.50_HC-FPC-0.5-14P-FH20`. |
 | Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints** -- see §2. **In the schematic as J6 (left) and J7 (right) since 2026-09-18**; population per board still open. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
 | Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
@@ -374,13 +382,11 @@ Work the deltas from §4 in this order; it minimises rework.
 1. ~~**Delete J3, J4, J5**~~ — **done 2026-09-18**, along with the 33 wire
    stubs, 30 labels and 3 GND symbols that fed only them.
 
-   **This deliberately leaves 15 ERC errors**, and they are the map of what is
-   still missing. Each removed header was the second connection on its GPIO
-   net, so 15 nets now reach only the RP2040 pin: `pin_not_driven` plus
-   `isolated_pin_label` on each of GPIO0-11 and GPIO27-29. They clear as the
-   remaining blocks land — **GPIO0-10 with the knob FFC** (step 5),
-   **GPIO11 with the second USB-C**, and **GPIO27-29 are the three genuine
-   spares**, which want no-connect flags once that is confirmed final.
+   This left 15 ERC errors, which were the map of what was still missing:
+   each removed header had been the second connection on its GPIO net.
+   **The knob FFC (J8) cleared 11 of them**, leaving **4**: `GPIO11`, which
+   clears with the second USB-C, and `GPIO27-29`, the three genuine spares,
+   which want no-connect flags once that is confirmed final.
    Nothing else regressed: `endpoint_off_grid` fell 136 -> 94 and
    `lib_symbol_mismatch` 52 -> 49, because the headers took their own
    off-grid pins with them.

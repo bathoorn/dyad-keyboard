@@ -286,11 +286,18 @@ future `easyeda2kicad` pull**, they are not one-offs:
    `kicad-cli fp upgrade --force`.
 2. It set **`(attr through_hole)` on an all-SMD part.** That feeds the
    position files, so it would have corrupted the pick-and-place JLCPCB
-   assembles from. Now `(attr smd)`.
+   assembles from. Now `(attr smd)`. **Not universal:** the later 14-pin
+   pull for C19273929 came out `smd` already, so check it every time rather
+   than assuming it is wrong -- or that it is right.
 3. It numbered the two hold-down tabs **21** and **22**. The symbol is a
    20-pin `Conn_01x20`, so those would have read as unmatched pads at parity
    time. Renamed to **`MP`**, which is what both KiCad stock and marbastlib
-   use for mechanical pads.
+   use for mechanical pads. The 14-pin part numbered its tabs **15** and
+   **16** -- same defect, numbers follow the position count.
+
+Also every time: the `.step` is deleted (keep only `.wrl`), and the model
+path is rewritten to `${KIPRJMOD}/../libraries/dyad.3dshapes/...` so it
+resolves from any of the three projects.
 
 Rejected alternatives, kept for the record -- both are a different vendor to
 the chosen part, and neither is needed now:

@@ -325,20 +325,27 @@
 		(uuid "aca0b488-1928-419e-afd6-d3eea8e278d8")
 	)
 	(pad "MP" smd rect
-		(at 6.45 1.3)
-		(size 2 1.7)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "2e9940fc-61a8-44bf-a3d0-701bacaaca4d")
-	)
-	(pad "MP" smd rect
 		(at -6.45 1.3)
 		(size 2 1.7)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(uuid "7c901cb0-50af-49a1-8d1c-205a6eb9c75c")
 	)
+	(pad "MP" smd rect
+		(at 6.45 1.3)
+		(size 2 1.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2e9940fc-61a8-44bf-a3d0-701bacaaca4d")
+	)
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/../libraries/dyad.3dshapes/FPC-SMD_20P-P0.50_HC-FPC-0.5-20P-FH20.wrl"
-    (offset (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0)))
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
