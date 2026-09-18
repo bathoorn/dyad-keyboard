@@ -117,7 +117,7 @@ does not matter.
 |---|---|---|---|
 | Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
-| Main FFC | HC-FPC-0.5-**20P**-FH20 | *confirm code* | 20-position sibling |
+| Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
 | Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
 | Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |

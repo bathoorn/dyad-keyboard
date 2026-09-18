@@ -28,6 +28,12 @@ Both halves are fully routed. Measured 2026-09-16.
 | DRC errors | 32 | 37 |
 | DRC violations | 195 | 253 |
 
+**Schematic parity on main-right is now 1, deliberately.** J1, the FFC
+connector, was added to the right schematic on 2026-09-16 and is not on the
+board yet, so the parity check reports `Missing footprint J1`. Unconnected is
+still 0 and violations still 253. That single parity issue clears when task 0
+is run against main-right; until then it is the expected state, not a defect.
+
 Every error is `courtyards_overlap` on a D/SW pair -- the deliberate
 diode-under-switch placement, not a defect. Everything else is silkscreen.
 Check against this before starting work; anything outside it is a real
@@ -52,12 +58,60 @@ wrong, suspect the root sheet uuid rather than the board: the root
 symbol instance paths, and the Root entry in the `.kicad_pro` `sheets` list
 must all agree. See docs/TOOLS.md.
 
-## 1. FFC connector to the controller -- NOT YET PLACED
+## 1. FFC connector to the controller -- RIGHT SCHEMATIC DONE
 
-**Neither half has any connector.** Their footprints are switches, diodes,
-LEDs, capacitors and one stabiliser -- nothing else. The matrix, power and
-LED-chain nets terminate at no external connection point, so as drawn the
-halves cannot reach the controller at all.
+**Right schematic: done (2026-09-16).** J1 is placed in
+`dyad-main-right-key-matrix.kicad_sch` as `Connector_Generic:Conn_01x20`,
+value `HC-FPC-0.5-20P-FH20`, all 20 pins wired, handedness tied to GND and
++3V3 brought onto the board. ERC errors on main-right went 3 -> 0.
+Footprint assigned 2026-09-18 (`dyad:FPC-SMD_20P-P0.50_HC-FPC-0.5-20P-FH20`,
+LCSC C19273932) -- see *Part* below. It is **not on the board yet**; task 0
+has not been run for it.
+
+**Left half: still nothing.** Its footprints are switches, diodes, LEDs,
+capacitors and one stabiliser -- nothing else, so as drawn it cannot reach
+the controller at all. It needs the same connector with the same pin
+assignment, differing only in the handedness tie.
+
+### Pin assignment -- fixed by the right half, match it everywhere
+
+Nothing specified the order, so the right half set it. The left main PCB and
+the controller must both follow this table or the cable is wrong:
+
+| Pin | Net | | Pin | Net |
+|---|---|---|---|---|
+| 1 | VCC (5 V) | | 11 | COL0 |
+| 2 | VCC (5 V) | | 12 | COL1 |
+| 3 | GND | | 13 | COL2 |
+| 4 | LEDIN | | 14 | COL3 |
+| 5 | GND | | 15 | COL4 |
+| 6 | **ROW4** | | 16 | COL5 |
+| 7 | **ROW3** | | 17 | COL6 |
+| 8 | **ROW2** | | 18 | COL7 |
+| 9 | **ROW1** | | 19 | +3V3 |
+| 10 | **ROW0** | | 20 | HAND |
+
+**The rows run descending (ROW4 on pin 6 down to ROW0 on pin 10), changed
+2026-09-18 during routing** because ascending forced the five row traces to
+cross each other on the way to J1. Columns were not touched. Schematic and
+board were both updated, and parity is 0 -- but this is now the order the
+**controller and the left half must match**. The earlier ascending table is
+wrong wherever it survives.
+
+Three choices in there are load-bearing:
+
+- **LEDIN sits at pin 4, between the two GND conductors.** It is the only
+  fast edge on the cable, and PLAN.md asks for ground returns between
+  signals. The two GNDs are the RGB return anyway, so they cost nothing
+  where they sit; splitting them around pin 4 is free shielding.
+- **Rows descend, columns ascend.** Not an aesthetic slip -- it is what keeps
+  the row traces from crossing on their run to the connector.
+- **HAND is pin 20, next to +3V3 at pin 19.** On the *left* half that tie is
+  then two adjacent pins. On the *right* half HAND goes to GND, which is a
+  via into the existing GND pour, so the far pin costs nothing there either.
+
+The mapping is also stored on J1 itself as a `Pinout` property, so it
+survives without this file.
 
 The pinout is already specified in **PLAN.md §Interfaces** and
 **CONTROLLER.md §2**. It is exactly 20 lines with **no spare**:
@@ -77,7 +131,9 @@ chain of 500 mA limits and lands on 3.5-6 mA per LED as the real ceiling.
 
 ### Two signals the boards do not have yet
 
-Both halves are missing **handedness** and **3V3**. Adding the connector is
+**The right half now has both** (`GND` tie on J1 pin 20, `+3V3` power symbol
+on pin 19, each with a `PWR_FLAG` so ERC knows the connector feeds the
+board). **The left half still has neither.** Adding the connector there is
 not just placing a part:
 
 - **Handedness** needs a tie on each half -- to 3V3 on the left, to GND on the
@@ -96,7 +152,19 @@ data line.
 
 CONTROLLER.md §3 already chose **HC-FPC-0.5-20P-FH20**, 0.5 mm pitch,
 flip-top, right-angle, bottom contact. The 14-pin knob sibling is LCSC
-C19273929; the 20-pin code is marked *confirm* and still needs looking up.
+C19273929.
+
+**The 20-pin code is now confirmed: `C19273932`** (Hong Cheng, 2026-09-18).
+JLCPCB Extended Part, 1,893 in stock, $0.076 at 1-99. The family is
+contiguous -- 8P C19273926, 10P ...927, 12P ...928, 14P ...929, 16P ...930,
+18P ...931, **20P ...932**, 24P ...933 -- which is how it was found.
+
+**Kinghelm `KH-FG0.5-H2.0-20PIN` (C2797211) is a real equivalent, but do not
+use it.** Same 20P / 0.5 mm / right-angle / bottom-contact / flip-top / 2.0 mm,
+and it is in JLCPCB's assembly library -- but **stock is 35 units** against
+1,893, and it costs $0.106 vs $0.076. It also numbers **pin 1 at the opposite
+end** from the HC part (see below), so it is not a drop-in substitute at
+assembly time either.
 
 Reasoning already settled there, do not re-litigate: 0.5 mm over 1.0 mm
 because a 20-position 1.0 mm part is ~23 mm of board edge against ~13 mm, on a
@@ -110,22 +178,79 @@ on the same side at both ends, type B on opposite sides, and the wrong one
 silently reverses the pinout end to end. Settle it once layout fixes both
 connectors' orientations -- not before.
 
-Footprint: `marbastlib-various` carries
-`XUNPU_FPC-05F-20PH20_1x20-1MP_P0.5mm_Horizontal`, which is the right pitch,
-position count and orientation -- but it is a different vendor to the chosen
-part, so check the land pattern against the HC datasheet before trusting it.
-That library is **not** in either project's `fp-lib-table`; only
-`marbastlib-mx` is registered. KiCad's own `Connector_FFC-FPC` has
-`Hirose_FH12-20S-0.5SH` as a further alternative.
+**Footprint: assigned 2026-09-18.** J1 carries
+`dyad:FPC-SMD_20P-P0.50_HC-FPC-0.5-20P-FH20`, pulled from LCSC's own package
+data for C19273932 with `easyeda2kicad`, so the design-side pads are the
+assembly-side part's own. It lives in a **new shared library**,
+`hardware/libraries/dyad.pretty`, registered in main-right's `fp-lib-table`
+as nickname `dyad` with the relative URI `${KIPRJMOD}/../libraries/dyad.pretty`
+so the left half can use the same entry verbatim. The 3D model is beside it
+in `hardware/libraries/dyad.3dshapes` -- **`.wrl` only**; easyeda2kicad also
+writes a 4 MB `.step`, which is deleted deliberately rather than carried in
+git. Re-delete it after any future pull.
+
+Three things had to be corrected after generation; **re-check them on any
+future `easyeda2kicad` pull**, they are not one-offs:
+
+1. It emitted the legacy KiCad 5 `(module ...)` format. Fixed with
+   `kicad-cli fp upgrade --force`.
+2. It set **`(attr through_hole)` on an all-SMD part.** That feeds the
+   position files, so it would have corrupted the pick-and-place JLCPCB
+   assembles from. Now `(attr smd)`.
+3. It numbered the two hold-down tabs **21** and **22**. The symbol is a
+   20-pin `Conn_01x20`, so those would have read as unmatched pads at parity
+   time. Renamed to **`MP`**, which is what both KiCad stock and marbastlib
+   use for mechanical pads.
+
+Rejected alternatives, kept for the record -- both are a different vendor to
+the chosen part, and neither is needed now:
+
+- `PCM_marbastlib-various:XUNPU_FPC-05F-20PH20_1x20-1MP_P0.5mm_Horizontal`
+- `Connector_FFC-FPC:Hirose_FH12-20S-0.5SH_1x20-1MP_P0.50mm_Horizontal`
+
+**Land patterns, measured from the LCSC/EasyEDA package data (2026-09-18):**
+
+| | signal pad | pitch / span | mech pad | pin 1 |
+|---|---|---|---|---|
+| HC C19273932 | 0.300 x 1.500 | 0.5 / 9.500 | 2.000 x 1.700 at x=±6.450, dy +2.601 | **left** |
+| Kinghelm C2797211 | 0.300 x 1.800 | 0.5 / 9.500 | 2.000 x 1.500 at x=±6.450, dy +2.450 | **right** |
+| marbastlib XUNPU | 0.300 x 1.350 | 0.5 / 9.500 | 2.000 x 2.500 at x=±6.440, dy +2.375 | **left** |
+
+**Pin 1 sits at opposite ends on the HC and Kinghelm parts.** That is a second
+instance of the same trap as cable type A/B: swapping vendors late silently
+reverses all 20 lines. Fix the vendor and the footprint together.
+
+The XUNPU footprint *is* usable for the HC part -- same pin-1 end, same pitch,
+span and mech-pad x within 0.01 mm -- but its signal pads are 0.15 mm shorter
+than HC's land pattern and its mech pads are 0.8 mm longer. It is a near
+miss, not a match.
+
+The shipped footprint was verified against the table above after generation:
+20 pads numbered 1-20, 0.300 x 1.500 mm, pitch 0.5000, span 9.500, pin 1 on
+the **left**, two `MP` pads 2.000 x 1.700 at x=±6.450 and dy +2.600, all SMD,
+courtyard present. **Task 0 for main-right is no longer blocked.**
 
 Symbol: `Connector_Generic:Conn_01x20`.
 
 ### Workflow
 
-Add the symbol in the key-matrix sheet, wire the 20 lines, add the handedness
-tie and the 3V3 reference, then Update PCB from Schematic (task 0). Then place
-and route -- 20 connections converging on one board edge, so decide where it
-lands before routing rather than after.
+Done for the right half: symbol in the key-matrix sheet, 20 lines wired,
+handedness tie and 3V3 reference in place.
+
+Part confirmed (C19273932) and footprint assigned, both 2026-09-18.
+
+Remaining, in order:
+
+1. **Update PCB from Schematic** on main-right (task 0). This clears the one
+   expected parity issue.
+2. **Place and route** the connector -- 20 connections converging on one
+   board edge, so decide where it lands *before* routing rather than after.
+3. **Repeat the whole thing on the left half**, same pin assignment, with
+   handedness tied to +3V3 instead of GND. Register the `dyad` library there
+   too -- the same relative URI works unchanged.
+
+Cable type (A vs B) stays open until layout fixes both connectors'
+orientations -- see the warning above.
 
 ## 2. Done -- VCC vias and matrix routing
 
