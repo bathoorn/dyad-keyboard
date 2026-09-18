@@ -86,6 +86,55 @@ knob variants. Neither costs an extra pin.
 + 2× GND. The doubled 5 V and GND are the per-key RGB return path; a 0.5 mm
 FFC conductor is good for roughly half an amp. See PLAN.md §5.
 
+Pin assignment, fixed by main-right and matched by main-left:
+
+| Pin | Net | | Pin | Net |
+|---|---|---|---|---|
+| 1 | VCC (5 V) | | 11 | COL0 |
+| 2 | VCC (5 V) | | 12 | COL1 |
+| 3 | GND | | 13 | COL2 |
+| 4 | LEDIN | | 14 | COL3 |
+| 5 | GND | | 15 | COL4 |
+| 6 | ROW4 | | 16 | COL5 |
+| 7 | ROW3 | | 17 | COL6 |
+| 8 | ROW2 | | 18 | COL7 *(idle on left)* |
+| 9 | ROW1 | | 19 | +3V3 |
+| 10 | ROW0 | | 20 | HAND |
+
+Rows descend where columns ascend -- ascending rows made the five row traces
+cross on their way to the connector. LEDIN sits between the two GNDs because
+it is the only fast edge on the cable.
+
+### Two main-FFC footprints, one populated (decided 2026-09-18)
+
+**The controller carries the 20-pin footprint on two edges, wired to the
+same nets, and only the one facing that half's main PCB is fitted.**
+
+Each half's J1 sits on its *inner* board edge, so the two cable approaches
+are mirror images. A mirror is not a rotation: turning the controller 180
+degrees swaps left/right *and* top/bottom, putting the main FFC on the right
+edge but USB-C on the wrong one. Only flipping the board over truly mirrors
+it, and that faces every component at the case floor and inverts the USB-C.
+
+With two footprints, each one's orientation is chosen independently, so the
+mirror is absorbed here in copper -- on the board WORKFLOW.md §2 names as
+having "enormous slack" and costing ~$15 to respin, rather than on the mains
+which have none and one of which is already routed. Both halves then share
+one cable type, one logical pinout and one firmware build.
+
+Consequences for layout:
+
+- Budget about **13 mm of edge twice** for the 20-pin parts, plus ~9 mm for
+  the knob FFC and ~9 mm each for the two USB-C -- roughly **53 mm of the
+  ~170 mm perimeter**.
+- The unpopulated footprint leaves a **stub on all 20 nets**. Irrelevant for
+  matrix and power; keep the LEDIN stub short, since it is the only line
+  with fast edges.
+- `interface.yaml` must eventually say **which** edge is populated per half,
+  since the case has to admit the ribbon from the correct side.
+- Cable type A vs B is now settleable: both connector orientations are fixed
+  by this decision plus main-left's placement.
+
 ---
 
 ## 3. BOM
@@ -117,7 +166,7 @@ does not matter.
 |---|---|---|---|
 | Split | **USB-C receptacle** (2nd placement) | **C165948** | Same part as J1 — no new line on the BOM. CC1/CC2 **unconnected**; serial on SBU1+SBU2 tied; fuse its VBUS. |
 | Knob FFC | HC-FPC-0.5-**14P**-FH20 | **C19273929** | 0.5 mm, flip-top, right-angle, bottom contact |
-| Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. |
+| Main FFC | HC-FPC-0.5-**20P**-FH20 | **C19273932** | 20-position sibling. Confirmed 2026-09-18: JLCPCB Extended, 1,893 in stock, $0.076/1-99. **Two footprints, one populated** -- see §2. Assembly quantity is 1 per board; the second is DNP. |
 | Level shift | 74AHCT125 | *verify* | **DNP**, 0 Ω bypass. RGB only. |
 | Power OR | Schottky, VBUS ↔ jack 5 V | *verify* | Stops one half back-feeding the other |
 | Buttons | BOOTSEL + RESET tactile switches | *verify* | The reference has neither as a real button |

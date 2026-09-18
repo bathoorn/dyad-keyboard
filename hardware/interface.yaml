@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 10
+version: 11
 units: mm
 key_unit: 19.05
 
@@ -48,6 +48,13 @@ changelog:
      rating, not the supply, was capping per-key RGB at ~17% of full white;
      USB-C carries 3 A and lifts that to ~45%. CC pins unconnected, serial on
      SBU1+SBU2 tied, split VBUS fused."
+  - "v11 - controller carries the 20-pin main FFC footprint on TWO edges,
+     one populated per half. Each half's J1 sits on its own inner board
+     edge, so the two cable approaches are mirror images, and a mirror is
+     not a rotation. Absorbing it in controller copper keeps one cable type,
+     one pinout and one firmware. The case must admit the ribbon from the
+     correct side per half; positions_controller and mounting_holes must
+     record WHICH edge is populated on each. See CONTROLLER.md §2."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.

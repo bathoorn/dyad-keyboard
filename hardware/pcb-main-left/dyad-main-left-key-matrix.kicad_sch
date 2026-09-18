@@ -10360,7 +10360,7 @@
 				)
 			)
 		)
-		(property "Pinout" "PROVISIONAL - confirm at routing. 1,2=VCC(5V) 3,5=GND 4=LEDIN 6-10=ROW4..ROW0 (descending) 11-17=COL0-6 18=COL7 (idle on left) 19=+3V3 20=HAND(tied to +3V3 here)"
+		(property "Pinout" "1,2=VCC(5V) 3,5=GND 4=LEDIN 6-10=ROW4..ROW0 (descending) 11-17=COL0-6 18=COL7 (idle on left) 19=+3V3 20=HAND(tied to +3V3 here). Identical to main-right; the mirrored approach is absorbed by the controller's second FFC footprint."
 			(at 193.04 66.04 0)
 			(hide yes)
 			(effects

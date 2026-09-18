@@ -111,7 +111,7 @@ board were both updated, and parity is 0 -- but this is now the order the
 **controller and the left half must match**. The earlier ascending table is
 wrong wherever it survives.
 
-#### The left pinout is PROVISIONAL until main-left is routed
+#### Resolved 2026-09-18: the left pinout is identical, and the controller absorbs the mirror
 
 The left connector faces the other way. Its inner edge is the board's right
 edge, and a right-angle part has a fixed ribbon exit, so it ends up rotated
@@ -129,12 +129,42 @@ reasons:
   controller pinout and no firmware asymmetry. Mirroring it in copper
   instead would need two visually identical but non-interchangeable cables.
 
-The escape hatch, if routing main-left turns out to want the opposite order:
+**The decision: the controller gets two 20-pin FFC footprints, one on each
+of two edges, wired to the same nets, and only the one facing that half's
+main PCB is populated.** Each footprint's orientation is chosen
+independently, so the mirror is absorbed in controller copper. Both halves
+then keep one cable type, one logical pinout and one firmware, and the left
+pinout above is final rather than provisional.
+
+Why there, and not somewhere else:
+
+- **A mirror is not a rotation.** Rotating the controller 180 degrees swaps
+  left/right *and* top/bottom, so it would put the main FFC on the right
+  edge but throw USB-C onto the wrong one. Only flipping the board over
+  truly mirrors it, and that puts every component against the case floor and
+  inverts the USB-C port.
+- **WORKFLOW.md §2 says to push uncertainty into the part with the most
+  slack**, and that is explicitly the controller -- small, singular, ~$15 to
+  respin. The mains have zero slack; the right half is already routed.
+- The project already uses this exact pattern twice: unpopulated SK6812
+  footprints and the DNP 74AHCT125. Unpopulated footprints cost nothing at
+  fab; adding them later is a respin.
+
+Cost: about 13 mm of board edge for the unpopulated part, plus 20 short
+stubs. Against a 170 mm perimeter that also needs two USB-C and the 14-pin
+knob FFC -- roughly 53 mm of connector edge in total -- it fits.
+
+Rejected: folding the cable on one half (cheapest in area, but
+assembly-order dependent and the easiest to get silently wrong); relocating
+both J1s so the halves are related by translation rather than reflection
+(would mean redoing main-right's placement and routing); and flipping the
+controller over.
+
+The escape hatch remains if routing main-left ever wants the opposite order:
 QMK supports `MATRIX_ROW_PINS_RIGHT` / `MATRIX_COL_PINS_RIGHT`, so the
-halves *may* legitimately differ. That is a deliberate trade -- a routing
-convenience against a permanent asymmetry -- and it is the decision to make
-when main-left is placed, not before. J1's `Pinout` property on main-left is
-marked `PROVISIONAL` until then.
+halves *may* legitimately differ. It is no longer needed for the mirror, and
+would now be a deliberate trade of a routing convenience against a permanent
+asymmetry.
 
 Three choices in there are load-bearing:
 
