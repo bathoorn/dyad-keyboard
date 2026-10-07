@@ -499,8 +499,13 @@ Verified to load in KiCad 10.0.6 despite being KiCad 6 format: 36 footprints,
 RP2040 + QFN-56 footprint, W25Q128JVS (exactly our 16 MB flash), the 12 MHz
 crystal's footprint and 1 kΩ series resistor (the crystal itself and its load
 caps did **not** transfer -- see §3), USBLC6-2SC6 ESD, USB-C with 27 Ω series and 5k1 CC resistors,
-the full decoupling network, and a 500 mA VBUS fuse. It also has an SWD header
-worth keeping for bring-up.
+the full decoupling network, and a 500 mA VBUS fuse. Its SWD header (J2) was
+carried over and then **removed 2026-10-07**: the 13.8 x 3.6 mm through-hole
+socket was the largest single part on the board, and dropping it let the
+RP2040 block move 4 mm forward so USB could be routed cleanly (see §6
+results). Flashing is over USB with BOOTSEL; SWCLK/SWDIO (U3 pins 24/25) are
+left unconnected. If SWD is ever wanted back, three small SMD test pads
+(SWCLK, SWDIO, GND) would cost almost no board area.
 
 ### What must change
 
@@ -624,3 +629,31 @@ The two that bite hardest:
 - **Ground pour continuity.** Easier here than it would have been on the main
   PCBs, because no matrix crosses this board. Stitch the centre pad with ~9
   vias and check the *poured* result, not the schematic intent.
+
+**Correction to the last point:** the matrix *does* cross this board. J6 and
+J7 carry the same 15 nets on opposite side edges, so the bundle has to get
+past the RP2040's USB connections or its knob bus, and it does so on F.Cu --
+the layer that would otherwise be the continuous ground. That is the root of
+the ground-coverage numbers below.
+
+### Checklist results (2026-10-07)
+
+Run against *Hardware design with RP2040* (RP-008279-DS-2), Chapter 2.
+
+| # | Item | Result |
+|---|---|---|
+| 1 | Schematic vs minimal design | ✅ after the crystal swap. Small deviations: one fewer 100 nF than 3V3 pins (the guide shares one between pins 48/49 too); no footprint for the guide's optional DNF 10 kΩ QSPI_SS pull-up, which it says the W25Q128JVS does not need. |
+| 2 | Flash on QSPI pins; BOOTSEL 1 kΩ | ✅ R1 1 kΩ, near the flash's CS pin as the guide asks. |
+| 3 | Crystal load from the part's CL | ❌ → ✅ Was CL 20 pF / ESR 80 Ω on 22 pF caps; now the guide's ABM8-272-T3 with 15 pF (§3). |
+| 4 | Decoupling, centre-pad vias, ground under the MCU | ⚠️ Every supply pin decoupled; centre pad 9 vias, solid zone connection. Ground fill directly under U3's body is incomplete (the bundle crosses on F.Cu). |
+| 5 | USB short, coupled, matched, over ground | ⚠️ Rerouted: D+ 15.9 mm / D- 16.1 mm, entirely on B.Cu, no vias (was 18 / 26 mm with 6 vias). Ground under it only ~9%, because the matrix bundle crosses beneath. Full-speed USB tolerates this; the guide's 90 Ω target needs a 1 mm board anyway. R5/R6 sit ~7 mm from the chip. |
+| 6 | LDO rated above Phase 1 peak | ⏳ Open -- the Phase 1 current measurement is still pending. |
+| 7 | BOOTSEL/RESET reachable in the case | ⏳ Open -- no case yet; which face mounts up is undecided. |
+| 8 | Power OR-ing, either half plugged in | ✅ Each half's VBUS enters the shared +5V through its own D1, so two hosts never meet. F2 (500 mA) caps what one half can send the other. |
+
+Measured ground share under the fast nets on the final routing (GND fill on
+the opposite layer, along each track): USB 9%, QSPI 1%, crystal 27%. QSPI is
+the weakest -- short (~55 mm across six lines) and run at the default flash
+clock, but the first suspect if XIP proves flaky at higher clocks. Raising
+these figures needs hand-routing around the bundle crossing; the autorouter
+attempts are recorded in docs/TOOLS.md.

@@ -7356,17 +7356,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.985 88.9)
-			(xy 122.555 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b6bc88d-fc1b-4600-a64f-e2e5ad3ea844")
-	)
-	(wire
-		(pts
 			(xy 68.58 25.4)
 			(xy 73.66 25.4)
 		)
@@ -7408,17 +7397,6 @@
 			(type default)
 		)
 		(uuid "4f8c8541-3ec6-4f7d-a6a9-450246c2a715")
-	)
-	(wire
-		(pts
-			(xy 122.555 86.36)
-			(xy 133.985 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50c38cf6-501a-4d6c-8b87-4e59c3ec6278")
 	)
 	(wire
 		(pts
@@ -9690,28 +9668,9 @@
 		)
 		(uuid "ac06db33-72e4-44fb-bbe5-413fbfc887d7")
 	)
-	(global_label "SWCLK"
-		(shape input)
-		(at 48.26 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0db2fed0-aeb7-4920-a911-5007e85470f3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.6179 87.5506 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+	(no_connect
+		(at 48.26 87.63)
+		(uuid "691272e7-246f-45d3-a417-646fdeb3e7c2")
 	)
 	(global_label "QSPI_CLK"
 		(shape input)
@@ -9802,29 +9761,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "SWCLK"
-		(shape input)
-		(at 122.555 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3489a8d2-4b97-462e-b984-5c1186880800")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1971 93.9006 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -10081,28 +10017,9 @@
 			)
 		)
 	)
-	(global_label "SWD"
-		(shape input)
-		(at 48.26 90.17 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b3735904-0810-47e0-b49f-f013c67bf34d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.9159 90.0906 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+	(no_connect
+		(at 48.26 90.17)
+		(uuid "62d009d6-2cc3-45f4-b546-2ab3ea1b0912")
 	)
 	(global_label "SD1"
 		(shape input)
@@ -10147,29 +10064,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "~{RESET}"
-		(shape input)
-		(at 122.555 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cf05a5cd-6029-45a0-96b1-9011372018ca")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7133 83.7406 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -10300,29 +10194,6 @@
 		(uuid "f5bcc643-4d5b-44af-ae30-dbec0a090563")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 171.8371 34.2106 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "SWD"
-		(shape input)
-		(at 122.555 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f66f628c-015b-4765-a3eb-b9811814a57c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.8991 91.3606 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11312,83 +11183,6 @@
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
 					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 133.985 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced)
-		(uuid "2a3c3a64-f26f-42f5-ad4b-e7fa9dbe7d1a")
-		(property "Reference" "#PWR021"
-			(at 133.985 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 133.985 81.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.985 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.985 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 133.985 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "0c6d0705-ba23-4cee-a60d-1af5de906c98")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -12657,94 +12451,6 @@
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
 					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x05")
-		(at 117.475 88.9 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "4efdc316-02c3-46a1-a5f0-22ad44d42146")
-		(property "Reference" "J2"
-			(at 113.665 85.09 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SWD"
-			(at 112.395 87.63 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
-			(at 117.475 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 117.475 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 117.475 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "850575fe-3c27-4376-ab5b-dbcd95258475")
-		)
-		(pin "2"
-			(uuid "931d1262-07ca-4655-83c1-3aa188e39440")
-		)
-		(pin "3"
-			(uuid "64b7d8b3-b17a-442f-9e9f-473867df8d07")
-		)
-		(pin "4"
-			(uuid "933d68ca-2974-45b3-bc30-8197325fdaeb")
-		)
-		(pin "5"
-			(uuid "bc20dec7-5d73-40a4-91c2-62ffd030a4a4")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -15676,83 +15382,6 @@
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
 					(reference "#PWR019")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 133.985 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced)
-		(uuid "fe29ac00-ce36-4faa-888e-0967f2e8c573")
-		(property "Reference" "#PWR022"
-			(at 133.985 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 133.985 93.98 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.985 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.985 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 133.985 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "57c7e850-bd5b-4018-b927-020847cde91a")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "#PWR022")
 					(unit 1)
 				)
 			)
