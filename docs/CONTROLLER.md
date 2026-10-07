@@ -17,23 +17,28 @@ nothing from this budget.
 
 | GPIO | Function | Constrained? |
 |---|---|---|
-| GP0 | **KNOB_D0** — SPI0 RX *or* I²C0 SDA | **yes** |
-| GP1 | **KNOB_D1** — SPI0 CSn *or* I²C0 SCL | **yes** |
-| GP2 | KNOB_SCK — SPI0 SCK | **yes** |
-| GP3 | KNOB_MOSI — SPI0 TX | **yes** |
-| GP4 | KNOB_CS — display chip select (software CS) | no |
-| GP5 | KNOB_DC — display data/command | no |
-| GP6 | KNOB_RST — display reset | no |
-| GP7 | KNOB_BL — display backlight (PWM) | no |
-| GP8 | KNOB_DR — Cirque data-ready | no |
-| GP9 | ENC_A | no |
-| GP10 | ENC_B | no |
-| GP11 | SPLIT_SERIAL — half-duplex, PIO | no |
-| GP12 | HANDEDNESS — from the main PCB | no |
-| GP13 | RGB_DATA — WS2812/SK6812, PIO | no |
-| GP14–GP18 | MATRIX_ROW0–4 | no |
-| GP19–GP26 | MATRIX_COL0–7 | no |
-| GP27, GP28, GP29 | **spare** | GP26–29 are ADC-capable |
+| GP0 | HANDEDNESS — from the main PCB | no |
+| GP1–GP8 | MATRIX_COL7–0 (GP1 = COL7 … GP8 = COL0) | no |
+| GP9–GP13 | MATRIX_ROW0–4 | no |
+| GP14 | RGB_DATA — WS2812/SK6812, PIO | no |
+| GP15 | SPLIT_SERIAL — half-duplex, PIO | no |
+| GP16 | **KNOB_D0** — SPI0 RX *or* I²C0 SDA | **yes** |
+| GP17 | **KNOB_D1** — SPI0 CSn *or* I²C0 SCL | **yes** |
+| GP18 | KNOB_SCK — SPI0 SCK | **yes** |
+| GP19 | KNOB_MOSI — SPI0 TX | **yes** |
+| GP20 | KNOB_CS — display chip select (software CS) | no |
+| GP21 | KNOB_DC — display data/command | no |
+| GP22 | KNOB_RST — display reset | no |
+| GP23 | KNOB_BL — display backlight (PWM) | no |
+| GP24 | KNOB_DR — Cirque data-ready | no |
+| GP25 | ENC_A | no |
+| GP26 | ENC_B | no |
+| GP27, GP28, GP29 | **spare** | all three ADC-capable |
+
+**Reassigned 2026-10-07** for routing -- see *Why this assignment* below. The
+first assignment (knob on GP0–10, matrix on GP12–26) predates any placement
+and is in git history. The schematic carries this table: U3's labels name the
+physical pin, and only the connector-side labels moved.
 
 **27 used, 3 spare.**
 
@@ -41,7 +46,7 @@ Only four pins are actually pinned down by silicon. Everything else — chip
 selects, DC/RST/BL, the encoder, the matrix, the split link, RGB — is free
 choice, because RP2040 drives software CS on any pin and PIO reaches any pin.
 
-### GP0/GP1 settle the Cirque bus question by not answering it
+### GP16/GP17 settle the Cirque bus question by not answering it
 
 `docs/PHASE1.md` §5a left one decision open: the plan puts the Cirque on I²C,
 but the bench module is SPI-strapped and works. That decision does **not** need
@@ -51,13 +56,89 @@ RP2040's function map overlaps exactly where it helps:
 
 | Pin | As SPI | As I²C |
 |---|---|---|
-| GP0 | SPI0 RX (MISO) | I²C0 SDA |
-| GP1 | SPI0 CSn | I²C0 SCL |
+| GP16 | SPI0 RX (MISO) | I²C0 SDA |
+| GP17 | SPI0 CSn | I²C0 SCL |
 
 So both lines go to the knob connector as **KNOB_D0/KNOB_D1**, and the choice
 is made in firmware plus how the *knob module* wires its two pads. The
 controller is identical either way, and the same 14-pin connector serves both
 knob variants. Neither costs an extra pin.
+
+### Why this assignment: routing (2026-10-07)
+
+The first assignment was chosen before any placement existed, and it put the
+knob bus on the side of the RP2040 that faces *away* from the knob FFC. The
+table above replaces it, derived from geometry as §2 asks. **Applied to the
+schematic 2026-10-07.**
+
+**Placement it assumes** (decided 2026-10-07): parts on **B.Cu**, as upstream;
+board **35 wide x 50 deep**, so the side edges are the 50 mm ones. U3 keeps
+its upstream orientation (B, 180 deg), which is the only one that points its
+USB/QSPI face at the rear edge and J1. All directions below are KiCad's top
+view, front = +y.
+
+| RP2040 face | Pins | Faces | Carries |
+|---|---|---|---|
+| USB/QSPI | 43-56 | rear | J1, flash -- unchanged |
+| GP12-17, XIN/XOUT, SWD, RUN | 15-28 | front | crystal, SWD, RUN; knob from GP16 leftward |
+| GP18-29 | 29-42 | left | knob (GP18-26), spares |
+| GP0-11 | 1-14 | right | matrix bus |
+
+**Connector pin 1, on B.Cu** (measured on main-right's J1, which uses the same
+footprint family: the cable enters on the mounting-pad side):
+
+- J8, front edge, opens +y: pin 1 on the **right**, pins run right to left.
+- J7, right edge, opens +x: pad 1 at the **rear**, pad 20 at the front.
+- J6, left edge, opens -x: pad 1 at the **front**, pad 20 at the rear.
+
+**The knob keeps the dual-function trick.** GP16/GP17 overlap exactly as
+GP0/GP1 do -- SPI0 RX/CSn *and* I²C0 SDA/SCL -- with SPI0 SCK/TX on GP18/GP19.
+The whole knob group is now one contiguous run of 11 pins wrapping the
+front-left corner, fanning straight into J8 with no crossings.
+
+**J8 changes in one place.** Arriving right to left, the chip presents
+D0, D1, SCK, MOSI, CS, DC, RST, BL, DR, ENC_A, ENC_B. So the §2 table's
+pins 3-6 were reordered to **3 D0, 4 D1, 5 SCK, 6 MOSI** (they were SCK,
+MOSI, D0, D1); pins 7-13 are unchanged. The knob module does not exist yet,
+so this cost nothing.
+
+**The matrix leaves the chip as one ordered bundle to the right.** GP0-15,
+read rear to front around the front-right corner, run HAND, COL7..COL0,
+ROW0..ROW4, LEDIN, SPLIT. That is J7's pad order exactly (rear to front:
+1 HAND, 3-10 COL7..COL0, 11-15 ROW0..ROW4, 17 LEDIN), so J7 is crossing-free,
+with SPLIT outermost, toward J9 if J9 sits in front of J7.
+
+**J6 is reached by wrapping the rear of the chip, and that wrap is free.** J6
+presents the same nets in the *opposite* front-to-rear order, because it is
+J7 rotated 180 degrees. A bundle that turns three corners around the rear of the
+chip reverses its order once on the way, which is exactly the reversal J6
+needs. So the §2 worry that an identical assignment "must cross all 20 nets"
+does not hold here, and J6/J7 can keep the same net-to-pad table.
+
+**What it still costs:** one layer change per net. On a single layer, at most
+two nets can each reach both side edges past a chip in the middle, so this is
+inherent, not a pin-order problem. Where each net splits into its J7 branch
+and its J6 branch, one branch has to hop under its neighbours. Keep the long
+wrap bundle on **B.Cu** (component side, in a part-free band behind the chip
+and flash) and make only the short hops on F.Cu, so the F.Cu ground plane is
+slotted briefly, not cut across. USB D+/D- also cross that band, as a short
+F.Cu hop of their own. The power pads interleaved with the signals (3V3 at
+pad 2, GND at 16/18) take a via each.
+
+**Placement this implies:** J1, ESD, F1 and D1 along the rear; a component-free
+band of ~7 mm behind U3+U1 for the wrap; J6/J7 on the side edges level with
+U3, J9/J10 in front of them; crystal and SWD in front of U3, to the right of
+the knob bundle, with J8 at front-left.
+
+**Open before applying:**
+
+- `interface.yaml` has no `positions_controller` yet, and the cable type A/B
+  question in §2 still stands. Everything here assumes a straight, unfolded
+  ribbon.
+- The ground-pour layer moves with the parts. With parts on B.Cu, **F.Cu** is
+  the continuous plane that PLAN.md asks for, not B.Cu as §2 says.
+- Firmware is unaffected for now: `dyad/proto` and `dyad/split` use the
+  bench rig's wiring, not the controller's.
 
 ---
 
@@ -76,10 +157,10 @@ for the same reason. Do not wire the knob module off this table directly.
 |---|---|---|---|
 | 1 | 3V3 | ✓ | ✓ |
 | 2 | GND | ✓ | ✓ |
-| 3 | KNOB_SCK | SCK | SCK *(SPI mode)* |
-| 4 | KNOB_MOSI | SDI | SDI *(SPI mode)* |
-| 5 | KNOB_D0 | — | MISO *or* SDA |
-| 6 | KNOB_D1 | — | CS *or* SCL |
+| 3 | KNOB_D0 | — | MISO *or* SDA |
+| 4 | KNOB_D1 | — | CS *or* SCL |
+| 5 | KNOB_SCK | SCK | SCK *(SPI mode)* |
+| 6 | KNOB_MOSI | SDI | SDI *(SPI mode)* |
 | 7 | KNOB_CS | display CS | — |
 | 8 | KNOB_DC | D/C | — |
 | 9 | KNOB_RST | RST | — |
@@ -145,16 +226,16 @@ right-hand column gives the controller's own net name:
 
 | Pad | Signal | Net | | Pad | Signal | Net |
 |---|---|---|---|---|---|---|
-| 1 | HAND | GPIO12 | | 11 | ROW0 | GPIO14 |
-| 2 | +3V3 | +3V3 | | 12 | ROW1 | GPIO15 |
-| 3 | COL7 | GPIO26 | | 13 | ROW2 | GPIO16 |
-| 4 | COL6 | GPIO25 | | 14 | ROW3 | GPIO17 |
-| 5 | COL5 | GPIO24 | | 15 | ROW4 | GPIO18 |
-| 6 | COL4 | GPIO23 | | 16 | GND | GND |
-| 7 | COL3 | GPIO22 | | 17 | LEDIN | GPIO13 |
-| 8 | COL2 | GPIO21 | | 18 | GND | GND |
-| 9 | COL1 | GPIO20 | | 19 | VCC 5 V | **+5V** |
-| 10 | COL0 | GPIO19 | | 20 | VCC 5 V | **+5V** |
+| 1 | HAND | GPIO0 | | 11 | ROW0 | GPIO9 |
+| 2 | +3V3 | +3V3 | | 12 | ROW1 | GPIO10 |
+| 3 | COL7 | GPIO1 | | 13 | ROW2 | GPIO11 |
+| 4 | COL6 | GPIO2 | | 14 | ROW3 | GPIO12 |
+| 5 | COL5 | GPIO3 | | 15 | ROW4 | GPIO13 |
+| 6 | COL4 | GPIO4 | | 16 | GND | GND |
+| 7 | COL3 | GPIO5 | | 17 | LEDIN | GPIO14 |
+| 8 | COL2 | GPIO6 | | 18 | GND | GND |
+| 9 | COL1 | GPIO7 | | 19 | VCC 5 V | **+5V** |
+| 10 | COL0 | GPIO8 | | 20 | VCC 5 V | **+5V** |
 
 Count check: HAND 1, +3V3 1, COL0-7 8, ROW0-4 5, GND 2, LEDIN 1, VCC 2 = 20.
 
@@ -484,8 +565,8 @@ Work the deltas from §4 in this order; it minimises rework.
 4. **Add the new parts:** PJ-320A jack, 20-pin and 14-pin FFC connectors,
    74AHCT125 (mark **DNP**, with a 0 Ω bypass), and the Schottky between VBUS
    and the jack's 5 V.
-5. **Wire to the pin assignment in §1.** GP2/GP3 must be SPI0 SCK/MOSI and
-   GP0/GP1 the dual-function pair — those four are fixed by silicon. The rest
+5. **Wire to the pin assignment in §1.** GP18/GP19 must be SPI0 SCK/MOSI and
+   GP16/GP17 the dual-function pair — those four are fixed by silicon. The rest
    is free.
 6. **Annotate**, then run **ERC** and get it clean.
 
