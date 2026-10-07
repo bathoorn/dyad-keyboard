@@ -51,10 +51,10 @@ service), two asymmetric main PCBs, and two knob-module variants.
 | 4 — Case | Not started. Board outlines and plate cutouts exported for it. |
 
 The main PCBs are a **placement scaffold**, not a finished layout. DRC reports
-223 violations on the left and 260 on the right, of which **0 and 1** are
-electrical (shorts, clearance, mask bridges) — the rest is silkscreen overlap
-and library-configuration noise. Routing is incomplete, notably the angled
-thumb keys.
+195 violations on the left and 253 on the right, **none** electrical (shorts,
+clearance, mask bridges). The 32 and 37 errors are all diode/switch courtyard
+overlaps from the deliberate diode-under-switch placement; the rest is
+silkscreen. Routing is incomplete, notably the angled thumb keys.
 
 ## Repository
 

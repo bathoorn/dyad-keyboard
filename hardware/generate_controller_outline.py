@@ -3,7 +3,9 @@
 
     ./.venv-kicad/bin/python hardware/generate_controller_outline.py
 
-Writes a 50 x 35 mm rounded-rectangle Edge.Cuts outline.
+Writes a 35 x 50 mm (wide x deep) rounded-rectangle Edge.Cuts outline -- the
+interface.yaml envelope [50, 35] turned 90 degrees, decided 2026-10-07 so
+the side edges carrying the FFC and split USB-C are the 50 mm ones.
 
 The controller board itself now starts from the vendored RP2040 design guide
 (see hardware/pcb-controller/upstream/), so this exists to regenerate the
@@ -22,7 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "hardware", "pcb-controller")
 PCB = os.path.join(OUT, "dyad-controller.kicad_pcb")
 
-W, H = 50.0, 35.0          # interface.yaml: controller_envelope.extent
+W, H = 35.0, 50.0          # interface.yaml: controller_envelope.extent, turned 90 deg
 R = 2.0                    # corner radius
 X0, Y0 = 100.0, 100.0      # arbitrary sheet origin
 NM = 1000000

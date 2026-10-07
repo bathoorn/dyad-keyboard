@@ -7356,17 +7356,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.985 88.9)
-			(xy 122.555 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b6bc88d-fc1b-4600-a64f-e2e5ad3ea844")
-	)
-	(wire
-		(pts
 			(xy 68.58 25.4)
 			(xy 73.66 25.4)
 		)
@@ -7408,17 +7397,6 @@
 			(type default)
 		)
 		(uuid "4f8c8541-3ec6-4f7d-a6a9-450246c2a715")
-	)
-	(wire
-		(pts
-			(xy 122.555 86.36)
-			(xy 133.985 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "50c38cf6-501a-4d6c-8b87-4e59c3ec6278")
 	)
 	(wire
 		(pts
@@ -8990,7 +8968,7 @@
 		)
 		(uuid "fefeb217-af2f-41ba-bb0c-ac1664cd6872")
 	)
-	(label "GPIO12"
+	(label "GPIO0"
 		(at 320.04 38.1 180)
 		(effects
 			(font
@@ -9000,7 +8978,7 @@
 		)
 		(uuid "5dfb493c-f7db-4da3-9760-7327232a478d")
 	)
-	(label "GPIO12"
+	(label "GPIO0"
 		(at 386.08 38.1 180)
 		(effects
 			(font
@@ -9010,7 +8988,7 @@
 		)
 		(uuid "cbbebc1a-889a-4ea0-bc19-7a28d148a800")
 	)
-	(label "GPIO26"
+	(label "GPIO1"
 		(at 320.04 43.18 180)
 		(effects
 			(font
@@ -9020,7 +8998,7 @@
 		)
 		(uuid "ce710735-a2dd-431f-ba72-ba312bb592a8")
 	)
-	(label "GPIO26"
+	(label "GPIO1"
 		(at 386.08 43.18 180)
 		(effects
 			(font
@@ -9030,7 +9008,7 @@
 		)
 		(uuid "01f6c8ee-6c7a-4704-b4d7-c7ce05e2885e")
 	)
-	(label "GPIO25"
+	(label "GPIO2"
 		(at 320.04 45.72 180)
 		(effects
 			(font
@@ -9040,7 +9018,7 @@
 		)
 		(uuid "13bcafb2-45ce-4515-8079-f496089d7449")
 	)
-	(label "GPIO25"
+	(label "GPIO2"
 		(at 386.08 45.72 180)
 		(effects
 			(font
@@ -9050,7 +9028,7 @@
 		)
 		(uuid "fa7f9e60-23c7-4f7b-bce9-3fc5f5123863")
 	)
-	(label "GPIO24"
+	(label "GPIO3"
 		(at 320.04 48.26 180)
 		(effects
 			(font
@@ -9060,7 +9038,7 @@
 		)
 		(uuid "d1fc4e4b-bd2b-46ab-a331-40cc4b1f9b18")
 	)
-	(label "GPIO24"
+	(label "GPIO3"
 		(at 386.08 48.26 180)
 		(effects
 			(font
@@ -9070,7 +9048,7 @@
 		)
 		(uuid "89a233f3-6091-419d-a0c1-6762fda4abce")
 	)
-	(label "GPIO23"
+	(label "GPIO4"
 		(at 320.04 50.8 180)
 		(effects
 			(font
@@ -9080,7 +9058,7 @@
 		)
 		(uuid "d25b653c-2db5-4fda-aa88-f3165fc98ec1")
 	)
-	(label "GPIO23"
+	(label "GPIO4"
 		(at 386.08 50.8 180)
 		(effects
 			(font
@@ -9090,7 +9068,7 @@
 		)
 		(uuid "12b4d62c-49a5-42b6-9643-f9aa181bbfda")
 	)
-	(label "GPIO22"
+	(label "GPIO5"
 		(at 320.04 53.34 180)
 		(effects
 			(font
@@ -9100,7 +9078,7 @@
 		)
 		(uuid "ac13e43c-6c02-41b3-8196-05dc46797d40")
 	)
-	(label "GPIO22"
+	(label "GPIO5"
 		(at 386.08 53.34 180)
 		(effects
 			(font
@@ -9110,7 +9088,7 @@
 		)
 		(uuid "5b4613ed-26d6-4650-b9d7-509eda9144b4")
 	)
-	(label "GPIO21"
+	(label "GPIO6"
 		(at 320.04 55.88 180)
 		(effects
 			(font
@@ -9120,7 +9098,7 @@
 		)
 		(uuid "1b594079-bbde-44ad-a71b-eadf53c9e349")
 	)
-	(label "GPIO21"
+	(label "GPIO6"
 		(at 386.08 55.88 180)
 		(effects
 			(font
@@ -9130,7 +9108,7 @@
 		)
 		(uuid "3653ec82-bc1a-4112-995a-17494502d085")
 	)
-	(label "GPIO20"
+	(label "GPIO7"
 		(at 320.04 58.42 180)
 		(effects
 			(font
@@ -9140,7 +9118,7 @@
 		)
 		(uuid "c513e21c-18d3-4e3c-8780-7ce0b4c2d47f")
 	)
-	(label "GPIO20"
+	(label "GPIO7"
 		(at 386.08 58.42 180)
 		(effects
 			(font
@@ -9150,7 +9128,7 @@
 		)
 		(uuid "f636a7dc-be77-4ea4-8a4a-28c42b86dfe4")
 	)
-	(label "GPIO19"
+	(label "GPIO8"
 		(at 320.04 60.96 180)
 		(effects
 			(font
@@ -9160,7 +9138,7 @@
 		)
 		(uuid "61043d5f-2d00-4301-b1ee-d1b9c01370b6")
 	)
-	(label "GPIO19"
+	(label "GPIO8"
 		(at 386.08 60.96 180)
 		(effects
 			(font
@@ -9170,7 +9148,7 @@
 		)
 		(uuid "64339104-b6ae-4910-9988-c8a1068be415")
 	)
-	(label "GPIO14"
+	(label "GPIO9"
 		(at 320.04 63.5 180)
 		(effects
 			(font
@@ -9180,7 +9158,7 @@
 		)
 		(uuid "088b661e-8cbb-406e-b556-e36f650deb11")
 	)
-	(label "GPIO14"
+	(label "GPIO9"
 		(at 386.08 63.5 180)
 		(effects
 			(font
@@ -9190,7 +9168,7 @@
 		)
 		(uuid "58b06ad1-ee29-4488-9fd8-bd272e5b68c3")
 	)
-	(label "GPIO15"
+	(label "GPIO10"
 		(at 320.04 66.04 180)
 		(effects
 			(font
@@ -9200,7 +9178,7 @@
 		)
 		(uuid "596a3857-f358-4378-a553-458862235cff")
 	)
-	(label "GPIO15"
+	(label "GPIO10"
 		(at 386.08 66.04 180)
 		(effects
 			(font
@@ -9210,7 +9188,7 @@
 		)
 		(uuid "eb002f7b-778f-497c-813e-d34446f2e885")
 	)
-	(label "GPIO16"
+	(label "GPIO11"
 		(at 320.04 68.58 180)
 		(effects
 			(font
@@ -9220,7 +9198,7 @@
 		)
 		(uuid "96ae3b5f-1a8b-4315-a164-485b1900125c")
 	)
-	(label "GPIO16"
+	(label "GPIO11"
 		(at 386.08 68.58 180)
 		(effects
 			(font
@@ -9230,7 +9208,7 @@
 		)
 		(uuid "f6a0e52c-917f-44c6-8bd6-ff98f5359303")
 	)
-	(label "GPIO17"
+	(label "GPIO12"
 		(at 320.04 71.12 180)
 		(effects
 			(font
@@ -9240,7 +9218,7 @@
 		)
 		(uuid "ec1518b7-19c7-436d-a481-5a5008325d44")
 	)
-	(label "GPIO17"
+	(label "GPIO12"
 		(at 386.08 71.12 180)
 		(effects
 			(font
@@ -9250,7 +9228,7 @@
 		)
 		(uuid "580d8621-12ac-415d-99f1-4492e9ece365")
 	)
-	(label "GPIO18"
+	(label "GPIO13"
 		(at 320.04 73.66 180)
 		(effects
 			(font
@@ -9260,7 +9238,7 @@
 		)
 		(uuid "da0d84c8-c376-494a-b8d8-6b6e3af43fef")
 	)
-	(label "GPIO18"
+	(label "GPIO13"
 		(at 386.08 73.66 180)
 		(effects
 			(font
@@ -9270,7 +9248,7 @@
 		)
 		(uuid "24b3a683-9262-425c-a583-d6b4d58fe2dd")
 	)
-	(label "GPIO13"
+	(label "GPIO14"
 		(at 320.04 78.74 180)
 		(effects
 			(font
@@ -9280,7 +9258,7 @@
 		)
 		(uuid "ed25873e-f88e-409c-9194-9644b91e5cb2")
 	)
-	(label "GPIO13"
+	(label "GPIO14"
 		(at 386.08 78.74 180)
 		(effects
 			(font
@@ -9420,7 +9398,7 @@
 		)
 		(uuid "d1d8f57c-8753-4d6f-9926-ae2032b3f91d")
 	)
-	(label "GPIO2"
+	(label "GPIO16"
 		(at 320.04 104.14 180)
 		(effects
 			(font
@@ -9430,7 +9408,7 @@
 		)
 		(uuid "acdc62a9-3a21-4ad6-b278-23a3c5cd0a49")
 	)
-	(label "GPIO3"
+	(label "GPIO17"
 		(at 320.04 106.68 180)
 		(effects
 			(font
@@ -9440,7 +9418,7 @@
 		)
 		(uuid "09df0883-8788-4838-8a74-909e7607462e")
 	)
-	(label "GPIO0"
+	(label "GPIO18"
 		(at 320.04 109.22 180)
 		(effects
 			(font
@@ -9450,7 +9428,7 @@
 		)
 		(uuid "4ece8ec4-24e1-4eb1-a07c-2f7f0ad7e0a7")
 	)
-	(label "GPIO1"
+	(label "GPIO19"
 		(at 320.04 111.76 180)
 		(effects
 			(font
@@ -9460,7 +9438,7 @@
 		)
 		(uuid "067aa5f9-8fa3-42f2-8391-92556d79372a")
 	)
-	(label "GPIO4"
+	(label "GPIO20"
 		(at 320.04 114.3 180)
 		(effects
 			(font
@@ -9470,7 +9448,7 @@
 		)
 		(uuid "9c5b691a-06af-405c-bf79-c754083e3e05")
 	)
-	(label "GPIO5"
+	(label "GPIO21"
 		(at 320.04 116.84 180)
 		(effects
 			(font
@@ -9480,7 +9458,7 @@
 		)
 		(uuid "6eeb20c0-9cd0-4504-97cc-db403bcbe3bd")
 	)
-	(label "GPIO6"
+	(label "GPIO22"
 		(at 320.04 119.38 180)
 		(effects
 			(font
@@ -9490,7 +9468,7 @@
 		)
 		(uuid "478006ba-d485-4063-ae6f-215811cc499e")
 	)
-	(label "GPIO7"
+	(label "GPIO23"
 		(at 320.04 121.92 180)
 		(effects
 			(font
@@ -9500,7 +9478,7 @@
 		)
 		(uuid "29421939-3331-4e01-9bdd-4f6ea16ed237")
 	)
-	(label "GPIO8"
+	(label "GPIO24"
 		(at 320.04 124.46 180)
 		(effects
 			(font
@@ -9510,7 +9488,7 @@
 		)
 		(uuid "7361e144-fe24-4300-bfda-410fac2b77e6")
 	)
-	(label "GPIO9"
+	(label "GPIO25"
 		(at 320.04 127 180)
 		(effects
 			(font
@@ -9520,7 +9498,7 @@
 		)
 		(uuid "222eb37a-8004-4f16-ae0d-9e0ab4d0f8cc")
 	)
-	(label "GPIO10"
+	(label "GPIO26"
 		(at 320.04 129.54 180)
 		(effects
 			(font
@@ -9590,7 +9568,7 @@
 		)
 		(uuid "c90ff5b6-54b4-46b1-b9bd-40e5bb3dcbe6")
 	)
-	(label "GPIO11"
+	(label "GPIO15"
 		(at 345.44 193.04 0)
 		(effects
 			(font
@@ -9600,7 +9578,7 @@
 		)
 		(uuid "0137d2ac-b9d8-4b3f-a0e2-5396189d2c6a")
 	)
-	(label "GPIO11"
+	(label "GPIO15"
 		(at 345.44 195.58 0)
 		(effects
 			(font
@@ -9610,7 +9588,7 @@
 		)
 		(uuid "42a133e0-9287-4e2e-ac28-e1fd70dce9a6")
 	)
-	(label "GPIO11"
+	(label "GPIO15"
 		(at 265.43 193.04 0)
 		(effects
 			(font
@@ -9620,7 +9598,7 @@
 		)
 		(uuid "664eb3b4-b338-439b-a800-604edada1f93")
 	)
-	(label "GPIO11"
+	(label "GPIO15"
 		(at 265.43 195.58 0)
 		(effects
 			(font
@@ -9690,28 +9668,9 @@
 		)
 		(uuid "ac06db33-72e4-44fb-bbe5-413fbfc887d7")
 	)
-	(global_label "SWCLK"
-		(shape input)
-		(at 48.26 87.63 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0db2fed0-aeb7-4920-a911-5007e85470f3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.6179 87.5506 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+	(no_connect
+		(at 48.26 87.63)
+		(uuid "691272e7-246f-45d3-a417-646fdeb3e7c2")
 	)
 	(global_label "QSPI_CLK"
 		(shape input)
@@ -9802,29 +9761,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "SWCLK"
-		(shape input)
-		(at 122.555 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3489a8d2-4b97-462e-b984-5c1186880800")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.1971 93.9006 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -10081,28 +10017,9 @@
 			)
 		)
 	)
-	(global_label "SWD"
-		(shape input)
-		(at 48.26 90.17 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b3735904-0810-47e0-b49f-f013c67bf34d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.9159 90.0906 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+	(no_connect
+		(at 48.26 90.17)
+		(uuid "62d009d6-2cc3-45f4-b546-2ab3ea1b0912")
 	)
 	(global_label "SD1"
 		(shape input)
@@ -10147,29 +10064,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "~{RESET}"
-		(shape input)
-		(at 122.555 83.82 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cf05a5cd-6029-45a0-96b1-9011372018ca")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.7133 83.7406 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -10300,29 +10194,6 @@
 		(uuid "f5bcc643-4d5b-44af-ae30-dbec0a090563")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 171.8371 34.2106 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "SWD"
-		(shape input)
-		(at 122.555 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f66f628c-015b-4765-a3eb-b9811814a57c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 128.8991 91.3606 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11318,83 +11189,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 133.985 86.36 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced)
-		(uuid "2a3c3a64-f26f-42f5-ad4b-e7fa9dbe7d1a")
-		(property "Reference" "#PWR021"
-			(at 133.985 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 133.985 81.28 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.985 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.985 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 133.985 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "0c6d0705-ba23-4cee-a60d-1af5de906c98")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 192.405 66.04 0)
 		(unit 1)
@@ -11720,7 +11514,7 @@
 		(at 118.11 26.67 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced)
@@ -12248,7 +12042,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "15pF"
 			(at 187.325 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12290,7 +12084,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1555"
+		(property "LCSC" "C1548"
 			(at 183.515 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -12657,94 +12451,6 @@
 			(project "dyad-controller"
 				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
 					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x05")
-		(at 117.475 88.9 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "4efdc316-02c3-46a1-a5f0-22ad44d42146")
-		(property "Reference" "J2"
-			(at 113.665 85.09 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SWD"
-			(at 112.395 87.63 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
-			(at 117.475 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 117.475 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 117.475 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "850575fe-3c27-4376-ab5b-dbcd95258475")
-		)
-		(pin "2"
-			(uuid "931d1262-07ca-4655-83c1-3aa188e39440")
-		)
-		(pin "3"
-			(uuid "64b7d8b3-b17a-442f-9e9f-473867df8d07")
-		)
-		(pin "4"
-			(uuid "933d68ca-2974-45b3-bc30-8197325fdaeb")
-		)
-		(pin "5"
-			(uuid "bc20dec7-5d73-40a4-91c2-62ffd030a4a4")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -13257,7 +12963,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "15pF"
 			(at 187.325 57.15 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13299,7 +13005,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1555"
+		(property "LCSC" "C1548"
 			(at 183.515 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -13651,7 +13357,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Abracon ABM8-272-T3, 12 MHz, CL 10 pF, ESR 50 ohm max -- the crystal of the RP2040 minimal design"
 			(at 192.405 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13661,7 +13367,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C9002"
+		(property "LCSC" "C20625731"
 			(at 192.405 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -14909,7 +14615,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+		(property "Footprint" "dyad:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 245.745 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -15682,83 +15388,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 133.985 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced)
-		(uuid "fe29ac00-ce36-4faa-888e-0967f2e8c573")
-		(property "Reference" "#PWR022"
-			(at 133.985 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 133.985 93.98 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.985 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.985 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 133.985 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(body_style 1)
-		(in_pos_files yes)
-		(pin "1"
-			(uuid "57c7e850-bd5b-4018-b927-020847cde91a")
-		)
-		(instances
-			(project "dyad-controller"
-				(path "/ba62e47e-9e07-4e97-ab08-24b670d50f97"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 166.37 17.78 0)
 		(unit 1)
@@ -16201,7 +15830,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+		(property "Footprint" "dyad:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 330.2 180.34 0)
 			(hide yes)
 			(effects
@@ -16222,6 +15851,17 @@
 		(property "Description" "USB 2.0-only Type-C Receptacle connector"
 			(at 330.2 180.34 0)
 			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C165948"
+			(at 241.935 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16272,7 +15912,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+		(property "Footprint" "dyad:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 			(at 250.19 180.34 0)
 			(hide yes)
 			(effects
@@ -16293,6 +15933,17 @@
 		(property "Description" "USB 2.0-only Type-C Receptacle connector"
 			(at 250.19 180.34 0)
 			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C165948"
+			(at 241.935 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
