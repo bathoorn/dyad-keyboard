@@ -1,0 +1,9 @@
+(version 1)
+
+# J1's USB-C signal pads sit at 0.5 mm pitch with 0.2 mm gaps, so a 0.2 mm
+# track leaving one pad passes its neighbour at ~0.135 mm -- under the 0.15 mm
+# netclass clearance but well inside JLCPCB's 2-layer capability. Relaxed for
+# copper touching J1's pads only, not board-wide.
+(rule "J1 fine-pitch USB-C pads"
+  (constraint clearance (min 0.13mm))
+  (condition "(A.Type == 'Pad' && A.memberOfFootprint('J1')) || (B.Type == 'Pad' && B.memberOfFootprint('J1'))"))
