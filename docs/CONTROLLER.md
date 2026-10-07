@@ -646,14 +646,17 @@ Run against *Hardware design with RP2040* (RP-008279-DS-2), Chapter 2.
 | 2 | Flash on QSPI pins; BOOTSEL 1 kΩ | ✅ R1 1 kΩ, near the flash's CS pin as the guide asks. |
 | 3 | Crystal load from the part's CL | ❌ → ✅ Was CL 20 pF / ESR 80 Ω on 22 pF caps; now the guide's ABM8-272-T3 with 15 pF (§3). |
 | 4 | Decoupling, centre-pad vias, ground under the MCU | ⚠️ Every supply pin decoupled; centre pad 9 vias, solid zone connection. Ground fill directly under U3's body is incomplete (the bundle crosses on F.Cu). |
-| 5 | USB short, coupled, matched, over ground | ⚠️ Rerouted: D+ 15.9 mm / D- 16.1 mm, entirely on B.Cu, no vias (was 18 / 26 mm with 6 vias). Ground under it only ~9%, because the matrix bundle crosses beneath. Full-speed USB tolerates this; the guide's 90 Ω target needs a 1 mm board anyway. R5/R6 sit ~7 mm from the chip. |
+| 5 | USB short, coupled, matched, over ground | ⚠️ Rerouted: D+ 15.9 mm / D- 16.1 mm, entirely on B.Cu, no vias (was 18 / 26 mm with 6 vias). Ground under it ~28% after the hand reroute (was ~9%), because the matrix bundle still crosses beneath. Full-speed USB tolerates this; the guide's 90 Ω target needs a 1 mm board anyway. R5/R6 sit ~7 mm from the chip. |
 | 6 | LDO rated above Phase 1 peak | ⏳ Open -- the Phase 1 current measurement is still pending. |
 | 7 | BOOTSEL/RESET reachable in the case | ⏳ Open -- no case yet; which face mounts up is undecided. |
 | 8 | Power OR-ing, either half plugged in | ✅ Each half's VBUS enters the shared +5V through its own D1, so two hosts never meet. F2 (500 mA) caps what one half can send the other. |
 
-Measured ground share under the fast nets on the final routing (GND fill on
-the opposite layer, along each track): USB 9%, QSPI 1%, crystal 27%. QSPI is
+Measured ground share under the fast nets (GND fill on the opposite layer,
+along each track), after a hand reroute in KiCad that pulled matrix lines
+(GPIO2, 4, 7, 10, 15) out from under the RP2040's surroundings: USB 28%
+(was 9%), crystal 50% (was 27%), QSPI 1% (unchanged). The F.Cu fill rose
+from 46% to 58% of the board, its main piece from 774 to 987 mm^2. QSPI is
 the weakest -- short (~55 mm across six lines) and run at the default flash
-clock, but the first suspect if XIP proves flaky at higher clocks. Raising
-these figures needs hand-routing around the bundle crossing; the autorouter
-attempts are recorded in docs/TOOLS.md.
+clock, but the first suspect if XIP proves flaky at higher clocks; its lines
+run on B.Cu over the remaining bundle crossing on F.Cu, the next target for
+a hand pass. The autorouter attempts are recorded in docs/TOOLS.md.
