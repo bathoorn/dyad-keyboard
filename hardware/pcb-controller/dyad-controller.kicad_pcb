@@ -7106,7 +7106,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "15pF"
 			(at 0 -1.16 90)
 			(layer "B.Fab")
 			(uuid "96ee1d50-fee3-4aeb-95e1-edffd726c9c3")
@@ -7140,7 +7140,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1555"
+		(property "LCSC" "C1548"
 			(at 128.606875 285.547125 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -7742,7 +7742,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "15pF"
 			(at 0 -1.16 270)
 			(layer "B.Fab")
 			(uuid "ec3e0113-f2c7-4e4b-a8a3-32e132f659cb")
@@ -7776,7 +7776,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1555"
+		(property "LCSC" "C1548"
 			(at 278.590375 -122.158125 0)
 			(layer "B.Fab")
 			(hide yes)
@@ -9151,7 +9151,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Abracon ABM8-272-T3, 12 MHz, CL 10 pF, ESR 50 ohm max -- the crystal of the RP2040 minimal design"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9162,7 +9162,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C9002"
+		(property "LCSC" "C20625731"
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)

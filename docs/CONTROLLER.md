@@ -413,15 +413,27 @@ distinct codes — nothing to look up):
 |---|---|---|---|
 | U3 | RP2040, QFN-56 | **C2040** |
 | U1 | W25Q128JVS, 16 MB SOIC-8 | **C131025** |
-| Y1 | 12 MHz crystal, 3225 4-pin | **C9002** |
+| Y1 | Abracon ABM8-272-T3, 12 MHz, CL 10 pF, 3225 4-pin | **C20625731** | ← **swapped 2026-10-07**, see below |
 | U2 | USBLC6-2SC6 ESD, SOT-23-6 | **C2827654** |
 | U4 | XC6206 LDO 3.3 V / 200 mA, SOT-23 | **C5446** |
 | J1 | USB-C receptacle, HRO TYPE-C-31-M-12 | **C165948** |
 | F1 | 500 mA fuse, 1206 | **C70076** | ← **upsize if RGB is populated**: it is in the LED path
-| C1–C17 | 10× 100 nF, 4× 1 µF, 1× 10 µF, 2× 22 pF, all 0402 | C1525 / C52923 / C15525 / C1555 |
+| C1–C17 | 10× 100 nF, 4× 1 µF, 1× 10 µF, 2× 15 pF (C2/C3), all 0402 | C1525 / C52923 / C15525 / **C1548** |
 | R1,R2,R7 | 1 kΩ 0402 | C11702 |
 | R3,R4 | 5k1 CC 0402 | C25905 |
 | R5,R6 | 27 Ω 0603 | C25190 |
+
+**The inherited crystal did not match its load caps.** The reference design
+carried LCSC C9002 (YXC X322512MSB4SI): CL **20 pF**, ESR **80 Ω**, with
+22 pF load caps. Those give ~11 + 3 pF stray = ~14 pF against the 20 pF it
+needs, so it would run fast -- and its 80 Ω ESR is above the 50 Ω that
+*Hardware design with RP2040* §2.3 relies on when sizing the 1 kΩ XOUT
+series resistor, so start-up margin was unknown. The guide says any other
+crystal circuit "will require extensive testing". Swapped to the guide's own
+circuit unchanged: ABM8-272-T3 (CL 10 pF, ESR ≤ 50 Ω), two 15 pF caps
+(7.5 pF + ~3 pF stray = 10.5 pF), 1 kΩ (R7). Same 3.2 × 2.5 mm 4-pad
+package and pin-out, so the footprint and routing are unchanged. Found by
+the §6 checklist, item 3.
 
 Passives are 0402. That is finer than the "0805, hand-solderable" assumption in
 PLAN.md §10, but these are on the *assembly* BOM — JLCPCB places them, so it
@@ -484,8 +496,9 @@ Verified to load in KiCad 10.0.6 despite being KiCad 6 format: 36 footprints,
 
 ### What transfers unchanged
 
-RP2040 + QFN-56 footprint, W25Q128JVS (exactly our 16 MB flash), 12 MHz crystal
-with 22 pF loads, USBLC6-2SC6 ESD, USB-C with 27 Ω series and 5k1 CC resistors,
+RP2040 + QFN-56 footprint, W25Q128JVS (exactly our 16 MB flash), the 12 MHz
+crystal's footprint and 1 kΩ series resistor (the crystal itself and its load
+caps did **not** transfer -- see §3), USBLC6-2SC6 ESD, USB-C with 27 Ω series and 5k1 CC resistors,
 the full decoupling network, and a 500 mA VBUS fuse. It also has an SWD header
 worth keeping for bring-up.
 
