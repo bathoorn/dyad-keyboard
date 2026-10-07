@@ -15857,6 +15857,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C165948"
+			(at 241.935 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(property "Serves" "Split link, RIGHT-edge placement - populated on the LEFT half (faces the other half). CC unconnected per PLAN.md §5 rule 1; SBU1+SBU2 tied per rule 2; VBUS_SPLIT needs its fuse + OR-ing Schottky per rule 3."
 			(at 330.2 180.34 0)
 			(hide yes)
@@ -15922,6 +15933,17 @@
 		(property "Description" "USB 2.0-only Type-C Receptacle connector"
 			(at 250.19 180.34 0)
 			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C165948"
+			(at 241.935 44.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)

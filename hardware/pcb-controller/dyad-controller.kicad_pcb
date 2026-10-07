@@ -794,6 +794,19 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC" "C165948"
+			(at 0 0 0)
+			(layer "B.Fab")
+			(hide yes)
+			
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(path "/779edf19-439a-4023-8c41-0595864579bd")
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10983,6 +10996,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC" "C165948"
+			(at 0 0 0)
+			(layer "B.Fab")
+			(hide yes)
+			
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
 				)
 				(justify mirror)
 			)
