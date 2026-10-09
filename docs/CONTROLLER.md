@@ -670,13 +670,17 @@ along each track), across the three routings:
 |---|---|---|---|
 | USB | 28% | 35% | **82%** |
 | QSPI | 1% | 0% | **65%** |
-| Crystal | 50% | 81% | 46% |
-| F.Cu fill | 58%, main piece 987 mm^2 | 56%, 1,091 mm^2 | **65%, 1,149 mm^2** |
+| Crystal | 50% | 81% | 54% (46% before a hand pass) |
+| F.Cu fill | 58%, main piece 987 mm^2 | 56%, 1,091 mm^2 | **65%, 1,146 mm^2** |
+| B.Cu fill | 51%, 9 pieces | 53%, 7 pieces | **54%, 6 pieces, main piece 1,018 mm^2** |
 | Routed | yes | GPIO3 unroutable | **yes** |
 
 What moved the numbers was where the main FFCs sit, not the board length on
 its own: with J6/J7 on the lower half of the side edges the matrix bundle
-no longer has to cross under the USB and QSPI routing on F.Cu. The crystal
-is now the weakest of the three (46%) -- short, and on the oscillator's own
-pins, so a lower priority than QSPI was. The routing workflow and its traps
-are recorded in docs/TOOLS.md and hardware/route_tools.py.
+no longer has to cross under the USB and QSPI routing on F.Cu. A hand pass
+in KiCad afterwards (2026-10-09; GPIO2/4/5/7/9/12/15, +3V3, XTAL_IN) lifted
+the crystal from 46% to 54% and joined the B.Cu fill into fewer pieces;
+the crystal is still the weakest of the three -- short, and on the
+oscillator's own pins, so a lower priority than QSPI was. The routing
+workflow and its traps are recorded in docs/TOOLS.md and
+hardware/route_tools.py.
