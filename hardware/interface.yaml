@@ -8,7 +8,7 @@
 # bump `version`, add a `changelog` line, re-run the virtual fit, and
 # re-print the affected coupon. That discipline is the whole point.
 
-version: 12
+version: 13
 units: mm
 key_unit: 19.05
 
@@ -60,6 +60,14 @@ changelog:
      USB-C. Envelope extent unchanged. Four M2 mounting holes, one per
      corner -- M2 rather than the project's M3 because an M3 head at the
      front-left corner would land on the knob FFC. See CONTROLLER.md §1."
+  - "v13 - controller lengthened from 50 to 57 mm (35 wide x 57 deep) to
+     give the routing room. Front mounting holes move with the front edge,
+     y 47 -> 54. Side-edge connectors swapped so the 20-pin main FFCs get
+     the roomier lower half: from the outline's rear-left corner, split
+     USB-C J10 (left) / J9 (right) centred at y 29, main FFC J6 (left) /
+     J7 (right) at y 41.8; host USB-C J1 on the rear edge and knob FFC J8
+     on the front edge, x 12.5. Per half, the left populates J6 + J9 and
+     the right J7 + J10 (CONTROLLER.md §2). See CONTROLLER.md §6 results."
 
 # ---------------------------------------------------------------------------
 # Upstream truth. Derived, never hand-edited.
@@ -129,11 +137,11 @@ outlines:
 # because it is small, singular, and ~$15 to respin.
 # ---------------------------------------------------------------------------
 controller_envelope:
-  extent: [50.0, 35.0]
+  extent: [57.0, 35.0]
   max_height_above_pcb: 10.0    # tallest are the tactile buttons ~5 mm; USB-C ~3.2 mm
   pcb_thickness: 1.6
-  outline: hardware/pcb-controller/dyad-controller.kicad_pcb  # 50 x 35, 2 mm corners
-  orientation: "35 wide x 50 deep (extent turned 90 deg); parts on B.Cu. Which face mounts up is open -- see z_stack.standoff_height"
+  outline: hardware/pcb-controller/dyad-controller.kicad_pcb  # 57 x 35, 2 mm corners
+  orientation: "35 wide x 57 deep (extent turned 90 deg); parts on B.Cu. Which face mounts up is open -- see z_stack.standoff_height"
   pinout: docs/CONTROLLER.md
   gpio_used: 27
   gpio_spare: 3
@@ -179,8 +187,8 @@ mounting:
                                 # M2, 2.2 mm plated hole on GND, 4.4 mm pad.
     - [3.0, 3.0]
     - [32.0, 3.0]
-    - [3.0, 47.0]
-    - [32.0, 47.0]
+    - [3.0, 54.0]
+    - [32.0, 54.0]
 
 # ---------------------------------------------------------------------------
 # One measured number, referenced everywhere. Never scatter magic clearances.
