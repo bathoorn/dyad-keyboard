@@ -72,7 +72,8 @@ table above replaces it, derived from geometry as §2 asks. **Applied to the
 schematic 2026-10-07.**
 
 **Placement it assumes** (decided 2026-10-07): parts on **B.Cu**, as upstream;
-board **35 wide x 50 deep**, so the side edges are the 50 mm ones. U3 keeps
+board **35 wide x 50 deep** (lengthened to **57 mm** on 2026-10-09 -- see §6
+results), so the side edges are the long ones. U3 keeps
 its upstream orientation (B, 180 deg), which is the only one that points its
 USB/QSPI face at the rear edge and J1. All directions below are KiCad's top
 view, front = +y.
@@ -129,6 +130,14 @@ pad 2, GND at 16/18) take a via each.
 band of ~7 mm behind U3+U1 for the wrap; J6/J7 on the side edges level with
 U3, J9/J10 in front of them; crystal and SWD in front of U3, to the right of
 the knob bundle, with J8 at front-left.
+
+**As built (2026-10-09), the side edges are the other way round:** split
+USB-C J10/J9 on top (y 29 from the rear edge), main FFC J6/J7 below them
+(y 41.8), on the 57 mm board. The 20-pin FFCs need far more routing room
+than the three-net USB-C ports, and the lower half of the board has it --
+moving them there is what finally kept the matrix bundle from crossing
+under the USB and QSPI routing (§6 results). The SWD header no longer
+exists (§4).
 
 **Open before applying:**
 
@@ -360,7 +369,10 @@ exactly one of each pair is populated, on **opposite** edges:
 Edge budget: each side edge carries 13 mm of FFC + ~9 mm of USB-C = 22 mm,
 against 35 mm if the board is oriented 50 wide by 35 deep. Tight but
 workable; if it binds, orienting the board the other way gives the side
-edges 50 mm.
+edges 50 mm. **As built:** turned (2026-10-07) and lengthened to 57 mm
+(2026-10-09), so each side edge is 57 mm, carrying the split USB-C
+(courtyard 10.7 mm) above the main FFC (14.5 mm), with the BOOTSEL / RESET
+button and a corner mounting hole above them.
 
 **Stubs are not a concern here.** RP2040 is USB 1.1 **Full Speed, 12 Mbps**
 (PLAN.md §Routing), so the unpopulated footprint's stub is electrically
@@ -645,18 +657,26 @@ Run against *Hardware design with RP2040* (RP-008279-DS-2), Chapter 2.
 | 1 | Schematic vs minimal design | ✅ after the crystal swap. Small deviations: one fewer 100 nF than 3V3 pins (the guide shares one between pins 48/49 too); no footprint for the guide's optional DNF 10 kΩ QSPI_SS pull-up, which it says the W25Q128JVS does not need. |
 | 2 | Flash on QSPI pins; BOOTSEL 1 kΩ | ✅ R1 1 kΩ, near the flash's CS pin as the guide asks. |
 | 3 | Crystal load from the part's CL | ❌ → ✅ Was CL 20 pF / ESR 80 Ω on 22 pF caps; now the guide's ABM8-272-T3 with 15 pF (§3). |
-| 4 | Decoupling, centre-pad vias, ground under the MCU | ⚠️ Every supply pin decoupled; centre pad 9 vias, solid zone connection. Ground fill directly under U3's body is incomplete (the bundle crosses on F.Cu). |
-| 5 | USB short, coupled, matched, over ground | ⚠️ Rerouted: D+ 15.9 mm / D- 16.1 mm, entirely on B.Cu, no vias (was 18 / 26 mm with 6 vias). Ground under it ~28% after the hand reroute (was ~9%), because the matrix bundle still crosses beneath. Full-speed USB tolerates this; the guide's 90 Ω target needs a 1 mm board anyway. R5/R6 sit ~7 mm from the chip. |
+| 4 | Decoupling, centre-pad vias, ground under the MCU | ⚠️ Every supply pin decoupled; centre pad 9 vias, solid zone connection. The F.Cu ground fill now covers 65% of the board in one 1,149 mm^2 main piece, but is still not unbroken directly under U3's body. |
+| 5 | USB short, coupled, matched, over ground | ✅ (mostly) D+ 15.9 mm / D- 16.1 mm, entirely on B.Cu, no vias (was 18 / 26 mm with 6 vias); 82% of its length over GND fill on F.Cu (was 9%, then 28%). Full-speed USB tolerates the rest; the guide's 90 Ω target needs a 1 mm board anyway. R5/R6 sit ~7 mm from the chip. |
 | 6 | LDO rated above Phase 1 peak | ⏳ Open -- the Phase 1 current measurement is still pending. |
 | 7 | BOOTSEL/RESET reachable in the case | ⏳ Open -- no case yet; which face mounts up is undecided. |
 | 8 | Power OR-ing, either half plugged in | ✅ Each half's VBUS enters the shared +5V through its own D1, so two hosts never meet. F2 (500 mA) caps what one half can send the other. |
 
 Measured ground share under the fast nets (GND fill on the opposite layer,
-along each track), after a hand reroute in KiCad that pulled matrix lines
-(GPIO2, 4, 7, 10, 15) out from under the RP2040's surroundings: USB 28%
-(was 9%), crystal 50% (was 27%), QSPI 1% (unchanged). The F.Cu fill rose
-from 46% to 58% of the board, its main piece from 774 to 987 mm^2. QSPI is
-the weakest -- short (~55 mm across six lines) and run at the default flash
-clock, but the first suspect if XIP proves flaky at higher clocks; its lines
-run on B.Cu over the remaining bundle crossing on F.Cu, the next target for
-a hand pass. The autorouter attempts are recorded in docs/TOOLS.md.
+along each track), across the three routings:
+
+| | 35 x 50, hand reroute | 35 x 57, FFCs above USB-C | **35 x 57, FFCs below USB-C (as built)** |
+|---|---|---|---|
+| USB | 28% | 35% | **82%** |
+| QSPI | 1% | 0% | **65%** |
+| Crystal | 50% | 81% | 46% |
+| F.Cu fill | 58%, main piece 987 mm^2 | 56%, 1,091 mm^2 | **65%, 1,149 mm^2** |
+| Routed | yes | GPIO3 unroutable | **yes** |
+
+What moved the numbers was where the main FFCs sit, not the board length on
+its own: with J6/J7 on the lower half of the side edges the matrix bundle
+no longer has to cross under the USB and QSPI routing on F.Cu. The crystal
+is now the weakest of the three (46%) -- short, and on the oscillator's own
+pins, so a lower priority than QSPI was. The routing workflow and its traps
+are recorded in docs/TOOLS.md and hardware/route_tools.py.
